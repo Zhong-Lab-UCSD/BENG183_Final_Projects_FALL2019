@@ -22,7 +22,7 @@ and genomic mutations. The input for RNA-seq analysis is raw reads, and the outp
 ## Normalization Techniques 
 The following are some different techniques in place to normalize RNA-seq data:
 
-* RPKM stands for Reads Per Kilobase of transcript per Million
+* *RPKM* stands for Reads Per Kilobase of transcript per Million
   Steps for RPKM:
   1. The numerator is the read counts aligned to a single gene.
   2. The total reads in a sample divided by 1,000,000 is our “per million” scaling factor. Multiply this by the length of the gene in        kilobases. This is our denominator.
@@ -31,7 +31,7 @@ The following are some different techniques in place to normalize RNA-seq data:
   Dividing the number in Step 1 by the number in Step 2 gives you reads per million (RPM) and normalizes for sequencing depth. Dividing   by the RPM values by the length of the gene in kilobases gives reads per kilobase of transcript per million (RPKM), and additionally     normalizes for gene length[1]. 
   ![RPKM](https://github.com/nbangari/BENG183_Final_Projects_FALL2019/blob/master/Normalization/img/image5.png)
   
-* TMM stands for trimmed means of M-values. 
+* *TMM* stands for trimmed means of M-values. 
 
   TMM is a method of normalization that estimates the relative RNA production level from RNA-seq data by estimating scale factors         between samples. TMM is calculated by dividing raw counts by the library size times a normalization factor. The library size is used     to account for the size of the library since a larger library can lead to more reads aligned but not necessarily more gene               expression. The normalization factor is used to account for “compositional biases” for example when certain genes are very highly       expressed to too low these may be outliers, TMM takes out these high and low expression outliers and only takes the mean of the         remaining values. TMM works under the assumption that the majority of genes are not differentially expressed. The main difference       between TMM and other normalization strategies is the TMM does not account for the length of the gene or transcript.[5]
     
