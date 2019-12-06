@@ -43,8 +43,20 @@ The following are some different techniques in place to normalize RNA-seq data:
       3. TMM is the sum of rescaled gene counts of all runs.
 
 
+## References 
 
- 
+[1] Mortazavi, A., Williams, B. A., McCue, K., Schaeffer, L., & Wold, B. (2008). Mapping and quantifying mammalian transcriptomes by RNA-Seq. Nature Methods, 5(7), 621.
+
+[2] Wagner, G. P., Kin, K., & Lynch, V. J. (2012). Measurement of mRNA abundance using RNA-seq data: RPKM measure is inconsistent among samples. Theory in Biosciences, 131(4), 281-285.
+
+[3] Zhou, Y., Zhu, J., Tong, T., Wang, J., Lin, B., & Zhang, J. (2019). A statistical normalization method and differential expression analysis for RNA-seq data between different species. BMC Bioinformatics, 20(1), 163.
+
+[4] Bacher, R., Chu, L. F., Leng, N., Gasch, A. P., Thomson, J. A., Stewart, R. M., … Kendziorski, C. (2017). SCnorm: robust normalization of single-cell RNA-seq data. Nature Methods, 14(6), 584–586. doi:10.1038/nmeth.4263
+
+[5] Robinson, M. D., & Oshlack, A. (2010). A scaling normalization method for differential expression analysis of RNA-seq data. Genome Biology, 11(3), R25.
+
+[6] Li, P., Piao, Y., Shon, H. S., & Ryu, K. H. (2015). Comparing the normalization methods for the differential analysis of Illumina high-throughput RNA-Seq data. BMC Bioinformatics, 16, 347. doi:10.1186/s12859-015-0778-7
+
 
   
 
