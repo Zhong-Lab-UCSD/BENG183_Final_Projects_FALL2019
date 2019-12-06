@@ -3,7 +3,7 @@
 ### **Your report must be submitted in Markdown format!**
 If you need a refresher on the Markdown format, [here is a basic guide.](https://github.com/Zhong-Lab-UCSD/BENG183/blob/master/markdown_tutorial.md)
 
-### **Please name your submission in the format "GROUP##_Final_Report.md" and only submit once per group!**
+### **Please name your submission in the format "GROUP##_Final_Project.md" and only submit once per group!**
 
 For final projects submission, please follow these steps:
 1. To start, [fork the repository](https://guides.github.com/activities/forking/).
