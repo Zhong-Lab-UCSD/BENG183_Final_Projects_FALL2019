@@ -8,4 +8,3 @@ Aaron Ho
 
 University of California, San Diego
 
----
