@@ -18,11 +18,13 @@ In **supervised learning**, the model is trained using a labeled dataset. In oth
 
 In **unsupervised learning**, the input data does not have corresponding labels. The goal of this type of learning is to model the distribution of the dataset in order to gain greater insight about the data. Unsupervised learning problems can fall under clustering, which is useful for uncovering groups within the data. 
 
---- 
+## Clustering
 
 Clustering is a useful technique that groups similar data points in such a way that similar points will be grouped closer to one another, thus forming a cluster. The two clustering techniques that we will discuss are hierarchical clustering and K-means clustering. 
 
-###Hierarchical Clustering 
+---
+
+### Hierarchical Clustering 
 
 In Hierarchical clustering, similarity (distance) between points is calculated to cluster the most similar points together. This process is repeated until only a single cluster is left. Essentially, the algorithm builds a hierarchy of clusters.  
 The algorithm for Hierarchical Clustering is as follows:
