@@ -55,9 +55,36 @@ With K-means clustering, the results can vary based on the “K” value that is
 
 ## Applications of Machine Learning to Biological Big Data and Bioinformatics
 
+### Finding Subclasses of Lung Cancer via Clustering of Gene Expression Profile
+
+### Determining Ancestry of New Samples via Clustering (PCA) of Genome
+
+### Transcription Binding Site Prediction using CNN on Binding Motifs
+
+### Cell Cycle Phase Prediction using CNN on Images of Jurkat Cells
 
 ## Challenges of Machine Learning Approaches in Bioinformatics
 
+### Consequences of Overfitting Given Insufficient Data
+
+### The Black Box of The Predictive Model
+
+### Reliance on Prior Knowledge, and Misapplication of Machine Learning
 
 ## References
 
+[1] Kimes, P. K., Liu, Y., Neil Hayes, D., & Marron, J. S. (2017). Statistical significance for hierarchical clustering. Biometrics, 73(3), 811–821. doi:10.1111/biom.12647
+
+[2] Bhattacharjee, Arindam, et al. "Classification of human lung carcinomas by mRNA expression profiling reveals distinct adenocarcinoma subclasses." Proceedings of the National Academy of Sciences 98.24 (2001): 13790-13795.
+
+[3] Li, Jun Z., et al. "Worldwide human relationships inferred from genome-wide patterns of variation." science 319.5866 (2008): 1100-1104.
+
+[4] Alipanahi, Babak, et al. "Predicting the sequence specificities of DNA-and RNA-binding proteins by deep learning." Nature biotechnology 33.8 (2015): 831.
+
+[5] Eulenberg, Philipp, et al. "Reconstructing cell cycle and disease progression using deep learning." Nature communications 8.1 (2017): 463.
+
+[6] Deep learning for genomics. Nat Genet 51, 1 (2019) doi:10.1038/s41588-018-0328-0
+
+[7] Xu, C., & Jackson, S. A. (2019). Machine learning and complex biological data. Genome biology, 20(1), 76. doi:10.1186/s13059-019-1689-0
+
+[8] Libbrecht, M. W., & Noble, W. S. (2015). Machine learning applications in genetics and genomics. Nature reviews. Genetics, 16(6), 321–332. doi:10.1038/nrg3920
