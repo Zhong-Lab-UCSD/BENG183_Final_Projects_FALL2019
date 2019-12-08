@@ -1,5 +1,5 @@
 # BENG183 Final Projects FALL2019
-<p></p>
+
 ### **Your report must be submitted in Markdown format!**
 If you need a refresher on the Markdown format, [here is a basic guide.](https://github.com/Zhong-Lab-UCSD/BENG183/blob/master/markdown_tutorial.md)
 
