@@ -2,10 +2,15 @@
 
 By Daniella Vo, Nidhi Bangari, Priya Jindal
 
-<!-- ## Sections
-TODO: add section links -->
+1. [Introduction](#1)
+2. [Normalization Techniques](#2)<br>
+    2.1. [Specificity](#2321)<br>
+    2.2. [Through-put and resolution](#2322)
+3. [Comparisons](#3)
+4. [Summary](#4)
+5. [References](#5)
 
-## Introduction
+## 1. Introduction<a name="1"></a> 
 
   RNA-sequencing is used to determine the gene expression levels, which allows 
 researchers to identify differentially expressed genes, discover new RNA isoforms,
@@ -26,7 +31,7 @@ and genomic mutations. The input for RNA-seq analysis is raw reads, and the outp
   
   There are various approaches to normalization. In this paper we will look at the various algorithms used for normalization and how they compare to one another by looking at applications of these methods. 
   
-## Normalization Techniques 
+## 2. Normalization Techniques<a name="2"></a>
 The following are some different techniques in place to normalize RNA-seq data:
 
 * *RPKM* stands for Reads Per Kilobase of transcript per Million
@@ -99,7 +104,7 @@ The equation is shown below:
       2. Then the raw gene counts are rescaled by dividing each gene count by the scaling factor for each run. 
       3. TMM is the sum of rescaled gene counts of all runs.
 
-## Comparisons
+## 3. Comparisons<a name="3"></a>
 
 | Normalization Method | Within-sample or between-sample? | Pros | Cons |
 |:---:|:---:|:---:|:----:|
@@ -132,11 +137,11 @@ A method previously used by Brawand et. al to normalize data across different sp
 
  It was also shown that a larger percentage of the genes identified as differentially expressed by SCBN were associated with evolution or illness, thereby indicating that the genes identified by SCBN had greater functional importance than those found by the median method. 
 
-## Summary
+## 4. Summary<a name="4"></a>
 Normalization is an important step in RNA-seq analysis because it allows you to compare within and between samples. This step is done after you have the raw counts for each gene and sample, before starting the differential gene analysis. There are numerous methods of normalization because there are different factors that need to be optimized when performing RNA-seq analysis, and which normalization method is needed depends on the type of RNA-seq analysis being done.
 
 
-## References 
+## 5. References<a name="5"></a>
 
 [1] Mortazavi, A., Williams, B. A., McCue, K., Schaeffer, L., & Wold, B. (2008). Mapping and quantifying mammalian transcriptomes by RNA-Seq. Nature Methods, 5(7), 621.
 
