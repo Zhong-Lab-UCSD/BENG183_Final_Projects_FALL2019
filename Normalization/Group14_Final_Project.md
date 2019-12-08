@@ -5,10 +5,10 @@ By Daniella Vo, Nidhi Bangari, Priya Jindal
 1. [Introduction](#1)
 2. [Normalization Techniques](#2)<br>
     2.1. [RPKM](#21)<br>
-    2.2. [FPKM](#22)
-    2.3. [TPM](#23)
-    2.4. [SCBN](#24)
-    2.5. [SCnorm](#25)
+    2.2. [FPKM](#22)<br>
+    2.3. [TPM](#23)<br>
+    2.4. [SCBN](#24)<br>
+    2.5. [SCnorm](#25)<br>
     2.6. [TMM](#26)
 3. [Comparisons](#3)
 4. [Summary](#4)
@@ -125,8 +125,10 @@ TMM stands for trimmed means of M-values.
           * Internally these normalization factors account library size
           * And determine a scaling factor based on the binomial distribution of data input since we 
           are only using the mean or trimmed values and are removing outlier values. 
+          
       2. Then the raw gene counts are rescaled by dividing each gene count by the scaling factor 
          for each run. 
+         
       3. TMM is the sum of rescaled gene counts of all runs.
 
 ## 3. Comparisons<a name="3"></a>
