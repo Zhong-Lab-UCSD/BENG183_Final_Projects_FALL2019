@@ -14,7 +14,7 @@ and genomic mutations. The input for RNA-seq analysis is raw reads, and the outp
 <p align="center">
   <img src="https://github.com/nbangari/BENG183_Final_Projects_FALL2019/blob/master/Normalization/img/image6.png">
 </p>
-<p> align="center"
+<p align="center">
     <em>Figure 1: RNA-seq analysis pipeline </em>
 </p>
 
