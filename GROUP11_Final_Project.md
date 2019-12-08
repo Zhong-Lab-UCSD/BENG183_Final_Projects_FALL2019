@@ -77,6 +77,8 @@ With K-means clustering, the results can vary based on the “K” value that is
 
 ### Reliance on Prior Knowledge, and Misapplication of Machine Learning
 
+## Present and Future Developments
+
 ## References
 
 [1] Kimes, P. K., Liu, Y., Neil Hayes, D., & Marron, J. S. (2017). Statistical significance for hierarchical clustering. Biometrics, 73(3), 811–821. doi:10.1111/biom.12647
