@@ -110,7 +110,7 @@ Comparing SCnorm and TPM: An experiment to test SCnorm was designed to sequence 
 A method previously used by Brawand et. al to normalize data across different species is to identify the most conserved genes, calculate the median expression levels in each species among the genes with expression values in the interquartile range for different species, derive scaling factors to adjust those median values to a common value, and then use RPKM to normalize the data. This method, called the “median” method, was compared for accuracy with SCBN [3], and SCBN was found to have a lower error rate, as seen in the figure below.
 
 <p align="center">
-  <img src="https://github.com/nbangari/BENG183_Final_Projects_FALL2019/blob/master/Normalization/img/image3.png">
+  <img src="https://github.com/nbangari/BENG183_Final_Projects_FALL2019/blob/master/Normalization/img/image3.png" width="300">
 </p>
 
  It was also shown that a larger percentage of the genes identified as differentially expressed by SCBN were associated with evolution or illness, thereby indicating that the genes identified by SCBN had greater functional importance than those found by the median method. 
