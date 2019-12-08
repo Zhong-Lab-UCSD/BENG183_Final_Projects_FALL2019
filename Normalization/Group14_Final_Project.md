@@ -55,12 +55,6 @@ SCBN stands for scale based normalization, and is a newly proposed method which 
     <em>Figure 1: Displaying the difference between normalization when comparing the same genes within a single species, and comparing orthologous genes across different species [3]</em>
 </p>
 
-<figure>
-  <img src="https://github.com/nbangari/BENG183_Final_Projects_FALL2019/blob/master/Normalization/img/image4.png" width="600">
-  <figcaption>This is my caption text.</figcaption>
-</figure>
-
-Figure 1: Displaying the difference between normalization when comparing the same genes within a single species, and comparing orthologous genes across different species [3]
 
 SCBN builds off another normalization method known as HTN, which is based on the hypothesis testing framework.It uses available knowledge of housekeeping genes, to calculate an optimal scaling factor. Using the same principles, SCBN utilizes the available knowledge of conserved orthologous genes for different species to derive the normalization scaling factor. SCBN assumes that a set of conserved orthologous genes between species is known in advance, and calculates the optimal scaling factor by minimizing the deviation between the empirical and nominal type I errors.
 
