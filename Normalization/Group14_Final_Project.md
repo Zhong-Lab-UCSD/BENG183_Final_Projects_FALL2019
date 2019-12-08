@@ -18,7 +18,7 @@ By Daniella Vo, Nidhi Bangari, Priya Jindal
 
   RNA-sequencing is used to determine the gene expression levels, which allows 
 researchers to identify differentially expressed genes, discover new RNA isoforms,
-and genomic mutations. The input for RNA-seq analysis is raw reads, and the output is differentially expressed genes, which are genes that are expressed differently for different cells. The pipeline for RNA-seq analysis is shown below:
+and genomic mutations. The input for RNA-seq analysis is raw reads, and the output is differentially expressed genes, which are genes that are expressed differently for different cells. The pipeline for RNA-seq analysis is shown in figure 1 below:
 
 <p align="center">
   <img src="https://github.com/nbangari/BENG183_Final_Projects_FALL2019/blob/master/Normalization/img/image6.png">
@@ -48,10 +48,10 @@ The following are some different techniques in place to normalize RNA-seq data:
 RPKM stands for Reads Per Kilobase of transcript per Million
   Steps for RPKM:
   1. The numerator is the read counts aligned to a single gene.
-  2. The total reads in a sample divided by 1,000,000 is our “per million” scaling factor. Multiply this by the length of the gene in        kilobases. This is our denominator.
+  2. The total reads in a sample divided by 1,000,000 is our “per million” scaling factor. Multiply this by the length of the gene in kilobases. This is our denominator.
   3. Numerator / denominator = RPKM value
   
-  Dividing the number in Step 1 by the number in Step 2 gives you reads per million (RPM) and normalizes for sequencing depth. Dividing   by the RPM values by the length of the gene in kilobases gives reads per kilobase of transcript per million (RPKM), and additionally     normalizes for gene length[1]. 
+  Dividing the number in Step 1 by the number in Step 2 gives you reads per million (RPM) and normalizes for sequencing depth. Dividing by the RPM values by the length of the gene in kilobases gives reads per kilobase of transcript per million (RPKM), and additionally normalizes for gene length[1]. 
   
 <p align="center">
   <img src="https://github.com/nbangari/BENG183_Final_Projects_FALL2019/blob/master/Normalization/img/image5.png" width="600">
