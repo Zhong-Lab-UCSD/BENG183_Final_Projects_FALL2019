@@ -40,7 +40,7 @@ The following are some different techniques in place to normalize RNA-seq data:
 <p align="center">
   <img src="https://github.com/nbangari/BENG183_Final_Projects_FALL2019/blob/master/Normalization/img/image5.png" width="600">
 </p>
-<p>
+<p align="center">
     <em>Figure 2:</em>
 </p>
   
@@ -49,7 +49,7 @@ The following are some different techniques in place to normalize RNA-seq data:
 <p align="center">
   <img src="https://github.com/nbangari/BENG183_Final_Projects_FALL2019/blob/master/Normalization/img/image5.png" width="600">
 </p>
-<p>
+<p align="center">
     <em>Figure 3: </em>
 </p>
 
@@ -60,7 +60,7 @@ SCBN stands for scale based normalization, and is a newly proposed method which 
 <p align="center">
   <img src="https://github.com/nbangari/BENG183_Final_Projects_FALL2019/blob/master/Normalization/img/image4.png" width="600">
 </p>
-<p>
+<p align="center">
     <em>Figure 4: Displaying the difference between normalization when comparing the same genes within a single species, and comparing orthologous genes across different species [3]</em>
 </p>
 
@@ -117,7 +117,7 @@ Comparing SCnorm and TPM: An experiment to test SCnorm was designed to sequence 
 <p align="center">
   <img src="https://github.com/nbangari/BENG183_Final_Projects_FALL2019/blob/master/Normalization/img/image2.png" width="250">
 </p>
-<p>
+<p align="center">
     <em>Figure 5: </em>
 </p>
   
@@ -126,7 +126,7 @@ A method previously used by Brawand et. al to normalize data across different sp
 <p align="center">
   <img src="https://github.com/nbangari/BENG183_Final_Projects_FALL2019/blob/master/Normalization/img/image3.png" width="400">
 </p>
-<p>
+<p align="center">
     <em>Figure 6: </em>
 </p>
 
