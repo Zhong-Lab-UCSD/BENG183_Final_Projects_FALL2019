@@ -17,11 +17,11 @@ https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2690996/ - explanation of why Bowti
     
 We plan to expand on Chapter 3.1, specifically the section on pre-processing and alignment(3.2.2 Step 2). This includes the computational process and idea behind Bowtie2 and the Burrow-Wheelers Aligner, as well as the relative pros and cons behind each algorithm.
 
-##BWA
+## BWA
 
  The Burrow-Wheelers Aligner(BWA) is separated into three programs: BWA-backtrack, BWA-MEM, and BWA-SW. BWA-backtrack supports reads up to 100bp, while BWA-SW, and the newer and faster BWA-MEM, can support up to reads ~1Mbp long. It uses the Burrow-Wheelers Transform algorithm to save memory while aligning reads. BWA supports both full-read alignment and chimeric alignment, and works optimally with reads with a sequencing error rate of ~2%, depending on the length of the alignment. It can work with genomes larger than 4GB, but cannot align chromosomes larger than 2GB. 
  
-##Bowtie2
+## Bowtie2
 
 Bowtie2 is a tool used for aligning sequencing reads to long reference sequences. The tool usually aligns reads of about 50 to 100s characters long. Bowtie2 performs end-to-end or local read alignments. An alignment score displays how similar the read sequence is to the reference sequence. A high alignment score means there is a lot of similarity. End-to-end read alignments searches for alignments for all of the characters read, while local read alignment uses a trimmed version. It also indexes the genome with an FM index to keep a small memory footprint. For the human genome this footprint is typically around 3.2 GB.  
 
@@ -29,7 +29,7 @@ Bowtie2 is a tool used for aligning sequencing reads to long reference sequences
 Sequence Aligners:
 https://en.wikipedia.org/wiki/Sequence_alignment_software(under short-read sequence alignment)
 
-##BBMap
+## BBMap
 BBMAP has a high mapping rate, high accuracy, and great speed. 
 
 Drawback: has high memory usage
@@ -54,9 +54,9 @@ BBMap is more accurate at all confidence levels
 
 
 
-##GMAP - Genome Mapping and Alignment Program 
+## GMAP - Genome Mapping and Alignment Program 
 
-###Background 
+### Background 
 This technique was developed in 2002, around the time when the draft human genome 
 was first released. GMAP was designed to take advantage of newly available genomic 
 sequence allowing users to align genes and expressed sequence tags (ESTs) rapidly to the 
@@ -66,7 +66,7 @@ and amplification of genomic regions in cancer. One of the most significant aspe
 GMAP is that the program can handle transcripts that had up to 20-30% sequence 
 deviation from the reference genome. In contrast, other programs for genomic locationation alignment, such as BLAT, generally had their alignment affected adversely by small amounts of deviation of only 1%. This relatively wide deviation allows for use of GMAP for cross species alignment. 
 
-###Advantages of GMAP
+### Advantages of GMAP
 Advantages of GMAP include: 
 Map and align a single cDNA interactively against a large genome in about a second, without the startup time of several minutes typically needed by existing mapping programs.
 Switch arbitrarily among different genomes without the need for a pre-loaded server dedicated to each genome. 
@@ -86,7 +86,7 @@ Less accurate than Bowtie2, BWA, and BBMap based on E. coli ROC Curves.
 three stage process. The first stage looks at long oligomers (such as 24-mers or 30-mers) from both ends of the query sequence to identify candidate genomic regions that contain oligomers from both ends. The second stage attempts to align the read against each of the candidate regions found in Stage 1. The last stage fills in these gaps using a variety of dynamic programming algorithms at the nucleotide level 
 
 
-Cloudburst(BigBWA?)
+### Cloudburst(BigBWA?)
 
 How it works:
 Cloudburst is based off the RMAP software implementation which:
