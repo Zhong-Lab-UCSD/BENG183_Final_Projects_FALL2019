@@ -15,6 +15,7 @@ and genomic mutations. The input for RNA-seq analysis is raw reads, and the outp
   The third step in the RNA-seq data analysis workflow is Expression quantification. During this step, we are able to measure the expression level of a gene as a measure of the number of RNA reads that were aligned to it. The difference between two individuals is not only limited to genomic differences in DNA. An individual with the same genome in all of their cells will still have different cells behaving differently due to differing levels of gene expression. Gene expression is regulated at many levels, one of which is the transcriptional level; a variety of transcription factors determine which genes will be transcribed and in what amounts at any time. The expression of genes in a cell can vary with environment, situations of stress, disease, etc. and understanding gene expression levels is key for a lot of research. For example, we can use gene expression levels to identify differentially expressed genes in cancer patients, and use this information to diagnose cancer early. 
   
   In the expression quantification step of RNA sequencing, the mapped reads to the genome are counted using tools such as featureCounts which determine the raw mapped read counts for sections of the genome. However, we cannot make any conclusions on gene expression solely based on these raw mapped read counts and therefore need to perform normalization.
+  
   In this paper, we will be discussing the importance of normalization and going into detail to explore various normalization strategies or techniques that are commonly used. Each technique has its own pros and cons and we will be comparing the techniques to one another to see how they perform with respect to each other. Normalization is important because if we simply measure the expression level of a gene as the raw number of RNA reads that were aligned to it, we will get an inaccurate picture. A very long gene is expected to have more reads that align to different parts of the gene than a short gene with the same expression level. In addition, if many copies of reads were made in the PCR step and we had a very large total read library size, then many more reads would align to a single gene than if we have a small total read library size. Therefore we need to adjust for gene length and library size in order to get an accurate picture of expression levels. Without normalization, it will be difficult to compare between and within different samples.
   
   There are various approaches to normalization. In this paper we will look at the various algorithms used for normalization and how they compare to one another by looking at applications of these methods. 
@@ -31,6 +32,38 @@ The following are some different techniques in place to normalize RNA-seq data:
   Dividing the number in Step 1 by the number in Step 2 gives you reads per million (RPM) and normalizes for sequencing depth. Dividing   by the RPM values by the length of the gene in kilobases gives reads per kilobase of transcript per million (RPKM), and additionally     normalizes for gene length[1]. 
   ![RPKM](https://github.com/nbangari/BENG183_Final_Projects_FALL2019/blob/master/Normalization/img/image5.png)
   
+  FPKM stands for Fragments Per Kilobase of transcript per Million and is nearly identical in procedure to RPKM. The only difference is that RPKM is designed for single-end read analysis, while FPKM was designed for paired-end reads. RPKM relies on the assumption that every read is associated with a single fragment that was sequenced. However, in paired-end sequencing, usually two reads (a “pair”) correspond to a single fragment, unless one read did not map for some reason. In FPKM, if two paired-end reads map to one fragment, they are counted as one instance of a read mapping to a fragment, rather than two. 
+  
+  ![RPKM](https://github.com/nbangari/BENG183_Final_Projects_FALL2019/blob/master/Normalization/img/image5.png)
+
+TPM stands for Transcripts per million and normalizes for library size by measuring the number of reads that align to a particular gene as the proportion of total reads in the library. This means every sample has the same total TPM, so TPM can be compared both between and within samples, unlike RPKM/FPKM which cannot be compared between samples [2]. 
+
+SCBN stands for scale based normalization, and is a newly proposed method which aims to more accurately identify genes with differential expression between different species. This is normally a challenging task due to variations between species, as not only gene lengths and read counts need to be considered, but also the different gene numbers and gene lengths across species. SCBN handles this by using knowledge about orthologous genes that are conserved in both species. 
+
+![RPKM](https://github.com/nbangari/BENG183_Final_Projects_FALL2019/blob/master/Normalization/img/image5.png)
+Figure 1: Displaying the difference between normalization when comparing the same genes within a single species, and comparing orthologous genes across different species [3]
+
+SCBN builds off another normalization method known as HTN, which is based on the hypothesis testing framework.It uses available knowledge of housekeeping genes, to calculate an optimal scaling factor. Using the same principles, SCBN utilizes the available knowledge of conserved orthologous genes for different species to derive the normalization scaling factor. SCBN assumes that a set of conserved orthologous genes between species is known in advance, and calculates the optimal scaling factor by minimizing the deviation between the empirical and nominal type I errors.
+
+Tools to implement SCBN include an R package named “SCBN”, which is freely available at http://www.bioconductor.org/packages/devel/bioc/html/SCBN.html.[3]
+
+SCnorm is a method of normalization that uses quantile regression to estimate the dependence of transcript expression on sequencing depth for every gene. Quantile regression is similar to linear regression, but instead of finding the slope of all the data points, quantile regression breaks up the data points into x quantiles and determines the slope of the data points in each of these quartiles.[4]
+ 
+Steps:
+1. Starting K = 1, where K represents the number of clusters. 
+
+The equation is shown below: 
+
+![RPKM](https://github.com/nbangari/BENG183_Final_Projects_FALL2019/blob/master/Normalization/img/image5.png)
+
+τ represents the quantiles; d represents the degrees; Yg,j denote the log non-zero expression count for gene g in cell j for g = 1,…, m and j = 1,…, n; Xj denote log sequencing depth for cell j; gene-specific relationship between log unnormalized expression and log sequencing depth is represented by βg,1
+
+2. This calculation is repeated by increasing K if the modes of the slopes within each of 10 equally sized gene groups (where a gene’s group membership is determined by its median expression among non-zero un-normalized measurements) are all less than 0.
+
+3. Normalized counts Y’′g,j are given by eYg,jSFj, where SF is the scale factor. The estimated scale factors are used to perform within-group adjustment for sequencing depth to provide normalizes estimates of expression.
+
+4. When multiple biological conditions are present, SCnorm is applied within each condition and the normalized counts are then re-scaled across conditions.
+  
 * *TMM* stands for trimmed means of M-values. 
 
   TMM is a method of normalization that estimates the relative RNA production level from RNA-seq data by estimating scale factors         between samples. TMM is calculated by dividing raw counts by the library size times a normalization factor. The library size is used     to account for the size of the library since a larger library can lead to more reads aligned but not necessarily more gene               expression. The normalization factor is used to account for “compositional biases” for example when certain genes are very highly       expressed to too low these may be outliers, TMM takes out these high and low expression outliers and only takes the mean of the         remaining values. TMM works under the assumption that the majority of genes are not differentially expressed. The main difference       between TMM and other normalization strategies is the TMM does not account for the length of the gene or transcript.[5]
@@ -41,6 +74,9 @@ The following are some different techniques in place to normalize RNA-seq data:
           * And determine a scaling factor based on the binomial distribution of data input since we are only using the mean or trimmed             values and are removing outlier values. 
       2. Then the raw gene counts are rescaled by dividing each gene count by the scaling factor for each run. 
       3. TMM is the sum of rescaled gene counts of all runs.
+
+## Comparisons
+
 
 
 ## References 
