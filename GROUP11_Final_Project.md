@@ -14,7 +14,7 @@ University of California, San Diego
 
 Machine learning has become an important topic of discussion in research because it can be used to analyze large datasets and discover specific patterns that are not immediately visible to the human eye. The field of Bioinformatics has increasingly begun to use machine learning methods to gain greater insight and make predictions about complex biological processes in organisms. Specifically, machine learning methods are being used in genomics to analyze DNA sequences in various ways including finding subclasses of diseases, determining ancestry of individuals, predicting transcription factor binding sites, and predicting cell cycle phases. In discussing machine learning methods, it is important to distinguish two different types of learning: *supervised and unsupervised learning*.
 
-<img src="learning.png" height="250" width="250">
+<img src="learning.png" height="250" width="300">
 
 In **supervised learning**, the model is trained using a labeled dataset. In other words, the correct labels are known and act as a “teacher” that corrects the algorithm during its training. The algorithm iteratively makes predictions on the training dataset until it reaches an acceptable level of performance. Supervised learning problems can be fall under classification, in which the algorithm's output value is a category.
 
@@ -28,7 +28,7 @@ Clustering is a useful technique that groups similar data points in such a way t
 
 ### Hierarchical Clustering 
 
-<img src="2.png" height="250" width="250">
+<img src="2.png" height="250" width="300">
 
 In Hierarchical clustering, similarity (distance) between points is calculated to cluster the most similar points together. This process is repeated until only a single cluster is left. Essentially, the algorithm builds a hierarchy of clusters.  
 The algorithm for Hierarchical Clustering is as follows:
@@ -41,7 +41,7 @@ The algorithm for Hierarchical Clustering is as follows:
 
 ### K-means Clustering
 
-<img src="3.png" height="250" width="250">
+<img src="3.png" height="250" width="300">
 
 In K-means clustering, we choose an arbitrary “K” value which represents the number of clusters. Then, K points are selected to serve as a mean for each of the K clusters. The algorithm iteratively reassigns points to new clusters with the goal of minimizing the point’s distance to the cluster’s mean. 
 
