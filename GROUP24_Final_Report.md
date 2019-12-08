@@ -20,5 +20,4 @@ $$ v_i = \sum_{k=1}^N (u_{ik})^my_k \Big/ \sum_{k=1}^k (u_{ik})^m $$
 
 ![just a link](https://github.com/insanebruce/BENG183_Final_Projects_FALL2019/images/)
 
-![K-Means](https://github.com/insanebruce/BENG183_Final_Projects_FALL2019/images/kmeans.png "K-Means") ![MOG]()
-![K-Means](https://github.com/insanebruce/BENG183_Final_Projects_FALL2019/images/mog.png "MOG")
+![K-Means](images/kmeans.png "K-Means") ![MOG](images/mog.png "MOG")
