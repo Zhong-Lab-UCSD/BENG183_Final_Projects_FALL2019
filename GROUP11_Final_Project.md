@@ -28,7 +28,7 @@ Clustering is a useful technique that groups similar data points in such a way t
 
 ### Hierarchical Clustering 
 
-![2](2.png =250x250)
+![2](2.png width="100" height="100")
 
 In Hierarchical clustering, similarity (distance) between points is calculated to cluster the most similar points together. This process is repeated until only a single cluster is left. Essentially, the algorithm builds a hierarchy of clusters.  
 The algorithm for Hierarchical Clustering is as follows:
