@@ -18,7 +18,7 @@ By Daniella Vo, Nidhi Bangari, Priya Jindal
 
   RNA-sequencing is used to determine the gene expression levels, which allows 
 researchers to identify differentially expressed genes, discover new RNA isoforms,
-and genomic mutations. The input for RNA-seq analysis is raw reads, and the output is differentially expressed genes, which are genes that are expressed differently for different cells. The pipeline for RNA-seq analysis is shown in figure 1 below:
+and genomic mutations. The input for RNA-seq analysis is raw reads, and the output is differentially expressed genes, which are genes that are expressed differently for different samples. The pipeline for RNA-seq analysis is shown in Figure 1 below:
 
 <p align="center">
   <img src="https://github.com/nbangari/BENG183_Final_Projects_FALL2019/blob/master/Normalization/img/image6.png">
@@ -27,11 +27,13 @@ and genomic mutations. The input for RNA-seq analysis is raw reads, and the outp
     <em>Figure 1: RNA-seq analysis pipeline </em>
 </p>
 
-  The third step in the RNA-seq data analysis workflow is Expression quantification. During this step, we are able to measure the expression level of a gene as a measure of the number of RNA reads that were aligned to it. The difference between two individuals is not only limited to genomic differences in DNA. An individual with the same genome in all of their cells will still have different cells behaving differently due to differing levels of gene expression. Gene expression is regulated at many levels, one of which is the transcriptional level; a variety of transcription factors determine which genes will be transcribed and in what amounts at any time. The expression of genes in a cell can vary with environment, situations of stress, disease, etc. and understanding gene expression levels is key for a lot of research. For example, we can use gene expression levels to identify differentially expressed genes in cancer patients, and use this information to diagnose cancer early. 
+  The first step is to check the quality of the reads produced by the RNA-sequencing. One tool that can be used for this is FastQC, which gives various measurements of read quality that can be analyzed by the researchers. If the quality is good enough, the next step is to map the reads to the genome. This step takes all the fragments that were sequenced and maps them to their corresponding genes (or other areas of the genome). 
+  
+  The third step in the RNA-seq data analysis workflow is Expression quantification. During this step, we are able to measure the expression level of a gene as a measure of the number of RNA reads that were aligned to it. The difference between two individuals is not only limited to genomic differences in DNA. An individual with the same genome in all of their cells will still have different cells behaving differently due to differing levels of gene expression (Alberts, 2002). Gene expression is regulated at many levels, one of which is the transcriptional level; a variety of transcription factors determine which genes will be transcribed and in what amounts at any time. The expression of genes in a cell can vary with environment, situations of stress, disease, etc. and understanding gene expression levels is key for a lot of research. For example, we can use gene expression levels to identify differentially expressed genes in cancer patients, and use this information to diagnose cancer early. 
   
   In the expression quantification step of RNA sequencing, the mapped reads to the genome are counted using tools such as featureCounts which determine the raw mapped read counts for sections of the genome. However, we cannot make any conclusions on gene expression solely based on these raw mapped read counts and therefore need to perform normalization.
   
-  In this paper, we will be discussing the importance of normalization and going into detail to explore various normalization strategies or techniques that are commonly used. Each technique has its own pros and cons and we will be comparing the techniques to one another to see how they perform with respect to each other. Normalization is important because if we simply measure the expression level of a gene as the raw number of RNA reads that were aligned to it, we will get an inaccurate picture. A very long gene is expected to have more reads that align to different parts of the gene than a short gene with the same expression level. In addition, if many copies of reads were made in the PCR step and we had a very large total read library size, then many more reads would align to a single gene than if we have a small total read library size. Therefore we need to adjust for gene length and library size in order to get an accurate picture of expression levels. Without normalization, it will be difficult to compare between and within different samples.
+  In this paper, we will be discussing the importance of normalization and going into detail to explore various normalization strategies or techniques that are commonly used. Each technique has its own pros and cons and we will be comparing the techniques to one another to see how they perform with respect to each other. Normalization is important because if we simply measure the expression level of a gene as the raw number of RNA reads that were aligned to it, we will get an inaccurate picture. A very long gene is expected to have more reads that align to different parts of the gene than a short gene with the same expression level. For example, if we sequenced in reads of ~100 bp, and exactly 4 copies of a long gene and 4 copies of a short gene were sequenced, but the short gene was ~100 bp long and the long gene was ~1000 bp long, then we would have ~40 reads map to the long gene and ~4 reads map to the short gene, although their expression levels were the same. In addition, if many copies of reads were made in the PCR step and we had a very large total read library size, then many more reads would align to a single gene than if we have a small total read library size. Therefore we need to adjust for gene length and library size in order to get an accurate picture of expression levels. Without normalization, it will be difficult to compare between and within different samples.
   
   There are various approaches to normalization. In this paper we will look at the various algorithms used for normalization and how they compare to one another by looking at applications of these methods. 
   
@@ -84,7 +86,7 @@ SCBN stands for scale based normalization, and is a newly proposed method which 
 </p>
 
 
-SCBN builds off another normalization method known as HTN, which is based on the hypothesis testing framework.It uses available knowledge of housekeeping genes, to calculate an optimal scaling factor. Using the same principles, SCBN utilizes the available knowledge of conserved orthologous genes for different species to derive the normalization scaling factor. SCBN assumes that a set of conserved orthologous genes between species is known in advance, and calculates the optimal scaling factor by minimizing the deviation between the empirical and nominal type I errors.
+SCBN builds off another normalization method known as HTN, which is based on the hypothesis testing framework. HTN uses available knowledge of housekeeping genes, to calculate an optimal scaling factor. Using the same principles, SCBN utilizes the available knowledge of conserved orthologous genes for different species to derive the normalization scaling factor. SCBN assumes that a set of conserved orthologous genes between species is known in advance, and calculates the optimal scaling factor by minimizing the deviation between the empirical and nominal type I errors.
 
 Tools to implement SCBN include an R package named “SCBN”, which is freely available at http://www.bioconductor.org/packages/devel/bioc/html/SCBN.html.[3]
 
@@ -173,14 +175,16 @@ Normalization is an important step in RNA-seq analysis because it allows you to 
 
 ## 5. References<a name="5"></a>
 
-[1] Mortazavi, A., Williams, B. A., McCue, K., Schaeffer, L., & Wold, B. (2008). Mapping and quantifying mammalian transcriptomes by RNA-Seq. Nature Methods, 5(7), 621.
+[1] Alberts, B., Johnson, A., Lewis, J., Raff, M., Roberts, K., & Walter, P. (2002). Molecular Biology of the Cell 4th edn (New York: Garland Science). Ann Bot, 91, 401.
 
-[2] Wagner, G. P., Kin, K., & Lynch, V. J. (2012). Measurement of mRNA abundance using RNA-seq data: RPKM measure is inconsistent among samples. Theory in Biosciences, 131(4), 281-285.
+[2] Mortazavi, A., Williams, B. A., McCue, K., Schaeffer, L., & Wold, B. (2008). Mapping and quantifying mammalian transcriptomes by RNA-Seq. Nature Methods, 5(7), 621.
 
-[3] Zhou, Y., Zhu, J., Tong, T., Wang, J., Lin, B., & Zhang, J. (2019). A statistical normalization method and differential expression analysis for RNA-seq data between different species. BMC Bioinformatics, 20(1), 163.
+[3] Wagner, G. P., Kin, K., & Lynch, V. J. (2012). Measurement of mRNA abundance using RNA-seq data: RPKM measure is inconsistent among samples. Theory in Biosciences, 131(4), 281-285.
 
-[4] Bacher, R., Chu, L. F., Leng, N., Gasch, A. P., Thomson, J. A., Stewart, R. M., … Kendziorski, C. (2017). SCnorm: robust normalization of single-cell RNA-seq data. Nature Methods, 14(6), 584–586. doi:10.1038/nmeth.4263
+[4] Zhou, Y., Zhu, J., Tong, T., Wang, J., Lin, B., & Zhang, J. (2019). A statistical normalization method and differential expression analysis for RNA-seq data between different species. BMC Bioinformatics, 20(1), 163.
 
-[5] Robinson, M. D., & Oshlack, A. (2010). A scaling normalization method for differential expression analysis of RNA-seq data. Genome Biology, 11(3), R25.
+[5] Bacher, R., Chu, L. F., Leng, N., Gasch, A. P., Thomson, J. A., Stewart, R. M., … Kendziorski, C. (2017). SCnorm: robust normalization of single-cell RNA-seq data. Nature Methods, 14(6), 584–586. doi:10.1038/nmeth.4263
 
-[6] Li, P., Piao, Y., Shon, H. S., & Ryu, K. H. (2015). Comparing the normalization methods for the differential analysis of Illumina high-throughput RNA-Seq data. BMC Bioinformatics, 16, 347. doi:10.1186/s12859-015-0778-7
+[6] Robinson, M. D., & Oshlack, A. (2010). A scaling normalization method for differential expression analysis of RNA-seq data. Genome Biology, 11(3), R25.
+
+[7] Li, P., Piao, Y., Shon, H. S., & Ryu, K. H. (2015). Comparing the normalization methods for the differential analysis of Illumina high-throughput RNA-Seq data. BMC Bioinformatics, 16, 347. doi:10.1186/s12859-015-0778-7
