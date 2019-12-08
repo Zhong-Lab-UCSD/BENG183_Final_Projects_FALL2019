@@ -28,7 +28,7 @@ Clustering is a useful technique that groups similar data points in such a way t
 
 ### Hierarchical Clustering 
 
-![2](2.png width="100" height="100")
+<img src="2.png" height="250" width="250">
 
 In Hierarchical clustering, similarity (distance) between points is calculated to cluster the most similar points together. This process is repeated until only a single cluster is left. Essentially, the algorithm builds a hierarchy of clusters.  
 The algorithm for Hierarchical Clustering is as follows:
@@ -41,7 +41,7 @@ The algorithm for Hierarchical Clustering is as follows:
 
 ### K-means Clustering
 
-![3](3.png =250x250)
+<img src="3.png" height="250" width="250">
 
 In K-means clustering, we choose an arbitrary “K” value which represents the number of clusters. Then, K points are selected to serve as a mean for each of the K clusters. The algorithm iteratively reassigns points to new clusters with the goal of minimizing the point’s distance to the cluster’s mean. 
 
