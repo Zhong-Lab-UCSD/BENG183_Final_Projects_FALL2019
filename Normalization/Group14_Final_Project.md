@@ -40,7 +40,7 @@ The following are some different techniques in place to normalize RNA-seq data:
 * *SCnorm*
 * *TMM*
 
-2.1 RPKM<a name="21"></a>
+### 2.1 RPKM<a name="21"></a>
 RPKM stands for Reads Per Kilobase of transcript per Million
   Steps for RPKM:
   1. The numerator is the read counts aligned to a single gene.
