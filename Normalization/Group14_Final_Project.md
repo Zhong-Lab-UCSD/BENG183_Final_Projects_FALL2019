@@ -6,6 +6,10 @@ By Daniella Vo, Nidhi Bangari, Priya Jindal
 2. [Normalization Techniques](#2)<br>
     2.1. [RPKM](#21)<br>
     2.2. [FPKM](#22)
+    2.3. [TPM](#23)
+    2.4. [SCBN](#24)
+    2.5. [SCnorm](#25)
+    2.6. [TMM](#26)
 3. [Comparisons](#3)
 4. [Summary](#4)
 5. [References](#5)
@@ -56,6 +60,7 @@ RPKM stands for Reads Per Kilobase of transcript per Million
     <em>Figure 2:</em>
 </p>
   
+### 2.1 FPKM<a name="22"></a>
   FPKM stands for Fragments Per Kilobase of transcript per Million and is nearly identical in procedure to RPKM. The only difference is that RPKM is designed for single-end read analysis, while FPKM was designed for paired-end reads. RPKM relies on the assumption that every read is associated with a single fragment that was sequenced. However, in paired-end sequencing, usually two reads (a “pair”) correspond to a single fragment, unless one read did not map for some reason. In FPKM, if two paired-end reads map to one fragment, they are counted as one instance of a read mapping to a fragment, rather than two. 
   
 <p align="center">
@@ -65,8 +70,10 @@ RPKM stands for Reads Per Kilobase of transcript per Million
     <em>Figure 3: </em>
 </p>
 
+### 2.3 TPM<a name="23"></a>
 TPM stands for Transcripts per million and normalizes for library size by measuring the number of reads that align to a particular gene as the proportion of total reads in the library. This means every sample has the same total TPM, so TPM can be compared both between and within samples, unlike RPKM/FPKM which cannot be compared between samples [2]. 
 
+### 2.4 SCBN<a name="24"></a>
 SCBN stands for scale based normalization, and is a newly proposed method which aims to more accurately identify genes with differential expression between different species. This is normally a challenging task due to variations between species, as not only gene lengths and read counts need to be considered, but also the different gene numbers and gene lengths across species. SCBN handles this by using knowledge about orthologous genes that are conserved in both species. 
 
 <p align="center">
@@ -81,6 +88,7 @@ SCBN builds off another normalization method known as HTN, which is based on the
 
 Tools to implement SCBN include an R package named “SCBN”, which is freely available at http://www.bioconductor.org/packages/devel/bioc/html/SCBN.html.[3]
 
+### 2.5 SCnorm<a name="25"></a>
 SCnorm is a method of normalization that uses quantile regression to estimate the dependence of transcript expression on sequencing depth for every gene. Quantile regression is similar to linear regression, but instead of finding the slope of all the data points, quantile regression breaks up the data points into x quantiles and determines the slope of the data points in each of these quartiles.[4]
  
 Steps:
@@ -99,8 +107,9 @@ The equation is shown below:
 3. Normalized counts Y’′g,j are given by eYg,jSFj, where SF is the scale factor. The estimated scale factors are used to perform within-group adjustment for sequencing depth to provide normalizes estimates of expression.
 
 4. When multiple biological conditions are present, SCnorm is applied within each condition and the normalized counts are then re-scaled across conditions.
-  
-* *TMM* stands for trimmed means of M-values. 
+ 
+### 2.1 TMM<a name="26"></a>
+TMM stands for trimmed means of M-values. 
 
   TMM is a method of normalization that estimates the relative RNA production level from RNA-seq data by estimating scale factors         between samples. TMM is calculated by dividing raw counts by the library size times a normalization factor. The library size is used     to account for the size of the library since a larger library can lead to more reads aligned but not necessarily more gene               expression. The normalization factor is used to account for “compositional biases” for example when certain genes are very highly       expressed to too low these may be outliers, TMM takes out these high and low expression outliers and only takes the mean of the         remaining values. TMM works under the assumption that the majority of genes are not differentially expressed. The main difference       between TMM and other normalization strategies is the TMM does not account for the length of the gene or transcript.[5]
     
