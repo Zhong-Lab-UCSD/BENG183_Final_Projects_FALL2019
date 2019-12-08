@@ -5,17 +5,8 @@ Group 28
 
 10/29/19
 
-
-Topic Selection: Expanding on Alignment Approaches
-
-https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2943993/ - overview of alignment algorithms
-
-https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5425171/ - recent advances in alignment
-
-https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2690996/ - explanation of why Bowtie2/BWA is much more popular than previous seed-than-extend based algorithms
-
-    
-We plan to expand on Chapter 3.1, specifically the section on pre-processing and alignment(3.2.2 Step 2). This includes the computational process and idea behind Bowtie2 and the Burrow-Wheelers Aligner, as well as the relative pros and cons behind each algorithm.
+# Overview
+The advent of next generation sequencing and newer technology has greatly influenced the development of different alignment software. Original software aligners generally followed two different archetypes: programs that followed the seed-and-extend hash table based algorithm, like SOAP, MAQ and RMAP, or suffix/prefix trie and Burrow-Wheelers Transform based algorithms like BWA and Bowtie2 [here](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2943993/). Since the Bowtie was shown to be faster than traditional seed-and-extend algorithms in [this](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2690996/) study while maintaining accuracy and showing similar memory footprint, it and other Burrow-Wheelers Transform algorithms like Bowtie2 and BWA have emerged to be frontrunners in genomic alignment software. Newer advances in technology, like cloud computing and GPU Cuda integration, have also greatly decreased the speed and increased the efficiency of bioinformatics alignment software.
 
 ## BWA
 
