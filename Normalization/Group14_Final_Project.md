@@ -142,17 +142,20 @@ TMM stands for trimmed means of M-values.
 |SCnorm    | Between-sample       | Uses single scale factor instead of global scale factor (as global scale factors compromise performance in single-cell settings), Good for scRNA (small conditional RNA) data unlike other methods | Only focuses on between sample comparisons (need to use R/SCnorm to adjust for gene-specific features) |
 |TMM    | Within-sample       | The data themselves do not need to be modified, unlike other normalization strategies. In TMM the estimated normalization factors are used directly in the statistical model used to test for DE, while preserving the data to be used elsewhere.    | Can only be used when looking for differences between the same gene in different samples, not different genes.   |
 
+#### Comparing TMM against others methods
 In one study, researchers compared TMM to several other normalization strategies and noticed that for accessions with read lengths of 35 nucleotides, RPKM was able to get much higher correlation values, which means it had more accurate gene expression values, than TMM. This they believed illustrated that the consideration of the transcript length in normalization is quite effective and can have a major impact on the gene expression analysis.[6]
 
-Comparing SCnorm and TPM: An experiment to test SCnorm was designed to sequence cells at very different depths. Prior to normalization, counts in the second group will appear four times higher on average given the increased sequencing depth. If normalization for depth is effective, fold-change estimates should be near one. After using the various normalization techniques on the data, SCnorm provides normalized data that results in fold-change estimates near one, whereas other methods show biased estimates, as seen in the figure below.[4]
+####  Comparing SCnorm and TPM 
+An experiment to test SCnorm was designed to sequence cells at very different depths. Prior to normalization, counts in the second group will appear four times higher on average given the increased sequencing depth. If normalization for depth is effective, fold-change estimates should be near one. After using the various normalization techniques on the data, SCnorm provides normalized data that results in fold-change estimates near one, whereas other methods show biased estimates, as seen in figure 5 below.[4]
 
 <p align="center">
   <img src="https://github.com/nbangari/BENG183_Final_Projects_FALL2019/blob/master/Normalization/img/image2.png" width="300">
 </p>
 <p align="center">
-    <em>Figure 5: </em>
+    <em>Figure 5: For each gene, the fold-change of non-zero counts between two groups was computed for data following normalization via SCnorm, MR, TPM, scran, SCDE, and BASiCS. Box-plots of gene-specific fold-changes are shown in the panel for data normalized by each method.</em>
 </p>
   
+####  Comparing RPKM and SCBN  
 A method previously used by Brawand et. al to normalize data across different species is to identify the most conserved genes, calculate the median expression levels in each species among the genes with expression values in the interquartile range for different species, derive scaling factors to adjust those median values to a common value, and then use RPKM to normalize the data. This method, called the “median” method, was compared for accuracy with SCBN [3], and SCBN was found to have a lower error rate, as seen in the figure below.
 
 <p align="center">
