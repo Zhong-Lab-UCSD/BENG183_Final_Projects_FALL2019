@@ -4,8 +4,8 @@ By Daniella Vo, Nidhi Bangari, Priya Jindal
 
 1. [Introduction](#1)
 2. [Normalization Techniques](#2)<br>
-    2.1. [Specificity](#2321)<br>
-    2.2. [Through-put and resolution](#2322)
+    2.1. [RPKM](#21)<br>
+    2.2. [FPKM](#22)
 3. [Comparisons](#3)
 4. [Summary](#4)
 5. [References](#5)
@@ -33,8 +33,15 @@ and genomic mutations. The input for RNA-seq analysis is raw reads, and the outp
   
 ## 2. Normalization Techniques<a name="2"></a>
 The following are some different techniques in place to normalize RNA-seq data:
+* *RPKM*
+* *FPKM*
+* *TPM*
+* *SCBN*
+* *SCnorm*
+* *TMM*
 
-* *RPKM* stands for Reads Per Kilobase of transcript per Million
+# 2.1 RPKM<a name="21"></a>
+RPKM stands for Reads Per Kilobase of transcript per Million
   Steps for RPKM:
   1. The numerator is the read counts aligned to a single gene.
   2. The total reads in a sample divided by 1,000,000 is our “per million” scaling factor. Multiply this by the length of the gene in        kilobases. This is our denominator.
