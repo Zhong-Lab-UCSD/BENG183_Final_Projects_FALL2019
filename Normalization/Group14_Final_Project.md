@@ -2,6 +2,9 @@
 
 By Daniella Vo, Nidhi Bangari, Priya Jindal
 
+<!-- ## Sections
+TODO: add section links -->
+
 ## Introduction
 
   RNA-sequencing is used to determine the gene expression levels, which allows 
@@ -32,24 +35,22 @@ The following are some different techniques in place to normalize RNA-seq data:
   Dividing the number in Step 1 by the number in Step 2 gives you reads per million (RPM) and normalizes for sequencing depth. Dividing   by the RPM values by the length of the gene in kilobases gives reads per kilobase of transcript per million (RPKM), and additionally     normalizes for gene length[1]. 
   ![RPKM](https://github.com/nbangari/BENG183_Final_Projects_FALL2019/blob/master/Normalization/img/image5.png)
   
-  
-* *FPKM* stands for Fragments Per Kilobase of transcript per Million and is nearly identical in procedure to RPKM. The only difference is that RPKM is designed for single-end read analysis, while FPKM was designed for paired-end reads. RPKM relies on the assumption that every read is associated with a single fragment that was sequenced. However, in paired-end sequencing, usually two reads (a “pair”) correspond to a single fragment, unless one read did not map for some reason. In FPKM, if two paired-end reads map to one fragment, they are counted as one instance of a read mapping to a fragment, rather than two. 
+  FPKM stands for Fragments Per Kilobase of transcript per Million and is nearly identical in procedure to RPKM. The only difference is that RPKM is designed for single-end read analysis, while FPKM was designed for paired-end reads. RPKM relies on the assumption that every read is associated with a single fragment that was sequenced. However, in paired-end sequencing, usually two reads (a “pair”) correspond to a single fragment, unless one read did not map for some reason. In FPKM, if two paired-end reads map to one fragment, they are counted as one instance of a read mapping to a fragment, rather than two. 
   
   ![RPKM](https://github.com/nbangari/BENG183_Final_Projects_FALL2019/blob/master/Normalization/img/image5.png)
 
+TPM stands for Transcripts per million and normalizes for library size by measuring the number of reads that align to a particular gene as the proportion of total reads in the library. This means every sample has the same total TPM, so TPM can be compared both between and within samples, unlike RPKM/FPKM which cannot be compared between samples [2]. 
 
-* *TPM* stands for Transcripts per million and normalizes for library size by measuring the number of reads that align to a particular     gene as the proportion of total reads in the library. This means every sample has the same total TPM, so TPM can be compared both       between and within samples, unlike RPKM/FPKM which cannot be compared between samples [2]. 
-
-* *SCBN* stands for scale based normalization, and is a newly proposed method which aims to more accurately identify genes with            differential expression between different species. This is normally a challenging task due to variations between species, as not only    gene lengths and read counts need to be considered, but also the different gene numbers and gene lengths across species. SCBN handles    this by using knowledge about orthologous genes that are conserved in both species. 
+SCBN stands for scale based normalization, and is a newly proposed method which aims to more accurately identify genes with differential expression between different species. This is normally a challenging task due to variations between species, as not only gene lengths and read counts need to be considered, but also the different gene numbers and gene lengths across species. SCBN handles this by using knowledge about orthologous genes that are conserved in both species. 
 
 ![RPKM](https://github.com/nbangari/BENG183_Final_Projects_FALL2019/blob/master/Normalization/img/image5.png)
 Figure 1: Displaying the difference between normalization when comparing the same genes within a single species, and comparing orthologous genes across different species [3]
 
-  SCBN builds off another normalization method known as HTN, which is based on the hypothesis testing framework.It uses available         knowledge of housekeeping genes, to calculate an optimal scaling factor. Using the same principles, SCBN utilizes the available         knowledge of conserved orthologous genes for different species to derive the normalization scaling factor. SCBN assumes that a set of   conserved orthologous genes between species is known in advance, and calculates the optimal scaling factor by minimizing the deviation   between the empirical and nominal type I errors.
+SCBN builds off another normalization method known as HTN, which is based on the hypothesis testing framework.It uses available knowledge of housekeeping genes, to calculate an optimal scaling factor. Using the same principles, SCBN utilizes the available knowledge of conserved orthologous genes for different species to derive the normalization scaling factor. SCBN assumes that a set of conserved orthologous genes between species is known in advance, and calculates the optimal scaling factor by minimizing the deviation between the empirical and nominal type I errors.
 
-  Tools to implement SCBN include an R package named “SCBN”, which is freely available at                              http://www.bioconductor.org/packages/devel/bioc/html/SCBN.html.[3]
+Tools to implement SCBN include an R package named “SCBN”, which is freely available at http://www.bioconductor.org/packages/devel/bioc/html/SCBN.html.[3]
 
-* *SCnorm* is a method of normalization that uses quantile regression to estimate the dependence of transcript expression on sequencing   depth for every gene. Quantile regression is similar to linear regression, but instead of finding the slope of all the data points,     quantile regression breaks up the data points into x quantiles and determines the slope of the data points in each of these quartiles.    [4]
+SCnorm is a method of normalization that uses quantile regression to estimate the dependence of transcript expression on sequencing depth for every gene. Quantile regression is similar to linear regression, but instead of finding the slope of all the data points, quantile regression breaks up the data points into x quantiles and determines the slope of the data points in each of these quartiles.[4]
  
 Steps:
 1. Starting K = 1, where K represents the number of clusters. 
@@ -79,6 +80,30 @@ The equation is shown below:
 
 ## Comparisons
 
+| Normalization Method | Within-sample or between-sample? | Pros | Cons |
+|:---:|:---:|:---:|:----:|
+|RPKM    | Within-sample       | Straightforward   | Only for single-end reads, Cannot be compared between samples |
+|FPKM    | Within-sample       | Works for paired-end reads | Cannot be compared between samples |
+|TPM    | Between-sample       | Can be compared between samples   | Not as good when systematic variation exists between transcript specific expression and sequencing depth (e.g. seen in scRNA), Works best for a single species  |
+|SCBM    | Between-sample       | Can be used to compare differential gene expression across different species | Requires a set of conserved orthologous genes between the species being compared to be known in advance  |
+|SCnorm    | Between-sample       | Uses single scale factor instead of global scale factor (as global scale factors compromise performance in single-cell settings), Good for scRNA (small conditional RNA) data unlike other methods
+   | Only focuses on between sample comparisons (need to use R/SCnorm to adjust for gene-specific features) |
+|TMM    | Within-sample       | The data themselves do not need to be modified, unlike other normalization strategies. In TMM the estimated normalization factors are used directly in the statistical model used to test for DE, while preserving the data to be used elsewhere.    | Can only be used when looking for differences between the same gene in different samples, not different genes.   |
+
+In one study, researchers compared TMM to several other normalization strategies and noticed that for accessions with read lengths of 35 nucleotides, RPKM was able to get much higher correlation values, which means it had more accurate gene expression values, than TMM. This they believed illustrated that the consideration of the transcript length in normalization is quite effective and can have a major impact on the gene expression analysis.[6]
+
+Comparing SCnorm and TPM: An experiment to test SCnorm was designed to sequence cells at very different depths. Prior to normalization, counts in the second group will appear four times higher on average given the increased sequencing depth. If normalization for depth is effective, fold-change estimates should be near one. After using the various normalization techniques on the data, SCnorm provides normalized data that results in fold-change estimates near one, whereas other methods show biased estimates, as seen in the figure below.[4]
+
+![RPKM](https://github.com/nbangari/BENG183_Final_Projects_FALL2019/blob/master/Normalization/img/image5.png)
+
+A method previously used by Brawand et. al to normalize data across different species is to identify the most conserved genes, calculate the median expression levels in each species among the genes with expression values in the interquartile range for different species, derive scaling factors to adjust those median values to a common value, and then use RPKM to normalize the data. This method, called the “median” method, was compared for accuracy with SCBN [3], and SCBN was found to have a lower error rate, as seen in the figure below.
+
+![RPKM](https://github.com/nbangari/BENG183_Final_Projects_FALL2019/blob/master/Normalization/img/image5.png)
+
+ It was also shown that a larger percentage of the genes identified as differentially expressed by SCBN were associated with evolution or illness, thereby indicating that the genes identified by SCBN had greater functional importance than those found by the median method. 
+
+## Summary
+Normalization is an important step in RNA-seq analysis because it allows you to compare within and between samples. This step is done after you have the raw counts for each gene and sample, before starting the differential gene analysis. There are numerous methods of normalization because there are different factors that need to be optimized when performing RNA-seq analysis, and which normalization method is needed depends on the type of RNA-seq analysis being done.
 
 
 ## References 
