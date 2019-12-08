@@ -122,8 +122,8 @@ TMM stands for trimmed means of M-values.
     WorkFlow : This briefly explains what occurs when we use TMM in R, since it is implemented in the 
     the edgeR Bioconductor package:           
       1. Use the calcNormFactors function in the package to calculate normalization factors
-          * Internally these normalization factors account library size
-          * And determine a scaling factor based on the binomial distribution of data input since we 
+          - Internally these normalization factors account library size
+          - And determine a scaling factor based on the binomial distribution of data input since we 
           are only using the mean or trimmed values and are removing outlier values. 
           
       2. Then the raw gene counts are rescaled by dividing each gene count by the scaling factor 
