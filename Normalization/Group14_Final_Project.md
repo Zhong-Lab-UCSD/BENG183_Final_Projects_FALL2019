@@ -92,32 +92,41 @@ Tools to implement SCBN include an R package named “SCBN”, which is freely a
 SCnorm is a method of normalization that uses quantile regression to estimate the dependence of transcript expression on sequencing depth for every gene. Quantile regression is similar to linear regression, but instead of finding the slope of all the data points, quantile regression breaks up the data points into x quantiles and determines the slope of the data points in each of these quartiles.[4]
  
     Workflow:
-        1. Starting K = 1, where K represents the number of clusters. 
-
-            The equation is shown below: 
+        1. Starting K = 1, where K represents the number of clusters. The equation is shown below: 
 
 <p align="center">
   <img src="https://github.com/nbangari/BENG183_Final_Projects_FALL2019/blob/master/Normalization/img/image8.png" width="400">
 </p>
 
-            τ represents the quantiles; d represents the degrees; Yg,j denote the log non-zero expression count for gene g in cell j for g = 1,…, m and j = 1,…, n; Xj denote log sequencing depth for cell j; gene-specific relationship between log unnormalized expression and log sequencing depth is represented by βg,1
+            τ represents the quantiles; d represents the degrees; Yg,j denote the log non-zero 
+            expression count for gene g in cell j for g = 1,…, m and j = 1,…, n; Xj denote log 
+            sequencing depth for cell j; gene-specific relationship between log unnormalized 
+            expression and log sequencing depth is represented by βg,1
 
-        2. This calculation is repeated by increasing K if the modes of the slopes within each of 10 equally sized gene groups (where a gene’s group membership is determined by its median expression among non-zero un-normalized measurements) are all less than 0.
+        2. This calculation is repeated by increasing K if the modes of the slopes within each of 10 
+        equally sized gene groups (where a gene’s group membership is determined by its median 
+        expression among non-zero un-normalized measurements) are all less than 0.
 
-        3. Normalized counts Y’′g,j are given by eYg,jSFj, where SF is the scale factor. The estimated scale factors are used to perform within-group adjustment for sequencing depth to provide normalizes estimates of expression.
+        3. Normalized counts Y’′g,j are given by eYg,jSFj, where SF is the scale factor. The estimated 
+        scale factors are used to perform within-group adjustment for sequencing depth to provide 
+        normalizes estimates of expression.
 
-        4. When multiple biological conditions are present, SCnorm is applied within each condition and the normalized counts are then re-scaled across conditions.
+        4. When multiple biological conditions are present, SCnorm is applied within each condition 
+        and the normalized counts are then re-scaled across conditions.
  
 ### 2.1 TMM<a name="26"></a>
 TMM stands for trimmed means of M-values. 
 
   TMM is a method of normalization that estimates the relative RNA production level from RNA-seq data by estimating scale factors         between samples. TMM is calculated by dividing raw counts by the library size times a normalization factor. The library size is used     to account for the size of the library since a larger library can lead to more reads aligned but not necessarily more gene               expression. The normalization factor is used to account for “compositional biases” for example when certain genes are very highly       expressed to too low these may be outliers, TMM takes out these high and low expression outliers and only takes the mean of the         remaining values. TMM works under the assumption that the majority of genes are not differentially expressed. The main difference       between TMM and other normalization strategies is the TMM does not account for the length of the gene or transcript.[5]
     
-    WorkFlow : This briefly explains what occurs when we use TMM in R, since it is implemented in the the edgeR Bioconductor package:           
+    WorkFlow : This briefly explains what occurs when we use TMM in R, since it is implemented in the 
+    the edgeR Bioconductor package:           
       1. Use the calcNormFactors function in the package to calculate normalization factors
           * Internally these normalization factors account library size
-          * And determine a scaling factor based on the binomial distribution of data input since we are only using the mean or trimmed             values and are removing outlier values. 
-      2. Then the raw gene counts are rescaled by dividing each gene count by the scaling factor for each run. 
+          * And determine a scaling factor based on the binomial distribution of data input since we 
+          are only using the mean or trimmed values and are removing outlier values. 
+      2. Then the raw gene counts are rescaled by dividing each gene count by the scaling factor 
+         for each run. 
       3. TMM is the sum of rescaled gene counts of all runs.
 
 ## 3. Comparisons<a name="3"></a>
