@@ -120,17 +120,16 @@ SCnorm is a method of normalization that uses quantile regression to estimate th
 TMM stands for trimmed means of M-values. 
 
   TMM is a method of normalization that estimates the relative RNA production level from RNA-seq data by estimating scale factors         between samples. TMM is calculated by dividing raw counts by the library size times a normalization factor. The library size is used     to account for the size of the library since a larger library can lead to more reads aligned but not necessarily more gene               expression. The normalization factor is used to account for “compositional biases” for example when certain genes are very highly       expressed to too low these may be outliers, TMM takes out these high and low expression outliers and only takes the mean of the         remaining values. TMM works under the assumption that the majority of genes are not differentially expressed. The main difference       between TMM and other normalization strategies is the TMM does not account for the length of the gene or transcript.[5]
-    
-    WorkFlow : This briefly explains what occurs when we use TMM in R, since it is implemented in the 
+   
+   
+   WorkFlow : This briefly explains what occurs when we use TMM in R, since it is implemented in the 
     the edgeR Bioconductor package:           
       1. Use the calcNormFactors function in the package to calculate normalization factors
           - Internally these normalization factors account library size
           - And determine a scaling factor based on the binomial distribution of data input since we 
           are only using the mean or trimmed values and are removing outlier values. 
-          
       2. Then the raw gene counts are rescaled by dividing each gene count by the scaling factor 
          for each run. 
-         
       3. TMM is the sum of rescaled gene counts of all runs.
 
 ## 3. Comparisons<a name="3"></a>
