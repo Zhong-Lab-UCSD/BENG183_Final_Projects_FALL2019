@@ -12,7 +12,7 @@ researchers to identify differentially expressed genes, discover new RNA isoform
 and genomic mutations. The input for RNA-seq analysis is raw reads, and the output is differentially expressed genes, which are genes that are expressed differently for different cells. The pipeline for RNA-seq analysis is shown below:
 
 <p align="center">
-  <img src="https://github.com/nbangari/BENG183_Final_Projects_FALL2019/blob/master/Normalization/img/image6.png">
+  <img src="https://github.com/nbangari/BENG183_Final_Projects_FALL2019/blob/master/Normalization/img/image6.png" description="test">
 </p>
 <p>
     <em>Figure 1: RNA-seq analysis pipeline </em>
