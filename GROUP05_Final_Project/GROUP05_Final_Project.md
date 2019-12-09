@@ -6,7 +6,7 @@ Group 05, Zoey Chesny, Kevin Ngo, Arielle Yoo
    a. [Cancer](#2)<br>
    b. [Somatic Mutations](#3)<br>
 2. [Mutational Signatures](#4)<br>
-  a. [Discovery of Mutational Signatures - Case Study](#5)<br>
+  a. [Discovery - A Case Study](#5)<br>
   b. [Types](#6)<br>
   c. [Extraction Methods](#7)<br>
 3. [Relevance](#8)<br>
