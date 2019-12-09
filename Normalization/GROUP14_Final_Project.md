@@ -76,6 +76,13 @@ Steps for RPKM:
 ### 2.3 TPM<a name="23"></a>
 TPM stands for Transcripts per million and normalizes for library size by measuring the number of reads that align to a particular gene as the proportion of total reads in the library. This means every sample has the same total TPM, so TPM can be compared both between and within samples, unlike RPKM/FPKM which cannot be compared between samples [5].
 
+<p align="center">
+  <img src="https://github.com/nbangari/BENG183_Final_Projects_FALL2019/blob/master/Normalization/img/tpm.png" width="600">
+</p>
+<p align="center">
+    <em>Figure 2: TPM calculation [3]</em>
+</p>
+
 ### 2.4 SCBN<a name="24"></a>
 SCBN stands for scale based normalization, and is a newly proposed method which aims to more accurately identify genes with differential expression between different species. This is normally a challenging task due to variations between species, as not only gene lengths and read counts need to be considered, but also the different gene numbers and gene lengths across species, as seen in Figure 4. SCBN handles this by using knowledge about orthologous genes that are conserved in both species. 
 
