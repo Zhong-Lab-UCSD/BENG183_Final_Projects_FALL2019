@@ -69,8 +69,7 @@ Detect statistically significant microexons and incorporate them into the alignm
 Handle mapping and alignment tasks on genomes having alternative assemblies 
 
 ### Disadvantages of GMAP
-Uses more memory compared to more recent programs such as Burrow-Wheelers Aligner (BWA). 
-Less accurate than Bowtie2, BWA, and BBMap based on E. coli ROC Curves. 
+One disadvantages of GMAP is that it uses more memory compared to more recent programs such as Burrow-Wheelers Aligner (BWA) Another disadvantage is that GMAP is less accurate than Bowtie2, BWA, and BBMap based on E. coli ROC Curves. 
 
 ### Computational Process 
 GMAP takes a hierarchical approach that successively refines the alignment through a 
