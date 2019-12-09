@@ -99,7 +99,7 @@ PWMs are formulated in a relatively straightforward way, using the read counts a
 
 Figure: Pipeline of DeepBind. We see that the input are reads from any one of various protein binding sequencing techniques, and the output is motifs. The motifs can then be used for many downstream tasks, including detecting binding sites. Our explanation focuses on analyzing CHiP seq data to find transcription factor binding sites, because it is related to what we have covered it in class.  
 
-Results:
+<b>Results:</b>
 
 CHIP-seq data from 506 experiments from the ENCODE database were used to train the experimental deep learning based DeepBind model.  Performance metric to quantify motif finding accuracy was AUC (area under curve), calculated by comparing the predicted motifs to true motifs. Performance of DeepBind was compared to MEME, a PWM based baseline model.  The AUC was calculated for each of 506 experiments, and the median AUC for each of 151 unique transcription factors is shown on the left, and for 6 cell lines shown on the right. Overall, the DeepBind model outperforms MEME for motif finding by 7%. 
 
