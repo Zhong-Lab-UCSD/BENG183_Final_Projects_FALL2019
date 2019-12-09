@@ -11,7 +11,7 @@ Group 05, Zoey Chesny, Kevin Ngo, Arielle Yoo
   c. [Extraction Methods](#7)<br>
 3. [Relevance](#8)<br>
   a. [Sequencing Analysis for Cancer Research](#9)<br>
-  c. [Current Clinical Aspects of Mutational Signatures](#10)<br>
+  c. [Current Clinical Aspects](#10)<br>
 4. [References](#11)<br>
 
 ---
@@ -38,14 +38,20 @@ Multiple somatic mutational processes contribute to the characteristic mutationa
 
 ![](sig_quantity.jpg)
 
+---
+## Mutational Signatures <a name="4"></a>
+
+1. Discovery
+2. Types
+3. Methods
 
 ---
-## Discovery of Mutational Signatures - A Case Study <a name="4"></a>
+## Discovery of Mutational Signatures - A Case Study <a name="5"></a>
 In a 1991 paper, a group of researchers discovered that different types of cancer had different p53 mutations. For example, G:C to T:A transversions are the most common substitutions in lung and liver cancer, while transitions are more common in colon, brain, and lymphoid cancers. The paper suggested that different mutation patterns for different tissue types means there are different factors that cause cancer development in different tissues (12). Using new sequencing technology, researchers were able to find most somatic mutations in a melanoma cancer cell line’s genome, report a comprehensive catalogue of these mutations, and show that these mutations related to past ultraviolet-light-induced DNA damage (13). When only sequencing a small cell lung cancer cell line, researchers were also able to identify tobacco smoke related mutations based on how mutation patterns reflected carcinogens present in cigarette smoke (14). However, when analyzing genomic data, there are often multiple mutation pathways that are existing at once, making it difficult to isolate specific patterns from a catalogue of mutations. Using nonnegative matrix factorization to solve this blind source separation problem, researchers were able to isolate these patterns, called mutational signatures, from catalogues of mutations (15). This mathematical process for identifying mutational signatures has been applied to many cancer types in order to find likely cancer causing mechanisms (10).
 
 
 ---
-## Types of Mutational Signatures <a name="5"></a>
+## Types of Mutational Signatures <a name="6"></a>
 In total, there are 96 possible single base substitutions that are documented when performing mutational signatures (4, 10). The mutation types are listed by the pyrimidine base change (4, 10). For example, C:G>A:T would be listed as C>A since C is a pyrimidine. T is the other pyrimidine besides C, so each of the six single base pair changes are C>A, C>G, C>T, T>A, T>C, and T>G. Since we are also considering the 5’ and 3’ adjacent nucleotides, the number of different mutation types changes from six to 96 because there are 16 different combinations of possible 5’ and 3’ adjacent nucleotides. The mutation types are always listed 5’ to 3’, therefore the mutation GAC>GGC (listed 5’ to 3’) would be a GTC>GCC mutation type. This conversion into a mutation type can be found by first finding the reverse complement of GAC>GGC to be CTG>CCG in the 3’ to 5’ direction and then listing each side in the 5’ to 3’ direction.
 
 ![](arielle.png)
@@ -59,7 +65,7 @@ Various mathematical methods have been developed to extract mutational signature
 ![](sig_chart2.jpg)
 
 ---
-## Various Methods to Extract Mutational Signatures <a name="6"></a>
+## Various Methods to Extract Mutational Signatures <a name="7"></a>
 SigProfiler and SignatureAnalyzer are two specific methods that extract mutational signatures from cancer utilizing nonnegative matrix factorisation (NMF). NMF is a machine learning technique that uses multivariate analysis and linear algebra to perform clustering approximations to reveal a signal’s component parts (12). This method applies to cancer mutational signatures because NMF can determine the specific mutations which underlie each overall mutational signature for both single cancer types and on all cancer types together (8). It does so by determining both signature profiles and their contributions to each signature to each cancer genome as part of its factorization of the input matrix of mutation spectra (8). This analysis is carried out separately for single base substitutions (SBS signatures), doublet base substitutions (DBS signatures) and indels (ID signatures) as well as for the three mutation types together to generate a composite signature analysis. However, it is possible to reconstruct the mutations seen in a given sample in multiple ways, given the large number of signatures and heterogeneous mutations across samples. Therefore, these two methods differ in their procedure used to estimate the contributions of signatures to each sample in order to minimize the biological implausibility of certain reconstructions (8). 
 
 ### SigProfiler
@@ -78,11 +84,18 @@ See Figure 8 below for a detailed flowchart of how the SigProfiler extraction me
 SignatureAnalyzer is based on a Bayesian variant of NMF that infers the number of signatures through the automatic relevance determination technique and delivers sparse and highly interpretable representations for signature profiles and their attributions. 
 
 The SignatureAnalyzer extraction uses a two-step process which first randomly searches all mutations in a sample for statistical significance. Due to its random search nature, each run of this algorithm may produce different solutions. The solution with the highest posterior probability after a fixed number of runs is selected. The first step of signature extraction and random searching is again performed but with additional signatures unique to hyper-mutated samples. The results are combined to minimize the effect of bias in ultra-mutated samples, but also use some well-known signatures to explain the mutational effects. 
+
 The attribution portion is then performed separately for low and ultra-mutated samples in all composite, SBS, DBS, and ID signatures. The activity of signatures is primarily inferred through an automatic relevance determination process applied to an activity matrix with a fixed signature matrix in a NMF technique. Further matrix manipulation is applied and eventual signature-by-sample classification is outputted to show which mutations have the greatest effects on which samples.
 
 The results of mutational signature attribution in SigProfiler compared to SignatureAnalyzer are shown in Figure 9. Sample attributions that significantly correlated (R^2 > 0.3 for SigProfiler or > 0.5 for SignatureAnalyzer) are connected with edges. The graph is used to visualize the different association results between the two methods. 
 
 ![](sig_graphs.jpg)
+
+---
+## Relevance <a name="8"></a>
+
+1. Sequencing Analysis for Cancer Research 
+2. Current Clinical Aspects
 
 ---
 ## Sequencing Analysis for Cancer Research <a name="9"></a>
@@ -104,19 +117,19 @@ There are still many challenges when it comes to using mutational signatures as 
 ---
 ## References <a name="11"></a>
 
-NCI Dictionary of Cancer Terms. (n.d.). Retrieved from https://www.cancer.gov/publications/dictionaries/cancer-terms/def/cancer.
-Alexandrov, L. B., Nik-Zainal, S., Wedge, D. C., Aparicio, S. A., Behjati, S., Biankin, A. V., … Stratton, M. R. (2013). Signatures of mutational processes in human cancer. Nature, 500(7463), 415–421. doi:10.1038/nature12477
-NCI Dictionary of Cancer Terms. (n.d.). Retrieved from https://www.cancer.gov/publications/dictionaries/cancer-terms/def/somatic-mutation
-Helleday, T., Eshtad, S. & Nik-Zainal, S. Mechanisms underlying mutational signatures in human cancers. Nat Rev Genet 15, 585–598 (2014) doi:10.1038/nrg3729
-Vogelstein B, Papadopoulos N, Velculescu VE, Zhou S, Diaz LA Jr, Kinzler KW. Cancer genome landscapes. Science. 2013;339(6127):1546–1558. doi:10.1126/science.1235122
-Stratton, M., Campbell, P. and Futreal, P. The cancer genome. Nature 458, 719–724 (2009) doi:10.1038/nature07943
-Hoeck, A., Tjoonk, N.H., Boxtel, R. et al. Portrait of a cancer: mutational signature analyses for cancer diagnostics. BMC Cancer 19, 457 (2019) doi:10.1186/s12885-019-5677-2
-Alexandrov, L. B., Kim, J., Haradhvala, N. J., Huang, M. N., Ng, A. W. T., Wu, Y., … PCAWG Mutational Signatures Working Group. (2019, January 1). The Repertoire of Mutational Signatures in Human Cancer. Retrieved from https://www.biorxiv.org/content/10.1101/322859v2.full.
-Interactive resources for schools. (2019). Retrieved November 26, 2019, from https://www.abpischools.org.uk/topic/celldivision/5.
-Alexandrov, L. B., Nik-Zainal, S., Wedge, D. C., Aparicio, S. A., Behjati, S., Biankin, A. V., … Stratton, M. R. (2013). Signatures of mutational processes in human cancer. Nature, 500(7463), 415–421. doi:10.1038/nature12477
-“Mutational Signatures (v3 - May 2019).” COSMIC, The Wellcome Sanger Institute, May 2019, cancer.sanger.ac.uk/cosmic/signatures.
-Hollstein, M., Sidransky, D., Vogelstein, B., & Harris, C. (1991). p53 mutations in human cancers. http://doi.org/10.1126/science.1905840
-Pleasance ED, Cheetham RK, Stephens PJ, et al. A comprehensive catalogue of somatic mutations from a human cancer genome. Nature. 2010;463(7278):191–196. doi:10.1038/nature08658
-Pleasance ED, Stephens PJ, O'Meara S, et al. A small-cell lung cancer genome with complex signatures of tobacco exposure. Nature. 2010;463(7278):184–190. doi:10.1038/nature08629
-Alexandrov LB, Nik-Zainal S, Wedge DC, Campbell PJ, Stratton MR. Deciphering signatures of mutational processes operative in human cancer. Cell Rep. 2013;3(1):246–259. doi:10.1016/j.celrep.2012.12.008
+1. NCI Dictionary of Cancer Terms. (n.d.). Retrieved from https://www.cancer.gov/publications/dictionaries/cancer-terms/def/cancer.
+2. Alexandrov, L. B., Nik-Zainal, S., Wedge, D. C., Aparicio, S. A., Behjati, S., Biankin, A. V., … Stratton, M. R. (2013). Signatures of mutational processes in human cancer. Nature, 500(7463), 415–421. doi:10.1038/nature12477
+3. NCI Dictionary of Cancer Terms. (n.d.). Retrieved from https://www.cancer.gov/publications/dictionaries/cancer-terms/def/somatic-mutation
+4. Helleday, T., Eshtad, S. & Nik-Zainal, S. Mechanisms underlying mutational signatures in human cancers. Nat Rev Genet 15, 585–598 (2014) doi:10.1038/nrg3729
+5. Vogelstein B, Papadopoulos N, Velculescu VE, Zhou S, Diaz LA Jr, Kinzler KW. Cancer genome landscapes. Science. 2013;339(6127):1546–1558. doi:10.1126/science.1235122
+6. Stratton, M., Campbell, P. and Futreal, P. The cancer genome. Nature 458, 719–724 (2009) doi:10.1038/nature07943
+7. Hoeck, A., Tjoonk, N.H., Boxtel, R. et al. Portrait of a cancer: mutational signature analyses for cancer diagnostics. BMC Cancer 19, 457 (2019) doi:10.1186/s12885-019-5677-2
+8. Alexandrov, L. B., Kim, J., Haradhvala, N. J., Huang, M. N., Ng, A. W. T., Wu, Y., … PCAWG Mutational Signatures Working Group. (2019, January 1). The Repertoire of Mutational Signatures in Human Cancer. Retrieved from https://www.biorxiv.org/content/10.1101/322859v2.full.
+9. Interactive resources for schools. (2019). Retrieved November 26, 2019, from https://www.abpischools.org.uk/topic/celldivision/5.
+10. Alexandrov, L. B., Nik-Zainal, S., Wedge, D. C., Aparicio, S. A., Behjati, S., Biankin, A. V., … Stratton, M. R. (2013). Signatures of mutational processes in human cancer. Nature, 500(7463), 415–421. doi:10.1038/nature12477
+11. “Mutational Signatures (v3 - May 2019).” COSMIC, The Wellcome Sanger Institute, May 2019, cancer.sanger.ac.uk/cosmic/signatures.
+12. Hollstein, M., Sidransky, D., Vogelstein, B., & Harris, C. (1991). p53 mutations in human cancers. http://doi.org/10.1126/science.1905840
+13. Pleasance ED, Cheetham RK, Stephens PJ, et al. A comprehensive catalogue of somatic mutations from a human cancer genome. Nature. 2010;463(7278):191–196. doi:10.1038/nature08658
+14. Pleasance ED, Stephens PJ, O'Meara S, et al. A small-cell lung cancer genome with complex signatures of tobacco exposure. Nature. 2010;463(7278):184–190. doi:10.1038/nature08629
+15. Alexandrov LB, Nik-Zainal S, Wedge DC, Campbell PJ, Stratton MR. Deciphering signatures of mutational processes operative in human cancer. Cell Rep. 2013;3(1):246–259. doi:10.1016/j.celrep.2012.12.008
 
