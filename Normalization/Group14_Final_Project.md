@@ -73,7 +73,7 @@ RPKM stands for Reads Per Kilobase of transcript per Million
 </p>
 
 ### 2.3 TPM<a name="23"></a>
-TPM stands for Transcripts per million and normalizes for library size by measuring the number of reads that align to a particular gene as the proportion of total reads in the library. This means every sample has the same total TPM, so TPM can be compared both between and within samples, unlike RPKM/FPKM which cannot be compared between samples [2]. 
+TPM stands for Transcripts per million and normalizes for library size by measuring the number of reads that align to a particular gene as the proportion of total reads in the library. This means every sample has the same total TPM, so TPM can be compared both between and within samples, unlike RPKM/FPKM which cannot be compared between samples. <sup>[2]</sup> 
 
 ### 2.4 SCBN<a name="24"></a>
 SCBN stands for scale based normalization, and is a newly proposed method which aims to more accurately identify genes with differential expression between different species. This is normally a challenging task due to variations between species, as not only gene lengths and read counts need to be considered, but also the different gene numbers and gene lengths across species. SCBN handles this by using knowledge about orthologous genes that are conserved in both species. 
@@ -88,10 +88,10 @@ SCBN stands for scale based normalization, and is a newly proposed method which 
 
 SCBN builds off another normalization method known as HTN, which is based on the hypothesis testing framework. HTN uses available knowledge of housekeeping genes, to calculate an optimal scaling factor. Using the same principles, SCBN utilizes the available knowledge of conserved orthologous genes for different species to derive the normalization scaling factor. SCBN assumes that a set of conserved orthologous genes between species is known in advance, and calculates the optimal scaling factor by minimizing the deviation between the empirical and nominal type I errors.
 
-Tools to implement SCBN include an R package named “SCBN”, which is freely available at http://www.bioconductor.org/packages/devel/bioc/html/SCBN.html.[3]
+Tools to implement SCBN include an R package named “SCBN”, which is freely available at http://www.bioconductor.org/packages/devel/bioc/html/SCBN.html. <sup>[3]</sup>
 
 ### 2.5 SCnorm<a name="25"></a>
-SCnorm is a method of normalization that uses quantile regression to estimate the dependence of transcript expression on sequencing depth for every gene. Quantile regression is similar to linear regression, but instead of finding the slope of all the data points, quantile regression breaks up the data points into x quantiles and determines the slope of the data points in each of these quartiles.[4]
+SCnorm is a method of normalization that uses quantile regression to estimate the dependence of transcript expression on sequencing depth for every gene. Quantile regression is similar to linear regression, but instead of finding the slope of all the data points, quantile regression breaks up the data points into x quantiles and determines the slope of the data points in each of these quartiles. <sup>[4]</sup>
  
     Workflow:
         1. Starting K = 1, where K represents the number of clusters. The equation is shown below: 
@@ -148,7 +148,7 @@ TMM stands for trimmed means of M-values.
 In one study, researchers compared TMM to several other normalization strategies and noticed that for accessions with read lengths of 35 nucleotides, RPKM was able to get much higher correlation values, which means it had more accurate gene expression values, than TMM <sup>[7]</sup> . This they believed illustrated that the consideration of the transcript length in normalization is quite effective and can have a major impact on the gene expression analysis.
 
 ####  Comparing SCnorm and TPM 
-An experiment to test SCnorm was designed to sequence cells at very different depths. Prior to normalization, counts in the second group will appear four times higher on average given the increased sequencing depth. If normalization for depth is effective, fold-change estimates should be near one. After using the various normalization techniques on the data, SCnorm provides normalized data that results in fold-change estimates near one, whereas other methods show biased estimates, as seen in figure 5 below.[4]
+An experiment to test SCnorm was designed to sequence cells at very different depths. Prior to normalization, counts in the second group will appear four times higher on average given the increased sequencing depth. If normalization for depth is effective, fold-change estimates should be near one. After using the various normalization techniques on the data, SCnorm provides normalized data that results in fold-change estimates near one, whereas other methods show biased estimates, as seen in figure 5 below. <sup>[4]</sup>
 
 <p align="center">
   <img src="https://github.com/nbangari/BENG183_Final_Projects_FALL2019/blob/master/Normalization/img/image2.png" width="300">
@@ -158,7 +158,7 @@ An experiment to test SCnorm was designed to sequence cells at very different de
 </p>
   
 ####  Comparing RPKM and SCBN  
-A method previously used by Brawand et. al to normalize data across different species is to identify the most conserved genes, calculate the median expression levels in each species among the genes with expression values in the interquartile range for different species, derive scaling factors to adjust those median values to a common value, and then use RPKM to normalize the data. This method, called the “median” method, was compared for accuracy with SCBN [3], and SCBN was found to have a lower error rate, as seen in the figure below.
+A method previously used by Brawand et. al to normalize data across different species is to identify the most conserved genes, calculate the median expression levels in each species among the genes with expression values in the interquartile range for different species, derive scaling factors to adjust those median values to a common value, and then use RPKM to normalize the data. This method, called the “median” method, was compared for accuracy with SCBN <sup>[3]</sup> , and SCBN was found to have a lower error rate, as seen in the figure below.
 
 <p align="center">
   <img src="https://github.com/nbangari/BENG183_Final_Projects_FALL2019/blob/master/Normalization/img/image3.png" width="400">
