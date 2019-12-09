@@ -12,14 +12,14 @@ The advent of next generation sequencing and newer technology has greatly influe
 ## GMAP - Genome Mapping and Alignment Program 
 
 ### Background 
-This technique was developed in 2002, around the time when the draft human genome 
-was first released. GMAP was designed to take advantage of newly available genomic 
-sequence allowing users to align genes and Expressed Sequence Tags (ESTs) rapidly to the 
-genome in order to reveal their intron-exon structure. The alignments also provide 
+GMAP was developed in 2002, around the time when the draft human genome 
+was first released. This technique was designed to take advantage of newly available genomic 
+sequence by allowing users to align genes and expressed sequence tags (ESTs) quickly and efficiently to the 
+genome in order to reveal their intron-exon structure. The alignments also reveal 
 measurements of gene expression which are useful in identifying cancer specific genes 
-and amplification of genomic regions in cancer. One of the most significant aspects of 
+and amplification of genomic regions in cancer. One of the most beneficial aspects of 
 GMAP is that the program can handle transcripts that had up to 20-30% sequence 
-deviation from the reference genome. In contrast, other programs for genomic locationation alignment, such as BLAT, generally had their alignment affected adversely by small amounts of deviation of only 1%. This relatively wide deviation allows for use of GMAP for cross species alignment. 
+deviation from the reference genome. In contrast, other programs for genomic location alignment, such as BLAT, generally had their alignment affected adversely by small amounts of deviation of only 1%. This relatively wide deviation allows for use of GMAP for cross species alignment. 
 
 ### Advantages of GMAP
 Advantages of GMAP include: 
