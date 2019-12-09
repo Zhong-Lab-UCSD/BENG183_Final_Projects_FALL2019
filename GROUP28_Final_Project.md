@@ -38,7 +38,7 @@ Less accurate than Bowtie2, BWA, and BBMap based on E. coli ROC Curves.
 
 ### Computational Process 
 GMAP takes a hierarchical approach that successively refines the alignment through a 
-three stage process. The first stage looks at long oligomers (such as 24-mers or 30-mers) from both ends of the query sequence to identify candidate genomic regions that contain oligomers from both ends. The second stage attempts to align the read against each of the candidate regions found in Stage 1. The last stage fills in these gaps using a variety of dynamic programming algorithms at the nucleotide level 
+three stage process. The first stage looks at long oligomers (such as 24-mers or 30-mers) from both ends of the query sequence to identify candidate genomic regions that contain oligomers from both ends. The second stage attempts to align the read against each of the candidate regions found in Stage 1. The last stage fills in these gaps using a variety of dynamic programming algorithms at the nucleotide level.
 
 
 ## BBMap
