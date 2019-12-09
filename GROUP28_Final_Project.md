@@ -18,27 +18,27 @@ sequence by allowing users to align genes and expressed sequence tags (ESTs) qui
 genome in order to reveal their intron-exon structure [(3)](https://www.ncbi.nlm.nih.gov/pubmed/27008021/). The alignments also reveal 
 measurements of gene expression which are useful in identifying cancer specific genes 
 and amplification of genomic regions in cancer[(3)](https://www.ncbi.nlm.nih.gov/pubmed/27008021/). One of the most beneficial aspects of 
-GMAP is that the program can handle transcripts that had up to 20-30% sequence 
-deviation from the reference genome. In contrast, other programs for genomic location alignment, such as BLAT, generally had their alignment affected adversely by small amounts of deviation of only 1% [(3)](https://www.ncbi.nlm.nih.gov/pubmed/27008021/). This relatively wide deviation allows for use of GMAP for cross species alignment. 
+GMAP is that the program can handle transcripts that have up to 20-30% sequence 
+deviation from the reference genome. In contrast, other programs for genomic alignment, such as BLAT, generally have their alignment affected adversely by small amounts of deviation of only 1% [(3)](https://www.ncbi.nlm.nih.gov/pubmed/27008021/). GMAP's relatively wide deviation allows for cross species alignment. 
 
 ### Advantages of GMAP
 Advantages of GMAP include: 
-(1) Map and align a single cDNA interactively against a large reference genome a second, without the several minutes of startup time usually needed by other alignment programs;
+(1) Map and align a single cDNA interactively against a large reference genome in about a second, without the several minutes of startup time usually needed by other alignment programs;
 (2) Switch arbitrarily among different reference genomes without the need for a pre-loaded server dedicated to each genome;
 (3) Run the program on computers with a minimum of 128 MB of RAM;
 (4) Perform high-throughput batch processing of cDNAs by using memory mapping and multithreading when necessary memory and hardware are available;
 (5) Generate accurate gene models, even with polymorphisms and sequence errors;
-(6) Locate splice sites accurately without use of probabilistic splice site models;
+(6) Locate splice sites accurately without the use of probabilistic splice site models;
 (7) Detect statistically significant microexons and incorporate them into the alignment;
-(8) Handle mapping and alignment tasks on genomes having alternative assemblies [(4)](https://academic.oup.com/bioinformatics/article/21/9/1859/409207/). 
+(8) Handle mapping and alignment tasks on genomes that have alternative assemblies [(4)](https://academic.oup.com/bioinformatics/article/21/9/1859/409207/). 
 
 ### Disadvantages of GMAP
-Uses more memory compared to more recent programs such as Burrow-Wheelers Aligner (BWA). 
-Less accurate than Bowtie2, BWA, and BBMap.
+One disadvantage of GMAP is that it uses more memory compared to more recent programs such as Burrow-Wheelers Aligner (BWA). 
+Another is that it is less accurate than Bowtie2, BWA, and BBMap.
 
 ### Computational Process 
 GMAP uses a hierarchical approach that successively refines the alignment through a 
-three stage process as shown in the image below [(3)](https://www.ncbi.nlm.nih.gov/pubmed/27008021/). The first stage looks at long oligomers (such as 24-mers or 30-mers) from both ends of the query sequence to identify candidate genomic regions that contain oligomers from both ends [(3)](https://www.ncbi.nlm.nih.gov/pubmed/27008021/). These long oligomer matches can be found by combining the information from 15-mers, results in an end pairing algorithm in GMAP [(3)](https://www.ncbi.nlm.nih.gov/pubmed/27008021/). In order to prevent the possibility of false positives, GMAP continues to scan for a specific number of cycles even after a single unique match in the genome is found. The second stage GMAP tries to align the read against each of the candidate regions found in Stage 1 [(3)](https://www.ncbi.nlm.nih.gov/pubmed/27008021/). Diagonalization and oligomer chaining is used to produce approximate alignments. The last stage fills in these gaps using a variety of programming algorithms at the nucleotide level [(3)](https://www.ncbi.nlm.nih.gov/pubmed/27008021/).
+three stage process as shown in the figure below [(3)](https://www.ncbi.nlm.nih.gov/pubmed/27008021/). The first stage looks at long oligomers (such as 24-mers or 30-mers) from both ends of the query sequence to identify candidate genomic regions that contain oligomers from both ends [(3)](https://www.ncbi.nlm.nih.gov/pubmed/27008021/). These long oligomer matches can be found by combining the information from 15-mers, results in an end pairing algorithm in GMAP [(3)](https://www.ncbi.nlm.nih.gov/pubmed/27008021/). In order to prevent the possibility of false positives, GMAP continues to scan for a specific number of cycles even after a single unique match in the genome is found. In the second stage, GMAP tries to align the read against each of the candidate regions found in Stage 1 [(3)](https://www.ncbi.nlm.nih.gov/pubmed/27008021/). Diagonalization and oligomer chaining is used to produce approximate alignments. The last stage fills in these gaps using a variety of programming algorithms at the nucleotide level [(3)](https://www.ncbi.nlm.nih.gov/pubmed/27008021/).
 
 ![gmap](https://media.springernature.com/original/springer-static/image/chp%3A10.1007%2F978-1-4939-3578-9_15/MediaObjects/326743_1_En_15_Fig1_HTML.gif)
 
