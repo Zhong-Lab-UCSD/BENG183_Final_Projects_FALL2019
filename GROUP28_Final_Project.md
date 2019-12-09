@@ -40,7 +40,7 @@ Less accurate than Bowtie2, BWA, and BBMap.
 GMAP uses a hierarchical approach that successively refines the alignment through a 
 three stage process. The first stage looks at long oligomers (such as 24-mers or 30-mers) from both ends of the query sequence to identify candidate genomic regions that contain oligomers from both ends [(3)](https://www.ncbi.nlm.nih.gov/pubmed/27008021/). These long oligomer matches can be found by combining the information from 15-mers, results in an end pairing algorithm in GMAP [(3)](https://www.ncbi.nlm.nih.gov/pubmed/27008021/). In order to prevent the possibility of false positives, GMAP continues to scan for a specific number of cycles even after a single unique match in the genome is found. The second stage GMAP tries to align the read against each of the candidate regions found in Stage 1 [(3)](https://www.ncbi.nlm.nih.gov/pubmed/27008021/). Diagonalization and oligomer chaining is used to produce approximate alignments. The last stage fills in these gaps using a variety of programming algorithms at the nucleotide level [(3)](https://www.ncbi.nlm.nih.gov/pubmed/27008021/).
 
-![gmap]: https://media.springernature.com/original/springer-static/image/chp%3A10.1007%2F978-1-4939-3578-9_15/MediaObjects/326743_1_En_15_Fig1_HTML.gif
+![gmap](https://media.springernature.com/original/springer-static/image/chp%3A10.1007%2F978-1-4939-3578-9_15/MediaObjects/326743_1_En_15_Fig1_HTML.gif)
 
 
 ## BBMap
