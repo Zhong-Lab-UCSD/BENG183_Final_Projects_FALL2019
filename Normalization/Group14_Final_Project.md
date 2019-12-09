@@ -109,10 +109,10 @@ SCnorm is a method of normalization that uses quantile regression to estimate th
         equally sized gene groups (where a gene’s group membership is determined by its median 
         expression among non-zero un-normalized measurements) are all less than 0.
 
-        3. Normalized counts Y’<sub>g,j</sub> are given by
+        3. Normalized counts Y’g,j are given by
         
  <p align="center">
-    <img src="https://github.com/nbangari/BENG183_Final_Projects_FALL2019/blob/master/Normalization/img/image1.png" width="35">
+    <img src="https://github.com/nbangari/BENG183_Final_Projects_FALL2019/blob/master/Normalization/img/equation.png" width="35">
  </p>
         
         where SF is the scale factor. The estimated 
