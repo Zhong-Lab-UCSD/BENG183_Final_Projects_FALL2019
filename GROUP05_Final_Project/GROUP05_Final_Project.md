@@ -8,7 +8,7 @@ Group 05: Zoey Chesny, Kevin Ngo, Arielle Yoo
 2. [Mutational Signatures](#4)<br>
   a. [Discovery - A Case Study](#5)<br>
   b. [Types](#6)<br>
-  c. [Extraction Methods](#7)<br>
+  c. [Various Extraction Methods](#7)<br>
 3. [Relevance](#8)<br>
   a. [Sequencing Analysis for Cancer Research](#9)<br>
   b. [Current Clinical Aspects](#10)<br>
@@ -17,6 +17,9 @@ Group 05: Zoey Chesny, Kevin Ngo, Arielle Yoo
 ---
 ## Background <a name="1"></a>
 Mutational Signatures are characteristic combinations of mutation types, which arise from specific mutational processes. These are often associated with cancer and cancer profiling. We'll first discuss how cancer arises from somatic mutations, and then get into the details of how mutational signatures were discovered, the various types, and how they are extracted. We'll then discuss the relevance of mutational signatures as it relates to sequencing analysis in cancer research and in the clinical setting.  
+
+1. [Cancer](#2)<br>
+2. [Somatic Mutations](#3)<br>
 
 ---
 ## Cancer <a name="2"></a>
@@ -45,9 +48,9 @@ Multiple somatic mutational processes contribute to the characteristic mutationa
 ---
 ## Mutational Signatures <a name="4"></a>
 
-1. Discovery
-2. Types
-3. Methods
+1. [Discovery - A Case Study](#5)<br>
+2. [Types](#6)<br>
+3. [Various Extraction Methods](#7)<br>
 
 ---
 ## Discovery of Mutational Signatures - A Case Study <a name="5"></a>
@@ -103,8 +106,8 @@ The results of mutational signature attribution in SigProfiler compared to Signa
 ---
 ## Relevance <a name="8"></a>
 
-1. Sequencing Analysis for Cancer Research 
-2. Current Clinical Aspects
+1. [Sequencing Analysis for Cancer Research](#9)<br>
+2. [Current Clinical Aspects](#10)<br>
 
 ---
 ## Sequencing Analysis for Cancer Research <a name="9"></a>
