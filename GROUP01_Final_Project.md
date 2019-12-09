@@ -206,5 +206,5 @@ Other variations of the process can use different algorithms to identify variati
 
 [15] [Galaxy pipelines](https://galaxyproject.github.io/training-material/topics/variant-analysis/)
 
-[x] High-Coverage Samples
-* Li, Heng (2014). Toward better understanding of artifacts in variant calling from high-coverage samples. Bioinformatics, 30-20:2843-2451. DOI: [10.1093/bioinformatics/btu356](https://doi.org/10.1093/bioinformatics/btu356)
+[x] [Recent publication on variant calling using neural networks ](https://www.nature.com/articles/s41467-019-09025-z)
+* Luo, R., Sedlazeck, F. J., Lam, T.-W., & Schatz, M. C. (2019). A multi-task convolutional deep neural network for variant calling in single molecule sequencing. Nature Communications, 10(1). doi: 10.1038/s41467-019-09025-z
