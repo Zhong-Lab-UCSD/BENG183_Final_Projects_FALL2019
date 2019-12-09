@@ -137,42 +137,8 @@ Figure 4: Comparison between FAIRE-seq and ATAC-seq. Figure by Davie, Kristofer 
 14. Li, Z. et al. Identification of transcription factor binding sites using ATAC-seq. Genome biology (2019). Available at: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6391789/.
 15. Buck1, M. J. Chromatin accessibility: a window into the genome. Epigenetics & Chromatin (2014). Available at: https://epigeneticsandchromatin.biomedcentral.com/articles/10.1186/1756-8935-7-33.
 
-
-
 **Figures**
 1. Meyer, C. A. & Liu, X. S. Identifying and mitigating bias in next-generation sequencing methods for chromatin biology. Nature News (2014). Available at: https://www.nature.com/articles/nrg3788.
 2. Complete Guide to Understanding and Using ATAC-Seq. Active Motif Available at: https://www.activemotif.com/blog-atac-seq.
 3. GATK_Team. SAM / BAM / CRAM - Mapped sequence data formats. GATK (2017). Available at: https://gatkforums.broadinstitute.org/gatk/discussion/11014/sam-bam-cram-mapped-sequence-data-formats.
 4. Davie, Kristofer et al. Discovery of Transcription Factors and Regulatory Regions Driving In Vivo Tumor Development by ATAC-seq and FAIRE-seq Open Chromatin Profiling. PLOS Genetics (2015). Available at: https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1004994
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-https://www.researchgate.net/figure/ChIP-and-ATAC-sequencing-workflow-and-analysis-Retina-is-dissected-from-the-eye-and_fig6_303984059 
-
-https://www.nature.com/articles/nrg3306?proof=trueIn 
