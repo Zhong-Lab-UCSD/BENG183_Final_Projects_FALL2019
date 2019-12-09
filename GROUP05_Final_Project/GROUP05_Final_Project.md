@@ -11,7 +11,7 @@ Group 05: Zoey Chesny, Kevin Ngo, Arielle Yoo
   c. [Extraction Methods](#7)<br>
 3. [Relevance](#8)<br>
   a. [Sequencing Analysis for Cancer Research](#9)<br>
-  c. [Current Clinical Aspects](#10)<br>
+  b. [Current Clinical Aspects](#10)<br>
 4. [References](#11)<br>
 
 ---
