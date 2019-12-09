@@ -41,7 +41,8 @@ A technique for location the regions where a specific DNA-binding protein (like 
 Which genomic positions are physically close together in the nucleus? Used to figure out what pairs of DNA strands form the anchors for chromatin loops. First, the loops are held in place by adding formaldehyde to the cells, which covalently links chromatin segments that are close to each other. Next, restriction enzymes are used to cut away the parts of the loop outside the anchors. Fill the sticky ends of the anchor sequences and mark the ends with biotin. DNA ends that are close to each other will be ligated; the ligation mainly happens only to the anchor sequences because of the proximity requirement. Cut off ends of DNA which are not ligated so that they do not contain biotin, and pull down the anchors by attracting the biotin with streptavidin. Shear the anchor DNA, do PCR to make more genetic material, and perform sequencing. Trim and remap signature during the data analysis to make sure you do not have extra nucleotides from outside the anchor sequences [[6]](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3149993/).
 
 ![comparison](3comparison.png) <br>
-[Figure 1:](https://www.nature.com/articles/nrg3788) Comparison between experimental tools for primary-order structure detection. Figure by Meyer, Clifford A.et al., Nature Reviews Genetics 15.11(2014):709-721
+[Figure 1:](https://www.nature.com/articles/nrg3788) <br>
+Comparison between experimental tools for primary-order structure detection. Figure by Meyer, Clifford A.et al., Nature Reviews Genetics 15.11(2014):709-721
 ### FAIRE-seq
 A method for finding regions of DNA associated with regulatory activity. DNA is cross linked to preserve its interactions, then sonicated. After sonication, the cross linking is removed using a phenol-chloroform extraction. When the cross linking is removed, chromatin associated with nucleosomes will remain in its organic state while the other DNA will prefer being aqueous. The assay then selects for the aqueous DNA in order to perform functional enrichment for the nucleosome depleted regions of the DNA and sequence those regions. Regulatory DNA segments are often characterized by an eviction of nucleosomes, so sequencing nucleosome poor regions will select for regulatory sequences [[7]](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1891346/).
 
@@ -53,7 +54,8 @@ Maps locations of nucleosomes by digesting areas of DNA that are not wrapped aro
 
 # ATAC-seq <a name="4"></a>
 ![ATAC-seq](4ATAC-seq.png)
-[Figure 2:](https://www.activemotif.com/blog-atac-seq) Visualization of ATAC seq action on DNA. Figure by Active Motif, Complete Guide to Understanding and Using ATAC-seq 
+[Figure 2:](https://www.activemotif.com/blog-atac-seq) <br>
+Visualization of ATAC seq action on DNA. Figure by Active Motif, Complete Guide to Understanding and Using ATAC-seq 
 
 ATAC-Seq stands for Assay for Transposase-Accessible Chromatin with high-throughput sequencing. It is used for mapping chromatin accessibility genome-wide. 
 
@@ -88,7 +90,8 @@ These adaptors and the low quality read fragments need to be trimmed away as the
 To be able to analyze what areas of the genome our ATAC-seq reads came from, we need to align them to a reference genome that comes with an annotation. Thus, we will need the FASTQ from the last step, a FASTA file of the reference genome, and the reference GTF or GFF3 file. In this step, the alignment tool will compare each read to the genome and will match it to the right chromosome and position. The algorithm for this will vary across tools, with more specificity often taking more time. Many of the robust methods include a Burrows-Wheeler Algorithm for genome indexing, which adds numeric labels to the reference genome to help guide reads more efficiently. These include BWA and BowTie2, which have the best mapping rates in most cases. Another method is Stampy, which is faster and more tolerant of variants from the reference, so it is useful to consider it if the organism sampled deviates from the reference genome significantly. These programs will output a file in sequence alignment map (SAM) format, or BAM which is the binary compressed version. 
 
 ![SAM](8SAM.png) <br>
-[Figure 3:](https://gatkforums.broadinstitute.org/gatk/discussion/11014/sam-bam-cram-mapped-sequence-data-formats) Basic structure of the SAM format. Figure by Genome Analysis Toolkit, SAM / BAM / CRAM - Mapped sequence data formats. 
+[Figure 3:](https://gatkforums.broadinstitute.org/gatk/discussion/11014/sam-bam-cram-mapped-sequence-data-formats) <br> 
+Basic structure of the SAM format. Figure by Genome Analysis Toolkit, SAM / BAM / CRAM - Mapped sequence data formats. 
 
 ### Step 3: Alignment quality filtering
 Reads that originate from the same fragment of DNA (duplicates) must be marked in the SAM file as we do not want to double count them when looking for peaks. Picard MarkDuplicates is a tool that is useful for this. Picard is an entire suite of the genome analysis tools generated by the reputable Broad Institute to do a variety of functions. 
@@ -134,7 +137,8 @@ ATAC-seq and DNase-seq are the only tools that can be used to find both transcri
 In a study that compared ATAC-seq to FAIRE-seq, ATAC-seq was found to also have a higher signal-to-noise ratio, with low background signal and sharper peaks (Fig. E and F). Furthermore, ATAC-seq showed a higher recall of true enhancers than FAIRE-seq, detecting ∼18.75% more enhancers ,even at similar levels of specificity (Fig. G). 
 
 ![comparison](11comparison.png)
-[Figure 4:](https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1004994) Comparison between FAIRE-seq and ATAC-seq. Figure by Davie, Kristofer et al., Discovery of Transcription Factors and Regulatory Regions Driving In Vivo Tumor Development by ATAC-seq and FAIRE-seq Open Chromatin Profiling.
+[Figure 4:](https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1004994) <br> 
+Comparison between FAIRE-seq and ATAC-seq. Figure by Davie, Kristofer et al., Discovery of Transcription Factors and Regulatory Regions Driving In Vivo Tumor Development by ATAC-seq and FAIRE-seq Open Chromatin Profiling.
 
 **Citations**
 1. nucleosome / nucleosomes. Nature News Available at: https://www.nature.com/scitable/definition/nucleosome-nucleosomes-30/.
