@@ -42,7 +42,7 @@ three stage process as shown in Figure 1 [(3)](https://www.ncbi.nlm.nih.gov/pubm
 
 ![gmap](https://media.springernature.com/original/springer-static/image/chp%3A10.1007%2F978-1-4939-3578-9_15/MediaObjects/326743_1_En_15_Fig1_HTML.gif)
 
-Figure 1: GMAP Computational Process
+**Figure 1: GMAP Computational Process**
 
 ## BBMap
 
