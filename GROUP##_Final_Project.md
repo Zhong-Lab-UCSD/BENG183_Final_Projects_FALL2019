@@ -1,6 +1,12 @@
 # ATAC-seq and its Related Biology and Computational Methods
 
 1. [Functional features of the genome](#1)
+2. [Genetic expression: why we study the epigenome](#2)
+3. [Previous Methods For Genome Wide Assays of Epigenetic Structure](#3)
+4. [ATAC-seq](#4) <br>
+    4.1 [Library Preparation Process](#41) <br>
+    4.2 [Computational Analysis](#42) <br>
+5. [Comparing Methods](#5)
 
 ## 1. Functional features of the genome <a name="1"></a>
 
@@ -17,12 +23,12 @@ Insulators are 300 to 2000 bp DNA sequences located close to promoters that are 
 ### Regulatory sequence elements
 Proximal to coding genes are promoter and silencer sequences, with enhancers located further away on the strand, but proximal due to DNA looping. Transcription factors (TFs) regulate gene expression by interacting with binding sites of these sequences. TFs know where to bind by looking for DNA-binding motifs, which are specific short sequences for which the factor has a high binding affinity. Once bound TFs often recruit other TFs and RNA polymerase to bind. 
 
-## Genetic expression: why we study the epigenome
+## Genetic expression: why we study the epigenome <a name="2"></a>
 Beyond DNA sequencing and RNA sequence quantification for genetic expression levels, it is important to understand the mechanisms for transcription regulation and how they affect genetic expression. Genes are largely regulated by transcription factors that bind in close proximity to them and either enhance expression by recruiting RNA polymerase for transcript elongation or inhibit expression by preventing other TFs or polymerase from binding to that region of the DNA. It is interesting to find motif sequences for which TFs have high affinity because we can infer a broad range of functions that the TF regulates and predict if nearby genes are implicated in TF action [[4]](https://www.cell.com/cell/fulltext/S0092-8674(18)30106-5?_returnURL=https://linkinghub.elsevier.com/retrieve/pii/S0092867418301065?showall=true).
 
 However, transcription factor activity cannot occur without access to open chromatin, not tightly packed around nucleosomes. It is useful to use methods that cut unprotected DNA to analyze the areas that are protected by nucleosome packing or by bound transcription factors. What genes are active in muscle cells that are not active in neurons? What genes are activated when a cell is under stress? When it is pre-cancerous? Assays for epigenetic structure help to answer these questions. 
 
-## Previous Methods For Genome Wide Assays of Epigenetic Structure
+## Previous Methods For Genome Wide Assays of Epigenetic Structure <a name="3"></a>
 
 ### ChIP seq
 ![ChIP-seq](1ChIP-seq.jpg) <br>
@@ -45,13 +51,13 @@ Maps locations of nucleosomes by digesting areas of DNA that are not wrapped aro
 ### DNase-seq
 Maps locations of nucleosomes by digesting areas of DNA that are not wrapped around histones with DNase I and sequencing the undigested areas [[9]](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3627383/).
 
-# ATAC-seq
+# ATAC-seq <a name="4"></a>
 ![ATAC-seq](4ATAC-seq.png)
 [Figure 2:](https://www.activemotif.com/blog-atac-seq) Visualization of ATAC seq action on DNA. Figure by Active Motif, Complete Guide to Understanding and Using ATAC-seq 
 
 ATAC-Seq stands for Assay for Transposase-Accessible Chromatin with high-throughput sequencing. It is used for mapping chromatin accessibility genome-wide. 
 
-## Library Preparation Process
+## Library Preparation Process <a name="41"></a>
 ### Cell prep
 During harvesting cells should be intact and in a homogenous single cell suspension. Making sure to have between 25k to 75k cells is important. Using too few cells causes over-digestion of chromatin later on. This creates more noisy data. Using too many cells results in under-digestion. This creates large fragments that can be hard to sequence. After harvesting, cells are lysed with a nonionic detergent to yield pure nuclei [[10]](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4374986/).
 
@@ -59,7 +65,7 @@ During harvesting cells should be intact and in a homogenous single cell suspens
 The yielded nuclei is then fragmented using Tn5 transposase through a process known as tagmentation. Tn5 also adds sequencing adapters to the end of chromatin where it forms a break. The resulting fragments constitute an ATAC-Seq library. The library undergoes purification to only include the DNA from the samples [[11]](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4374986/).
 The purified library can be amplified by PCR so that it can be analyzed by other methods such as qPCR or next-generation sequencing.
 
-## Computational Analysis
+## Computational Analysis <a name="42"></a>
 ### The steps:
 Raw read quality: check the sequencing output for the base pair quality and do any necessary read trimming
 Alignment to a reference genome: map the reads to a reference genome for the organism studied
@@ -100,7 +106,7 @@ R is a programming language built for scripting, specifically with an emphasis o
 Aside from looking at individual genes, it is also useful to look at gene functions that are “enriched”, more highly expressed. Functional enrichment analysis can be done using gene ontology (GO), a set of terms to categorize and build a network of gene functions. Another representation of biomolecular interactions is Kyoto Encyclopedia of Genes and Genomes (KEGG) pathways. The ChIPpeakAnno bioconductor package can be used for this. Many of the bioconductor tools were written for peak calling for ChIP-seq but are just as effective for analyzing ATAC-seq peaks as the input data formats are the same. 
 
 
-### A wrapper to sum it all up
+### A wrapper to sum it all up: GUAVA
 A “wrapper” program is one that puts other well-known gold-standard programs together in sequence with the right settings so the user only needs to make one command to the wrapper program as a whole. This makes analysis more accessible to those without bioinformatics expertise, but we can separate the steps and do more finetuning, and even swap some programs to fine tune it to our experiments. Recently, GUAVA has been developed to provide a convenient user interface for ATAC-seq analysis and generate visuals and annotations. They provide an excellent flowchart to summarize the entire workflow. 
 Their steps and tools:
 1. Raw read quality: FASTQC and CutAdapt
@@ -114,7 +120,8 @@ a. Intermediate steps: <br>
 6. Peak functional annotation: ChIPpeakAnno R package
 
 ![flowchart](10flowchart.png) <br>
-## Comparing Methods
+
+# Comparing Methods <a name="5"></a>
 
 Compared to DNase-seq, FAIRE-seq, and MNase-seq ATAC-seq has two common advantages. 
 I. It can be performed with significantly fewer cells. Only requires about 50,000 cells compared to the millions needed by other methods. 
