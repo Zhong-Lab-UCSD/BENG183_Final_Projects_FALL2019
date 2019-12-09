@@ -102,7 +102,7 @@ Results:
 
 CHIP-seq data from 506 experiments from the ENCODE database were used to train the experimental deep learning based DeepBind model.  Performance metric to quantify motif finding accuracy was AUC (area under curve), calculated by comparing the predicted motifs to true motifs. Performance of DeepBind was compared to MEME, a PWM based baseline model.  The AUC was calculated for each of 506 experiments, and the median AUC for each of 151 unique transcription factors is shown on the left, and for 6 cell lines shown on the right. Overall, the DeepBind model outperforms MEME for motif finding. 
 
-<img src="8.png" height="250" width="300">
+<img src="8.png" height="250" width="300"> <img src="9.png" height="250" width="300">
 
 Figure: AUC of DeepBind model vs MEME baseline model on prediction transcription factor binding sites from 506 CHIP seq experiments. Left: median AUC grouped by transcription factor. Right: median AUC grouped by cell line. The average AUC of DeepBind outperforms MEME. 
 
@@ -112,11 +112,11 @@ https://www.nature.com/articles/s41467-017-00623-3
 
 Convolutional neural networks, a type of deep learning model that excels in image analysis, can be used for both prediction and clustering tasks. In this study, a convolutional neural network was used to predict the cell cycle phase of jurkat cell images. After training the model on 33,000 images, predictions were made on 3000 images. An accuracy of 98% was achieved, a 6% improvement over traditional machine learning techniques. [5]
 
-<img src="9.png" height="250" width="300">
+<img src="10.png" height="250" width="300">
 
 Figure: Images of jurkat cells in each stage of cell cycle
 
-<img src="10.png" height="250" width="300">
+<img src="11.png" height="250" width="300">
 
 Figure: Predictions results of trained convolutional neural network on 30,000 images. 98% accuracy is achieved. 
 
