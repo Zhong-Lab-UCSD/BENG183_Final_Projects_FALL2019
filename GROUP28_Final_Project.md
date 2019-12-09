@@ -106,7 +106,7 @@ Map phase: Extract K-mers(Seeds)
 
 Reduce phase: Extend Seeds
 
-The advantage of Clouburst is that it reduces the time to map reads linearly(~30X faster on 24 cores, and >~100 times faster on 96 cores). This can make it scale the slower RMAP process to match that of current BWT based algorithms. Due to linear scaling, this type of algorithm is good for large datasets, or to just reduce the time needed to compute a normal dataset. It also allows computation with shorter k-mers(which is more time consuming that using longer k-mers in the seed-and-extend algorithm) due to its linear speed decrease. It can be easily scaled due to the open source Hadoop MapReduce implementation. Due to the growing popularity of cloud computing, computing costs can be rented for cheap, making it an economical way to process data.
+The advantage of Clouburst is that it reduces the time to map reads linearly(~30X faster on 24 cores, and >~100 times faster on 96 cores). This can make it scale the slower RMAP process to match that of current BWT based algorithms. Due to linear scaling, this type of algorithm is good for large datasets, or to just reduce the time needed to compute a normal dataset. It also allows computation with shorter k-mers(which is more time consuming than using longer k-mers in the seed-and-extend algorithm) due to its linear speed decrease. It can be easily scaled due to the open source Hadoop MapReduce implementation. Due to the growing popularity of cloud computing, computing costs can be rented for cheap, making it an economical way to process data.
 
 ## Other
 Other examples of Cloud based algorithms include BigBWA, a cloud computing algorithm based off of BWA using the same MapReduce technique to linearly scale BWA.
