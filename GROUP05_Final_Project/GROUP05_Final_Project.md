@@ -1,5 +1,5 @@
 # BENG183-Final-Project: Mutational Signatures
-*Group 05:* Zoey Chesny, Kevin Ngo, Arielle Yoo
+**Group 05:** Zoey Chesny, Kevin Ngo, Arielle Yoo
 
 ## Outline
 1. [Background](#1)<br>
