@@ -63,11 +63,62 @@ With K-means clustering, the results can vary based on the “K” value that is
 
 ### Finding Subclasses of Lung Cancer via Clustering of Gene Expression Profile
 
+https://www.pnas.org/content/98/24/13790.long
+
+Given a cohort of individuals with lung cancer, different subclasses of lung cancer can be identified among the samples using hierarchical clustering of their gene expression profiles. The first step is to use some method, such as RNA-seq, to quantify the gene expression level for each individual. After generating the gene expression profiles for each individual, differential expression analysis can be performed on each sample, and the most differentially expressed genes can be used in downstream analysis. Namely, hierarchical clustering can be performed on the most differentially expressed genes, which allows for identification of clusters of samples, where each cluster represents a subtype of lung cancer.  [2]
+
+<img src="4.png" height="250" width="300">
+
+Figure: In this study, oligonucleotide microarrays were used to find mRNA expression levels corresponding to 12,600 transcript sequences in 186 lung tumor samples, including 139 adenocarcinomas resected from the lung. Hierarchical clustering performed on 203 samples identified several subclasses. 
+
 ### Determining Ancestry of New Samples via Clustering (PCA) of Genome
+
+https://science.sciencemag.org/content/319/5866/1100.full	
+Given a cohort of individuals hailing from various ancestries, clustering can be used to determine the ancestry of each person based on their genetic profile. The first step is to sequence each person’s genome. Then, locations of allelic single nucleotide polymorphisms (SNPs) were determined by comparing each sample genome to the orthologous chimpanzee reference. An Identity-by-State (IBS) matrix is calculated using the SNPs of each sample, to quantify the pairwise distance of each sample from every other sample. For example, given 938 samples, a 938 by 938 IBS matrix is calculated, where each sample is represented by a single row or column in the matrix, and each row/column represents the pairwise distance of a sample from every other sample. Finally, PCA is performed on the IBS matrix. Visualization of PCs 1 and 2 show distinct clustering of samples according to ancestry. For this experiment, a cohort of 938 fully consenting individuals from 51 subpopulations from sub-Saharan Africa, North Africa, Europe, the Middle East, South/Central Asia, East Asia, Oceania, and the Americas was used, and over 650,000 autosomal SNPs were analyzed. [3] 
+
+<b>Results:</b>
+
+<img src="5.png" height="250" width="300">
+
+Figure: PCA performed on 938 dimensional IBS matrix, each row representing a sample. The first and second PCs explain 59% and 26% of the IBS variation, respectively. 51 populations were separated into known continental groups. PC 1 appears to capture the contrast between sub-Saharan Africans and non-Africans and the PC2 captures the East-West difference in Eurasia.
+
+<img src="6.png" height="250" width="300">
+
+Figure: Performing identical technique (pairwise IBS matrix, PCA) on individual subgroups reveals further clustering of the data into known subpopulations. 
 
 ### Transcription Binding Site Prediction using CNN on Binding Motifs
 
+https://www.nature.com/articles/nbt.3300
+
+After performing CHIP seq, a popular downstream analysis to perform on the sequencing data is to formulate a position weight matrix (PWM). The PWM is a 4 row by n column, where n is the length of the motif, that quantifies, for distinct sequences in the genome i.e. motifs, the probability that the motif is a binding sequence for the proteins in the CHIP seq experiment. The PWMs are then used to identify protein binding motifs: the motifs with the highest scores are likely to be bound by proteins. Those motifs are identified in the genome as protein binding sites. [4]
+
+PWMs are formulated in a relatively straightforward way, using the read counts along with a scoring function, to generate a probability or score for each motif.  However, more complicated techniques have been proposed as an alternative, and have achieved state of the art performance in motif finding. DeepBind[4] uses a deep convolutional neural network (CNN) to scan CHIP-seq reads and output motifs, and has outperformed traditional methods as well as other machine learning methods. 
+
+<img src="7.png" height="250" width="300">
+
+Figure: Pipeline of DeepBind. We see that the input are reads from any one of various protein binding sequencing techniques, and the output is motifs. The motifs can then be used for many downstream tasks, including detecting binding sites. Our explanation focuses on analyzing CHiP seq data to find transcription factor binding sites, because it is related to what we have covered it in class.  
+
+Results:
+
+CHIP-seq data from 506 experiments from the ENCODE database were used to train the experimental deep learning based DeepBind model.  Performance metric to quantify motif finding accuracy was AUC (area under curve), calculated by comparing the predicted motifs to true motifs. Performance of DeepBind was compared to MEME, a PWM based baseline model.  The AUC was calculated for each of 506 experiments, and the median AUC for each of 151 unique transcription factors is shown on the left, and for 6 cell lines shown on the right. Overall, the DeepBind model outperforms MEME for motif finding. 
+
+<img src="8.png" height="250" width="300">
+
+Figure: AUC of DeepBind model vs MEME baseline model on prediction transcription factor binding sites from 506 CHIP seq experiments. Left: median AUC grouped by transcription factor. Right: median AUC grouped by cell line. The average AUC of DeepBind outperforms MEME. 
+
 ### Cell Cycle Phase Prediction using CNN on Images of Jurkat Cells
+
+https://www.nature.com/articles/s41467-017-00623-3
+
+Convolutional neural networks, a type of deep learning model that excels in image analysis, can be used for both prediction and clustering tasks. In this study, a convolutional neural network was used to predict the cell cycle phase of jurkat cell images. After training the model on 33,000 images, predictions were made on 3000 images. An accuracy of 98% was achieved, a 6% improvement over traditional machine learning techniques. [5]
+
+<img src="9.png" height="250" width="300">
+
+Figure: Images of jurkat cells in each stage of cell cycle
+
+<img src="10.png" height="250" width="300">
+
+Figure: Predictions results of trained convolutional neural network on 30,000 images. 98% accuracy is achieved. 
 
 ## Challenges of Machine Learning Approaches in Bioinformatics
 
