@@ -23,14 +23,14 @@ deviation from the reference genome. In contrast, other programs for genomic loc
 
 ### Advantages of GMAP
 Advantages of GMAP include: 
-(1) Map and align a single cDNA interactively against a large reference genome a second, without the several minutes of startup time usually needed by other alignment programs.
-(2) Switch arbitrarily among different reference genomes without the need for a pre-loaded server dedicated to each genome. 
-(3) Run the program on computers with a minimum of 128 MB of RAM.
-(4) Perform high-throughput batch processing of cDNAs by using memory mapping and multithreading when necessary memory and hardware are available. 
-(5) Generate accurate gene models, even with polymorphisms and sequence errors.
-(6) Locate splice sites accurately without use of probabilistic splice site models.
-(7) Detect statistically significant microexons and incorporate them into the alignment. 
-(8) Handle mapping and alignment tasks on genomes having alternative assemblies. 
+(1) Map and align a single cDNA interactively against a large reference genome a second, without the several minutes of startup time usually needed by other alignment programs;
+(2) Switch arbitrarily among different reference genomes without the need for a pre-loaded server dedicated to each genome;
+(3) Run the program on computers with a minimum of 128 MB of RAM;
+(4) Perform high-throughput batch processing of cDNAs by using memory mapping and multithreading when necessary memory and hardware are available;
+(5) Generate accurate gene models, even with polymorphisms and sequence errors;
+(6) Locate splice sites accurately without use of probabilistic splice site models;
+(7) Detect statistically significant microexons and incorporate them into the alignment;
+(8) Handle mapping and alignment tasks on genomes having alternative assemblies [(4)](https://academic.oup.com/bioinformatics/article/21/9/1859/409207/). 
 
 ### Disadvantages of GMAP
 Uses more memory compared to more recent programs such as Burrow-Wheelers Aligner (BWA). 
