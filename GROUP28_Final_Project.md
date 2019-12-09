@@ -17,9 +17,9 @@ was first released. This technique was designed to take advantage of newly avail
 sequence by allowing users to align genes and expressed sequence tags (ESTs) quickly and efficiently to the 
 genome in order to reveal their intron-exon structure [(3)](https://www.ncbi.nlm.nih.gov/pubmed/27008021/). The alignments also reveal 
 measurements of gene expression which are useful in identifying cancer specific genes 
-and amplification of genomic regions in cancer. One of the most beneficial aspects of 
+and amplification of genomic regions in cancer[(3)](https://www.ncbi.nlm.nih.gov/pubmed/27008021/). One of the most beneficial aspects of 
 GMAP is that the program can handle transcripts that had up to 20-30% sequence 
-deviation from the reference genome. In contrast, other programs for genomic location alignment, such as BLAT, generally had their alignment affected adversely by small amounts of deviation of only 1%. This relatively wide deviation allows for use of GMAP for cross species alignment. 
+deviation from the reference genome. In contrast, other programs for genomic location alignment, such as BLAT, generally had their alignment affected adversely by small amounts of deviation of only 1% [(3)](https://www.ncbi.nlm.nih.gov/pubmed/27008021/). This relatively wide deviation allows for use of GMAP for cross species alignment. 
 
 ### Advantages of GMAP
 Advantages of GMAP include: 
