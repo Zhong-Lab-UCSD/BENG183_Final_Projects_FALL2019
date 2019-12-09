@@ -1,6 +1,8 @@
 # ATAC-seq and its Related Biology and Computational Methods
 
-## Functional features of the genome.
+1. [Functional features of the genome](#1)
+
+## 1. Functional features of the genome <a name="1"></a>
 
 ### Chromatin Organization and Nucleosomes
 A nucleosome is a unit of DNA packaging, consisting of a segment of DNA wound around eight histone protein cores. This forms a histone octamer. A histone octamer contains two copies each of the histone proteins H2A, H2B, H3, and H4 [[1]](https://www.nature.com/scitable/definition/nucleosome-nucleosomes-30/).
