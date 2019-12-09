@@ -3,7 +3,23 @@ BENG 183 Group 1
 
 Authors: Haoyin Xu, Hongru Yu, Ginny Wu
 
-## Introduction
+
+### ***Table of Contents***:
+#### [Introduction](#1)
+#### [Strategies](#2)
+* [Bayes' Method](#3)
+* [Heuristic Method](#4)
+* [Machine Learning Method](#5)
+#### [Procedure](#6)
+#### [Demo](#7)
+* [Files](#8)
+* [Results](#9)
+#### [Significance](#10)
+#### [Alternative Methods](#11)
+#### [References](#12)
+
+
+## Introduction<a name="1"></a>
 The genomes of individuals and overall populations are all incredibly similar; humans share 99.9% of our DNA while the remaining 0.1% of variations instruct our diversity.[<sup>[1]</sup>](https://www.genome.gov/17516714/2006-release-about-whole-genome-association-studies) These variations arise from random mutations as well as from gene recombinations in the germ line. When we compare genomes, the variations can be searched for and used to study anything from diseases to body development. For example, variations can be used to map the development of cell lineages in an embryo or the growth of a cancerous tumor.
 <p float="left">
   <img src='/pictures/snp.png' width='200'/>
@@ -20,11 +36,11 @@ The genomes of individuals and overall populations are all incredibly similar; h
 
 The specific ways DNA variants appear can be categorized into three groups: SNPs, indels, and structural variations. Single nucleotide polymorphisms (SNPs) represent differences of a single nucleotide. Indels are insertions and deletions of DNA segments and not as common as SNPs. Structural variations are much larger and typically characterized as more than 1 kb in length. These segments can be inverted, translocated, or copied redundantly within the genome. Variant calling is the process by which these variations are identified from sequence data.
 
-## Strategies
+## Strategies<a name="2"></a>
 
 Different variant calling methods rely on several kinds of general strategies, including probabilistic strategy, heuristic strategy, and machine learning.[<sup>[2]</sup>](https://en.wikipedia.org/wiki/SNV_calling_from_NGS_data) Each of these approaches has its own advantages and disadvantages, and researchers' choice depends on the actual data and sample type.[<sup>[3]</sup>](https://doi.org/10.1186/gm432)
 
-#### Bayes' Method
+#### Bayes' Method<a name="3"></a>
 The probabilistic approach takes a Bayesian perspective on the data. Researchers use the data to generate prior estimates for genotype probabilities (**P(G)**), create error models for data observations (**P(D|G)**), and combine these steps to calculate the probabilities of variants at certain loci. During these calculations, researchers have to consider the effects of linkage disequilibrium, which makes genotypes at adjacent loci not independent.
 
 <img src='/pictures/bayes.svg'>
@@ -32,25 +48,25 @@ The probabilistic approach takes a Bayesian perspective on the data. Researchers
 *Figure 2: Bayes’ Theorem*
 <br>
 
-#### Heuristic Method
+#### Heuristic Method<a name="4"></a>
 Heuristic based algorithms serve as an alternative method. Instead of calculating genotype possibilities, researchers would use a list of heuristic factors to set the bounds for variant calling. Those factors might include minimum allele counts, read quality cut-offs, and depth levels of read coverage. Though a relatively unpopular approach, the method could robustly outlay data that violate the assumptions of probabilistic models.
 
-#### Machine Learning Method
+#### Machine Learning Method<a name="5"></a>
 Machine learning represents researchers’ recent attempts to optimize the current variant calling methods. Relying on convolutional neural network (CNN), the method is able to magically output genotype likelihoods. Researchers currently have few practical ways to understand the nature of these neural networks, but try their best to make sure that the accuracy of input data meet their expectations.
 
-## Procedure
+## Procedure<a name="6"></a>
 After the whole genome or exome is sequenced, the raw reads in FASTQ files are quality checked and aligned to the reference genome, resulting in BAM or CRAM files. The alignment shows how the sequences are different from the reference genome, and these variants can be further analyzed to confirm their significance.
 
 Because this is a comparative analysis, the algorithms can differ depending on sample type. There are many packages and pipelines that have been developed to accommodate for diploidy, somatic cells, and germline cells.
 
-## Demo
+## Demo<a name="7"></a>
 We demonstrate an analysis pipeline for identifying tuberculosis related SNPs starting from analysis ready reads to final VCF file visualizations. The tools used:
 *  **FastQC**: quality check and trimming of reads[<sup>[4]</sup>](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)
 * **bwa mem**: Burrows-Wheeler Alignment alignment[<sup>[5]</sup>](http://www.ncbi.nlm.nih.gov/pubmed/19451168)
 * **samtools**: file conversion sam to bam[<sup>[6]</sup>](http://samtools.sourceforge.net)
 * **VarScan**: variant calling[<sup>[7]</sup>](http://dkoboldt.github.io/varscan/)
 
-### Demo Files
+### Demo Files<a name="8"></a>
 Sequenced read files: Feliciano, Cinara S. et al. (2018)[<sup>[8]</sup>](https://doi.org/10.1016/j.tube.2018.04.003)
 
 Reference Genome: [Mycobacterium tuberculosis H37Rv NCBI database](https://www.ncbi.nlm.nih.gov/nuccore/NC_000962.3?report=fasta)
@@ -62,7 +78,7 @@ Run Fastqc to quality check reads. `-o .` outputs files to current directory. Mu
 fastqc -o . \path\to\read_1.fastq.gz \path\to\read_2.fastq.gz
 ```
 
-### FastQC: Per Base Sequence Quality before and after trimming
+#### FastQC: Per Base Sequence Quality before and after trimming
 <p float="left">
   <img src='/pictures/fastqc1.png' width='400'/>
   <img src='/pictures/fastqc1-trim.png'  width='400' />
@@ -122,7 +138,7 @@ rm *.sam *.bam *.mpileup *raw.vcf
 
 Variant calling complete! You can view the final vcf file with variant locations and sequnces using any plain text reader or spreadsheet software (i.e. import to Microsoft Excel and select "Tab" when it prompts you what delimiter is used).
 
-## Results
+### Demo Results<a name="9"></a>
 Upon inspecting the vcf files, the following significant mutations can be observed:
 
 Number of mutations at locus:
@@ -148,7 +164,7 @@ Type of mutations at locus:
 |ERR2433005|MS|M|M|N|MMM|S|S|S|
 |ERR2433006|N|N|N|M|MMMS|N|N|S|
 
-## Significance
+## Significance<a name="10"></a>
 A patient goes to hospital after showing classical food poisoning symptoms. After rapid testing, an E. Coli infection was confirmed. However, the specific type of E. Coli he contracted is antibiotic resistant. Luckily, because of the growth rate of E. Coli, specific testing can be done with different antibiotic trials to figure out which one will improve his condition at a relatively fast rate. But if the patient is unlucky and contracted a slow-growing pathogen like Mycobacterium tuberculosis, the specific testing that need to be done will take as long as eight weeks to complete. During that process, doctors must take a leap of faith and guess which antibiotic mix he needs to use to prevent the patient's condition from worsening. [<sup>[9]</sup>](https://www.nature.com/news/health-care-bring-microbial-sequencing-to-hospitals-1.15282)
 
 However, new technologies have emerged since the old days. Now we can sequence the entire genome of Mycobacterium Tuberculosis in a matter of days. There have already been multiple mutations known to cause tuberculosis to develop resistance.Bringing pathogen sequencing to hospitals will being several benefits. First, we can improve the survival rate of patients especially those with more rapid and lethal infections. Second, we will significantly decrease the amount of broad-spectrum antibiotics used when specific testing of the pathogen is being done. This will reduce the possibility of the pathogen to develop new resistances. Finally, with enough sequencing done on the same pathogen, there is a bigger likelihood that new mutations that causes antibiotic resistance will be discovered. [<sup>[9]</sup>](https://doi.org/10.1016/j.tube.2018.04.003)
@@ -163,12 +179,12 @@ Now focusing on the mutations detected and how they affect protein expression. W
 
 Because of the specific proteins that the mutations affect, there can be concluded a guideline for ideal treatment for the patient contracted the specific *Mycobacterium Tuberculosis* strain that we mapped. We need to use antibiotics that targets the portion of the cell division pathway that takes place inside the cell. So, no matter how the cell membrane surface changes, it will not fail to target the pathogen. We also prefer antibiotics that has high osmolarity, so it can pass through the cell membrane more effectively. Last, we need to increase the dosage of the antibiotics for the mutation in gyrA may cause excessive effluxion of the antibodies thus decreasing their effectiveness. Doctors should not prescribe rifamycin, pyrazinamide, streptomycin or ciprofloxacin for there are mutations specifically responsible for resistance to those drugs. 
 
-## Alternative Methods
+## Alternative Methods<a name="11"></a>
 ### Galaxy Tool Variant Calling Pipeline
 Other variations of the process can use different algorithms to identify variations. The bioinformatics webtool Galaxy includes several pipelines for variant analysis that are optimized for different sample types. The tutorials found [here](https://galaxyproject.github.io/training-material/topics/variant-analysis/) take into consideration sequence characteristics of diploid, haploid, somatic, and germline sample reads.[<sup>[15]</sup>]
 
 
-## References:
+## References:<a name="12"></a>
 [1] [Fun statistic](https://www.genome.gov/17516714/2006-release-about-whole-genome-association-studies)
 
 [2] [Wikipedia for variant calling](https://en.wikipedia.org/wiki/SNV_calling_from_NGS_data)
