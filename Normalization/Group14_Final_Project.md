@@ -115,9 +115,8 @@ SCnorm is a method of normalization that uses quantile regression to estimate th
     <img src="https://github.com/nbangari/BENG183_Final_Projects_FALL2019/blob/master/Normalization/img/equation2.png" width="50">
  </p>
         
-        where SF is the scale factor. The estimated 
-        scale factors are used to perform within-group adjustment for sequencing depth to provide 
-        normalizes estimates of expression.
+        where SF is the scale factor. The estimated scale factors are used to perform within-group 
+        adjustment for sequencing depth to provide normalizes estimates of expression.
 
         4. When multiple biological conditions are present, SCnorm is applied within each condition 
         and the normalized counts are then re-scaled across conditions.
