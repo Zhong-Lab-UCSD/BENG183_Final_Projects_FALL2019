@@ -27,7 +27,7 @@ Cancer is the term for the collection of diseases resulting from abnormal cell d
 
 Different types of cancer arise depending on the different combinations of mutations that and the tissue type that these mutations occur in. Different somatic mutational processes generate unique combinations of mutations in cancers called mutational signatures. Some signatures correlate with the age of the patient, defects in DNA maintenance or mutagenic exposures; but many signatures have other unknown origins (2). These mutational signatures are generated from weighing a single mutation from each cancer sample against an aggregated set of cancer mutations from multiple cases of a particular type of cancer. The signature that explains the majority of the somatic mutational processes for the tumor is then reported using a mathematical model. Analyses of the mutational signatures can indicate the damaged component of DNA and which replicative pathways and DNA repair did not function as normal during the development of the disease. Potentially, the mutational signatures can be used to discern active mutational processes from past mutations revealing new anticancer therapy target sites (4).
 
-![](sig_example_cancer.jpg)
+![](six_example_cancer.jpg)
 ###### Figure 2: The contributions of mutational signatures to individual cancers of selected cancer types. Bars represent a typical sample of the particular cancer type, and the vertical axis shows the number of mutations per megabase (2).
 
 ---
@@ -97,7 +97,7 @@ The attribution portion is then performed separately for low and ultra-mutated s
 The results of mutational signature attribution in SigProfiler compared to SignatureAnalyzer are shown in Figure 9. Sample attributions that significantly correlated (R^2 > 0.3 for SigProfiler or > 0.5 for SignatureAnalyzer) are connected with edges. The graph is used to visualize the different association results between the two methods (8).
 
 ![](sig_graphs.jpg)
-###### Figure 9. This depicts the relationship between SBS, DBS, and ID signatures comparing SigProfiler (a) to SignatureAnalyzer (b). Different signatures are related to different pathways or environmental conditions in a given cancer sample. This graph shows how particular mutations are attributed to different environmental factors or conditions on synthetic pancreatic adenocarcinoma data (8).
+###### Figure 9: This depicts the relationship between SBS, DBS, and ID signatures comparing SigProfiler (a) to SignatureAnalyzer (b). Different signatures are related to different pathways or environmental conditions in a given cancer sample. This graph shows how particular mutations are attributed to different environmental factors or conditions on synthetic pancreatic adenocarcinoma data (8).
 
 
 ---
