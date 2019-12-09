@@ -77,7 +77,7 @@ Steps for RPKM:
 TPM stands for Transcripts per million and normalizes for library size by measuring the number of reads that align to a particular gene as the proportion of total reads in the library. This means every sample has the same total TPM, so TPM can be compared both between and within samples, unlike RPKM/FPKM which cannot be compared between samples [5].
 
 <p align="center">
-  <img src="https://github.com/nbangari/BENG183_Final_Projects_FALL2019/blob/master/Normalization/img/tpm.png" width="400">
+  <img src="https://github.com/nbangari/BENG183_Final_Projects_FALL2019/blob/master/Normalization/img/tpm.png" width="300">
 </p>
 <p align="center">
     <em>Figure 2: TPM calculation [3]</em>
