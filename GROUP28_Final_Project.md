@@ -23,7 +23,7 @@ deviation from the reference genome. In contrast, other programs for genomic loc
 
 ### Advantages of GMAP
 Advantages of GMAP include: 
-(1) Map and align a single cDNA interactively against a large genome in about a second, without the startup time of several minutes typically needed by existing mapping programs.
+Map and align a single cDNA interactively against a large genome in about a second, without the startup time of several minutes typically needed by existing mapping programs.
 Switch arbitrarily among different genomes without the need for a pre-loaded server dedicated to each genome. 
 Run the program on computers with as little as 128 MB or RAM.
 Perform high-throughput batch processing of cDNAs by using memory mapping and multithreading when appropriate memory and hardware are available. 
