@@ -16,9 +16,9 @@ By Daniella Vo, Nidhi Bangari, Priya Jindal
 
 ## 1. Introduction<a name="1"></a> 
 
-  RNA-sequencing is used to determine the gene expression levels, which allows 
+  RNA-sequencing is used to determine gene expression levels, which allow 
 researchers to identify differentially expressed genes, discover new RNA isoforms,
-and genomic mutations. The input for RNA-seq analysis is raw reads, and the output is differentially expressed genes, which are genes that are expressed differently for different samples. The pipeline for RNA-seq analysis is shown in Figure 1 below:
+and find genomic mutations. RNA-seq analysis takes raw reads as input, and outputs differentially expressed genes, which are genes that are expressed in different levels for different samples. The pipeline for RNA-seq analysis is shown in Figure 1 below:
 
 <p align="center">
   <img src="https://github.com/nbangari/BENG183_Final_Projects_FALL2019/blob/master/Normalization/img/image6.png">
