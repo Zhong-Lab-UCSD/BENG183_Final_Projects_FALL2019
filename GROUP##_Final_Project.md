@@ -1,61 +1,62 @@
-Functional features of the genome.
+# ATAC-seq and its Related Biology and Computational Methods
 
-Chromatin Organization and Nucleosomes
+## Functional features of the genome.
+
+### Chromatin Organization and Nucleosomes
 A nucleosome is a unit of DNA packaging, consisting of a segment of DNA wound around eight histone protein cores. This forms a histone octamer. A histone octamer contains two copies each of the histone proteins H2A, H2B, H3, and H4.1
 
 Genetic expression regulation is partly reliant on the chemical modifications on histones. DNA tightly wraps around histones because they hold a positive charge that attracts the negatively charged DNA strand. Histones have long amino acid tails that influence chromatin accessibility, and chemical groups added to the tails such as methylation or acetylation, can influence how these tails wrap around and cover the DNA.  
 Methylation: It is often associated with gene inactivation, but some modifications play crucial roles in DNA repair and dynamic regulation. A common modification is the tri-methylation of the histone H3 on the 4th residue from the N-terminus which is a lysine (K). Abbreviated, this is known as the H3K4me3. Other well-known modification sites are H3K9, H3K27, H3K36, H3K79 and H4K20.2
 Acetylation: It is often associated with gene activation due to its involvement in transcriptional elongation. Sites of interest are H3K36 and H4K16.3 
 
-Insulators
+### Insulators
 Insulators are 300 to 2000 bp DNA sequences located close to promoters that are responsible for mediating intra and inter chromosomal interactions. By creating loops and causing nucleosome modifications, insulators act as enhancer-blockers or barriers or both. Essentially, their main purpose is to isolate the regulation of close proximity genes from each other. ATAC seq may help infer insulator locations by revealing the locations where DNA loops are formed. Perhaps if we know that a loop occurs close to a promoter sequence, we can postulate that the loop is an insulator. 
 
-Regulatory sequence elements
+### Regulatory sequence elements
 Proximal to coding genes are promoter and silencer sequences, with enhancers located further away on the strand, but proximal due to DNA looping. Transcription factors (TFs) regulate gene expression by interacting with binding sites of these sequences. TFs know where to bind by looking for DNA-binding motifs, which are specific short sequences for which the factor has a high binding affinity. Once bound TFs often recruit other TFs and RNA polymerase to bind. 
 
-Genetic expression: why we study the epigenome
+## Genetic expression: why we study the epigenome
 Beyond DNA sequencing and RNA sequence quantification for genetic expression levels, it is important to understand the mechanisms for transcription regulation and how they affect genetic expression. Genes are largely regulated by transcription factors that bind in close proximity to them and either enhance expression by recruiting RNA polymerase for transcript elongation or inhibit expression by preventing other TFs or polymerase from binding to that region of the DNA. It is interesting to find motif sequences for which TFs have high affinity because we can infer a broad range of functions that the TF regulates and predict if nearby genes are implicated in TF action.4
 However, transcription factor activity cannot occur without access to open chromatin, not tightly packed around nucleosomes. It is useful to use methods that cut unprotected DNA to analyze the areas that are protected by nucleosome packing or by bound transcription factors. What genes are active in muscle cells that are not active in neurons? What genes are activated when a cell is under stress? When it is pre-cancerous? Assays for epigenetic structure help to answer these questions. 
 
-Previous Methods For Genome Wide Assays of Epigenetic Structure
-ChIP seq
+## Previous Methods For Genome Wide Assays of Epigenetic Structure
 
+### ChIP seq
 (from Lecture 6_ChIP-seq-KN slides)
 A technique for location the regions where a specific DNA-binding protein (like a transcription factor) interacts with DNA. First, crosslink the protein with the DNA using a substance like formaldehyde, add protein specific antibodies with magnetic regions, shear the DNA and pull down with streptavidin (this technique is called immunoprecipitation). Finally, reverse the cross links and sequence the DNA you have pulled down.5
 
-HI - C
+### HI - C
 
 (from Lecture 7_Genome-interaction-Hi-C-KN slides)
 Which genomic positions are physically close together in the nucleus? Used to figure out what pairs of DNA strands form the anchors for chromatin loops. First, the loops are held in place by adding formaldehyde to the cells, which covalently links chromatin segments that are close to each other. Next, restriction enzymes are used to cut away the parts of the loop outside the anchors. Fill the sticky ends of the anchor sequences and mark the ends with biotin. DNA ends that are close to each other will be ligated; the ligation mainly happens only to the anchor sequences because of the proximity requirement. Cut off ends of DNA which are not ligated so that they do not contain biotin, and pull down the anchors by attracting the biotin with streptavidin. Shear the anchor DNA, do PCR to make more genetic material, and perform sequencing. Trim and remap signature during the data analysis to make sure you do not have extra nucleotides from outside the anchor sequences.6
 
 
 ​Figure 1:Comparison between experimental tools for primary-order structure detection. Figure by Meyer, Clifford A.et al., Nature Reviews Genetics 15.11(2014):709-721
-FAIRE-seq
+### FAIRE-seq
 A method for finding regions of DNA associated with regulatory activity. DNA is cross linked to preserve its interactions, then sonicated. After sonication, the cross linking is removed using a phenol-chloroform extraction. When the cross linking is removed, chromatin associated with nucleosomes will remain in its organic state while the other DNA will prefer being aqueous. The assay then selects for the aqueous DNA in order to perform functional enrichment for the nucleosome depleted regions of the DNA and sequence those regions. Regulatory DNA segments are often characterized by an eviction of nucleosomes, so sequencing nucleosome poor regions will select for regulatory sequences.7
 
-MNase
+### MNase
 Maps locations of nucleosomes by digesting areas of DNA that are not wrapped around histones with Micrococcal Nuclease and sequencing the undigested areas.8
 
-DNase-seq
+### DNase-seq
 Maps locations of nucleosomes by digesting areas of DNA that are not wrapped around histones with DNase I and sequencing the undigested areas.9
 
-ATAC-seq
+# ATAC-seq
 
 Figure 2: Visualization of ATAC seq action on DNA. Figure by Active Motif, Complete Guide to Understanding and Using ATAC-seq 
 
 ATAC-Seq stands for Assay for Transposase-Accessible Chromatin with high-throughput sequencing. It is used for mapping chromatin accessibility genome-wide. 
 
-Library Preparation Process
-Cell prep
+## Library Preparation Process
+### Cell prep
 During harvesting cells should be intact and in a homogenous single cell suspension. Making sure to have between 25k to 75k cells is important. Using too few cells causes over-digestion of chromatin later on. This creates more noisy data. Using too many cells results in under-digestion. This creates large fragments that can be hard to sequence. After harvesting, cells are lysed with a nonionic detergent to yield pure nuclei.10 
 
-Transposition Reaction
+### Transposition Reaction
 The yielded nuclei is then fragmented using Tn5 transposase through a process known as tagmentation. Tn5 also adds sequencing adapters to the end of chromatin where it forms a break. The resulting fragments constitute an ATAC-Seq library. The library undergoes purification to only include the DNA from the samples.11
 The purified library can be amplified by PCR so that it can be analyzed by other methods such as qPCR or next-generation sequencing.
 
-
-Computational Analysis
-The steps:
+## Computational Analysis
+### The steps:
 Raw read quality: check the sequencing output for the base pair quality and do any necessary read trimming
 Alignment to a reference genome: map the reads to a reference genome for the organism studied
 Alignment quality and filtering: check the quality of the mapping
@@ -64,25 +65,25 @@ Differential peak analysis: compare selected areas between samples
 
 We will be providing some alternate programs for each step
 
-Step 1: Raw read quality
+**Step 1: Raw read quality**
 Out of sequencing machines, the data is often very “noisy”. They come in the format of a FASTQ file, each read with its own identifier tag, sequence, quality string, and a delimiter (normally a “+”) to separate it from the next read. The bases do not come out with 100% accuracy, and the machine will assign a Phred quality score, represented by one ASCII character per nucleotide, to each nucleotide based on its confidence that it correctly identified that base. 
 
 The reads can also come with “adaptor” sequences still attached to the ends. Adaptors can be added to the end of DNA fragments to help identify the samples they originate from and to hybridize them to the flowcells of the sequencing machine for the sequencing process. FASTQC will detect these as a warning in “per base sequence content”, as the bases at the start of a read will be biased away from the expected approximate 25% frequency do to the inclusion of these. In addition, the restriction (cut) sites of the transposase will also introduce bias which is expected and does not need to be fixed. 
 
 These adaptors and the low quality read fragments need to be trimmed away as they will interfere with the alignment step and cause the reads to map to erroneous areas of the genome or to not map at all. In addition, the restriction (cut) sites of the transposase will also introduce bias which is expected and does not need to be fixed. Some useful trimming tools are cutadapt and Trimmomatic. 
 
-Step 2: Alignment
+**Step 2: Alignment**
 To be able to analyze what areas of the genome our ATAC-seq reads came from, we need to align them to a reference genome that comes with an annotation. Thus, we will need the FASTQ from the last step, a FASTA file of the reference genome, and the reference GTF or GFF3 file. In this step, the alignment tool will compare each read to the genome and will match it to the right chromosome and position. The algorithm for this will vary across tools, with more specificity often taking more time. Many of the robust methods include a Burrows-Wheeler Algorithm for genome indexing, which adds numeric labels to the reference genome to help guide reads more efficiently. These include BWA and BowTie2, which have the best mapping rates in most cases. Another method is Stampy, which is faster and more tolerant of variants from the reference, so it is useful to consider it if the organism sampled deviates from the reference genome significantly. These programs will output a file in sequence alignment map (SAM) format, or BAM which is the binary compressed version. 
 
 Figure 3: Basic structure of the SAM format. Figure by Genome Analysis Toolkit, SAM / BAM / CRAM - Mapped sequence data formats. 
-Step 3: Alignment quality filtering
+**Step 3: Alignment quality filtering**
 Reads that originate from the same fragment of DNA (duplicates) must be marked in the SAM file as we do not want to double count them when looking for peaks. Picard MarkDuplicates is a tool that is useful for this. Picard is an entire suite of the genome analysis tools generated by the reputable Broad Institute to do a variety of functions. 
 
-Step 4: Peak calling
+**Step 4: Peak calling**
 Now that all the reads are mapped to the reference genome, they can be stacked up for every chromosomal position and counted.12 Interactive Genome Viewer (IGV , below) can be used to visualize these peaks, but we will want to use software to identify them all. A common program for this is MACS2. It takes a BAM file and will output a BED file, which contains information about the location and gene annotations of peaks. MACS2 models the expected fragment sizes and uses a Poisson distribution to capture biases so it can more sensitively and robustly detect real peaks against background noise 13. 
 
 
-Step 5: Differential peak analysis
+**Step 5: Differential peak analysis**
 To compare different epigenomic states across samples, we compare the size and location of peaks to see the genes whose accessibilities differ. There are two different approaches:
 Evaluating peaks and the individual genes on which they map.
 Evaluating the functions of genes for the differing peaks. 
@@ -91,7 +92,7 @@ R is a programming language built for scripting, specifically with an emphasis o
 Aside from looking at individual genes, it is also useful to look at gene functions that are “enriched”, more highly expressed. Functional enrichment analysis can be done using gene ontology (GO), a set of terms to categorize and build a network of gene functions. Another representation of biomolecular interactions is Kyoto Encyclopedia of Genes and Genomes (KEGG) pathways. The ChIPpeakAnno bioconductor package can be used for this. Many of the bioconductor tools were written for peak calling for ChIP-seq but are just as effective for analyzing ATAC-seq peaks as the input data formats are the same. 
 
 
-A wrapper to sum it all up
+## A wrapper to sum it all up
 A “wrapper” program is one that puts other well-known gold-standard programs together in sequence with the right settings so the user only needs to make one command to the wrapper program as a whole. This makes analysis more accessible to those without bioinformatics expertise, but we can separate the steps and do more finetuning, and even swap some programs to fine tune it to our experiments. Recently, GUAVA has been developed to provide a convenient user interface for ATAC-seq analysis and generate visuals and annotations. They provide an excellent flowchart to summarize the entire workflow. 
 Their steps and tools:
 Raw read quality: FASTQC and CutAdapt
@@ -105,7 +106,7 @@ Differential peak analysis: DESeq2 R package
 Peak functional annotation: ChIPpeakAnno R package
 
 
-Comparing Methods
+## Comparing Methods
 
 Compared to DNase-seq, FAIRE-seq, and MNase-seq ATAC-seq has two common advantages. 
 It can be performed with significantly fewer cells. Only requires about 50,000 cells compared to the millions needed by other methods. 
@@ -119,7 +120,7 @@ In a study that compared ATAC-seq to FAIRE-seq, ATAC-seq was found to also have 
 
 Figure 4: Comparison between FAIRE-seq and ATAC-seq. Figure by Davie, Kristofer et al., Discovery of Transcription Factors and Regulatory Regions Driving In Vivo Tumor Development by ATAC-seq and FAIRE-seq Open Chromatin Profiling.
 
-Citations
+**Citations**
 1. nucleosome / nucleosomes. Nature News Available at: https://www.nature.com/scitable/definition/nucleosome-nucleosomes-30/.
 2. Greer, E. L. & Shi, Y. Histone methylation: a dynamic mark in health, disease and inheritance. Nature reviews. Genetics (2012). Available at: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4073795/.
 3. Histone Acetylation and Genome Function  EpiGenie Available at: https://epigenie.com/epigenie-learning-center/epigenetics/histone-acetylation-and-genome-function/.
@@ -138,7 +139,7 @@ Citations
 
 
 
-Figures
+**Figures**
 1. Meyer, C. A. & Liu, X. S. Identifying and mitigating bias in next-generation sequencing methods for chromatin biology. Nature News (2014). Available at: https://www.nature.com/articles/nrg3788.
 2. Complete Guide to Understanding and Using ATAC-Seq. Active Motif Available at: https://www.activemotif.com/blog-atac-seq.
 3. GATK_Team. SAM / BAM / CRAM - Mapped sequence data formats. GATK (2017). Available at: https://gatkforums.broadinstitute.org/gatk/discussion/11014/sam-bam-cram-mapped-sequence-data-formats.
