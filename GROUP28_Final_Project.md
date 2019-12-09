@@ -63,7 +63,7 @@ Map and align a single cDNA interactively against a large genome in about a seco
 Switch arbitrarily among different genomes without the need for a pre-loaded server dedicated to each genome. 
 Run the program on computers with as little as 128 MB or RAM.
 Perform high-throughput batch processing of cDNAs by using memory mapping and multithreading when appropriate memory and hardware are available. 
-Generate accurate gen models, even in the presence of substantial polymorphisms and sequence errors.
+Generate accurate gene models, even in the presence of substantial polymorphisms and sequence errors.
 Locate splice sites accurately without use of probabilistic splice site models.
 Detect statistically significant microexons and incorporate them into the alignment 
 Handle mapping and alignment tasks on genomes having alternative assemblies 
