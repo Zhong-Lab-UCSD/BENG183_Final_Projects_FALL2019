@@ -50,12 +50,12 @@ BBMAP has a high mapping rate, high accuracy, and great speed.
 
 
 ### Disadvantages of BBMAP
-Drawback: has high memory usage
+Has high memory usage. The accuracy could be better. It still needs some optimization.
 
 ### Testing against other alignment approaches 
 
 ROC Testing Methodology
-![] (pic1.png)
+
 
 ROC curves generated files from files containing 1,000,000 reads containing a mix of mutation types
 20% of the reads were perfect. Of the rest, the mutations rates varied:
@@ -67,7 +67,7 @@ ROC curves generated files from files containing 1,000,000 reads containing a mi
 Rates are compounded 
 (0.85)^2 of the reads have at least 2 SNPs, and .25 of the reads have both an insertion and a deletion.
 
-![] (pic2.png)
+
 
 SAM files contain a mapping quality field. The sam file is evaluated to calculate true and false positive rates 
 
