@@ -42,13 +42,18 @@ three stage process. The first stage looks at long oligomers (such as 24-mers or
 
 
 ## BBMap
-BBMAP has a high mapping rate, high accuracy, and great speed. 
 
+### Background
+Performs affine-transform-optimized global alignment. It is slower, but more accurate than Smith-Waterman. Uses kmers to index the genome. There is no size or scaffold count limit. It has higher sensitivity and specificity that Burrows-Wheeler aligners. 
+BBMAP has a high mapping rate, high accuracy, and great speed. 
+ 
+
+
+### Disadvantages of BBMAP
 Drawback: has high memory usage
 
-Performs affine-transform-optimized global alignment. It is slower, but more accurate than Smith-Waterman. Uses kmers to index the genome. There is no size or scaffold count limit. It has higher sensitivity and specificity that Burrows-Wheeler aligners. 
+### Testing against other alignment approaches 
 
-Testing against other alignment approaches:
 ROC Testing Methodology
 ROC curves generated files from files containing 1,000,000 reads containing a mix of mutation types
 20% of the reads were perfect. Of the rest, the mutations rates varied:
