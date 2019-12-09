@@ -112,7 +112,7 @@ SCnorm is a method of normalization that uses quantile regression to estimate th
         3. Normalized counts Y’<sub>g,j</sub> are given by
         
  <p align="center">
-    <img src="https://github.com/nbangari/BENG183_Final_Projects_FALL2019/blob/master/Normalization/img/image1.png" width="200">
+    <img src="https://github.com/nbangari/BENG183_Final_Projects_FALL2019/blob/master/Normalization/img/image1.png" width="50">
  </p>
         
         where SF is the scale factor. The estimated 
