@@ -23,14 +23,14 @@ deviation from the reference genome. In contrast, other programs for genomic loc
 
 ### Advantages of GMAP
 Advantages of GMAP include: 
-Map and align a single cDNA interactively against a large genome in about a second, without the startup time of several minutes typically needed by existing mapping programs.
-Switch arbitrarily among different genomes without the need for a pre-loaded server dedicated to each genome. 
-Run the program on computers with as little as 128 MB or RAM.
-Perform high-throughput batch processing of cDNAs by using memory mapping and multithreading when appropriate memory and hardware are available. 
-Generate accurate gen models, even in the presence of substantial polymorphisms and sequence errors.
-Locate splice sites accurately without use of probabilistic splice site models.
-Detect statistically significant microexons and incorporate them into the alignment 
-Handle mapping and alignment tasks on genomes having alternative assemblies 
+(1) Map and align a single cDNA interactively against a large reference genome a second, without the several minutes of startup time usually needed by other alignment programs.
+(2) Switch arbitrarily among different reference genomes without the need for a pre-loaded server dedicated to each genome. 
+(3) Run the program on computers with a minimum of 128 MB of RAM.
+(4) Perform high-throughput batch processing of cDNAs by using memory mapping and multithreading when necessary memory and hardware are available. 
+(5) Generate accurate gene models, even with polymorphisms and sequence errors.
+(6) Locate splice sites accurately without use of probabilistic splice site models.
+(7) Detect statistically significant microexons and incorporate them into the alignment. 
+(8) Handle mapping and alignment tasks on genomes having alternative assemblies. 
 
 ### Disadvantages of GMAP
 Uses more memory compared to more recent programs such as Burrow-Wheelers Aligner (BWA). 
@@ -56,7 +56,6 @@ Has high memory usage. The accuracy could be better. It still needs some optimiz
 
 ROC Testing Methodology
 
-![pic1](https://1.bp.blogspot.com/-KyIQsnK14NM/Xe38vZt7QEI/AAAAAAAAAAM/mWvmHtfUh44HKLEbknXZ48uTHNknS_2kQCLcBGAsYHQ/s1600/pic1.PNG)
 
 ROC curves generated files from files containing 1,000,000 reads containing a mix of mutation types
 20% of the reads were perfect. Of the rest, the mutations rates varied:
@@ -68,7 +67,7 @@ ROC curves generated files from files containing 1,000,000 reads containing a mi
 Rates are compounded 
 (0.85)^2 of the reads have at least 2 SNPs, and .25 of the reads have both an insertion and a deletion.
 
-![pic2](https://1.bp.blogspot.com/-UvPcddKLl1Q/Xe38vZYmJsI/AAAAAAAAAAY/t65ywgj77iMLToeTrFR4GDPfeQsssyy9gCEwYBhgL/s1600/pic2.PNG)
+
 
 SAM files contain a mapping quality field. The sam file is evaluated to calculate true and false positive rates 
 
