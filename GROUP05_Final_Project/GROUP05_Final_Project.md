@@ -22,17 +22,21 @@ Mutational Signatures are characteristic combinations of mutation types, which a
 ## Cancer <a name="2"></a>
 Cancer is the term for the collection of diseases resulting from abnormal cell division. Tumors caused by cancer divide without control and invade nearby cells and tissues (1). All cancer originates from somatic mutations (2). Cancer is caused by multiple DNA alterations in the cell, although most mutations in genomes do not bear a strong impact on cancer selection (2). 
 
-[image]
+![](cancer_cells.jpg)
 
 Different types of cancer arise depending on the different combinations of mutations that and the tissue type that these mutations occur in. Different somatic mutational processes generate unique combinations of mutations in cancers called mutational signatures. Some signatures correlate with the age of the patient, defects in DNA maintenance or mutagenic exposures; but many signatures have other unknown origins (2). These mutational signatures are generated from weighing a single mutation from each cancer sample against an aggregated set of cancer mutations from multiple cases of a particular type of cancer. The signature that explains the majority of the somatic mutational processes for the tumor is then reported using a mathematical model. Analyses of the mutational signatures can indicate the damaged component of DNA and which replicative pathways and DNA repair did not function as normal during the development of the disease. Potentially, the mutational signatures can be used to discern active mutational processes from past mutations revealing new anticancer therapy target sites (4).
+
+![](sig_example_cancer.jpg)
 
 ---
 ## Somatic Mutations <a name="3"></a>
 Somatic mutations are defined as mutations that occur in any non–germ cell of the body after conception (5). Types of somatic mutations include single base substitutions; insertions or deletions of small or large segments of DNA; rearrangements, in which DNA breaks and then ligates to a DNA segment from elsewhere in the genome; copy number variations where the number of copies of a specific sequence deviates from the two copies present in the normal diploid genome (6).
 
-[image]
+![](somatic_mutations.jpg)
 
 Multiple somatic mutational processes contribute to the characteristic mutational signature in cancer genomes (8). In general, somatic mutations come from either exogenous processes (meaning they are caused by environmental factors) or endogenous processes (meaning they are caused by DNA repair mistakes), both of which create distinctive mutational patterns (7). These mutational processes may superimpose on each other in one individual cancer genome (8). Thus, mathematical methods have been developed to systematically characterize each mutational process contributing to a particular type of cancer by deciperhing mutational signatures, estimating the number of mutations that contributes to each signature in a sample, and calculating the probability of each tumor resulting from a particular mutational class signature (8). The presence or absence of mutational signatures may indicate the cellular process occuring or not occuring in the sample (7). 
+
+![](sig_quantity.jpg)
 
 
 ---
@@ -44,14 +48,15 @@ In a 1991 paper, a group of researchers discovered that different types of cance
 ## Types of Mutational Signatures <a name="5"></a>
 In total, there are 96 possible single base substitutions that are documented when performing mutational signatures (4, 10). The mutation types are listed by the pyrimidine base change (4, 10). For example, C:G>A:T would be listed as C>A since C is a pyrimidine. T is the other pyrimidine besides C, so each of the six single base pair changes are C>A, C>G, C>T, T>A, T>C, and T>G. Since we are also considering the 5’ and 3’ adjacent nucleotides, the number of different mutation types changes from six to 96 because there are 16 different combinations of possible 5’ and 3’ adjacent nucleotides. The mutation types are always listed 5’ to 3’, therefore the mutation GAC>GGC (listed 5’ to 3’) would be a GTC>GCC mutation type. This conversion into a mutation type can be found by first finding the reverse complement of GAC>GGC to be CTG>CCG in the 3’ to 5’ direction and then listing each side in the 5’ to 3’ direction.
 
-[image]
+![](arielle.png)
 
 There are 1,536 classes of mutational signatures when accounting for two flanking bases 5’ and 3’ to the mutated base (8). There are 78 classes of mutational signatures that contain doublet base substitutions (8). There are 83 classes of mutational signatures that are based on the size of indel, repeats, and microhomology. Indels were classified as deletions or insertions of a single base according to their pyrimidine base. Longer indels (up to 50 nucleotides) tend to occur at repeats or with overlapping microhomology at the breakpoints and were classified according to the size of indel, repeat, and microhomology (8).
 
-[image]
+![](sig_chart1.jpg)
 
 Various mathematical methods have been developed to extract mutational signatures from cancer sequencing data (8). However, correct signature extraction still requires human judgement and consideration of the available data based on biological plausibility, experimental discrimination of mutational signatures, and evidence of DNA damage and repair. Human-guided sensitivity analysis helps confirm that different samples from various tumors can yield the same signatures (8). 
 
+![](sig_chart2.jpg)
 
 ---
 ## Various Methods to Extract Mutational Signatures <a name="6"></a>
@@ -66,7 +71,7 @@ The first step of determining the attribution of activities of mutational signat
 
 See Figure 8 below for a detailed flowchart of how the SigProfiler extraction method works. 
 
-[image]
+![](sig_profiler.jpg)
 
 ### SignatureAnalyzer 
 
@@ -77,7 +82,7 @@ The attribution portion is then performed separately for low and ultra-mutated s
 
 The results of mutational signature attribution in SigProfiler compared to SignatureAnalyzer are shown in Figure 9. Sample attributions that significantly correlated (R^2 > 0.3 for SigProfiler or > 0.5 for SignatureAnalyzer) are connected with edges. The graph is used to visualize the different association results between the two methods. 
 
-[image]
+![](sig_graphs.jpg)
 
 ---
 ## Sequencing Analysis for Cancer Research <a name="9"></a>
