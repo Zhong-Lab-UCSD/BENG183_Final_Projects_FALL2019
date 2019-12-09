@@ -14,8 +14,8 @@ The advent of next generation sequencing and newer technology has greatly influe
 ### Background 
 This technique was developed in 2002, around the time when the draft human genome 
 was first released. GMAP was designed to take advantage of newly available genomic 
-sequence allowing users to align genes and expressed sequence tags (ESTs) rapidly to the 
-Genome in order to reveal their intron-exon structure. The alignments also provide 
+sequence allowing users to align genes and Expressed Sequence Tags (ESTs) rapidly to the 
+genome in order to reveal their intron-exon structure. The alignments also provide 
 measurements of gene expression which are useful in identifying cancer specific genes 
 and amplification of genomic regions in cancer. One of the most significant aspects of 
 GMAP is that the program can handle transcripts that had up to 20-30% sequence 
