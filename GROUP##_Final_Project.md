@@ -3,11 +3,11 @@
 ## Functional features of the genome.
 
 ### Chromatin Organization and Nucleosomes
-A nucleosome is a unit of DNA packaging, consisting of a segment of DNA wound around eight histone protein cores. This forms a histone octamer. A histone octamer contains two copies each of the histone proteins H2A, H2B, H3, and H4.1
+A nucleosome is a unit of DNA packaging, consisting of a segment of DNA wound around eight histone protein cores. This forms a histone octamer. A histone octamer contains two copies each of the histone proteins H2A, H2B, H3, and H4 [1](https://www.nature.com/scitable/definition/nucleosome-nucleosomes-30/).
 
 Genetic expression regulation is partly reliant on the chemical modifications on histones. DNA tightly wraps around histones because they hold a positive charge that attracts the negatively charged DNA strand. Histones have long amino acid tails that influence chromatin accessibility, and chemical groups added to the tails such as methylation or acetylation, can influence how these tails wrap around and cover the DNA.  
-Methylation: It is often associated with gene inactivation, but some modifications play crucial roles in DNA repair and dynamic regulation. A common modification is the tri-methylation of the histone H3 on the 4th residue from the N-terminus which is a lysine (K). Abbreviated, this is known as the H3K4me3. Other well-known modification sites are H3K9, H3K27, H3K36, H3K79 and H4K20.2
-Acetylation: It is often associated with gene activation due to its involvement in transcriptional elongation. Sites of interest are H3K36 and H4K16.3 
+Methylation: It is often associated with gene inactivation, but some modifications play crucial roles in DNA repair and dynamic regulation. A common modification is the tri-methylation of the histone H3 on the 4th residue from the N-terminus which is a lysine (K). Abbreviated, this is known as the H3K4me3. Other well-known modification sites are H3K9, H3K27, H3K36, H3K79 and H4K20 [2](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4073795/).
+Acetylation: It is often associated with gene activation due to its involvement in transcriptional elongation. Sites of interest are H3K36 and H4K16 [3](https://epigenie.com/epigenie-learning-center/epigenetics/histone-acetylation-and-genome-function/).
 
 ### Insulators
 Insulators are 300 to 2000 bp DNA sequences located close to promoters that are responsible for mediating intra and inter chromosomal interactions. By creating loops and causing nucleosome modifications, insulators act as enhancer-blockers or barriers or both. Essentially, their main purpose is to isolate the regulation of close proximity genes from each other. ATAC seq may help infer insulator locations by revealing the locations where DNA loops are formed. Perhaps if we know that a loop occurs close to a promoter sequence, we can postulate that the loop is an insulator. 
@@ -16,43 +16,43 @@ Insulators are 300 to 2000 bp DNA sequences located close to promoters that are 
 Proximal to coding genes are promoter and silencer sequences, with enhancers located further away on the strand, but proximal due to DNA looping. Transcription factors (TFs) regulate gene expression by interacting with binding sites of these sequences. TFs know where to bind by looking for DNA-binding motifs, which are specific short sequences for which the factor has a high binding affinity. Once bound TFs often recruit other TFs and RNA polymerase to bind. 
 
 ## Genetic expression: why we study the epigenome
-Beyond DNA sequencing and RNA sequence quantification for genetic expression levels, it is important to understand the mechanisms for transcription regulation and how they affect genetic expression. Genes are largely regulated by transcription factors that bind in close proximity to them and either enhance expression by recruiting RNA polymerase for transcript elongation or inhibit expression by preventing other TFs or polymerase from binding to that region of the DNA. It is interesting to find motif sequences for which TFs have high affinity because we can infer a broad range of functions that the TF regulates and predict if nearby genes are implicated in TF action.4
+Beyond DNA sequencing and RNA sequence quantification for genetic expression levels, it is important to understand the mechanisms for transcription regulation and how they affect genetic expression. Genes are largely regulated by transcription factors that bind in close proximity to them and either enhance expression by recruiting RNA polymerase for transcript elongation or inhibit expression by preventing other TFs or polymerase from binding to that region of the DNA. It is interesting to find motif sequences for which TFs have high affinity because we can infer a broad range of functions that the TF regulates and predict if nearby genes are implicated in TF action [4](https://www.cell.com/cell/fulltext/S0092-8674(18)30106-5?_returnURL=https://linkinghub.elsevier.com/retrieve/pii/S0092867418301065?showall=true).
 However, transcription factor activity cannot occur without access to open chromatin, not tightly packed around nucleosomes. It is useful to use methods that cut unprotected DNA to analyze the areas that are protected by nucleosome packing or by bound transcription factors. What genes are active in muscle cells that are not active in neurons? What genes are activated when a cell is under stress? When it is pre-cancerous? Assays for epigenetic structure help to answer these questions. 
 
 ## Previous Methods For Genome Wide Assays of Epigenetic Structure
 
 ### ChIP seq
 (from Lecture 6_ChIP-seq-KN slides)
-A technique for location the regions where a specific DNA-binding protein (like a transcription factor) interacts with DNA. First, crosslink the protein with the DNA using a substance like formaldehyde, add protein specific antibodies with magnetic regions, shear the DNA and pull down with streptavidin (this technique is called immunoprecipitation). Finally, reverse the cross links and sequence the DNA you have pulled down.5
+A technique for location the regions where a specific DNA-binding protein (like a transcription factor) interacts with DNA. First, crosslink the protein with the DNA using a substance like formaldehyde, add protein specific antibodies with magnetic regions, shear the DNA and pull down with streptavidin (this technique is called immunoprecipitation). Finally, reverse the cross links and sequence the DNA you have pulled down [5](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3431496/).
 
 ### HI - C
 
 (from Lecture 7_Genome-interaction-Hi-C-KN slides)
-Which genomic positions are physically close together in the nucleus? Used to figure out what pairs of DNA strands form the anchors for chromatin loops. First, the loops are held in place by adding formaldehyde to the cells, which covalently links chromatin segments that are close to each other. Next, restriction enzymes are used to cut away the parts of the loop outside the anchors. Fill the sticky ends of the anchor sequences and mark the ends with biotin. DNA ends that are close to each other will be ligated; the ligation mainly happens only to the anchor sequences because of the proximity requirement. Cut off ends of DNA which are not ligated so that they do not contain biotin, and pull down the anchors by attracting the biotin with streptavidin. Shear the anchor DNA, do PCR to make more genetic material, and perform sequencing. Trim and remap signature during the data analysis to make sure you do not have extra nucleotides from outside the anchor sequences.6
+Which genomic positions are physically close together in the nucleus? Used to figure out what pairs of DNA strands form the anchors for chromatin loops. First, the loops are held in place by adding formaldehyde to the cells, which covalently links chromatin segments that are close to each other. Next, restriction enzymes are used to cut away the parts of the loop outside the anchors. Fill the sticky ends of the anchor sequences and mark the ends with biotin. DNA ends that are close to each other will be ligated; the ligation mainly happens only to the anchor sequences because of the proximity requirement. Cut off ends of DNA which are not ligated so that they do not contain biotin, and pull down the anchors by attracting the biotin with streptavidin. Shear the anchor DNA, do PCR to make more genetic material, and perform sequencing. Trim and remap signature during the data analysis to make sure you do not have extra nucleotides from outside the anchor sequences [6](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3149993/).
 
 
-​Figure 1:Comparison between experimental tools for primary-order structure detection. Figure by Meyer, Clifford A.et al., Nature Reviews Genetics 15.11(2014):709-721
+​[Figure 1:](https://www.nature.com/articles/nrg3788) Comparison between experimental tools for primary-order structure detection. Figure by Meyer, Clifford A.et al., Nature Reviews Genetics 15.11(2014):709-721
 ### FAIRE-seq
-A method for finding regions of DNA associated with regulatory activity. DNA is cross linked to preserve its interactions, then sonicated. After sonication, the cross linking is removed using a phenol-chloroform extraction. When the cross linking is removed, chromatin associated with nucleosomes will remain in its organic state while the other DNA will prefer being aqueous. The assay then selects for the aqueous DNA in order to perform functional enrichment for the nucleosome depleted regions of the DNA and sequence those regions. Regulatory DNA segments are often characterized by an eviction of nucleosomes, so sequencing nucleosome poor regions will select for regulatory sequences.7
+A method for finding regions of DNA associated with regulatory activity. DNA is cross linked to preserve its interactions, then sonicated. After sonication, the cross linking is removed using a phenol-chloroform extraction. When the cross linking is removed, chromatin associated with nucleosomes will remain in its organic state while the other DNA will prefer being aqueous. The assay then selects for the aqueous DNA in order to perform functional enrichment for the nucleosome depleted regions of the DNA and sequence those regions. Regulatory DNA segments are often characterized by an eviction of nucleosomes, so sequencing nucleosome poor regions will select for regulatory sequences [7](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1891346/).
 
 ### MNase
-Maps locations of nucleosomes by digesting areas of DNA that are not wrapped around histones with Micrococcal Nuclease and sequencing the undigested areas.8
+Maps locations of nucleosomes by digesting areas of DNA that are not wrapped around histones with Micrococcal Nuclease and sequencing the undigested areas [8](https://currentprotocols.onlinelibrary.wiley.com/doi/full/10.1002/0471142727.mb2101s69).
 
 ### DNase-seq
-Maps locations of nucleosomes by digesting areas of DNA that are not wrapped around histones with DNase I and sequencing the undigested areas.9
+Maps locations of nucleosomes by digesting areas of DNA that are not wrapped around histones with DNase I and sequencing the undigested areas [9](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3627383/).
 
 # ATAC-seq
 
-Figure 2: Visualization of ATAC seq action on DNA. Figure by Active Motif, Complete Guide to Understanding and Using ATAC-seq 
+[Figure 2:](https://www.activemotif.com/blog-atac-seq) Visualization of ATAC seq action on DNA. Figure by Active Motif, Complete Guide to Understanding and Using ATAC-seq 
 
 ATAC-Seq stands for Assay for Transposase-Accessible Chromatin with high-throughput sequencing. It is used for mapping chromatin accessibility genome-wide. 
 
 ## Library Preparation Process
 ### Cell prep
-During harvesting cells should be intact and in a homogenous single cell suspension. Making sure to have between 25k to 75k cells is important. Using too few cells causes over-digestion of chromatin later on. This creates more noisy data. Using too many cells results in under-digestion. This creates large fragments that can be hard to sequence. After harvesting, cells are lysed with a nonionic detergent to yield pure nuclei.10 
+During harvesting cells should be intact and in a homogenous single cell suspension. Making sure to have between 25k to 75k cells is important. Using too few cells causes over-digestion of chromatin later on. This creates more noisy data. Using too many cells results in under-digestion. This creates large fragments that can be hard to sequence. After harvesting, cells are lysed with a nonionic detergent to yield pure nuclei [10](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4374986/).
 
 ### Transposition Reaction
-The yielded nuclei is then fragmented using Tn5 transposase through a process known as tagmentation. Tn5 also adds sequencing adapters to the end of chromatin where it forms a break. The resulting fragments constitute an ATAC-Seq library. The library undergoes purification to only include the DNA from the samples.11
+The yielded nuclei is then fragmented using Tn5 transposase through a process known as tagmentation. Tn5 also adds sequencing adapters to the end of chromatin where it forms a break. The resulting fragments constitute an ATAC-Seq library. The library undergoes purification to only include the DNA from the samples [11](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4374986/).
 The purified library can be amplified by PCR so that it can be analyzed by other methods such as qPCR or next-generation sequencing.
 
 ## Computational Analysis
@@ -75,12 +75,12 @@ These adaptors and the low quality read fragments need to be trimmed away as the
 **Step 2: Alignment**
 To be able to analyze what areas of the genome our ATAC-seq reads came from, we need to align them to a reference genome that comes with an annotation. Thus, we will need the FASTQ from the last step, a FASTA file of the reference genome, and the reference GTF or GFF3 file. In this step, the alignment tool will compare each read to the genome and will match it to the right chromosome and position. The algorithm for this will vary across tools, with more specificity often taking more time. Many of the robust methods include a Burrows-Wheeler Algorithm for genome indexing, which adds numeric labels to the reference genome to help guide reads more efficiently. These include BWA and BowTie2, which have the best mapping rates in most cases. Another method is Stampy, which is faster and more tolerant of variants from the reference, so it is useful to consider it if the organism sampled deviates from the reference genome significantly. These programs will output a file in sequence alignment map (SAM) format, or BAM which is the binary compressed version. 
 
-Figure 3: Basic structure of the SAM format. Figure by Genome Analysis Toolkit, SAM / BAM / CRAM - Mapped sequence data formats. 
+[Figure 3:](https://gatkforums.broadinstitute.org/gatk/discussion/11014/sam-bam-cram-mapped-sequence-data-formats) Basic structure of the SAM format. Figure by Genome Analysis Toolkit, SAM / BAM / CRAM - Mapped sequence data formats. 
 **Step 3: Alignment quality filtering**
 Reads that originate from the same fragment of DNA (duplicates) must be marked in the SAM file as we do not want to double count them when looking for peaks. Picard MarkDuplicates is a tool that is useful for this. Picard is an entire suite of the genome analysis tools generated by the reputable Broad Institute to do a variety of functions. 
 
 **Step 4: Peak calling**
-Now that all the reads are mapped to the reference genome, they can be stacked up for every chromosomal position and counted.12 Interactive Genome Viewer (IGV , below) can be used to visualize these peaks, but we will want to use software to identify them all. A common program for this is MACS2. It takes a BAM file and will output a BED file, which contains information about the location and gene annotations of peaks. MACS2 models the expected fragment sizes and uses a Poisson distribution to capture biases so it can more sensitively and robustly detect real peaks against background noise 13. 
+Now that all the reads are mapped to the reference genome, they can be stacked up for every chromosomal position and counted [12](https://www.ncbi.nlm.nih.gov/pubmed/22517427). Interactive Genome Viewer (IGV , below) can be used to visualize these peaks, but we will want to use software to identify them all. A common program for this is MACS2. It takes a BAM file and will output a BED file, which contains information about the location and gene annotations of peaks. MACS2 models the expected fragment sizes and uses a Poisson distribution to capture biases so it can more sensitively and robustly detect real peaks against background noise [13](https://genomebiology.biomedcentral.com/articles/10.1186/gb-2008-9-9-r137#citeas).
 
 
 **Step 5: Differential peak analysis**
@@ -109,16 +109,16 @@ Peak functional annotation: ChIPpeakAnno R package
 ## Comparing Methods
 
 Compared to DNase-seq, FAIRE-seq, and MNase-seq ATAC-seq has two common advantages. 
-It can be performed with significantly fewer cells. Only requires about 50,000 cells compared to the millions needed by other methods. 
-Library prep is faster and less step intensive compared to previous methods.14
+I. It can be performed with significantly fewer cells. Only requires about 50,000 cells compared to the millions needed by other methods. 
+II. Library prep is faster and less step intensive compared to previous methods [14](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6391789/).
 
 However, ATAC-seq is nor the best technology to use in all cases. When looking at nucleosome distribution MNase-seq strategy of cutting up the DNA between nucleosomes produces strong peaks for nucleosomes. Looking at the gaps between ATAC-seq’s peaks to determine nucleosome location is less effective because Tn5 struggles to cut in between the small gaps between nucleosomes.
 
-ATAC-seq and DNase-seq are the only tools that can be used to find both transcription factor binding sites and chromatin accessibility. ChIP-seq shows binding site locations but not accessibility. FAIRE-seq shows accessibility, but not the binding site.15
+ATAC-seq and DNase-seq are the only tools that can be used to find both transcription factor binding sites and chromatin accessibility. ChIP-seq shows binding site locations but not accessibility. FAIRE-seq shows accessibility, but not the binding site [15](https://epigeneticsandchromatin.biomedcentral.com/articles/10.1186/1756-8935-7-33).
 
 In a study that compared ATAC-seq to FAIRE-seq, ATAC-seq was found to also have a higher signal-to-noise ratio, with low background signal and sharper peaks (Fig. E and F). Furthermore, ATAC-seq showed a higher recall of true enhancers than FAIRE-seq, detecting ∼18.75% more enhancers ,even at similar levels of specificity (Fig. G). 
 
-Figure 4: Comparison between FAIRE-seq and ATAC-seq. Figure by Davie, Kristofer et al., Discovery of Transcription Factors and Regulatory Regions Driving In Vivo Tumor Development by ATAC-seq and FAIRE-seq Open Chromatin Profiling.
+[Figure 4:](https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1004994) Comparison between FAIRE-seq and ATAC-seq. Figure by Davie, Kristofer et al., Discovery of Transcription Factors and Regulatory Regions Driving In Vivo Tumor Development by ATAC-seq and FAIRE-seq Open Chromatin Profiling.
 
 **Citations**
 1. nucleosome / nucleosomes. Nature News Available at: https://www.nature.com/scitable/definition/nucleosome-nucleosomes-30/.
