@@ -101,15 +101,15 @@ Aside from looking at individual genes, it is also useful to look at gene functi
 ### A wrapper to sum it all up
 A “wrapper” program is one that puts other well-known gold-standard programs together in sequence with the right settings so the user only needs to make one command to the wrapper program as a whole. This makes analysis more accessible to those without bioinformatics expertise, but we can separate the steps and do more finetuning, and even swap some programs to fine tune it to our experiments. Recently, GUAVA has been developed to provide a convenient user interface for ATAC-seq analysis and generate visuals and annotations. They provide an excellent flowchart to summarize the entire workflow. 
 Their steps and tools:
-Raw read quality: FASTQC and CutAdapt
-Alignment to a reference genome: BowTie2
-Alignment quality and filtering: Picard MarkDuplicates, SAMTools
-Intermediate steps:
-Alignment shifting: A GUAVA-specific script. The Tn5 transposase cuts open chromatin regions with two cuts that are separated by 9 bp, forming a sticky end . Thus, the reads aligning to the positive and negative strand need to be adjusted by +4 bp and -5 bp, respectively, to represent the center of the transposase binding site.
-Analysis of fragment size distribution: Picard CollectInsertSizeMetrics. Checks the quality of the ATAC-seq library since a good fragment size distribution graph should have sharp two peaks at less than 100 base pairs (bp) from the open chromatin and at  about ∼200 bp for mono-nucleosomes and smaller peaks representing di-nucleosomes and tri-nucleosomes. 
-Peak calling: MACS2
-Differential peak analysis: DESeq2 R package
-Peak functional annotation: ChIPpeakAnno R package
+1. Raw read quality: FASTQC and CutAdapt
+2. Alignment to a reference genome: BowTie2
+3. Alignment quality and filtering: Picard MarkDuplicates, SAMTools
+a. Intermediate steps:
+i. Alignment shifting: A GUAVA-specific script. The Tn5 transposase cuts open chromatin regions with two cuts that are separated by 9 bp, forming a sticky end . Thus, the reads aligning to the positive and negative strand need to be adjusted by +4 bp and -5 bp, respectively, to represent the center of the transposase binding site.
+ii. Analysis of fragment size distribution: Picard CollectInsertSizeMetrics. Checks the quality of the ATAC-seq library since a good fragment size distribution graph should have sharp two peaks at less than 100 base pairs (bp) from the open chromatin and at  about ∼200 bp for mono-nucleosomes and smaller peaks representing di-nucleosomes and tri-nucleosomes. 
+4. Peak calling: MACS2
+5. Differential peak analysis: DESeq2 R package
+6. Peak functional annotation: ChIPpeakAnno R package
 
 ![flowchart](10flowchart.png) <br>
 ## Comparing Methods
