@@ -193,3 +193,5 @@ Normalization is an important step in RNA-seq analysis because it allows you to 
 [6] Robinson, M. D., & Oshlack, A. (2010). A scaling normalization method for differential expression analysis of RNA-seq data. Genome Biology, 11(3), R25.
 
 [7] Li, P., Piao, Y., Shon, H. S., & Ryu, K. H. (2015). Comparing the normalization methods for the differential analysis of Illumina high-throughput RNA-Seq data. BMC Bioinformatics, 16, 347. doi:10.1186/s12859-015-0778-7
+
+[8] Zhong, S. BENG 183 Lecture Slides: https://sites.google.com/eng.ucsd.edu/beng183-fa19/schedule
