@@ -12,7 +12,6 @@ Authors: Haoyin Xu, Hongru Yu, Ginny Wu
 * [Machine Learning Method](#5)
 #### [Procedure](#6)
 #### [Demo](#7)
-* [Files](#8)
 * [Results](#9)
 #### [Significance](#10)
 #### [Alternative Methods](#11)
@@ -66,7 +65,7 @@ We demonstrate an analysis pipeline for identifying tuberculosis related SNPs st
 * **samtools**: file conversion sam to bam[<sup>[6]</sup>](http://samtools.sourceforge.net)
 * **VarScan**: variant calling[<sup>[7]</sup>](http://dkoboldt.github.io/varscan/)
 
-### Demo Files<a name="8"></a>
+### Demo Files
 Sequenced read files: Feliciano, Cinara S. et al. (2018)[<sup>[8]</sup>](https://doi.org/10.1016/j.tube.2018.04.003)
 
 Reference Genome: [Mycobacterium tuberculosis H37Rv NCBI database](https://www.ncbi.nlm.nih.gov/nuccore/NC_000962.3?report=fasta)
