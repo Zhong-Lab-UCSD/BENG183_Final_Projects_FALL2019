@@ -105,8 +105,8 @@ Their steps and tools:
 2. Alignment to a reference genome: BowTie2
 3. Alignment quality and filtering: Picard MarkDuplicates, SAMTools <br>
 a. Intermediate steps: <br>
-&nbsp;&nbsp;&nbsp;i. Alignment shifting: A GUAVA-specific script. The Tn5 transposase cuts open chromatin regions with two cuts that are separated by 9 bp, forming a sticky end . Thus, the reads aligning to the positive and negative strand need to be adjusted by +4 bp and -5 bp, respectively, to represent the center of the transposase binding site. <br>
-&nbsp;&nbsp;&nbsp;ii. Analysis of fragment size distribution: Picard CollectInsertSizeMetrics. Checks the quality of the ATAC-seq library since a good fragment size distribution graph should have sharp two peaks at less than 100 base pairs (bp) from the open chromatin and at  about ∼200 bp for mono-nucleosomes and smaller peaks representing di-nucleosomes and tri-nucleosomes. 
+&nbsp;&nbsp;&nbsp;i. Alignment shifting: A GUAVA-specific script. The Tn5 transposase cuts open chromatin regions with two cuts that are &nbsp;&nbsp;&nbsp;separated by 9 bp, forming a sticky end . Thus, the reads aligning to the positive and negative strand need to be &nbsp;&nbsp;&nbsp;adjusted by +4 bp and -5 bp, respectively, to represent the center of the transposase binding site. <br>
+&nbsp;&nbsp;&nbsp;ii. Analysis of fragment size distribution: Picard CollectInsertSizeMetrics. Checks the quality of the ATAC-seq &nbsp;&nbsp;&nbsp;library since a good fragment size distribution graph should have sharp two peaks at less than 100 base pairs (bp) &nbsp;&nbsp;&nbsp;from the open chromatin and at  about ∼200 bp for mono-nucleosomes and smaller peaks representing di-nucleosomes and &nbsp;&nbsp;&nbsp;tri-nucleosomes. 
 4. Peak calling: MACS2
 5. Differential peak analysis: DESeq2 R package
 6. Peak functional annotation: ChIPpeakAnno R package
