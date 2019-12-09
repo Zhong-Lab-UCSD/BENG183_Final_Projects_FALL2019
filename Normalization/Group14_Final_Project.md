@@ -82,7 +82,7 @@ SCBN stands for scale based normalization, and is a newly proposed method which 
   <img src="https://github.com/nbangari/BENG183_Final_Projects_FALL2019/blob/master/Normalization/img/image4.png" width="600">
 </p>
 <p align="center">
-    <em>Figure 4: Displaying the difference between normalization when comparing the same genes within a single species, and comparing orthologous genes across different species [3]</em>
+    <em>Figure 4: Displaying the difference between normalization when comparing the same genes within a single species, and comparing orthologous genes across different species <sup>[3]</sup> </em>
 </p>
 
 
