@@ -17,7 +17,7 @@ With this paradigm, when one is diagnosed with cancer, he/she is simply given th
 
 Prognosis begins with profiling the individual’s tumor. A sample of the tumor, along with normal DNA are both sequenced and then aligned to a reference genome. By comparing the alignments, mutation specific to the individual can be identified.
 
-![Traditional Treatment model vs Precision & Pesonalized Medicine model for cancer prognosis.](https://www.ncbi.nlm.nih.gov/corecgi/tileshop/tileshop.fcgi?p=PMC3&id=614754&s=84&r=1&c=1)
+![Traditional Treatment model vs Precision & Pesonalized Medicine model for cancer prognosis.](https://imgur.com/c9pwOK4)
 
 With this knowledge on hand, many routes for personalized treatment are opened. Immunotherapy drugs could be applied, motivating the patient’s immune system to better recognize and target cancer cells; Antibodies can be designed to seek specific antigens on malignant cells. All these treatments are better equipped to target the affected cells more accurately all while bypassing healthy cells, which relieves many of the negative side effects currently present in most cancer therapies.
 
