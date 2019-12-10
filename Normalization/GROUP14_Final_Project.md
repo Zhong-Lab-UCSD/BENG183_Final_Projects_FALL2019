@@ -149,7 +149,7 @@ TMM stands for trimmed means of M-values.
 |FPKM    | Within-sample       | Works for paired-end reads | Cannot be compared between samples |
 |TPM    | Between-sample       | Can be compared between samples   | Not as good when systematic variation exists between transcript specific expression and sequencing depth (e.g. seen in scRNA), Works best for a single species  |
 |SCBM    | Between-sample       | Can be used to compare differential gene expression across different species | Requires a set of conserved orthologous genes between the species being compared to be known in advance  |
-|SCnorm    | Between-sample       | Uses single scale factor instead of global scale factor (as global scale factors compromise performance in single-cell settings), Good for scRNA (small conditional RNA) data unlike other methods | Only focuses on between sample comparisons (need to use R/SCnorm to adjust for gene-specific features) |
+|SCnorm    | Between-sample       | Uses single scale factor instead of global scale factor (as global scale factors compromise performance in single-cell settings). Good for scRNA (small conditional RNA) data unlike other methods | Only focuses on between sample comparisons (need to use R/SCnorm to adjust for gene-specific features) |
 |TMM    | Within-sample       | The data themselves do not need to be modified, unlike other normalization strategies. In TMM the estimated normalization factors are used directly in the statistical model used to test for DE, while preserving the data to be used elsewhere.    | Can only be used when looking for differences between the same gene in different samples, not different genes.   |
   
 ####  Comparing RPKM and SCBN  
