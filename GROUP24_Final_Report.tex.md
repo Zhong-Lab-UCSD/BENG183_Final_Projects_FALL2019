@@ -20,12 +20,12 @@
 
 ## Overview
 
-Clustering is a really useful machine learning technique for analyzing all kinds of data. It can help us to group certain data points that have similar properties in a large dataset, in order to grab information from it. In biological research, we often obtain lots of data from the experiments. In order to shuffle the useful information from the sea of data, it is crucial for us to correctly interpret the patterns behind it using clustering. We can use clustering method in gene expression data obtained from RNA sequencing, to discover potential groups of genes and samples, and predict the unknown functions of genes.
-In this report, we are going to expand on what we have learned about k-means clustering in the class, introduce global k-means, fuzzy c-means clustering, and Mixture of Gaussian clustering methods. Additionaly, we will discuss how they are different and useful in genomic data analysis.
+Clustering is a really useful machine learning technique for analyzing all kinds of data. It can help us to group certain data points that have similar properties in a large dataset, in order to grab information from it. In biological research, we often obtain lots of data from the experiments. In order to shuffle the useful information from the sea of data, it is crucial for us to correctly interpret the patterns behind it using clustering. We can use clustering methods in gene expression data obtained from RNA sequencing, to discover potential groups of genes and samples, and predict the unknown functions of genes.
+In this report, we are going to expand on what we have learned about k-means clustering in the class, introduce global k-means, fuzzy c-means clustering, and Mixture of Gaussian clustering methods. Additionaly, we will discuss how they are different and useful in biological data analysis.
 
 ## *K*-Means Clustering
 
-K-means clustering is a clustering algorithm that essentially partitions all data points into k clusters with locally optimal within-cluster sum of squared Euclidean distances. The standard algorithm starts with a given initial set of k cluster centers [11]:
+K-means clustering is a clustering algorithm that essentially partitions all data points into *k* clusters with locally optimal within-cluster sum of squared Euclidean distances. The standard algorithm starts with a given initial set of *k* cluster centers [11]:
 
 Step 1: For each point, find its closest cluster center and assign it to the closest cluster.  
 Step 2: Update the cluster centers to be the average of points contained within them.  
@@ -41,7 +41,7 @@ As mentioned, k-means clustering results are sensitive to the initial choice of 
 
 One traditional way is to start from one cluster (centroid), and continuously adding new clustering center as the iteration proceeds.
 
-Step 1: Given the finite data set $A$, $\{a_1, a_2, \dots, a_m\}$, consisting of m n-dimensional elements, compute A’s center, set this as the initial center.  
+Step 1: Given the finite data set $A$, $\{a_1, a_2, \dots, a_m\}$, consisting of m n-dimensional elements, compute *A*’s center, set this as the initial center.  
 Step 2: Let the rest ($k$-1)-partition centroids be $x_1, x_2, \dots, x_{k-1}$, compute $\overline{f_k}(y)$, $y \in \R^n$by comparing the minimum square distance between each point and the closest cluster center from $x_1, x_2, \dots, x_{k-1}$ with the square distance of each pair of data. So the point with the minimum $\overline{f_k}(y)$ value would be the new cluster center for the next iteration.  
 Step 3: Select $\{x_1, x_2, \dots, x_{k-1},y\}$ as a new starting point, apply the k-means algorithm. Then use the result as the input, go back to step 2.  
 Step 4: Stop iteration if $\overline{f_k}(y)$ is smaller than a given tolerance value.
@@ -93,7 +93,7 @@ Therefore, when we cluster the datasets in a 2 dimensional plot, we will define 
 
 Since we do not know these mean and variance because we do not know which Gaussian generated which data point, these parameters are calculated by a process called Expectation-Maximization (EM), which involves two steps --- the E-step and the M-step. We also have a parameter called $\Pi$ which represent the density of the distribution.
 
-During the E-step, we compute the responsibilities for each Gaussian for each datapoint. The responsibility ($r_{ic}$) is calculated by dividing the Probability of $X_i$ belongs to cluster $c$ by the Sum of probability $X_i$ belongs to $c_1,c_2,\dots,c_k$. This value will be big if the point is assigned to the correct clusterm and low otherwise.
+During the E-step, we compute the responsibilities for each Gaussian for each datapoint. The responsibility ($r_{ic}$) is calculated by dividing the Probability of $X_i$ belonging to cluster $c$ by the Sum of probability $X_i$ belonging to $c_1,c_2,\dots,c_k$. This value will be big if the point is assigned to the correct clusterm and low otherwise.
 
 During the M-step, we modify the parameters of each Gaussian to maximize the likelihood for the responsibility weighted data. The density $\Pi$, mean $\mu$ and the covariance matrix $\Sigma$ are updated until convergence. They are updated following the manner below [10]:
 
@@ -155,7 +155,7 @@ According to. Zhe Liu *et al.*’s paper about using using a new clustering meth
 
 In the paper, Zhe Liu et al.  also compare the performances of their improved EM algorithm, the classic EM algorithm, which is the GMM we introduced before, EM algorithm based on multivariate distributions, and two standard clustering --- Fuzzy *c*-means and *k*-means clustering, which we also introduced in our report. Therefore, the table generated in the paper is a good visualization of comparing our introduced clustering methods [9].
 
-They compared the clustering method by Precision (P), Recall (R), F-measure and ARI, where ARI means the adjusted rand index and F-measure is calculated by $2P \cdot R \Big/(P+R)$. The higher the value of ARI, the cluster generated by algorithm is more close to the real cluster. The higher the F-measure is, the better the clustering performance [9].
+They compared the clustering method by Precision (P), Recall (R), F-measure and ARI, where ARI means the adjusted rand index and F-measure is calculated by $2P \cdot R \Big/(P+R)$. The higher the value of ARI is, the cluster generated by algorithm is more close to the real cluster. The higher the F-measure is, the better the clustering performance [9].
 
 | ![table1](images/table1.png)|
 |:--|
