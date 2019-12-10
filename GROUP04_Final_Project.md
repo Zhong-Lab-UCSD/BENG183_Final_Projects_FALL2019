@@ -38,7 +38,7 @@ We will not discuss those commands here, rather we will discuss VCF file generat
 #### SpeedSeq Methods:
 SpeedSeq is a genome analysis tool that aims to help with alignment, insertions and deletions (indel) variant detection and functional detection. The characteristics of the SpeedSeq, compared to other variant calling method, is its efficiency and low-cost property. As indicated in the SpeedSeq: ultra-fast personal genome analysis and interpretation. written by Chiang, Colby, et al, SpeedSeq achieves superior processing efficiency through rapid duplicate marking with SAMBLASTER5, through balanced parallelization of external applications and by executing nondependent pipeline components simultaneously. The speed is also obtained from processing by SAMBLASTER due to the addition of mate CIGAR and mate mapping quality tags. [3]
 <p align="center">
-<img src="https://github.com/ztybigcat/BENG183_Final_Projects_FALL2019/blob/master/images_group4/image9.png", width = "800"><br/>
+<img src="https://github.com/ztybigcat/BENG183_Final_Projects_FALL2019/blob/master/images_group4/image9.png", width = "800", height = "800"><br/>
 [Figure 3: SpeedSeq Workflow[3]]<br/>
 </p>
 
@@ -115,6 +115,10 @@ Method:
 1. Encoded reference reads into a red-green-blue(RGB) pileup image (as shown in Figure 2) at a candidate variant [12]. 
 2. Use CNN to classify the images into three diploid genotype states of homozygous reference (hom-ref), heterozygous (het), or homozygous alternate (hom-alt)[12].
 
+### Comparison:
+
+<br/>
+<br/>
 <p align="center">
 <img src="https://github.com/ztybigcat/BENG183_Final_Projects_FALL2019/blob/master/images_group4/image10.png", width = "800"><br/>
 Table 1: Comparison of variant calling pipelines using false negative SNV calls. Data comes from Comparison of three variant callers for human whole genome sequencing(2018) written by Supernat, A., Vidarsson, O. V., Steen, V. M., & Stokowy, T. . The variants are called from 30x, 15x and 10x coverage of the NA12878 sample (HiSeq4000, Genomics Core Facility, Bergen, Norway) and compared to GIAB NISTv3.3.2 (fp://fp-trace.ncbi.nlm.nih.gov/giab/fp/release/NA12878_HG001/NISTv3.3.2/GRCh38/). <br/>
@@ -153,23 +157,8 @@ Table 5: Comparison of amount of hours running DeepVariant and GATK with 35X WGS
 As showed in Table 5, running DeepVariant requires more hours if running on CPU. To speed up this process, a better computer setting like GPU, a specialized electronic circuit designed to rapidly manipulate and alter memory for faster computing, is recommended. Without GPU, DeepVariant requires 830 hours to run a 35X WGS sample, while GATK only requires 430 hours[23]. Even with GPU, to run the complete WGS with a 8 core machine 16GB RAM hardware, it need 24 to 48 hours to complete, as the trade off of good performance[4].
 <br/>
 
-###**Reference**
-### Comparison:
- Table 1: Comparison of variant calling pipelines using false negative SNV calls. Data comes from Comparison of three variant callers for human whole genome sequencing(2018) written by Supernat, A., Vidarsson, O. V., Steen, V. M., & Stokowy, T. . The variants are called from 30x, 15x and 10x coverage of the NA12878 sample (HiSeq4000, Genomics Core Facility, Bergen, Norway) and compared to GIAB NISTv3.3.2 (fp://fp-trace.ncbi.nlm.nih.gov/giab/fp/release/NA12878_HG001/NISTv3.3.2/GRCh38/). 
 
-  Table 2: Comparison of variant calling pipelines using single-nucleotide variant (SNV) calling precisions. Data source is the same as Table 1, using the same coverage comparison.
 
-  Table 3: Comparison of variant calling pipelines using F1 score to test the accuracy of three systems, it considers both the precision and the recall of the test to calculate. Data source is the same as Table 1, using the same coverage comparison.
-
-  Table 4: Comparison of variant calling pipelines using true positive (sensitivity) SNV calls. Data source is the same as Table 1, using the same coverage comparison.
-
-  These four tables are comparison of variant calling pipelines using four different types of scores that specifically deals with precision, sensitivity, and accuracy. Data from each table is called from 30x, 15x and 10x coverage, meant to test the influences of the sequencing depth (the number of unique reads that include a given nucleotide in the reconstructed sequence). Therefore, statistics in each table are presented in 3 groups with decreasing coverages, and compare three tools within each coverage scale respectively. Bar chart is chosen as the presentation format, as it can clearly visualize the differences of scores between three tools.
-
-  From these four tables, we can see that DeepVariant was clearly more precise (F-Score of 0.94) in indel calling as compared to GATK and SpeedSeq (F-Scores 0.90 and 0.84, respectively) (Table 3). Obviously, DeepVariant is also the most sensitive and accurate tool with the highest number of true positive indel calls (460,271) (Table 4) as well as the lowest number of false negative (39,426) (Table 1)  With respect to the performance on the data with coverage of 15x and 10x, we observed that reduced coverage resulted in a marked drop of the quality of variant calling for all tools. Among these three tools, DeepVariant keep the most stable score among all three coverages, it does not change much with the reduced coverage. Indeed, the F-Scores of DeepVariant for 15x data were almost similar to SpeedSeq at 30x (Table 3). By comparing the false negative score (Table 1), we see that out of the three tested variant callers, GATK was most prone to errors in low coverage regions, while DeepVariant was most robust in such region. 
-
-  Table 5: Comparison of amount of hours running DeepVariant and GATK with 35X WGS sample with a 8 core machine 16GB RAM computer.
-
-  As showed in Table 5, running DeepVariant requires more hours if running on CPU. To speed up this process, a better computer setting like GPU, a specialized electronic circuit designed to rapidly manipulate and alter memory for faster computing, is recommended. Without GPU, DeepVariant requires 830 hours to run a 35X WGS sample, while GATK only requires 430 hours[23]. Even with GPU, to run the complete WGS with a 8 core machine 16GB RAM hardware, it need 24 to 48 hours to complete, as the trade off of good performance[4].
 
   ### Step by Step Tutorial:
 
@@ -235,24 +224,17 @@ As showed in Table 5, running DeepVariant requires more hours if running on CPU.
  Lines start with single “#” are headers(basically column name). The data columns include the following items:
  
  CHROM: the number of chromosomes the variant is located;
- 
  POS: the position of base pair on sequence;
- 
  REF: base on reference genome;
- 
  ALT: base of variant sequence;
- 
  QUAL: quality score of called variant;
- 
- FILTER: A “PASS” in the data indicates this variant has passed all filters. Otherwise it logs which filter the variant has failed to pass. For example: “q5;s40” means the quality is below 5 and this variant is present in 40% of samples.
- 
+ FILTER: A “PASS” in the data indicates this variant has passed all filters. Otherwise it logs which filter the variant has failed to pass. For example: “q5;s40” means the quality is below 5 and this variant is present in 40% of samples。
  INFO: Additional info regarding this variant.
  
  The output.visual_report.html visual report contains some graphs that summarizes the vcf files.  For example, Variant types tells you how many different variants are detected and color coded their types; depth tells you the sequencing depth of all samples in histogram format. Other histograms includes information like quality score distribution, genotype distribution, and distribution of base changes.
 ![Figure1](https://github.com/ztybigcat/BENG183_Final_Projects_FALL2019/blob/master/images_group4/image4.png "Figure 6")
   [Figure 6. Sample visual report]
 
-  ### Reference
 
   Academic Sources:
 1. DePristo MA, Banks E, Poplin R, et al. A framework for variation discovery and genotyping using next-generation DNA sequencing data. Nat Genet. 2011;43(5):491–498. doi:10.1038/ng.806
