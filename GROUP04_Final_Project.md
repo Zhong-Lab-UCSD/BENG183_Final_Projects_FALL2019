@@ -20,7 +20,10 @@ The program generates a De Brujin graph based on the alignment. From that, it pr
 Using PairHMM algorithm, the program aligns each possible haplotype(different k-mers) with the reference. The result is recorded in a matrix form where each element represents possibility where a certain haplotype is the true form. Then the matrix is marginalized, producing the probability each allele.
 4. Assign sample genotypes 
 Bayes' rule is used to calculate the possibility of genotypes per sample using the results generated from the last step. Finally the program pick the highest possible genotype.
-
+```bash
+BIN_VERSION="0.9.0" #Define version of software we are using.
+sudo docker pull google/deepvariant:"${BIN_VERSION}"
+```
 ####SpeedSeq Methods:
 ####Deep Variant Methods:
 ###**Compartion of three methods**
