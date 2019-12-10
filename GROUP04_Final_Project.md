@@ -195,36 +195,36 @@ Method:
  FILTER: A “PASS” in the data indicates this variant has passed all filters. Otherwise it logs which filter the variant has failed to pass. For example: “q5;s40” means the quality is below 5 and this variant is present in 40% of samples。
  INFO: Additional info regarding this variant.
  The output.visual_report.html visual report contains some graphs that summarizes the vcf files.  For example, Variant types tells you how many different variants are detected and color coded their types; depth tells you the sequencing depth of all samples in histogram format. Other histograms includes information like quality score distribution, genotype distribution, and distribution of base changes.
-
+![Figure1](https://github.com/ztybigcat/BENG183_Final_Projects_FALL2019/blob/master/images_group4/image4.png "Figure 6")
   [Figure 6. Sample visual report]
 
   ### Reference
 
   Academic Sources:
- DePristo MA, Banks E, Poplin R, et al. A framework for variation discovery and genotyping using next-generation DNA sequencing data. Nat Genet. 2011;43(5):491–498. doi:10.1038/ng.806
- Ryan Poplin, Valentin Ruano-Rubio, Mark A. DePristo, et al. Scaling accurate genetic variant discovery to tens of thousands of samples. bioRxiv 201178; doi: https://doi.org/10.1101/201178
- Chiang C, Layer RM, Faust GG, et al. SpeedSeq: ultra-fast personal genome analysis and interpretation. Nature Methods. 2015;12(10):966-968. doi:10.1038/nmeth.3505.
- Supernat, A., Vidarsson, O., Steen, V. and Stokowy, T. (2018). Comparison of three variant callers for human whole genome sequencing. Scientific Reports, 8(1).
-  Ngcungcu T, et al. Duplicated Enhancer Region Increases Expression of CTSB and Segregates with Keratolytic Winter Erythema in South African and Norwegian Families. Am. J. Hum. Genet. 2017;100:737–750. doi: 10.1016/j.ajhg.2017.03.012.
- Macintyre, G. et al. Copy-number signatures and mutational processes in ovarian carcinoma. bioRxiv 174201, 10.1101/174201 (2017).
- Chambers JC, et al. 114 Whole genome sequencing to identify genetic variants underlying cardiovascular disease among Indian Asians. Heart. 2012;98:A64–A64. doi: 10.1136/heartjnl-2012-301877b.114.
- Radder JE, et al. Extreme Trait Whole-Genome Sequencing Identifies PTPRO as a Novel Candidate Gene in Emphysema with Severe Airflow Obstruction. Am. J. Respir. Crit. Care Med. 2017;196:159–171. doi: 10.1164/rccm.201606-1147OC.
- Flannick J, et al. Sequence data and association statistics from 12,940 type 2 diabetes cases and controls. Sci. Data. 2017;4:170179. doi: 10.1038/sdata.2017.179.
- Khan, F. F. et al. Whole genome sequencing of 91 multiplex schizophrenia families reveals increased burden of rare, exonic copy number variation in schizophrenia probands and genetic heterogeneity. Schizophr. Res. 10.1016/j.schres.2018.02.034 (2018).
- Zhao M, Wang Q, Wang Q, Jia P, Zhao Z. Computational tools for copy number variation (CNV) detection using next-generation sequencing data: features and perspectives. BMC Bioinformatics. 2013;14:S1. doi: 10.1186/1471-2105-14-S11-S1.
- Ryan Poplin, Dan Newburger, Jojo Dijamco, Nam Nguyen, Dion Loy, Sam S. Gross, Cory Y. McLean, Mark A. DePristo. Creating a universal SNP and small indel variant caller with deep neural networks. Nature Biotechnology doi: 10.1038/nbt.4235
- Harold E. Smith* and Sijung Yun。 “Evaluating alignment and variant-calling software for mutation identification in C. elegans by whole-genome sequencing”. PLoS One. 2017; 12(3): e0174446. Published online 2017 Mar 23. doi: 10.1371/journal.pone.0174446
- Chiang, C., Layer, R., Faust, G. et al. SpeedSeq: ultra-fast personal genome analysis and interpretation. Nat Methods 12, 966–968 (2015) doi:10.1038/nmeth.3505
+1. DePristo MA, Banks E, Poplin R, et al. A framework for variation discovery and genotyping using next-generation DNA sequencing data. Nat Genet. 2011;43(5):491–498. doi:10.1038/ng.806
+2. Ryan Poplin, Valentin Ruano-Rubio, Mark A. DePristo, et al. Scaling accurate genetic variant discovery to tens of thousands of samples. bioRxiv 201178; doi: https://doi.org/10.1101/201178
+3. Chiang C, Layer RM, Faust GG, et al. SpeedSeq: ultra-fast personal genome analysis and interpretation. Nature Methods. 2015;12(10):966-968. doi:10.1038/nmeth.3505.
+4. Supernat, A., Vidarsson, O., Steen, V. and Stokowy, T. (2018). Comparison of three variant callers for human whole genome sequencing. Scientific Reports, 8(1).
+5. Ngcungcu T, et al. Duplicated Enhancer Region Increases Expression of CTSB and Segregates with Keratolytic Winter Erythema in South African and Norwegian Families. Am. J. Hum. Genet. 2017;100:737–750. doi: 10.1016/j.ajhg.2017.03.012.
+6. Macintyre, G. et al. Copy-number signatures and mutational processes in ovarian carcinoma. bioRxiv 174201, 10.1101/174201 (2017).
+7. Chambers JC, et al. 114 Whole genome sequencing to identify genetic variants underlying cardiovascular disease among Indian Asians. Heart. 2012;98:A64–A64. doi: 10.1136/heartjnl-2012-301877b.114.
+8. Radder JE, et al. Extreme Trait Whole-Genome Sequencing Identifies PTPRO as a Novel Candidate Gene in Emphysema with Severe Airflow Obstruction. Am. J. Respir. Crit. Care Med. 2017;196:159–171. doi: 10.1164/rccm.201606-1147OC.
+9. Flannick J, et al. Sequence data and association statistics from 12,940 type 2 diabetes cases and controls. Sci. Data. 2017;4:170179. doi: 10.1038/sdata.2017.179.
+10. Khan, F. F. et al. Whole genome sequencing of 91 multiplex schizophrenia families reveals increased burden of rare, exonic copy number variation in schizophrenia probands and genetic heterogeneity. Schizophr. Res. 10.1016/j.schres.2018.02.034 (2018).
+11. Zhao M, Wang Q, Wang Q, Jia P, Zhao Z. Computational tools for copy number variation (CNV) detection using next-generation sequencing data: features and perspectives. BMC Bioinformatics. 2013;14:S1. doi: 10.1186/1471-2105-14-S11-S1.
+12. Ryan Poplin, Dan Newburger, Jojo Dijamco, Nam Nguyen, Dion Loy, Sam S. Gross, Cory Y. McLean, Mark A. DePristo. Creating a universal SNP and small indel variant caller with deep neural networks. Nature Biotechnology doi: 10.1038/nbt.4235
+13. Harold E. Smith* and Sijung Yun。 “Evaluating alignment and variant-calling software for mutation identification in C. elegans by whole-genome sequencing”. PLoS One. 2017; 12(3): e0174446. Published online 2017 Mar 23. doi: 10.1371/journal.pone.0174446
+14. Chiang, C., Layer, R., Faust, G. et al. SpeedSeq: ultra-fast personal genome analysis and interpretation. Nat Methods 12, 966–968 (2015) doi:10.1038/nmeth.3505
 
   General Sources:
 
-  “Introduction to Variant detection”. https://www.melbournebioinformatics.org.au/tutorials/tutorials/var_detect_advanced/var_detect_advanced_background/
- “The Variant Call Format Specification”. VCFv4.3 and BCFv2.2. 22 Aug 2019. https://samtools.github.io/hts-specs/VCFv4.3.pdf
- “DeepVariant Quick Start” https://github.com/google/deepvariant/blob/r0.9/docs/deepvariant-quick-start.md
- “HaplotypeCaller Call germline SNPs and indels via local re-assembly of haplotypes”. https://software.broadinstitute.org/gatk/documentation/tooldocs/3.8-0/org_broadinstitute_gatk_tools_walkers_haplotypecaller_HaplotypeCaller.php
- “BroadE: GATK - Haplotype Caller”. https://www.youtube.com/watch?v=vocBk2MHp1A
- “Crunching NGS data on Pouta Cloud”. https://www.csc.fi/web/blog/post/-/blogs/crunching-ngs-data-on-pouta-cloud
- DeepVariant GitHub Repo: https://github.com/google/deepvariant
- “DeepVariant: Highly Accurate Genomes With Deep Neural Networks”. https://ai.googleblog.com/2017/12/deepvariant-highly-accurate-genomes.html
- “Amplifying Google’s DeepVariant”. https://blog.dnanexus.com/2018-04-18-deepvariant-amplified/  cpu
- “Evaluating DeepVariant: A New Deep Learning Variant Caller from the Google Brain Team”. https://blog.dnanexus.com/2017-12-05-evaluating-deepvariant-googles-machine-learning-variant-caller/
+15. “Introduction to Variant detection”. https://www.melbournebioinformatics.org.au/tutorials/tutorials/var_detect_advanced/var_detect_advanced_background/
+16. “The Variant Call Format Specification”. VCFv4.3 and BCFv2.2. 22 Aug 2019. https://samtools.github.io/hts-specs/VCFv4.3.pdf
+17. “DeepVariant Quick Start” https://github.com/google/deepvariant/blob/r0.9/docs/deepvariant-quick-start.md
+18. “HaplotypeCaller Call germline SNPs and indels via local re-assembly of haplotypes”. https://software.broadinstitute.org/gatk/documentation/tooldocs/3.8-0/org_broadinstitute_gatk_tools_walkers_haplotypecaller_HaplotypeCaller.php
+19. “BroadE: GATK - Haplotype Caller”. https://www.youtube.com/watch?v=vocBk2MHp1A
+20. “Crunching NGS data on Pouta Cloud”. https://www.csc.fi/web/blog/post/-/blogs/crunching-ngs-data-on-pouta-cloud
+21. DeepVariant GitHub Repo: https://github.com/google/deepvariant
+22. “DeepVariant: Highly Accurate Genomes With Deep Neural Networks”. https://ai.googleblog.com/2017/12/deepvariant-highly-accurate-genomes.html
+23. “Amplifying Google’s DeepVariant”. https://blog.dnanexus.com/2018-04-18-deepvariant-amplified/  cpu
+24. “Evaluating DeepVariant: A New Deep Learning Variant Caller from the Google Brain Team”. https://blog.dnanexus.com/2017-12-05-evaluating-deepvariant-googles-machine-learning-variant-caller/
