@@ -21,7 +21,7 @@
  
 >This image describes the general outline from converting text to vectors based on associativity, which is then applied to train the neural network/input. A neural network is a computing system created from interconnected nodes that process information and inputs.
  
- > ###Word2Vec
+ >### Word2Vec
  > - Machine Learning models take matrices as input; therefore, we need to convert every word in the text into a vector and represent them in vector space. 
  > - One common Word2Vec model is the Skip-Gram Model. This word vectorization method represents semantic connections between words. Word vectorization methods provide Distributional Similarity Based Representation, which states you can get a lot of value by representing a word by means of its neighbors. 
  > - A Skip-Gram Model uses the current word to predict its neighbors (its context). 
