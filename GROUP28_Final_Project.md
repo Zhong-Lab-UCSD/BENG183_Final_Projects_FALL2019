@@ -98,7 +98,7 @@ Other examples of software in this category is HISAT2 and SOAP2, both of which a
 
 ## Cloudburst
 
-Cloudburst is based off the RMAP software implementation, which was created on 8/18/2009, can map reads without sequence quality data, supports paired-end reads, supports bisulfite treated read mapping, and can map at a speed of ~8mbp/hr. The cloudburst algorithm is a seed-and-extend based algorithm with a more modern cloud computing twist. Because it is based on the slower seed-and-extend algorithm, it is slower than state of the art BWT transform algorithms like Bowtie2 and BWA.
+Cloudburst is based off the RMAP software implementation, which was created on 8/18/2009, can map reads without sequence quality data, supports paired-end reads, supports bisulfite treated read mapping, and can map at a speed of ~8mbp/hr. The cloudburst algorithm is a seed-and-extend based algorithm with a more modern cloud computing twist. Because it is based on the slower seed-and-extend algorithm, it is slower than state of the art BWT transform algorithms like Bowtie2 and BWA[(5)](https://academic.oup.com/bioinformatics/article/25/11/1363/332646).
 
 The benefit of this algorithm is that it is easily scalable with cloud computing to reach similar speeds to Bowtie2 and BWA. It uses the Hadoop MapReduce implementation to allow cloud computing. MapReduce is an algorithm that allows splits a large process into multiple sub-processes in a two step process(Map and Reduce). These smaller subprocesses are then run on multiple different servers before being combined to extract data.
 
