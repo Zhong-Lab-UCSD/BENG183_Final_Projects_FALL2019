@@ -130,7 +130,10 @@ As the result shown above, (S1,S1,S1) will be the best hidden state sequence tha
     
 * **Problem Specification**:
     Again, the parameters will be very similar to the Evaluation problem.            
-    * If we have the DNA Sequence (e.g. ATTG...), we would like our observation to be ![](http://bit.ly/358SKYZ) (![](http://bit.ly/2LCFKTI))
+    * If we have the DNA Sequence (e.g. ATTG...), we would like our observation to be 
+    ![](http://bit.ly/358SKYZ) (
+    ![](http://bit.ly/2LCFKTI)
+    )
     * The hidden states are the desired features. For example, they can be "exons" or "introns", or they can be "deletion", "duplication" or "insertion".
 
     Solution is the trained hidden Markov model that maximize the probability of predicting given features on a DNA sequence.
