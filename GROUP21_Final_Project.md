@@ -53,7 +53,7 @@ SNP Array is a type of a DNA Microarray used to find out if an individual carrie
 7. cDNAs that aren't complementary to none of the oligonucleotides are washed off the slide.
 8. This microarray is then scanned using a scanner. The fluorescent dye glows when hit with the laser and we can visualize which cDNA binds to which gene by detecting the fluorescent signals.
 
-  A red glow in a spot means that that particular gene has higher expression in the tumor cDNA. A green glow signifies the higher expression of that gene in normal cDNA. A yellow glow signifies the equal expression of the gene in both tumor and normal cDNA. If some spot, has no glow, it means that the gene isn't expressed in either of the cDNA samples.
+    A red glow in a spot means that that particular gene has higher expression in the tumor cDNA. A green glow signifies the higher expression of that gene in normal cDNA. A yellow glow signifies the equal expression of the gene in both tumor and normal cDNA. If some spot, has no glow, it means that the gene isn't expressed in either of the cDNA samples.
 
 This analysis helps researchers see which genes are differentially expressed in cancerous vs. normal tissue. This can help design better drug treatments, genetic therapies, and tests for early detection of cancer. People who have a history of genetic diseases are recommended to get precautionary testing done to find out if they carry the mutations relating to the diseases. Especially in breast cancer, when a parent is known to be affected by it, children are recommended to get tested to get preventive surgery/treatments. Currently, the two most popular SNP array platforms used in the industry are (12):
 
