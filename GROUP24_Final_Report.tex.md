@@ -117,7 +117,7 @@ Standard *k*-means clustering requires a careful selection of initial cluster ce
 
 Both k-means and FCM are partition-based clustering algorithm, and they work in a similar iterative fashion. The key difference between FCM and k-means is that using FCM, each data points may belong to multiple clusters based on the computed membership values. These fuzzy classification makes the clustering less vulnerable to noise if the input data is a bit fuzzy. For instance, when clustering of microarray data, k-means clustering may not work well because it does not provide information about the influence of a given gene for the overall shape of clusters. On the other hand, FCM is one fuzzy partitioning method and can attribute cluster memberships to genes [4].
 
-However, as FCM is a bit more complex than k-means, it has a slower runtime compared to k-means clustering. As Velmurugan performed comparative analysis of k-means and FCM on telecommunication data [11], he pointed out that k-means runs significantly faster than FCM (Fig. X).
+However, as FCM is a bit more complex than k-means, it has a slower runtime compared to k-means clustering. As Velmurugan performed comparative analysis of k-means and FCM on telecommunication data [11], he pointed out that k-means runs significantly faster than FCM (Fig. 2).
 
 |![km-fcm-time](images/fcm_vs_km_time.png)|
 |:--|
@@ -179,6 +179,7 @@ RNA-seq technology is widely applied in research as an attractive alternative to
 
 In RNA-seq analysis, we can use built-in clustering methods in R script. To understand the performance between different clustering method, we can illustrate using real scRNA-seq data sets ,  GSE60749-GPL13112 (Kumar), SRP073808 (Koh) and GSE52529GPL16791 (Trapnell) and a few others [4]. There are fourteen different clustering methods investigated, but we are particularly interested in k-means related methods: 
 PCAKmeans (PCA dimension reduction (dim=30) and *k*-means clustering with 25 random starts), pcaReduce (PCA dimension reduction (dim=30) and *k*-means clustering through an iterative process. Stepwise merging of clusters and reducing the number of dimensions by PC with lowest variance), which is like the global *k*-means clustering method that involve step-wise computation.  
+
 And an ensemble method SAFE of *k*-means clustering and other clustering methods SC3, CIDR, Seurat and t-SNE.
 
 | ![heatmap](images/heatmap.png)|
@@ -194,6 +195,8 @@ In Fig 8, *k*-means methods have shorter runtime compared to others. But notice 
 Filtering out far-from mean data before clustering: Note that actual RNA-seq data can be noisy, and because *k*-clustering is a partitioning algorithm, genes might be eventually assigned to a cluster even if they do not actually fit in. 
 
 Choosing value for k: Too small k-value can result in oversimplification of the data. To solve this, we can choose to examine different k-values using correlation function. If the correlation is high ($|Corr(A, B)|$ close to 1) between two *k*’s, we might consider reducing the value of *k* [12]. 
+
+Overall, *k*-means clustering is still a good clustering method for RNA-seq data because of its relative short runtime and less computational complexity. Its accuracy is also acceptable for relative small or simple data sets. However, if we want to obtain a more accurate result for a large data set, it is better to apply multiple clustering methods and compare their differences. 
 
 ## Reference
 
