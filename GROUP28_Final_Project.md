@@ -48,7 +48,7 @@ three stage process as shown in Figure 1 [(3)](https://www.ncbi.nlm.nih.gov/pubm
 
 ### Background
 Performs affine-transform-optimized global alignment. It is slower, but more accurate than Smith-Waterman. Uses kmers to index the genome. There is no size or scaffold count limit. It has higher sensitivity and specificity that Burrows-Wheeler aligners. 
-BBMAP has a high mapping rate, high accuracy, and great speed [(4)] (https://jgi.doe.gov/data-and-tools/bbtools/bb-tools-user-guide/bbmap-guide/).  
+BBMAP has a high mapping rate, high accuracy, and great speed [(4)](https://jgi.doe.gov/data-and-tools/bbtools/bb-tools-user-guide/bbmap-guide/).  
  
 
 
