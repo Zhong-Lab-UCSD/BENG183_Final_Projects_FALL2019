@@ -28,7 +28,7 @@ The bulk of the diseases that are currently used in predictive genomics are dise
 
 Every year, BRCA gene testing has become more and more accessible. Nonetheless, BRCA testing is still limited to those who have some sort of tie to a potential increased risk of cancer. The general criteria for considering a BRCA gene test fall into two main categories, a personal history of cancer before advanced age, or extensive family history with cancer. A personal history of cancer includes history with any of the BRCA-related cancers during young/middle-aged years or history with multiple types of cancers. Extensive family history with cancer includes multiple family members being diagnosed with cancer or a family history of having mutated BRCA genes. The only thing required from the patient is a blood sample taken at their physician's office. Once taken, the sample can be sent in to a number of labs to be screened for BRCA 1/2 mutations. The biggest labs that currently offer BRCA gene testing are Myriad Genetics, Medical Diagnostics, and Quest Diagnostics.
 
-However, there are some diseases that are much more environmentally dependent that can not be used in predictive genomics with strong statistical backing. An example of this is Type 2 diabetes. Even after genetic markers for type 2 diabetes were determined, no strong correlation between genetic variants and the chance of developing the disease could be concluded (2). This is because the chance of developing type 2 diabetes is much more dependent on an individual's environment rather than their genetic makeup.
+However, there are some diseases that are much more environmentally dependent that can not be used in predictive genomics with strong statistical backing. An example of this is Type 2 diabetes. Even after genetic markers for type 2 diabetes were determined, no strong correlation between genetic variants and the chance of developing the disease could be concluded (6). This is because the chance of developing type 2 diabetes is much more dependent on an individual's environment rather than their genetic makeup.
 
 ## Algorithms/Technologies:
 
@@ -132,6 +132,7 @@ As presented in class, RNA-seq technology is often preferred to other sequencing
 8. What are single nucleotide polymorphisms (SNPs)?. (2019, November 26). Retrieved from <https://ghr.nlm.nih.gov/primer/genomicresearch/snp>
 
 9. SNP. (n.d.) Retrieved from <https://www.nature.com/scitable/definition/snp-295/>
+
 10. Affymetrix Genome-Wide Human SNP Array 6.0 Data Sheet. (n.d.) Retrieved from <http://tools.thermofisher.com/content/sfs/brochures/genomewide_snp6_datasheet.pdf>
 11. Illumina Infinium Array Workflow. 2017\. Retrieved from <https://www.illumina.com/content/dam/illumina-marketing/documents/products/workflows/workflow_infinium_ii.pdf>
 12. LaFramboise, T. (2009). Single nucleotide polymorphism arrays: a decade of biological, computational and technological advances. _Nucleic acids research_, _37_(13), 4181-4193.
@@ -143,6 +144,7 @@ As presented in class, RNA-seq technology is often preferred to other sequencing
 14. RNA Seq vs Microarray. (n.d.). Retrieved from <https://www.otogenetics.com/rna-sequencing-vs-microarray/>
 
 15. Advantages of RNA-Seq Technology. 2019\. Retrieved from <https://www.illumina.com/science/technology/next-generation-sequencing/microarray-rna-seq-comparison.html>
+
 16. Beroukhim, R., Lin, M., Park, Y., Hao, K., Zhao, X., Garraway, L. A., ... & Descazeaud, A. (2006). Inferring loss-of-heterozygosity from unpaired tumors using high-density oligonucleotide SNP arrays. _PLoS computational biology_, _2_(5), e41.
 
   <https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.0020041>
