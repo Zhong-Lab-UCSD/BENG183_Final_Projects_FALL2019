@@ -35,7 +35,7 @@ Here is a GIF demo:
 
 ![k-means demo](https://shabal.in/visuals/kmeans/random.gif)
 
-<img src="http://shabal.in/visuals/kmeans/random.gif" width=500 height=300>
+<img src="http://shabal.in/visuals/kmeans/random.gif" width=700 height=500>
 
 ## Global *K*-Means Clustering
 
