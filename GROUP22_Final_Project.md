@@ -1,6 +1,6 @@
 # Machine learning : Hidden Markov model (HMM)
 
-(A friendly remainder: there are many math equations in this file, please add this [MathJax Chrome Plugin](https://chrome.google.com/webstore/detail/mathjax-plugin-for-github/ioemnmodlmafdkllaclgeombjnmnbima?hl=en) before reading. Or you can choose to view this project in [HTML Version](http://htmlpreview.github.io/?https://github.com/jic307/BENG183-Final-Project/blob/master/GROUP22_Final_Project.html))
+(A friendly reminder: there are many math equations in this file, please add this [MathJax Chrome Plugin](https://chrome.google.com/webstore/detail/mathjax-plugin-for-github/ioemnmodlmafdkllaclgeombjnmnbima?hl=en) before reading. Or you can choose to view this project in [HTML Version](http://htmlpreview.github.io/?https://github.com/jic307/BENG183-Final-Project/blob/master/GROUP22_Final_Project.html))
 
 A Hidden Markov Model (HMM) was first introduced as a way to solve speech recognition problems in 1990s. Later, many HMM applications are brought into play in the field of bioinformatics. In this chapter, we will show the definitions for the Markov Chain and HMM, as well as bioinformatics problems using HMM and their algorithm implementations.
 
