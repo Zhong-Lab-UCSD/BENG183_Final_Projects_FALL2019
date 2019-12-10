@@ -28,7 +28,7 @@ Clustering is a useful technique that groups similar data points in such a way t
 
 ### Hierarchical Clustering 
 
-<img src="2.png" height="250" width="300">
+<p align="center"><img src="2.png" height="250" width="300"></p>
 
 In Hierarchical clustering, similarity (distance) between points is calculated to cluster the most similar points together. This process is repeated until only a single cluster is left. Essentially, the algorithm builds a hierarchy of clusters.  
 The algorithm for Hierarchical Clustering is as follows:
@@ -41,7 +41,7 @@ The algorithm for Hierarchical Clustering is as follows:
 
 ### K-means Clustering
 
-<img src="3.png" height="250" width="300">
+<p align="center"><img src="3.png" height="250" width="300"></p>
 
 In K-means clustering, we choose an arbitrary “K” value which represents the number of clusters. Then, K points are selected to serve as a mean for each of the K clusters. The algorithm iteratively reassigns points to new clusters with the goal of minimizing the point’s distance to the cluster’s mean. 
 
@@ -67,7 +67,7 @@ https://www.pnas.org/content/98/24/13790.long
 
 Given a cohort of individuals with lung cancer, different subclasses of lung cancer can be identified among the samples using hierarchical clustering of their gene expression profiles. The first step is to use some method, such as RNA-seq, to quantify the gene expression level for each individual. After generating the gene expression profiles for each individual, differential expression analysis can be performed on each sample, and the most differentially expressed genes can be used in downstream analysis. Namely, hierarchical clustering can be performed on the most differentially expressed genes, which allows for identification of clusters of samples, where each cluster represents a subtype of lung cancer.  [2]
 
-<img src="4.png" height="500" >
+<p align="center"><img src="4.png" height="500" ></p>
 
 Figure: In this study, oligonucleotide microarrays were used to find mRNA expression levels corresponding to 12,600 transcript sequences in 186 lung tumor samples, including 139 adenocarcinomas resected from the lung. Hierarchical clustering performed on 203 samples identified several subclasses. 
 
@@ -79,11 +79,11 @@ Given a cohort of individuals hailing from various ancestries, clustering can be
 
 <b>Results:</b>
 
-<img src="5.png" height="400">
+<p align="center"><img src="5.png" height="400"></p>
 
 Figure: PCA performed on 938 dimensional IBS matrix, each row representing a sample. The first and second PCs explain 59% and 26% of the IBS variation, respectively. 51 populations were separated into known continental groups. PC 1 appears to capture the contrast between sub-Saharan Africans and non-Africans and the PC2 captures the East-West difference in Eurasia.
 
-<img src="6.png" height="250" >
+<p align="center"><img src="6.png" height="250" ></p>
 
 Figure: Performing identical technique (pairwise IBS matrix, PCA) on individual subgroups reveals further clustering of the data into known subpopulations. 
 
@@ -95,7 +95,7 @@ After performing CHIP seq, a popular downstream analysis to perform on the seque
 
 PWMs are formulated in a relatively straightforward way, using the read counts along with a scoring function, to generate a probability or score for each motif.  However, more complicated techniques have been proposed as an alternative, and have achieved state of the art performance in motif finding. DeepBind[4] uses a deep convolutional neural network (CNN) to scan CHIP-seq reads and output motifs, and has outperformed traditional methods as well as other machine learning methods. 
 
-<img src="7.png" height="250" >
+<p align="center"><img src="7.png" height="250" ></p>
 
 Figure: Pipeline of DeepBind. We see that the input are reads from any one of various protein binding sequencing techniques, and the output is motifs. The motifs can then be used for many downstream tasks, including detecting binding sites. Our explanation focuses on analyzing CHiP seq data to find transcription factor binding sites, because it is related to what we have covered it in class.  
 
@@ -113,11 +113,11 @@ https://www.nature.com/articles/s41467-017-00623-3
 
 Convolutional neural networks, a type of deep learning model that excels in image analysis, can be used for both prediction and clustering tasks. In this study, a convolutional neural network was used to predict the cell cycle phase of jurkat cell images. After training the model on 33,000 images, predictions were made on 3000 images. An accuracy of 98% was achieved, a 6% improvement over traditional machine learning techniques. [5]
 
-<img src="10.png" height="200">
+<p align="center"><img src="10.png" height="200"></p>
 
 Figure: Images of jurkat cells in each stage of cell cycle
 
-<img src="11.png" height="400">
+<p align="center"><img src="11.png" height="400"></p>
 
 Figure: Predictions results of trained convolutional neural network on 30,000 images. 98% accuracy is achieved. 
 
