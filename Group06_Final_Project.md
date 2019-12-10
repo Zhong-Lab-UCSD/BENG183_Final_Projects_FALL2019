@@ -4,28 +4,20 @@ By: Erikka Linn A13780018 , Kalyani Kottilil A13513679, Katha Korgaonkar A134374
 
 ### Table of Contents
 
-[Intro](#introduction) 
-
-[Background](#background)
-
-[What is ATAC-seq?](#what-is-atac-seq)
-
-[How Does ATAC-seq Work?](#how-does-atac-seq-work)
-
-[Protocol](#protocol)
-
-[Applications](#applications)
-
-[Pros and Cons](#pros-and-cons-of-atac-seq)
-
-[Future Developments](#future-developments)
-
+[Intro](#introduction)\
+[Background](#background)\
+[What is ATAC-seq?](#what-is-atac-seq)\
+[How Does ATAC-seq Work?](#how-does-atac-seq-work)\
+[Protocol](#protocol)\
+[Applications](#applications)\
+[Pros and Cons](#pros-and-cons-of-atac-seq)\
+[Future Developments](#future-developments)\
 [References](#references)
 
 ## Introduction
 Current methods such as ChIP-seq, Hi-C and bisulfite sequencing are ways to analyze the effects of epigenetic modifications on the genome. However, these methods require prior knowledge of the mechanisms where one needs to have specific transcription factors (and their subsequent antibodies) available. This limits what potential mutations/changes can be fully investigated. One method that overcomes this limitation is ATAC-seq which can analyze chromatin accessibility no matter the mechanism.
 
-The ATAC-seq protocol only requires around 50,000 cells and two steps: cell preparation and transposition: open chromatin is tagged with Tn5 transposase and these fragments are then sequenced and analyzed. Applications include nucleosome mapping, transcription factor occupancy analysis, identifying new enhancers, investigating pathological conditions, and single cell analysis to better understand differences between or within cell populations. The speed and efficacy of this procedure makes ATAC-seq optimal to identify open regions of the genome, and future developments are focusing on making the method more high-throughput using microfluidic (and related) techniques. 
+The ATAC-seq protocol only requires around 50,000 cells and two steps: cell preparation and transposition. Open chromatin is tagged with Tn5 transposase and these fragments are then sequenced and analyzed. Applications include nucleosome mapping, transcription factor occupancy analysis, identifying new enhancers, investigating pathological conditions, and single cell analysis to better understand differences between or within cell populations. The speed and efficacy of this procedure makes ATAC-seq optimal to identify open regions of the genome, and future developments are focusing on making the method more high-throughput using microfluidic (and related) techniques. 
 
 ## Background
 **Chromosomes** are condensed DNA where strands are tightly wound and unwound to make the sequences available for regulatory processes. This process is detailed in the figure below:
@@ -100,9 +92,9 @@ Methods like these tend to average the results from all cell types and therefore
 	
 *MNase-seq, DNase-seq, FAIRE-seq, and ATAC-seq are the most commonly used methods to assess primary-order chromatin state.*
 
-**MNase-seq** uses MNase, an endo-exonuclease, to shear linker DNA between nucleosomes, leaving the DNA bound to nucleosomes available to be sequenced. Reads are typically from euchromatic regions, not heterochromatic regions, due to heterochromatin giving rise to longer fragments that can be excluded through size selection before analysis. This method requires 106-107 cells, and at least two biological replicates are needed to make sure the experiment is reproducible. MNase-seq can lend to better understanding of nucleosome positions throughout the genome 
+**MNase-seq** uses MNase, an endo-exonuclease, to shear linker DNA between nucleosomes, leaving the DNA bound to nucleosomes available to be sequenced. Reads are typically from euchromatic regions, not heterochromatic regions, due to heterochromatin giving rise to longer fragments that can be excluded through size selection before analysis. This method requires 10<sup>6</sup>-10<sup>7</sup> cells, and at least two biological replicates are needed to make sure the experiment is reproducible. MNase-seq can lend to better understanding of nucleosome positions throughout the genome 
 
-**DNase-seq** uses DNase I exonuclease to sensitively target, digest and subsequently identify open chromatin regions. DNase-seq, like MNase-seq, also requires 106-107 cells and two replicates. The method can be used to also identify binding sites for transcription factors, in addition to finding nucleosome positions. 
+**DNase-seq** uses DNase I exonuclease to sensitively target, digest and subsequently identify open chromatin regions. DNase-seq, like MNase-seq, also requires 10<sup>6</sup>-10<sup>7</sup> cells and two replicates. The method can be used to also identify binding sites for transcription factors, in addition to finding nucleosome positions. 
 
 **FAIRE-seq** (formaldehyde-assisted isolation of regulatory elements) first crosslinks DNA to nucleosomes using formaldehyde. It then removes the crosslinks and the nucleosome-free DNA is sequenced to ultimately identify open regions in the genome. This method typically does not have high resolution, and the noise-to-signal ratio tends to be high.
 	
