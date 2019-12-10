@@ -89,20 +89,20 @@ DeepVariant workflow (Referenced from the official paper):
 
 i. Left Box in Figure 4 :
 
-Step 1: Preparation for variant calling.
-File: Make_examples.py
-Purpose: Convert BAM files into images (as shown in Figure 2) that can be used in CNN in step 2.
-Method: The Make_examples.py use a very sensitive caller to find all positions that might be a variant. Then it uses a type of local reassembly as a more thorough version of indel realignment. Finally, it pileup all reads into different images for different positions mentioned above[24].   
+Step 1: Preparation for variant calling.<br/>
+File: Make_examples.py<br/>
+Purpose: Convert BAM files into images (as shown in Figure 2) that can be used in CNN in step 2.<br/>
+Method: The Make_examples.py use a very sensitive caller to find all positions that might be a variant. Then it uses a type of local reassembly as a more thorough version of indel realignment. Finally, it pileup all reads into different images for different positions mentioned above[24].   <br/>
 
-Step 2: Call variants
-File: Call_variants.py
-Purpose: Classify images from step 1 as variant (Homozygous with different sequence, Heterozygote) or non-variant (Homozygous with same sequence).
-Method: Call_variants.py use a pre-trained convolutional neural network (CNN, or ConvNet) to predict which category does the image belong to. After the classification, if the most likely genotype is heterozygous or homozygous non-reference, a variant call is emitted[24].
+Step 2: Call variants<br/>
+File: Call_variants.py<br/>
+Purpose: Classify images from step 1 as variant (Homozygous with different sequence, Heterozygote) or non-variant (Homozygous with same sequence).<br/>
+Method: Call_variants.py use a pre-trained convolutional neural network (CNN, or ConvNet) to predict which category does the image belong to. After the classification, if the most likely genotype is heterozygous or homozygous non-reference, a variant call is emitted[24].<br/>
 
 ii. Middle box in Figure 4 :
 
-Purpose: Show how to train a CNN model, a deep learning model to classify images with different genotypes.
-Steps:
+Purpose: Show how to train a CNN model, a deep learning model to classify images with different genotypes.<br/>
+Steps:<br/>
 1. Use paired pileup images as training set images (as shown in Figure 2) and known genotypes as training set labels for the CNN model.
 2. Use stochastic gradient descent algorithm during training and find the best model during training.
 3. Along with other CNN models to optimize the CNN parameters to maximize accuracy. Other CNN models includes random CNN model, CNN models trained for other image classifications, and prior DeepVariant models[12]. 
@@ -110,8 +110,8 @@ Steps:
 
 iii. Right box in Figure 4 :
 
-Purpose: Shows how the CNN model is used.
-Method: 
+Purpose: Shows how the CNN model is used.<br/>
+Method: <br/>
 1. Encoded reference reads into a red-green-blue(RGB) pileup image (as shown in Figure 2) at a candidate variant [12]. 
 2. Use CNN to classify the images into three diploid genotype states of homozygous reference (hom-ref), heterozygous (het), or homozygous alternate (hom-alt)[12].
 
@@ -242,20 +242,20 @@ As showed in Table 5, running DeepVariant requires more hours if running on CPU.
 
 
   Academic Sources:
-1. DePristo MA, Banks E, Poplin R, et al. A framework for variation discovery and genotyping using next-generation DNA sequencing data. *Nat Genet*. 2011;43(5):491–498. doi:10.1038/ng.806
-2. Ryan Poplin, Valentin Ruano-Rubio, Mark A. DePristo, et al. Scaling accurate genetic variant discovery to tens of thousands of samples. *bioRxiv* 201178; doi: https://doi.org/10.1101/201178
-3. Chiang C, Layer RM, Faust GG, et al. SpeedSeq: ultra-fast personal genome analysis and interpretation. *Nature Methods*. 2015;12(10):966-968. doi:10.1038/nmeth.3505.
-4. Supernat, A., Vidarsson, O., Steen, V. and Stokowy, T. (2018). Comparison of three variant callers for human whole genome sequencing. *Scientific Reports*, 8(1).
-5. Ngcungcu T, et al. Duplicated Enhancer Region Increases Expression of CTSB and Segregates with Keratolytic Winter Erythema in South African and Norwegian Families. Am. J. Hum. *Genet.* 2017;100:737–750. doi: 10.1016/j.ajhg.2017.03.012.
-6. Macintyre, G. et al. Copy-number signatures and mutational processes in ovarian carcinoma. *bioRxiv* 174201, 10.1101/174201 (2017).
-7. Chambers JC, et al. 114 Whole genome sequencing to identify genetic variants underlying cardiovascular disease among Indian Asians. *Heart.* 2012;98:A64–A64. doi: 10.1136/heartjnl-2012-301877b.114.
-8. Radder JE, et al. Extreme Trait Whole-Genome Sequencing Identifies PTPRO as a Novel Candidate Gene in Emphysema with Severe Airflow Obstruction. Am. J. Respir. Crit. *Care Med*. 2017;196:159–171. doi: 10.1164/rccm.201606-1147OC.
-9. Flannick J, et al. Sequence data and association statistics from 12,940 type 2 diabetes cases and controls. *Sci. Data.* 2017;4:170179. doi: 10.1038/sdata.2017.179.
-10. Khan, F. F. et al. Whole genome sequencing of 91 multiplex schizophrenia families reveals increased burden of rare, exonic copy number variation in schizophrenia probands and genetic heterogeneity. *Schizophr.* Res. 10.1016/j.schres.2018.02.034 (2018).
-11. Zhao M, Wang Q, Wang Q, Jia P, Zhao Z. Computational tools for copy number variation (CNV) detection using next-generation sequencing data: features and perspectives. *BMC Bioinformatics.* 2013;14:S1. doi: 10.1186/1471-2105-14-S11-S1.
-12. Ryan Poplin, Dan Newburger, Jojo Dijamco, Nam Nguyen, Dion Loy, Sam S. Gross, Cory Y. McLean, Mark A. DePristo. Creating a universal SNP and small indel variant caller with deep neural networks. *Nature Biotechnology* doi: 10.1038/nbt.4235
-13. Harold E. Smith* and Sijung Yun。 “Evaluating alignment and variant-calling software for mutation identification in C. elegans by whole-genome sequencing”. *PLoS One.* 2017; 12(3): e0174446. Published online 2017 Mar 23. doi: 10.1371/journal.pone.0174446
-14. Chiang, C., Layer, R., Faust, G. et al. SpeedSeq: ultra-fast personal genome analysis and interpretation. *Nat Methods* 12, 966–968 (2015) doi:10.1038/nmeth.3505
+1. DePristo MA, Banks E, Poplin R, et al. A framework for variation discovery and genotyping using next-generation DNA sequencing data. Nat Genet. 2011;43(5):491–498. doi:10.1038/ng.806
+2. Ryan Poplin, Valentin Ruano-Rubio, Mark A. DePristo, et al. Scaling accurate genetic variant discovery to tens of thousands of samples. bioRxiv 201178; doi: https://doi.org/10.1101/201178
+3. Chiang C, Layer RM, Faust GG, et al. SpeedSeq: ultra-fast personal genome analysis and interpretation. Nature Methods. 2015;12(10):966-968. doi:10.1038/nmeth.3505.
+4. Supernat, A., Vidarsson, O., Steen, V. and Stokowy, T. (2018). Comparison of three variant callers for human whole genome sequencing. Scientific Reports, 8(1).
+5. Ngcungcu T, et al. Duplicated Enhancer Region Increases Expression of CTSB and Segregates with Keratolytic Winter Erythema in South African and Norwegian Families. Am. J. Hum. Genet. 2017;100:737–750. doi: 10.1016/j.ajhg.2017.03.012.
+6. Macintyre, G. et al. Copy-number signatures and mutational processes in ovarian carcinoma. bioRxiv 174201, 10.1101/174201 (2017).
+7. Chambers JC, et al. 114 Whole genome sequencing to identify genetic variants underlying cardiovascular disease among Indian Asians. Heart. 2012;98:A64–A64. doi: 10.1136/heartjnl-2012-301877b.114.
+8. Radder JE, et al. Extreme Trait Whole-Genome Sequencing Identifies PTPRO as a Novel Candidate Gene in Emphysema with Severe Airflow Obstruction. Am. J. Respir. Crit. Care Med. 2017;196:159–171. doi: 10.1164/rccm.201606-1147OC.
+9. Flannick J, et al. Sequence data and association statistics from 12,940 type 2 diabetes cases and controls. Sci. Data. 2017;4:170179. doi: 10.1038/sdata.2017.179.
+10. Khan, F. F. et al. Whole genome sequencing of 91 multiplex schizophrenia families reveals increased burden of rare, exonic copy number variation in schizophrenia probands and genetic heterogeneity. Schizophr. Res. 10.1016/j.schres.2018.02.034 (2018).
+11. Zhao M, Wang Q, Wang Q, Jia P, Zhao Z. Computational tools for copy number variation (CNV) detection using next-generation sequencing data: features and perspectives. BMC Bioinformatics. 2013;14:S1. doi: 10.1186/1471-2105-14-S11-S1.
+12. Ryan Poplin, Dan Newburger, Jojo Dijamco, Nam Nguyen, Dion Loy, Sam S. Gross, Cory Y. McLean, Mark A. DePristo. Creating a universal SNP and small indel variant caller with deep neural networks. Nature Biotechnology doi: 10.1038/nbt.4235
+13. Harold E. Smith* and Sijung Yun。 “Evaluating alignment and variant-calling software for mutation identification in C. elegans by whole-genome sequencing”. PLoS One. 2017; 12(3): e0174446. Published online 2017 Mar 23. doi: 10.1371/journal.pone.0174446
+14. Chiang, C., Layer, R., Faust, G. et al. SpeedSeq: ultra-fast personal genome analysis and interpretation. Nat Methods 12, 966–968 (2015) doi:10.1038/nmeth.3505
 
   General Sources:
 
