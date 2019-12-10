@@ -97,13 +97,16 @@ As presented in class, RNA-seq technology is often preferred to other sequencing
 
 1. Marzuillo, C., De Vito, C., D'Andrea, E., Rosso, A., & Villari, P. (2013). Predictive genetic testing for complex diseases: a public health perspective. _QJM: An International Journal of Medicine_, _107_(2), 93-97. <https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3905632/>
 
-2. Warren, M. (2018). The approach to predictive medicine that is taking genomics research by storm. _Nature_, _562_(7726), 181-184. [www.nature.com/articles/d41586-018-06956-3](http://www.nature.com/articles/d41586-018-06956-3).
+2. Warren, M. (2018). The approach to predictive medicine that is taking genomics research by storm. _Nature_, _562_(7726), 181-184. 
+[www.nature.com/articles/d41586-018-06956-3](http://www.nature.com/articles/d41586-018-06956-3).
 
 3. Wang, E., Zaman, N., Mcgee, S., Milanese, J. S., Masoudi-Nejad, A., & O'Connor-McCourt, M. (2015, February). Predictive genomics: a cancer hallmark network framework for predicting tumor clinical phenotypes using genome sequencing data. In _Seminars in cancer biology_ (Vol. 30, pp. 4-12). Academic Press. <https://www.sciencedirect.com/science/article/pii/S1044579X14000509?via%3Dihub>
 
-4. Timms, K. M., Abkevich, V., Hughes, E., Neff, C., Reid, J., Morris, B., ... & Iliev, D. (2014). Association of BRCA1/2 defects with genomic scores predictive of DNA damage repair deficiency among breast cancer subtypes. _Breast Cancer Research_, _16_(6), 475. <https://www.ncbi.nlm.nih.gov/pubmed/25475740>.
+4. Timms, K. M., Abkevich, V., Hughes, E., Neff, C., Reid, J., Morris, B., ... & Iliev, D. (2014). Association of BRCA1/2 defects with genomic scores predictive of DNA damage repair deficiency among breast cancer subtypes. _Breast Cancer Research_, _16_(6), 475. 
+<https://www.ncbi.nlm.nih.gov/pubmed/25475740>.
 
-5. Steemers, F. J., Chang, W., Lee, G., Barker, D. L., Shen, R., & Gunderson, K. L. (2006). Whole-genome genotyping with the single-base extension assay. _Nature methods_, _3_(1), 31. <https://www.ncbi.nlm.nih.gov/pubmed/16369550?dopt=AbstractPlus>
+5. Steemers, F. J., Chang, W., Lee, G., Barker, D. L., Shen, R., & Gunderson, K. L. (2006). Whole-genome genotyping with the single-base extension assay. _Nature methods_, _3_(1), 31. 
+<https://www.ncbi.nlm.nih.gov/pubmed/16369550?dopt=AbstractPlus>
 
 6. Gorodetska, I., Kozeretska, I., & Dubrovska, A. (2019). _BRCA_ Genes: The Role in Genome Stability, Cancer Stemness and Therapy Resistance. _Journal of Cancer_, _10_(9), 2109–2127\. doi:10.7150/jca.30410 <https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6548160/>
 
@@ -118,8 +121,7 @@ As presented in class, RNA-seq technology is often preferred to other sequencing
 11. Illumina Infinium Array Workflow. 2017\. Retrieved from <https://www.illumina.com/content/dam/illumina-marketing/documents/products/workflows/workflow_infinium_ii.pdf>
 
 12. LaFramboise, T. (2009). Single nucleotide polymorphism arrays: a decade of biological, computational and technological advances. _Nucleic acids research_, _37_(13), 4181-4193.
-
-  <https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2715261/>
+<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2715261/>
 
 13. Convert array Data into Meaningful results. (GenomeStudio). 2019\. Retrieved from <https://www.illumina.com/techniques/microarrays/array-data-analysis-experimental-design/genomestudio.html>
 
