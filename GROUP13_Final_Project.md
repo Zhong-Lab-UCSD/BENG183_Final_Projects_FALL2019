@@ -21,7 +21,7 @@
  
 >This image describes the general outline from converting text to vectors based on associativity, which is then applied to train the neural network/input. A neural network is a computing system created from interconnected nodes that process information and inputs.
  
- >### Word2Vec
+ >#### Word2Vec
  > - Machine Learning models take matrices as input; therefore, we need to convert every word in the text into a vector and represent them in vector space. 
  > - One common Word2Vec model is the Skip-Gram Model. This word vectorization method represents semantic connections between words. Word vectorization methods provide Distributional Similarity Based Representation, which states you can get a lot of value by representing a word by means of its neighbors. 
  > - A Skip-Gram Model uses the current word to predict its neighbors (its context). 
@@ -29,40 +29,40 @@
  > - The result of this model is that the words appearing in similar contexts in these texts are represented by proximal vectors. 
 
 >### **3.3 Creating Models** <a name="33"></a>
->>####What is a Neural Network?
+>>#### What is a Neural Network?
 >>A computing system made up of a number of simple interconnected nodes (processing elements), which processes information by their dynamic state response to external inputs.
  
- >><img src="neuralNetworks.png" width="500" height="400">
+ >><img src="neuralNetworks.png" width="400" height="350">
  
  >>The input layer receives various forms of information from the outside world. This is the data that the network aims to process or learn about. From the input unit, the data goes through one or more hidden units. The hidden unit’s job is to transform the input into something the output unit can use.
  <br> </br>
- >>####***Recurrent Neural Network***
->> Recurrent neural networks are networks with loops in them, allowing information to persist. Some common occurrences of RNNs are in translation, image captioning, and more.  RNNs combine the input vector with their state vector with a fixed (but learned) function to produce a new state vector [4].
+ >> ####***Recurrent Neural Network***
+ >> Recurrent neural networks are networks with loops in them, allowing information to persist. Some common occurrences of RNNs are in translation, image captioning, and more.  RNNs combine the input vector with their state vector with a fixed (but learned) function to produce a new state vector [4].
  <br> </br>
  
- >>><img src="unrolled.png" width="500" height="400">
+ >>><img src="unrolled.png" width="500" height="350">
  
 >>> As you can see in the unrolled version, the model first takes the x(0) from the sequence of input and then it outputs h(0) which together with x(1) is the input for the next step. So, the h(0) and x(1) is the input for the next step. Similarly, h(1) from the next is the input with x(2) for the next step and so on. This way, it remembers the context while training. This method of remembering past processed data is extremely useful when we want our model to have context from previous input.
  
- >>####***Long Short-Term Memory (LSTM)***
+ >> ####***Long Short-Term Memory (LSTM)***
  >>LSTMs are a type of RNN; specifically a LSTM’s hidden layer updates are replaced by purpose-built memory cells. As a result, they may be better at finding and preserving long range dependencies of text. 
  
- >>####***Bi-Directional Long Short-Term Memory (LSTM)***
+ >> ####***Bi-Directional Long Short-Term Memory (LSTM)***
  >>Bi-LSTM’s are a combination of two LSTMs; one LSTM processing the data from front to end (Forward Layer) and one LSTM processing the data end to from (Backward Layer). Because Bi-LSTM’s read and analyze the input data in both the forward and reverse direction, the model is able to learn more relationships between the words. Bi-LSTMs find the probability of a word based on its full left and right contexts is ideal for maximizing the possibility of correctly clustering key phrases of symptoms, diseases, and/or treatments for a specific condition [5].
+ >> <img src="memorycell1.png" width="250" height="250">
+ >> <img src="memorycell2.png" width="250" height="200">
  <br> </br>
- <img src="memorycell1.png" width="250" height="250">
- <img src="memorycell2.png" width="250" height="200">
- <br> </br>
- As mentioned previously, RNN introduces the connection between the previous states and current state. The recurrent layer is designed to store history information. The values in the hidden and output layers are computed as follows: 
- 
->>>h(t) = f(Ux(t) + Wh(t − 1)) 
 
->>>y(t) = g(Vh(t))
+>>As mentioned previously, RNN introduces the connection between the previous states and current state. The recurrent layer is designed to store history information. The values in the hidden and output layers are computed as follows: 
+ 
+>>h(t) = f(Ux(t) + Wh(t − 1)) 
+
+>>y(t) = g(Vh(t))
 
 >>where U, W, and V are the connection weights to be computed in training time, and f(z) and g(z) are sigmoid and softmax activation functions as follows: <br>
  <img src="equations.png" width="200" height="150"> 
  
- >>######***A Long Short-Term Memory Cell***
+ >> ######***A Long Short-Term Memory Cell***
  >>The image below illustrates a single LSTM memory cell, as well as provides the equations needs to implement the following cell. 
  
  >><img src="LSTM.png" width="350" height="350">
@@ -75,7 +75,7 @@
   - Organizes unstructured data in health record databases, giving physicians more information about the data for decision making [6].
  - Amazon Alexa, which uses NLP technology,has collaborated with Britain’s National Health Service (NHS) to provide medical advice to its users [7].
  
- >#### **4.1 Case Study: Pharmacogenetic Studies** <a name="41"></a>
+ > #### **4.1 Case Study: Pharmacogenetic Studies** <a name="41"></a>
  >- Natural language processing algorithms were used to develop a weekly dose calculation system by extending an existing medication information extraction system “to extract drug-dose information from clinical text, and to assess the capabilities of such tools to automate the data-extraction process for pharmacogenetic studies.” [9]
  > - This study was done specifically on warfarin:
   > - The experiment consisted of 1125 patients with a stable warfarin dose
