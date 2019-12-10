@@ -49,12 +49,9 @@
  
  >>#### ***Bi-Directional Long Short-Term Memory (LSTM)***
  >>Bi-LSTM’s are a combination of two LSTMs; one LSTM processing the data from front to end (Forward Layer) and one LSTM processing the data end to from (Backward Layer). Because Bi-LSTM’s read and analyze the input data in both the forward and reverse direction, the model is able to learn more relationships between the words. Bi-LSTMs find the probability of a word based on its full left and right contexts is ideal for maximizing the possibility of correctly clustering key phrases of symptoms, diseases, and/or treatments for a specific condition [5].
- >>
->><img src="memorycell1.png" width="250" height="225"> 
+ >><img src="LSTM.png" width="350" height="350">
 
->><img src="memorycell2.png" width="250" height="200">
-
->>As mentioned previously, RNN introduces the connection between the previous states and current state. The recurrent layer is designed to store history information. The values in the hidden and output layers are computed as follows: 
+>>As mentioned previously, RNN introduces the connection between the previous states and current state. The recurrent layer is designed to store history information. The values in the hidden and output layers are computed as follows: [6]
 >
 >>h(t) = f(Ux(t) + Wh(t − 1)) 
 
@@ -64,17 +61,18 @@
  >><img src="equations.png" width="200" height="150"> 
  
  >>##### ***A Long Short-Term Memory Cell***
- >>The image below illustrates a single LSTM memory cell, as well as provides the equations needs to implement the following cell. 
+>>The image below illustrates a single LSTM memory cell, as well as provides the equations needs to implement the following cell.
+>>><img src="memorycell1.png" width="250" height="225">
+>>><img src="memorycell2.png" width="250" height="225">
  
- >><img src="LSTM.png" width="350" height="350">
  
  ## **4. Applications**<a name="4"></a> 
  - NLP text mining helps maximize the information we get out of electronic health records, by finding patterns and concepts within the data that humans cannot identify with the bare eye.
  - Clinical documentation using electronic health records allows NLP to be applied in the healthcare industry, improving healthcare delivery, disease diagnosis and affordability [1]. 
  - More specifically, NLP is a useful technique for precision medicine
   - NLP enables recognition and prediction of diseases based on electronic health records and patient’s own speech
-  - Organizes unstructured data in health record databases, giving physicians more information about the data for decision making [6].
- - Amazon Alexa, which uses NLP technology, has collaborated with Britain’s National Health Service (NHS) to provide medical advice to its users [7].
+  - Organizes unstructured data in health record databases, giving physicians more information about the data for decision making [7].
+ - Amazon Alexa, which uses NLP technology, has collaborated with Britain’s National Health Service (NHS) to provide medical advice to its users [8].
  
  > #### **4.1 Case Study: Pharmacogenetic Studies** <a name="41"></a>
  >- Natural language processing algorithms were used to develop a weekly dose calculation system by extending an existing medication information extraction system “to extract drug-dose information from clinical text, and to assess the capabilities of such tools to automate the data-extraction process for pharmacogenetic studies.” [9]
@@ -99,12 +97,12 @@
  
  [5] Banerjee, Suvro. “An Introduction to Recurrent Neural Networks.” Medium, Explore Science & Artificial Intelligence, 19 Aug. 2019, medium.com/explore-artificial-intelligence/an-introduction-to-recurrent-neural-networks-72c97bf0912.<br>
  
- [6] “Top 12 Use Cases of Natural Language Processing in Healthcare.” Maruti Techlabs, 2 Dec. 2019, marutitech.com/use-cases-of-natural-language-processing-in-healthcare/.<br>
+ [6] Huang, Zhiheng, et al. “Bidirectional LSTM-CRF Models for Sequence Tagging.” 9 Aug. 2015.
  
- [7] Magra, Iliana. “Alexa Now Gives U.K. Users N.H.S. Medical Advice.” The New York Times, The New York Times, 10 July 2019, www.nytimes.com/2019/07/10/world/europe/alexa-nhs-amazon-privacy.html.<br>
+ [7] “Top 12 Use Cases of Natural Language Processing in Healthcare.” Maruti Techlabs, 2 Dec. 2019, marutitech.com/use-cases-of-natural-language-processing-in-healthcare/.<br>
  
- [8] “Sequence Tagging with Tensorflow.” Guillaume Genthial Blog, 5 Apr. 2017, guillaumegenthial.github.io/sequence-tagging-with-tensorflow.html.<br>
- 
+ [8] Magra, Iliana. “Alexa Now Gives U.K. Users N.H.S. Medical Advice.” The New York Times, The New York Times, 10 July 2019, www.nytimes.com/2019/07/10/world/europe/alexa-nhs-amazon-privacy.html.<br>
+  
  [9] Hua Xu, Min Jiang, Matt Oetjens, Erica A Bowton, Andrea H Ramirez, Janina M Jeff, Melissa A Basford, Jill M Pulley, James D Cowan, Xiaoming Wang, Marylyn D Ritchie, Daniel R Masys, Dan M Roden, Dana C Crawford, Joshua C Denny, Facilitating pharmacogenetic studies using electronic health records and natural-language processing: a case study of warfarin, Journal of the American Medical Informatics Association, Volume 18, Issue 4, July 2011, Pages 387–391, https://doi.org/10.1136/amiajnl-2011-000208<br>
  
  
