@@ -2,6 +2,26 @@
 
 By: Erikka Linn A13780018 , Kalyani Kottilil A13513679, Katha Korgaonkar A13437473
 
+### Table of Contents
+
+[Intro](#introduction) 
+
+[Background](#background)
+
+[What is ATAC-seq?](#what-is-atac-seq)
+
+[How Does ATAC-seq Work?](#how-does-atac-seq-work)
+
+[Protocol](#protocol)
+
+[Applications](#applications)
+
+[Pros and Cons](#pros-and-cons-of-atac-seq)
+
+[Future Developments](#future-developments)
+
+[References](#references)
+
 ## Introduction
 Current methods such as ChIP-seq, Hi-C and bisulfite sequencing are ways to analyze the effects of epigenetic modifications on the genome. However, these methods require prior knowledge of the mechanisms where one needs to have specific transcription factors (and their subsequent antibodies) available. This limits what potential mutations/changes can be fully investigated. One method that overcomes this limitation is ATAC-seq which can analyze chromatin accessibility no matter the mechanism.
 
@@ -15,7 +35,7 @@ The ATAC-seq protocol only requires around 50,000 cells and two steps: cell prep
 
 > **Genetic regulation** can be carried out through a variety of interactions such as when upstream activation sequences recruit proteins or proximal promoter elements modify strands in addition to the interaction between chromatin and transcription factors. 
 >
-> *So, how can the other regulatory regions not modified by transcription factors be found?*
+> **So, how can the other regulatory regions not modified by transcription factors be found?**
 
 This is where ATAC-seq is useful as it can help provide a ‘bigger picture’ where the reads show accessible regions DNA sequences in that relate to specific locations in the nucleosome and binding sites. 
 
@@ -93,7 +113,9 @@ Future applications or optimizations of this protocol look to apply ATAC-seq in 
 	
 Also, due to its ease of use, ATAC-seq is likely to become commonly used in many epigenomics workflows to analyze chromosome accessibility.
 
-## References
+---
+
+### References
 1. https://www.abcam.com/epigenetics/epigenetics-application-spotlight-atac-seq
 2. https://www.activemotif.com/blog-atac-seq
 3. https://www.illumina.com/science/sequencing-method-explorer/kits-and-arrays/atac-seq.html
