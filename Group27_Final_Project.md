@@ -59,7 +59,7 @@ However, if we were to use an error-prone RCA method instead of PCR, the process
 
 <br />
 
-![Figure 3 - RCA vs. PCR Pipelines for Error-Prone Amplification](https://github.com/npusarla/BENG183_Final_Projects_FALL2019/blob/master/Images/Figure3.jpeg)
+![Figure 3 - RCA vs. PCR Pipelines for Error-Prone Amplification](https://github.com/npusarla/BENG183_Final_Projects_FALL2019/blob/master/Images/PCR_v_rca.jpg)
 
 <br />
 
@@ -75,7 +75,9 @@ Rolling Circle Amplification is used frequently for efficient isothermal DNA amp
 ![Figure 4 - RCAGel](https://github.com/npusarla/BENG183_Final_Projects_FALL2019/blob/master/Images/RCA_gel.jpg)
 
 <br />
+
 &nbsp; &nbsp; &nbsp; &nbsp;**Figure 4 - Electrophoresis of RCA Products**
+
 <br />
 
 A specific example of this case is described below. In various tropical and subtropical countries around the world, geminiviruses have a history of destroying large regions of crops, and a combination of PCR and RFLP (Restriction Fragment Length Polymorphism) have been used for diagnostic tools in this field. However, developing countries are the major regions in which geminiviruses attack, and a combination of RCA/RFLP offers a low-cost procedure alternative for diagnosis that can be performed in lower standard laboratories, but still with high accuracy. Circular DNA was extracted from plants that were positive and negative for infection by various geminiviruses. After purification of the DNA, RCA was performed as an alternative to PCR using ɸ29 Polymerase. 
@@ -89,7 +91,7 @@ The DNA amplified from RCA can additionally be characterized by RFLP analysis an
 
 ## Conclusion
 
-Rolling Circle Amplification, the amplification of circularized target template molecules, is an innovative and efficient process to achieve a multitude of copies of the DNA snippet of interest. While only a few of the potential uses of RCA are described in this writeup, there are other avenues such as its utilization in Low Copy Number (LCN) DNA used for forensic genomics. Because this is a fairly new concept, continued efforts are being pursued to find even more approaches with RCA. 
+Rolling Circle Amplification, the amplification of circularized target template molecules, is an innovative and efficient process to achieve a multitude of copies of the DNA snippet of interest. While only a few of the potential uses of RCA are described in this writeup, there are other avenues such as its utilization in Low Copy Number (LCN) DNA used for forensic genomics [7]. Because this is a fairly new concept, continued efforts are being pursued to find even more approaches with RCA.
 
 ---
 
@@ -101,5 +103,5 @@ Rolling Circle Amplification, the amplification of circularized target template 
 4. Fujii, Ryota & Kitaoka, Motomitsu & Hayashi, Kiyoshi. (2004). One-step random mutagenesis by error-prone rolling circle amplification. Nucleic acids research. 32. e145. 10.1093/nar/gnh147. 
 5. Mohsen, Michael G, and Eric T Kool. “The Discovery of Rolling Circle Amplification and Rolling Circle Transcription.” Accounts of Chemical Research, U.S. National Library of Medicine, 15 Nov. 2016, www.ncbi.nlm.nih.gov/pubmed/27797171.
 6. Schweitzer, Barry, et al. "Immunoassays with rolling circle DNA amplification: a versatile platform for ultrasensitive antigen detection." Proceedings of the National Academy of Sciences 97.18 (2000): 10113-10119.
-
+7. Kieser, Rachel E., and Bruce Budowle. “Rolling Circle Amplification: A (Random) Primer on the Enrichment of an Infinite Linear DNA Template.” Wiley Online Library, John Wiley &amp; Sons, Ltd, 28 Aug. 2019, onlinelibrary.wiley.com/doi/full/10.1002/wfs2.1359
 
