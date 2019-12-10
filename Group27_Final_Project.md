@@ -83,7 +83,7 @@ The DNA amplified from RCA can additionally be characterized by RFLP analysis an
 3. Ali, M. Monsur, et al. “Rolling Circle Amplification: a Versatile Tool for Chemical Biology, Materials Science and Medicine.” Chemical Society Reviews, The Royal Society of Chemistry, 18 Mar. 2014, pubs.rsc.org/en/content/articlelanding/2014/cs/c3cs60439j#!divAbstract. 
 4. Fujii, Ryota & Kitaoka, Motomitsu & Hayashi, Kiyoshi. (2004). One-step random mutagenesis by error-prone rolling circle amplification. Nucleic acids research. 32. e145. 10.1093/nar/gnh147. 
 5. Mohsen, Michael G, and Eric T Kool. “The Discovery of Rolling Circle Amplification and Rolling Circle Transcription.” Accounts of Chemical Research, U.S. National Library of Medicine, 15 Nov. 2016, www.ncbi.nlm.nih.gov/pubmed/27797171.
-6. Ali, M. Monsur; Li, Feng; Zhang, Zhiqing; Zhang, Kaixiang; Kang, Dong-Ku; Ankrum, James A.; Le, X. Chris; Zhao, Weian (2014). "Rolling circle amplification: a versatile tool for chemical biology, materials science and medicine". Chemical Society Reviews. 43 (10): 3324–41. doi:10.1039/C3CS60439J
+6. 
 
 
 
