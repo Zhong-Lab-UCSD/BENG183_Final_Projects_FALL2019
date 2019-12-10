@@ -4,11 +4,11 @@
 
 * [Overview](#overview)
 
-* [k-Means Clustering](#k-means-clustering)
+* [*k*-Means Clustering](#k-means-clustering)
 
-* [Global k-Means Clustering](#global-k-means-clustering)
+* [Global *k*-Means Clustering](#global-k-means-clustering)
 
-* [Fuzzy c-Means Clustering](#fuzzy-c-means-clustering)
+* [Fuzzy *c*-Means Clustering](#fuzzy-c-means-clustering)
 
 * [Mixture of Gaussian Clustering](#mixture-of-gaussian-clustering)
 
@@ -33,7 +33,7 @@ Step 3: Stop if the algorithm converges (that is, the cluster assignments no lon
 
 Here is a GIF demo:
 
-<img src="http://shabal.in/visuals/kmeans/random.gif" width=700 height=500>
+<img src="https://shabal.in/visuals/kmeans/random.gif" width=700 height=500>
 
 ## Global *K*-Means Clustering
 
@@ -44,7 +44,7 @@ One traditional way is to start from one cluster (centroid), and continuously ad
 Step 1: Given the finite data set $A$, $\{a_1, a_2, \dots, a_m\}$, consisting of m n-dimensional elements, compute A’s center, set this as the initial center.  
 Step 2: Let the rest ($k$-1)-partition centroids be $x_1, x_2, \dots, x_{k-1}$, compute $\overline{f_k}(y)$, $y \in \R^n$by comparing the minimum square distance between each point and the closest cluster center from $x_1, x_2, \dots, x_{k-1}$ with the square distance of each pair of data. So the point with the minimum $\overline{f_k}(y)$ value would be the new cluster center for the next iteration.  
 Step 3: Select $\{x_1, x_2, \dots, x_{k-1},y\}$ as a new starting point, apply the k-means algorithm. Then use the result as the input, go back to step 2.  
-Step 4: Stop iteration if $\overline{f_k}(y)$ is smaller than a given tolerance value
+Step 4: Stop iteration if $\overline{f_k}(y)$ is smaller than a given tolerance value.
 
 ## Fuzzy c-Means Clustering
 
@@ -109,7 +109,7 @@ Here is a GIF demo for the algorithm:
 
 ## Discussion
 
-### Limitations
+### Limitations of *k*-Means
 
 Standard *k*-means clustering requires a careful selection of initial cluster centers. A different initialization may yield to a different number of iterations required for convergence, and a different clustering results. However, in some cases, the algorithm may not converge at all. In addition, the algorithm produces a clustering that attains local optimum, and more importantly, there may be different cluster assignments that have the same optimal scores [11]. Last but not least, the standard k-means clustering is vulnerable to the noise, thus its reliability is compromised provided the data is fuzzy.
 
