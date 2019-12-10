@@ -129,7 +129,10 @@ Figure: Predictions results of trained convolutional neural network on 30,000 im
 
 ### Reliance on Prior Knowledge, and Misapplication of Machine Learning
 
-## Present and Future Developments
+## Future of Machine Learning in Bioinformatics
+
+Future applications of machine learning techniques in the field of Bioinformatics have the potential to contribute to the areas of patient-specific pharmaceutical drugs, newborn genetic screening tools, and agriculture. Pharmacogenomics is studying how the genetic make-up of an individual plays a role in their response to drugs. Newborn genetic screening tools are being developed to collect data at birth and screen for certain diseases. Lastly, genetic data is being used to predict the yield and health of crops, which could help farmers better optimize their yields. Machine learning is currently impacting multiple areas of Bioinformatics research and it will continue to be an active field in the near future. [9]
+
 
 ## References
 
@@ -148,3 +151,5 @@ Figure: Predictions results of trained convolutional neural network on 30,000 im
 [7] Xu, C., & Jackson, S. A. (2019). Machine learning and complex biological data. Genome biology, 20(1), 76. doi:10.1186/s13059-019-1689-0
 
 [8] Libbrecht, M. W., & Noble, W. S. (2015). Machine learning applications in genetics and genomics. Nature reviews. Genetics, 16(6), 321–332. doi:10.1038/nrg3920
+
+[9] Sennaar, K. (2019). Machine Learning in Genomics – Current Efforts and Future Applications | Emerj. Retrieved 9 December 2019
