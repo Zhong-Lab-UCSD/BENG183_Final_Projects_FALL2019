@@ -40,7 +40,7 @@ Single Nucleotide Polymorphisms are locations in the human genome where there ca
 
 SNP Array is a type of a DNA Microarray used to find out if an individual carries the mutation responsible for a specific disease. It is widely used to detect cancer biomarkers. This is done by analyzing which genes are expressed in a tissue. SNP Arrays are often used to compare the pattern of gene expression in tumor versus normal tissue. For simplicity, the two possible alleles at the SNP position be A and B. Since each individual has 2 copies of the SNP, the possible genotypes are AA, AB, BB. (12)
 
-![DNA Microarray Workflow](./GROUP21_Final_Project_images/probe.jpg) _FIGURE 2: DNA Microarray Workflow_
+![DNA Microarray Workflow](./GROUP21_Final_Project_images/probe.jpg) _FIGURE 2: SNP Microarray Workflow_
 
 #### Workflow of SNP Arrays (7)
 
