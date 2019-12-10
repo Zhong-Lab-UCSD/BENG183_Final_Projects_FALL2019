@@ -8,7 +8,7 @@
 - [Applications](#Applications)
   * [PCR Alternative](#PCR-Alternative)
   * [Random Mutagenesis](#Random-Mutagenesis)
-  * [Geminiviruses & RFLP](#Geminiviruses-RFLP)
+  * [Geminiviruses & RFLP](#Geminiviruses-and-RFLP)
 - [References](#References)
 
 
@@ -59,7 +59,7 @@ Another useful application of RCA is in enzyme development using random mutagene
 &nbsp; &nbsp; &nbsp; &nbsp;**Figure 3 - RCA vs. PCR Pipelines for Error-Prone Amplification**
 <br />
 
-### Geminiviruses & RFLP
+### Geminiviruses and RFLP
 
 Rolling Circle Amplification is used frequently for efficient isothermal DNA amplification in molecular diagnoses. Even though PCR is a popular and reliable technique, its applicability is limited by its dependence on heating and cooling cycles. The heating step of PCR can damage biological models, and therefore an isothermal approach to DNA/RNA amplification, such as RCA, is preferable. The circular templates used allow for amplification to be over a thousand-fold from a single binding event, therefore, making RCA ideal for the ultrasensitive detection used in diagnostics. In addition, Rolling Circle Amplification, using the specific bacteriophage ɸ29, DNA Polymerase aids in determining diagnoses of geminiviruses and essentially all viruses with small-single stranded circular DNA genomes[2]. Viral DNA components of geminiviruses can be detected using RCA, allowing for such diagnoses. 
 
