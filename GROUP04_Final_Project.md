@@ -1,7 +1,7 @@
 # Introducing DeepVariant with performance comparing with GATK and SpeedSeq
 
 Zoe Li, Tianyi Zhang, Ningxin Kang
-<p style="float:right">Dec 9 2019</p>
+<div style="float:right">Dec 9 2019</div>
 
 ### Abstract
 We are unique genetically because we have variations in our DNA. Genetic variants can be grouped into three categories by size: single nucleotide variant (SNV), insertion and deletion (indel), and structural variant (SV, including copy number variation, duplication, translocation, etc.). With the advancement of NGS (Next-generation Sequencing), tons of genetic data is produced for analysis. To identify mutation, the first important step is to detect candidate variants. Currently, there are a few tools available for variant calling: DeepVariant, GATK, and SpeedSeq. We will briefly introduce all three of these tools and then compare them in terms of their performance, runtime, device requirement, and potential possibilities in the following chapter. Among these three tools, Deep Variant is one of the newest TensorFlow based deep learning variant callers, which was first published in 2017 by winning the PrecisionFDA Truth Challenge. Comparing with the other tools, DeepVariant has the highest precision, highest true positive calling, highest F1 score, and lowest false negative calling,  although it also requires a higher computer hardware setting. Since DeepVarinat is currently one of the most valuable technology to learn for bioinformaticians, we will include a deeper explanation and analysis of how DeepVariant works with a step by step tutorial.
