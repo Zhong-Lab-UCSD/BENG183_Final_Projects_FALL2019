@@ -45,7 +45,7 @@ The following are some different techniques in place to normalize RNA-seq data:
 ### 2.1 RPKM<a name="21"></a>
 RPKM stands for Reads Per Kilobase of transcript per Million [4].
   
-    Steps for RPKM: 
+    Workflow: 
       1. The numerator is the read counts aligned to a single gene.
       2. The total reads in a sample divided by 1,000,000 is our “per million” scaling factor.
       Multiply this by the length of the gene in kilobases. This is our denominator.
@@ -91,6 +91,26 @@ SCBN stands for scale based normalization, and is a newly proposed method which 
 </p>
 
 SCBN builds off another normalization method known as HTN, which is based on the hypothesis testing framework. HTN uses available knowledge of housekeeping genes, to calculate an optimal scaling factor. Using the same principles, SCBN utilizes the available knowledge of conserved orthologous genes for different species to derive the normalization scaling factor. SCBN assumes that a set of conserved orthologous genes between species is known in advance, and calculates the optimal scaling factor by minimizing the deviation between the empirical and nominal type I errors.
+
+    Workflow: 
+          1. For each orthologous gene, take the null hypothesis as the case 
+          where the true expression level of the gene in species 1 is equal to 
+          the true expression level of the gene in species 2. 
+          The experimental hypothesis is the case where these two levels are not equal.
+          2. Assume that the reads mapped to the orthologous genes are Poisson random variables. 
+          The random variable follows a binomial distribution with the conditional probability density function. 
+          The p-value of the test in this model is calculated as follows: 
+          
+  <p align="center">
+  <img src="./img/image10.png" width="400">
+  </p>
+
+          3. The p-value is a function of the scaling factor c. 
+          The optimal c for normalization is defined as the value with most accurate detection of differentially expressed genes.
+          Therefore the following positive false discovery rate (pFDR) function is minimized to find c:
+   <p align="center">
+  <img src="./img/image11.png" width="400">
+  </p>
 
 Tools to implement SCBN include an R package named “SCBN”, which is freely available at http://www.bioconductor.org/packages/devel/bioc/html/SCBN.html [6].
 
