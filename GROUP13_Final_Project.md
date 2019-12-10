@@ -36,7 +36,7 @@
  
  >>The input layer receives various forms of information from the outside world. This is the data that the network aims to process or learn about. From the input unit, the data goes through one or more hidden units. The hidden unit’s job is to transform the input into something the output unit can use.
  <br> </br>
- >> ####***Recurrent Neural Network***
+ >>#### ***Recurrent Neural Network***
  >> Recurrent neural networks are networks with loops in them, allowing information to persist. Some common occurrences of RNNs are in translation, image captioning, and more.  RNNs combine the input vector with their state vector with a fixed (but learned) function to produce a new state vector [4].
  <br> </br>
  
@@ -50,7 +50,8 @@
  >>#### ***Bi-Directional Long Short-Term Memory (LSTM)***
  >>Bi-LSTM’s are a combination of two LSTMs; one LSTM processing the data from front to end (Forward Layer) and one LSTM processing the data end to from (Backward Layer). Because Bi-LSTM’s read and analyze the input data in both the forward and reverse direction, the model is able to learn more relationships between the words. Bi-LSTMs find the probability of a word based on its full left and right contexts is ideal for maximizing the possibility of correctly clustering key phrases of symptoms, diseases, and/or treatments for a specific condition [5].
  >>
-> <img src="memorycell1.png" width="250" height="250"> 
+> <img src="memorycell1.png" width="250" height="225"> 
+
 > <img src="memorycell2.png" width="250" height="200">
 
 >>As mentioned previously, RNN introduces the connection between the previous states and current state. The recurrent layer is designed to store history information. The values in the hidden and output layers are computed as follows: 
@@ -62,7 +63,7 @@
 >>where U, W, and V are the connection weights to be computed in training time, and f(z) and g(z) are sigmoid and softmax activation functions as follows: <br>
  <img src="equations.png" width="200" height="150"> 
  
- >> ######***A Long Short-Term Memory Cell***
+ >>###### ***A Long Short-Term Memory Cell***
  >>The image below illustrates a single LSTM memory cell, as well as provides the equations needs to implement the following cell. 
  
  >><img src="LSTM.png" width="350" height="350">
