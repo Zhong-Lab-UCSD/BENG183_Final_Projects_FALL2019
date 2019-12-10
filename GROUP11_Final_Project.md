@@ -146,6 +146,10 @@ An example of this is seen in bioinformatics in a medical application. A model w
 
 As previously stated, there are many ‘hidden’ factors in biology, and without understanding the process of the predictive model, we may not be able to model data accurately, or interpret data correctly. In a field where a large number of scientists rely solely on the results of data input and output, a lack of understanding how that data is analyzed can be especially dangerous, especially when the model isn’t fully optimized.
 
+<p align="center"><img src="14.jpg" height="250" ></p>
+
+Figure. Interpretation of a predictive model. Data input through ‘The Black Box’ leads to processed data meant for interpretation.
+
 ### Reliance on Prior Knowledge, and Misapplication of Machine Learning
 
 ## Future of Machine Learning in Bioinformatics
