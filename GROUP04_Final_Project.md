@@ -118,32 +118,37 @@ Method:
 ### Comparison:
 
 <br/>
-<br/>
 <p align="center">
 <img src="https://github.com/ztybigcat/BENG183_Final_Projects_FALL2019/blob/master/images_group4/image10.png", width = "800"><br/>
-Table 1: Comparison of variant calling pipelines using false negative SNV calls. Data comes from Comparison of three variant callers for human whole genome sequencing(2018) written by Supernat, A., Vidarsson, O. V., Steen, V. M., & Stokowy, T. . The variants are called from 30x, 15x and 10x coverage of the NA12878 sample (HiSeq4000, Genomics Core Facility, Bergen, Norway) and compared to GIAB NISTv3.3.2 (fp://fp-trace.ncbi.nlm.nih.gov/giab/fp/release/NA12878_HG001/NISTv3.3.2/GRCh38/). <br/>
+Table 1: Comparison of variant calling pipelines using false negative SNV calls. Data comes from Comparison of three variant callers for human whole genome sequencing(2018) written by Supernat, A., Vidarsson, O. V., Steen, V. M., & Stokowy, T. . <br/>
+The variants are called from 30x, 15x and 10x coverage of the NA12878 sample (HiSeq4000, Genomics Core Facility, Bergen, Norway) and compared to GIAB NISTv3.3.2 (fp://fp-trace.ncbi.nlm.nih.gov/giab/fp/release/NA12878_HG001/NISTv3.3.2/GRCh38/). <br/>
 </p>
-
+<br/>
+<br/>
 <p align="center">
 <img src="https://github.com/ztybigcat/BENG183_Final_Projects_FALL2019/blob/master/images_group4/image2.png", width = "800"><br/>
 Table 2: Comparison of variant calling pipelines using single-nucleotide variant (SNV) calling precisions. Data source is the same as Table 1, using the same coverage comparison.<br/>
 </p>
 
-
+<br/>
 <p align="center">
 <img src="https://github.com/ztybigcat/BENG183_Final_Projects_FALL2019/blob/master/images_group4/image11.png", width = "800"><br/>
-Table 3: Comparison of variant calling pipelines using F1 score to test the accuracy of three systems, it considers both the precision and the recall of the test to calculate. Data source is the same as Table 1, using the same coverage comparison.
+Table 3: Comparison of variant calling pipelines using F1 score to test the accuracy of three systems, it considers both the precision and the recall of the test to calculate. <br/>
+Data source is the same as Table 1, using the same coverage comparison.
 <br/>
 </p>
+<br/>
 
 <p align="center">
 <img src="https://github.com/ztybigcat/BENG183_Final_Projects_FALL2019/blob/master/images_group4/image6.png", width = "800"><br/>
-Table 4: Comparison of variant calling pipelines using true positive (sensitivity) SNV calls. Data source is the same as Table 1, using the same coverage comparison.
+Table 4: Comparison of variant calling pipelines using true positive (sensitivity) SNV calls. 
+<br/>Data source is the same as Table 1, using the same coverage comparison.
 <br/>
 </p>
 <br/>
 
 These four tables are comparison of variant calling pipelines using four different types of scores that specifically deals with precision, sensitivity, and accuracy. Data from each table is called from 30x, 15x and 10x coverage, meant to test the influences of the sequencing depth (the number of unique reads that include a given nucleotide in the reconstructed sequence). Therefore, statistics in each table are presented in 3 groups with decreasing coverages, and compare three tools within each coverage scale respectively. Bar chart is chosen as the presentation format, as it can clearly visualize the differences of scores between three tools.
+<br/>
 <br/>
 From these four tables, we can see that DeepVariant was clearly more precise (F-Score of 0.94) in indel calling as compared to GATK and SpeedSeq (F-Scores 0.90 and 0.84, respectively) (Table 3). Obviously, DeepVariant is also the most sensitive and accurate tool with the highest number of true positive indel calls (460,271) (Table 4) as well as the lowest number of false negative (39,426) (Table 1)  With respect to the performance on the data with coverage of 15x and 10x, we observed that reduced coverage resulted in a marked drop of the quality of variant calling for all tools. Among these three tools, DeepVariant keep the most stable score among all three coverages, it does not change much with the reduced coverage. Indeed, the F-Scores of DeepVariant for 15x data were almost similar to SpeedSeq at 30x (Table 3). By comparing the false negative score (Table 1), we see that out of the three tested variant callers, GATK was most prone to errors in low coverage regions, while DeepVariant was most robust in such region. 
 <br/>
