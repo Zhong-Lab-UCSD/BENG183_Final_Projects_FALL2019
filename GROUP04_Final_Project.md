@@ -10,13 +10,19 @@ We are unique genetically because we have variations in our DNA. Genetic variant
 Next-generation sequencing (NGS) allows people to use genetic testing for a better understanding of their own genetic make up. The whole-genome sequencing (WGS) allows people to detect diseases causing variant in both protein encoding and non-coding regions of the genome[5]. With genomic detection, a wide range of diseases such as sporadic cancer[6], heart diseases[7], respiratory tract diseases[8], diabetes[9] and psychiatric conditions[10] can be detected. Since the genetic disease is directed related to people’s life, the precision and accuracy of the detection are essential. Currently, DeepVariant is one of the best tools to use. 
 
 During this detecting process, the current algorithm aligns the individual’s gene with the reference gene to find the difference in between. Usually, the difference is called genetic variation. Currently, a few different types of genetic variations are analyzed. The single nucleotide variants (SNVs) and short indels are commonly called, whereas structural variants (SVs) and copy number variants (CNVs) have proven more challenging to detect in WGS data[11]. DeepVariant mostly focus on Indel in its variants calling and achieved an outstanding performance.
-![Figure1](https://github.com/ztybigcat/BENG183_Final_Projects_FALL2019/blob/master/images_group4/image7.png "Figure 1")
-[Figure 1: Difference between SNPs, Indels, and SV. [20]]
+<p align="center">
+<img src="https://github.com/ztybigcat/BENG183_Final_Projects_FALL2019/blob/master/images_group4/image7.png", width = "600"> <br/>
+[Figure 1: Difference between SNPs, Indels, and SV. [20]]<br/>
+</p>
+
 Based on Dr. Supernat’s review on DeepVariant, we chose the top two competitors, GATK and SpeedSeq, to do a deeper analysis in terms of their performance compared with the new technology DeepVariant[4]. We are first introducing the mechanisms of GATK, SpeedSeq, and DeepVariant followed by a comparison in terms of their false negative, precision, F1 score, true positive, and their computing hardware requirements. In the second half of this chapter, we also have a step by step tutorial for running the DeepVariant with the sample data from its official GitHub repo[21]. The sample commands and outputs are included in the tutorial for your reference.
 
 #### GATK Methods:
 GATK(Genome Analysis Toolkit) is a framework initially released in 2011 to “discover and genotype variation[1]. After years of development, the current variant call software in GATK is called HaplotypeCaller. It can call SNPs and indel.[2] The procedure generally contains the following steps:
-[Figure 2: GATK Workflow[2]]
+<p align="center">
+<img src="https://github.com/ztybigcat/BENG183_Final_Projects_FALL2019/blob/master/images_group4/image8.jpg", width = "800"><br/>
+[Figure 2: GATK Workflow[2]]<br/>
+</p>
 
 ##### 1. Define active regions 
 Basically in this step the software finds the region where it needs to work on (Where there are differences) and ignore the parts that match perfectly. During this step, the software uses the original mapping output and counts mismatches to calculate a “active probability” . Using the active probability an active area of 50bps to 300bps is defined[2].
@@ -31,8 +37,10 @@ We will not discuss those commands here, rather we will discuss VCF file generat
 
 #### SpeedSeq Methods:
 SpeedSeq is a genome analysis tool that aims to help with alignment, insertions and deletions (indel) variant detection and functional detection. The characteristics of the SpeedSeq, compared to other variant calling method, is its efficiency and low-cost property. As indicated in the SpeedSeq: ultra-fast personal genome analysis and interpretation. written by Chiang, Colby, et al, SpeedSeq achieves superior processing efficiency through rapid duplicate marking with SAMBLASTER5, through balanced parallelization of external applications and by executing nondependent pipeline components simultaneously. The speed is also obtained from processing by SAMBLASTER due to the addition of mate CIGAR and mate mapping quality tags. [3]
-
-[Figure 3: SpeedSeq Workflow[3]]
+<p align="center">
+<img src="https://github.com/ztybigcat/BENG183_Final_Projects_FALL2019/blob/master/images_group4/image9.png", width = "800"><br/>
+[Figure 3: SpeedSeq Workflow[3]]<br/>
+</p>
 
 SpeedSeq workflow:
 ##### 1. SpeedSeq data alignments:
@@ -106,6 +114,44 @@ Purpose: Shows how the CNN model is used.
 Method: 
 1. Encoded reference reads into a red-green-blue(RGB) pileup image (as shown in Figure 2) at a candidate variant [12]. 
 2. Use CNN to classify the images into three diploid genotype states of homozygous reference (hom-ref), heterozygous (het), or homozygous alternate (hom-alt)[12].
+
+<p align="center">
+<img src="https://github.com/ztybigcat/BENG183_Final_Projects_FALL2019/blob/master/images_group4/image10.png", width = "800"><br/>
+Table 1: Comparison of variant calling pipelines using false negative SNV calls. Data comes from Comparison of three variant callers for human whole genome sequencing(2018) written by Supernat, A., Vidarsson, O. V., Steen, V. M., & Stokowy, T. . The variants are called from 30x, 15x and 10x coverage of the NA12878 sample (HiSeq4000, Genomics Core Facility, Bergen, Norway) and compared to GIAB NISTv3.3.2 (fp://fp-trace.ncbi.nlm.nih.gov/giab/fp/release/NA12878_HG001/NISTv3.3.2/GRCh38/). <br/>
+</p>
+
+<p align="center">
+<img src="https://github.com/ztybigcat/BENG183_Final_Projects_FALL2019/blob/master/images_group4/image2.png", width = "800"><br/>
+Table 2: Comparison of variant calling pipelines using single-nucleotide variant (SNV) calling precisions. Data source is the same as Table 1, using the same coverage comparison.<br/>
+</p>
+
+
+<p align="center">
+<img src="https://github.com/ztybigcat/BENG183_Final_Projects_FALL2019/blob/master/images_group4/image11.png", width = "800"><br/>
+Table 3: Comparison of variant calling pipelines using F1 score to test the accuracy of three systems, it considers both the precision and the recall of the test to calculate. Data source is the same as Table 1, using the same coverage comparison.
+<br/>
+</p>
+
+<p align="center">
+<img src="https://github.com/ztybigcat/BENG183_Final_Projects_FALL2019/blob/master/images_group4/image6.png", width = "800"><br/>
+Table 4: Comparison of variant calling pipelines using true positive (sensitivity) SNV calls. Data source is the same as Table 1, using the same coverage comparison.
+<br/>
+</p>
+<br/>
+
+These four tables are comparison of variant calling pipelines using four different types of scores that specifically deals with precision, sensitivity, and accuracy. Data from each table is called from 30x, 15x and 10x coverage, meant to test the influences of the sequencing depth (the number of unique reads that include a given nucleotide in the reconstructed sequence). Therefore, statistics in each table are presented in 3 groups with decreasing coverages, and compare three tools within each coverage scale respectively. Bar chart is chosen as the presentation format, as it can clearly visualize the differences of scores between three tools.
+<br/>
+From these four tables, we can see that DeepVariant was clearly more precise (F-Score of 0.94) in indel calling as compared to GATK and SpeedSeq (F-Scores 0.90 and 0.84, respectively) (Table 3). Obviously, DeepVariant is also the most sensitive and accurate tool with the highest number of true positive indel calls (460,271) (Table 4) as well as the lowest number of false negative (39,426) (Table 1)  With respect to the performance on the data with coverage of 15x and 10x, we observed that reduced coverage resulted in a marked drop of the quality of variant calling for all tools. Among these three tools, DeepVariant keep the most stable score among all three coverages, it does not change much with the reduced coverage. Indeed, the F-Scores of DeepVariant for 15x data were almost similar to SpeedSeq at 30x (Table 3). By comparing the false negative score (Table 1), we see that out of the three tested variant callers, GATK was most prone to errors in low coverage regions, while DeepVariant was most robust in such region. 
+<br/>
+
+<p align="center">
+<img src="https://github.com/ztybigcat/BENG183_Final_Projects_FALL2019/blob/master/images_group4/image3.png", width = "800"><br/>
+Table 5: Comparison of amount of hours running DeepVariant and GATK with 35X WGS sample with a 8 core machine 16GB RAM computer.
+<br/>
+</p>
+<br/>
+As showed in Table 5, running DeepVariant requires more hours if running on CPU. To speed up this process, a better computer setting like GPU, a specialized electronic circuit designed to rapidly manipulate and alter memory for faster computing, is recommended. Without GPU, DeepVariant requires 830 hours to run a 35X WGS sample, while GATK only requires 430 hours[23]. Even with GPU, to run the complete WGS with a 8 core machine 16GB RAM hardware, it need 24 to 48 hours to complete, as the trade off of good performance[4].
+<br/>
 
 ###**Reference**
 ### Comparison:
