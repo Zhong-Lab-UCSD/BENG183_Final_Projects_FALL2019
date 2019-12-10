@@ -127,9 +127,9 @@ However, as FCM is a bit more complex than k-means, it has a slower runtime comp
 
 Because global *k*-means clustering involves a series of computation of the auxiliary function <img src="/tex/2bfa3db256fd1625d91ab9bc03acd9bc.svg?invert_in_darkmode&sanitize=true" align=middle width=37.57057094999999pt height=28.091038800000003pt/>, which produces an affinity matrix in every iteration, it requires longer runtime and greater computation power comparing with the standard *k*-means clustering. However, this gives a much better set of centroids for initial *k*-clusters because at each iteration the cluster centers can be refined according to the previous ones (Fig.).
 
-| ![time](images/kmeans_time.png)|
+|<img src="images/kmeans_time.png" width="400" height="300">|
 |:--|
-| Fig.X A diagram comparing the differences in clustering error between difference k-means clustering methods. Notice that global k-means has the lowest error [8].|
+| Fig.X A diagram comparing the differences in clustering error between different k-means clustering methods. Notice that global k-means has the lowest error [8].|
 
 One way to improve its runtime is to reduce the unnecessary computations by removing data points that are close to the centroid of the previous iteration when we are calculating <img src="/tex/2bfa3db256fd1625d91ab9bc03acd9bc.svg?invert_in_darkmode&sanitize=true" align=middle width=37.57057094999999pt height=28.091038800000003pt/>, and use the triangle inequality while calculating distances to avoid repeats. The algorithm is illustrated below:
 
@@ -185,7 +185,7 @@ And an ensemble method SAFE of *k*-means clustering and other clustering methods
 |:--|
 | Fig X. The diagram shows different median ARI score for different clustering methods. Each row is a different data set, and each column is a clustering methods. We can see that the k-means clustering methods only have median-to-low accuracy. |
 
-| ![runtime](images/runtime.jpeg)|
+| <img src="images/runtime.jpeg" width="400" height="300"> |
 |:--|
 | Fig X. The diagram shows the runtime for each clustering methods. |
 
