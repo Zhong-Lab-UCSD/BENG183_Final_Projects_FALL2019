@@ -1,4 +1,5 @@
-# <p align = "center"> Vaccine Informatics </p>
+<p align="center"> <img width="382" alt="Screen Shot 2019-12-09 at 9 29 26 PM" src="https://user-images.githubusercontent.com/50211392/70498376-07d05b00-1acb-11ea-8624-ef15ff7f5612.png">
+</p>
 
 ### History of Vaccinology  
 **&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**
