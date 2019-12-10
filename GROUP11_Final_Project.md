@@ -106,7 +106,7 @@ CHIP-seq data from 506 experiments from the ENCODE database were used to train t
 <p align="center"><img src="8.png" height="250" ></p>
 <p align="center"><img src="9.png" height="250"></p>
 
-Figure: AUC of DeepBind model vs MEME baseline model on prediction transcription factor binding sites from 506 CHIP seq experiments. Top: median AUC grouped by transcription factor. Bottom: median AUC grouped by cell line. The average AUC of DeepBind outperforms MEME for motif finding by 6-7%. 
+Figure: AUC of DeepBind model vs MEME baseline model on prediction transcription factor binding sites from 506 CHIP seq experiments. Top: Median AUC grouped by transcription factor. The best performing DeepBind model achieved 0.928 average median AUC, and the best performing MEME model achieved 0.85 AUC. Bottom: Median AUC grouped by cell line. The best performing DeepBind model achieved 0.94 average median AUC, and the best performing MEME model achieved 0.886 AUC. The average AUC of the best performing DeepBind model outperforms the best performing MEME model for motif finding by 6-7%. 
 
 ### Cell Cycle Phase Prediction using Convolutional Neural Network on Images of Jurkat Cells
 
