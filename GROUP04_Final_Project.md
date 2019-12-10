@@ -87,19 +87,19 @@ DeepVariant workflow (Referenced from the official paper):
 
 
 
-i. Left Box in Figure 4 :
+##### i. Left Box in Figure 4 :
 
-Step 1: Preparation for variant calling.<br/>
+###### Step 1: Preparation for variant calling.<br/>
 File: Make_examples.py<br/>
 Purpose: Convert BAM files into images (as shown in Figure 2) that can be used in CNN in step 2.<br/>
 Method: The Make_examples.py use a very sensitive caller to find all positions that might be a variant. Then it uses a type of local reassembly as a more thorough version of indel realignment. Finally, it pileup all reads into different images for different positions mentioned above[24].   <br/>
 
-Step 2: Call variants<br/>
+###### Step 2: Call variants<br/>
 File: Call_variants.py<br/>
 Purpose: Classify images from step 1 as variant (Homozygous with different sequence, Heterozygote) or non-variant (Homozygous with same sequence).<br/>
 Method: Call_variants.py use a pre-trained convolutional neural network (CNN, or ConvNet) to predict which category does the image belong to. After the classification, if the most likely genotype is heterozygous or homozygous non-reference, a variant call is emitted[24].<br/>
 
-ii. Middle box in Figure 4 :
+##### ii. Middle box in Figure 4 :
 
 Purpose: Show how to train a CNN model, a deep learning model to classify images with different genotypes.<br/>
 Steps:<br/>
@@ -108,7 +108,7 @@ Steps:<br/>
 3. Along with other CNN models to optimize the CNN parameters to maximize accuracy. Other CNN models includes random CNN model, CNN models trained for other image classifications, and prior DeepVariant models[12]. 
 4. Finalize the final trained model and save it for the variant calling.
 
-iii. Right box in Figure 4 :
+##### iii. Right box in Figure 4 :
 
 Purpose: Shows how the CNN model is used.<br/>
 Method: <br/>
