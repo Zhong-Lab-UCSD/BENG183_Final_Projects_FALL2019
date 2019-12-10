@@ -14,11 +14,12 @@
 
 ---
 
-![RCA](https://github.com/npusarla/BENG183_Final_Projects_FALL2019/blob/master/Images/RCA.png)
 
 ## Introduction
 
 Rolling Circle Amplification (RCA) is a process in which a short DNA or RNA primer is amplified to create a long single-stranded DNA or RNA using its respective polymerases and a circular DNA template. This enzymatic process proves to be a powerful DNA amplification technique that plays a significant role in biomedical research and nanotechnology. RCA is used to develop multiple sensitive diagnostic methods that have different targets such as proteins, cells, nucleic acids, and other small molecules. In addition, because the RCA products are circular in structure due to the circular DNA template, the products have been used to create complicated DNA structures such as nanotubes, nanoribbons, and other DNA materials. These specific RCA products have been used for drug delivery, bioseparation, biodetection, and other technologies. In addition, RCA is a powerful tool for amplifying signals in immunoassays, especially ELISA, and as such has become a very versatile amplification tool with a menagerie of applications in genomics, proteomics, diagnosis, biosensing, and enzyme development. 
+
+![RCA](https://github.com/npusarla/BENG183_Final_Projects_FALL2019/blob/master/Images/RCA.png)
 
 ---
 
