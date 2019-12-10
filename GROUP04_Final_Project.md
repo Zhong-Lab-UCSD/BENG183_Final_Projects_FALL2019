@@ -108,3 +108,123 @@ Method:
 2. Use CNN to classify the images into three diploid genotype states of homozygous reference (hom-ref), heterozygous (het), or homozygous alternate (hom-alt)[12].
 
 ###**Reference**
+### Comparison:
+ Table 1: Comparison of variant calling pipelines using false negative SNV calls. Data comes from Comparison of three variant callers for human whole genome sequencing(2018) written by Supernat, A., Vidarsson, O. V., Steen, V. M., & Stokowy, T. . The variants are called from 30x, 15x and 10x coverage of the NA12878 sample (HiSeq4000, Genomics Core Facility, Bergen, Norway) and compared to GIAB NISTv3.3.2 (fp://fp-trace.ncbi.nlm.nih.gov/giab/fp/release/NA12878_HG001/NISTv3.3.2/GRCh38/). 
+
+  Table 2: Comparison of variant calling pipelines using single-nucleotide variant (SNV) calling precisions. Data source is the same as Table 1, using the same coverage comparison.
+
+  Table 3: Comparison of variant calling pipelines using F1 score to test the accuracy of three systems, it considers both the precision and the recall of the test to calculate. Data source is the same as Table 1, using the same coverage comparison.
+
+  Table 4: Comparison of variant calling pipelines using true positive (sensitivity) SNV calls. Data source is the same as Table 1, using the same coverage comparison.
+
+  These four tables are comparison of variant calling pipelines using four different types of scores that specifically deals with precision, sensitivity, and accuracy. Data from each table is called from 30x, 15x and 10x coverage, meant to test the influences of the sequencing depth (the number of unique reads that include a given nucleotide in the reconstructed sequence). Therefore, statistics in each table are presented in 3 groups with decreasing coverages, and compare three tools within each coverage scale respectively. Bar chart is chosen as the presentation format, as it can clearly visualize the differences of scores between three tools.
+
+  From these four tables, we can see that DeepVariant was clearly more precise (F-Score of 0.94) in indel calling as compared to GATK and SpeedSeq (F-Scores 0.90 and 0.84, respectively) (Table 3). Obviously, DeepVariant is also the most sensitive and accurate tool with the highest number of true positive indel calls (460,271) (Table 4) as well as the lowest number of false negative (39,426) (Table 1)  With respect to the performance on the data with coverage of 15x and 10x, we observed that reduced coverage resulted in a marked drop of the quality of variant calling for all tools. Among these three tools, DeepVariant keep the most stable score among all three coverages, it does not change much with the reduced coverage. Indeed, the F-Scores of DeepVariant for 15x data were almost similar to SpeedSeq at 30x (Table 3). By comparing the false negative score (Table 1), we see that out of the three tested variant callers, GATK was most prone to errors in low coverage regions, while DeepVariant was most robust in such region. 
+
+  Table 5: Comparison of amount of hours running DeepVariant and GATK with 35X WGS sample with a 8 core machine 16GB RAM computer.
+
+  As showed in Table 5, running DeepVariant requires more hours if running on CPU. To speed up this process, a better computer setting like GPU, a specialized electronic circuit designed to rapidly manipulate and alter memory for faster computing, is recommended. Without GPU, DeepVariant requires 830 hours to run a 35X WGS sample, while GATK only requires 430 hours[23]. Even with GPU, to run the complete WGS with a 8 core machine 16GB RAM hardware, it need 24 to 48 hours to complete, as the trade off of good performance[4].
+
+  ### Step by Step Tutorial:
+
+  1. Docker installation: 
+
+  ```bash
+ sudo apt-get -y install docker.io
+ ```
+ Deepvariant runs in docker. On Linux, we use the above command to install docker.  For Mac, please see https://docs.docker.com/docker-for-mac/install/ to install docker. Deep Variant does not run on Windows.
+
+  2. Install DeepVariant
+ ```bash
+ BIN_VERSION="0.9.0" 
+ sudo docker pull google/deepvariant:"${BIN_VERSION}"
+ ```
+ After installing docker, we run the above command to Define version of software we are using and install deepvariant version 0.9.0.
+
+  3. Download the testing data and create input folder and output folder:
+ ```bash
+ INPUT_DIR="${PWD}/quickstart-testdata" #Define input directory variable
+ OUTPUT_DIR="${PWD}/quickstart-output"
+
+ DATA_HTTP_DIR="https://storage.googleapis.com/deepvariant/quickstart-testdata" #Define data download source url
+
+ mkdir -p ${INPUT_DIR} #create actual input data folder
+ mkdir -p ${OUTPUT_DIR}
+ ```
+ Just like other post sequencing analysis software, we need a reference genome file in FASTA format and its pregenerated index file; an aligned read file in BAM format. Here we are using the sample FASTA and BAM from the DeepVariant’s official quick start documentation.
+
+  4.  Run DeepVariant in one line
+ ```bash
+ sudo docker run \
+   -v "${INPUT_DIR}":"/input" \  #mounts input directory into container 
+   -v "${OUTPUT_DIR}:/output" \  #same for output directory
+   google/deepvariant:"${BIN_VERSION}" \ 
+   /opt/deepvariant/bin/run_deepvariant \ #program name
+   --model_type=WGS \ #Replace this string with exactly one of the following [WGS,WES,PACBIO; WGS means whole genome sequencing
+   --ref=/input/ucsc.hg19.chr20.unittest.fasta \ #reference genome file
+   --reads=/input/NA12878_S1.chr20.10_10p1mb.bam \ #aligned reads file
+   --regions "chr20:10,000,000-10,010,000" \ #the region we are interested
+   --output_vcf=/output/output.vcf.gz \ # output file names
+   --output_gvcf=/output/output.g.vcf.gz \
+   --num_shards=1 \ #number of CPU cores you have
+ ```
+ Generates the output likethis:
+ ```
+ ***** Running the command:*****
+ time seq 0 3 | parallel -k --line-buffer /opt/deepvariant/bin/make_examples --mode calling --ref "/input/ucsc.hg19.chr20.unittest.fasta" --reads "/input/NA12878_S1.chr20.10_10p1mb.bam" --examples "/tmp/deepvariant_tmp_output/make_examples.tfrecord@4.gz" --gvcf "/tmp/deepvariant_tmp_output/gvcf.tfrecord@4.gz" --regions "chr20:10,000,000-10,010,000" --task {}
+ ```
+ And the following files are generated in the output folder:
+ ```
+ output.g.vcf.gz
+ output.g.vcf.gz.tbi
+ output.vcf.gz
+ output.vcf.gz.tbi
+ Output.visual_report.html
+ ```
+ The main output file in compressed in the file called output.vcf.gz. We use command
+ ```bash
+ gunzip output.vcf.gz
+ ```
+ To dump the vcf file in plain text format. Open the text file in any text editor, we see lines starts with “##”. These are meta-information lines. These lines contains information about the data like version, reference, config during run, etc.
+ Lines start with single “#” are headers(basically column name). The data columns include the following items:
+ CHROM: the number of chromosomes the variant is located;
+ POS: the position of base pair on sequence;
+ REF: base on reference genome;
+ ALT: base of variant sequence;
+ QUAL: quality score of called variant;
+ FILTER: A “PASS” in the data indicates this variant has passed all filters. Otherwise it logs which filter the variant has failed to pass. For example: “q5;s40” means the quality is below 5 and this variant is present in 40% of samples。
+ INFO: Additional info regarding this variant.
+ The output.visual_report.html visual report contains some graphs that summarizes the vcf files.  For example, Variant types tells you how many different variants are detected and color coded their types; depth tells you the sequencing depth of all samples in histogram format. Other histograms includes information like quality score distribution, genotype distribution, and distribution of base changes.
+
+  [Figure 6. Sample visual report]
+
+  ### Reference
+
+  Academic Sources:
+ DePristo MA, Banks E, Poplin R, et al. A framework for variation discovery and genotyping using next-generation DNA sequencing data. Nat Genet. 2011;43(5):491–498. doi:10.1038/ng.806
+ Ryan Poplin, Valentin Ruano-Rubio, Mark A. DePristo, et al. Scaling accurate genetic variant discovery to tens of thousands of samples. bioRxiv 201178; doi: https://doi.org/10.1101/201178
+ Chiang C, Layer RM, Faust GG, et al. SpeedSeq: ultra-fast personal genome analysis and interpretation. Nature Methods. 2015;12(10):966-968. doi:10.1038/nmeth.3505.
+ Supernat, A., Vidarsson, O., Steen, V. and Stokowy, T. (2018). Comparison of three variant callers for human whole genome sequencing. Scientific Reports, 8(1).
+  Ngcungcu T, et al. Duplicated Enhancer Region Increases Expression of CTSB and Segregates with Keratolytic Winter Erythema in South African and Norwegian Families. Am. J. Hum. Genet. 2017;100:737–750. doi: 10.1016/j.ajhg.2017.03.012.
+ Macintyre, G. et al. Copy-number signatures and mutational processes in ovarian carcinoma. bioRxiv 174201, 10.1101/174201 (2017).
+ Chambers JC, et al. 114 Whole genome sequencing to identify genetic variants underlying cardiovascular disease among Indian Asians. Heart. 2012;98:A64–A64. doi: 10.1136/heartjnl-2012-301877b.114.
+ Radder JE, et al. Extreme Trait Whole-Genome Sequencing Identifies PTPRO as a Novel Candidate Gene in Emphysema with Severe Airflow Obstruction. Am. J. Respir. Crit. Care Med. 2017;196:159–171. doi: 10.1164/rccm.201606-1147OC.
+ Flannick J, et al. Sequence data and association statistics from 12,940 type 2 diabetes cases and controls. Sci. Data. 2017;4:170179. doi: 10.1038/sdata.2017.179.
+ Khan, F. F. et al. Whole genome sequencing of 91 multiplex schizophrenia families reveals increased burden of rare, exonic copy number variation in schizophrenia probands and genetic heterogeneity. Schizophr. Res. 10.1016/j.schres.2018.02.034 (2018).
+ Zhao M, Wang Q, Wang Q, Jia P, Zhao Z. Computational tools for copy number variation (CNV) detection using next-generation sequencing data: features and perspectives. BMC Bioinformatics. 2013;14:S1. doi: 10.1186/1471-2105-14-S11-S1.
+ Ryan Poplin, Dan Newburger, Jojo Dijamco, Nam Nguyen, Dion Loy, Sam S. Gross, Cory Y. McLean, Mark A. DePristo. Creating a universal SNP and small indel variant caller with deep neural networks. Nature Biotechnology doi: 10.1038/nbt.4235
+ Harold E. Smith* and Sijung Yun。 “Evaluating alignment and variant-calling software for mutation identification in C. elegans by whole-genome sequencing”. PLoS One. 2017; 12(3): e0174446. Published online 2017 Mar 23. doi: 10.1371/journal.pone.0174446
+ Chiang, C., Layer, R., Faust, G. et al. SpeedSeq: ultra-fast personal genome analysis and interpretation. Nat Methods 12, 966–968 (2015) doi:10.1038/nmeth.3505
+
+  General Sources:
+
+  “Introduction to Variant detection”. https://www.melbournebioinformatics.org.au/tutorials/tutorials/var_detect_advanced/var_detect_advanced_background/
+ “The Variant Call Format Specification”. VCFv4.3 and BCFv2.2. 22 Aug 2019. https://samtools.github.io/hts-specs/VCFv4.3.pdf
+ “DeepVariant Quick Start” https://github.com/google/deepvariant/blob/r0.9/docs/deepvariant-quick-start.md
+ “HaplotypeCaller Call germline SNPs and indels via local re-assembly of haplotypes”. https://software.broadinstitute.org/gatk/documentation/tooldocs/3.8-0/org_broadinstitute_gatk_tools_walkers_haplotypecaller_HaplotypeCaller.php
+ “BroadE: GATK - Haplotype Caller”. https://www.youtube.com/watch?v=vocBk2MHp1A
+ “Crunching NGS data on Pouta Cloud”. https://www.csc.fi/web/blog/post/-/blogs/crunching-ngs-data-on-pouta-cloud
+ DeepVariant GitHub Repo: https://github.com/google/deepvariant
+ “DeepVariant: Highly Accurate Genomes With Deep Neural Networks”. https://ai.googleblog.com/2017/12/deepvariant-highly-accurate-genomes.html
+ “Amplifying Google’s DeepVariant”. https://blog.dnanexus.com/2018-04-18-deepvariant-amplified/  cpu
+ “Evaluating DeepVariant: A New Deep Learning Variant Caller from the Google Brain Team”. https://blog.dnanexus.com/2017-12-05-evaluating-deepvariant-googles-machine-learning-variant-caller/
