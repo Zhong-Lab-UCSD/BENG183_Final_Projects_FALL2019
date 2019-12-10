@@ -106,8 +106,9 @@ SCBN builds off another normalization method known as HTN, which is based on the
   </p>
 
           3. The p-value is a function of the scaling factor c. 
-          The optimal c for normalization is defined as the value with most accurate detection of differentially expressed genes.
-          Therefore the following positive false discovery rate (pFDR) function is minimized to find c:
+          The optimal c for normalization is defined as the value with most accurate detection 
+          of differentially expressed genes. Therefore the following positive false discovery rate (pFDR) 
+          function is minimized to find c:
    <p align="center">
   <img src="./img/image11.png" width="400">
   </p>
