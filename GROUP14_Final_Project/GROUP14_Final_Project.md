@@ -47,7 +47,8 @@ RPKM stands for Reads Per Kilobase of transcript per Million [4].
   
     Steps for RPKM: 
       1. The numerator is the read counts aligned to a single gene.
-      2. The total reads in a sample divided by 1,000,000 is our “per million” scaling factor. Multiply this by the length of the gene in kilobases. This is our denominator.
+      2. The total reads in a sample divided by 1,000,000 is our “per million” scaling factor.
+      Multiply this by the length of the gene in kilobases. This is our denominator.
       3. Numerator / denominator = RPKM value
   
   Dividing the number in Step 1 by the number in Step 2 gives you reads per million (RPM) and normalizes for sequencing depth. Dividing by the RPM values by the length of the gene in kilobases gives reads per kilobase of transcript per million (RPKM), and additionally normalizes for gene length, as seen in Figure 2.
