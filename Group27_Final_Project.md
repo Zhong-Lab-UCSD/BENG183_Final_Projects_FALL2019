@@ -23,7 +23,7 @@ One of the main applications of Rolling Circle Amplification (RCA) is as a repla
 
 <br />
 
-![Figure 2 - PCR and RCA Pipelines Side by Side](https://github.com/npusarla/BENG183_Final_Projects_FALL2019/blob/master/Images/Figure2.png)
+![Figure 2 - PCR and RCA Pipelines Side by Side](https://github.com/npusarla/BENG183_Final_Projects_FALL2019/blob/master/Images/smallerPNG.jpg)
 </br>
 &nbsp; &nbsp; &nbsp; &nbsp;**Figure 2 - PCR and RCA Pipelines Side by Side**
 
