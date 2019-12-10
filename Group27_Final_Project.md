@@ -72,7 +72,7 @@ Rolling Circle Amplification is used frequently for efficient isothermal DNA amp
 
 <br />
 
-![Figure 4 - RCAGel](https://github.com/npusarla/BENG183_Final_Projects_FALL2019/blob/master/Images/RCA_Gel.jpg)
+![Figure 4 - RCAGel](https://github.com/npusarla/BENG183_Final_Projects_FALL2019/blob/master/Images/RCA_gel.jpg)
 
 <br />
 &nbsp; &nbsp; &nbsp; &nbsp;**Figure 4 - Electrophoresis of RCA Products**
