@@ -15,7 +15,7 @@
 
   That is to say, precision medicine is a specific form of therapeutics tailored for each subpopulation of patients through the use of tools such as pharmacogenomics; an offspring of pharmacogenetics. Precision medicine aims to customize health care so that each treatment is tailored for every subpopulation in every possible way. Our main focus is pharmacogenomics with emphasis on genomic approaches. 
 An overall layout of the procedure is seen below </br>
-![pm](pm.PNG)</br>
+![pm](https://i.imgur.com/ueqGnX6.png)</br>
 
 ### Part 2: A Brief History on Pharmacogenetics & Pharmacogenomics<a name="2"></a>
 
@@ -31,7 +31,7 @@ Combining drugs allows them to accomplish what one alone cannot, enabling treatm
  
  A group led by Ke-Jia Xu pioneered the creation of a drug network [6]. The network and corresponding formula predicts synergistic drugs and thus saves time otherwise wasted on testing combinations by brute force. Drug network construction is an efficient method where drugs are represented as nodes and connected by edges with widths proportional to their ability to complement one another also known as therapeutic similarity. The following equation depicts how the drug network is constructed. 
  
-![equation](eq2.PNG)</br>
+![equation](https://i.imgur.com/prcTXxT.gif)</br>
 * N is the number of drugs in the network</br>
 * n1 & n2 are the partners of drugs 1 and 2</br>
 * m is the number of chemicals they have in common with each other</br>
@@ -89,7 +89,7 @@ As previously discussed in regards to the naive approach, testing for drug sensi
 
 Drug sensitivity can be visualized as a histogram. Below, histograms are denoted  as sensitivity value for each 323 cell lines treated with 24 drugs. The sensitivity of the drug was measured by measuring the area under the dose-response curve (denoted as activity area). 
 Each histogram denotes the distribution of sensitivity values of a drug treating on cancer cell lines.</br>
-![image](srep22811-f1.jpg)</br>
+![image](https://i.imgur.com/TRZwGOu.jpg)</br>
 
 
  An example of the application of RNA-Seq in better defining the transcriptome differences between populations with diverse phenotypic drug response is seen in a study that has combined drug sensitivity studies and the Cancer Cell Line Encyclopedia (CCLE) to investigate possible causes for adverse drug response across cancer cell types through analysis of differential expression of drug-response associated (DRA) genes. In recent years, studies have focused on the identification of DRA biomarkers due to their association with anti-cancer drug sensitivity and the success of clinical trials which used drugs specifically targeting these genes. The study used data from the CCLE since it provides a valuable resource of gene expression profiles of 20,069 genes for 504 human cancer cell lines. The gene expression levels allowed for the use of a method (defined below) to calculate the drug sensitivity across the genes in all 
@@ -99,7 +99,7 @@ A linear regression model was used in order to inquire which genes are sensitive
 
 Through this, the sensitivity regression coefficient, γj was calculated across all samples and all genes  </br>
 
-![equa4](eq4.PNG)</br>
+![equa4](https://i.imgur.com/snCMICe.png)</br>
 
 * Yij is the expression level of gene j in sample i </br>
 * Sensitivityi is the drug sensitivity of sample i</br>
@@ -125,7 +125,7 @@ From the outputted sensitivity coefficients, a permutation test was run 1,000 ti
 
 The genes identified as sensitive to a given drug were then separated into genes that were positively regulated (upregulated) in response to the drug, or negatively regulated (downregulated). These expression patterns of the significantly sensitive DRA genes for the drug 17-AAG are visualized using a heatmap of the z-scores of the gene expression across all samples (columns) and genes (rows).
 
-![lasteq](lastpic.PNG)</br>
+![lasteq](https://i.imgur.com/tfpQsQ1.png)</br>
 
 As seen above, hierarchical clustering was performed with a Euclidean distance metric on both samples and genes. The clustering reveals that there are 2 main groups of genes based on their expression values: genes with relatively low sensitivity to the drug deemed “non-sensitive group” and genes with relatively high sensitivity to the drug deemed “sensitive group”. The clustering of “non-sensitive” and “sensitive” groups was seen across all 14 drugs. A student t-test was run between these groups across all drugs and all p-values were found to be less than 2.0 × 10^−7.
 
