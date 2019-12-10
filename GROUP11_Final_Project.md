@@ -103,7 +103,8 @@ Figure: Pipeline of DeepBind. We see that the input are reads from any one of va
 
 CHIP-seq data from 506 experiments from the ENCODE database were used to train the experimental deep learning based DeepBind model.  Performance metric to quantify motif finding accuracy was AUC (area under curve), calculated by comparing the predicted motifs to true motifs. Performance of DeepBind was compared to MEME, a PWM based baseline model.  The AUC was calculated for each of 506 experiments, and the median AUC for each of 151 unique transcription factors is shown on the left, and for 6 cell lines shown on the right. Overall, the DeepBind model outperforms MEME for motif finding by 7%. 
 
-<img src="8.png" height="250" > <img src="9.png" height="250">
+<p align="center"><img src="8.png" height="250" ></p>
+<p align="center"><img src="9.png" height="250"></p>
 
 Figure: AUC of DeepBind model vs MEME baseline model on prediction transcription factor binding sites from 506 CHIP seq experiments. Top: median AUC grouped by transcription factor. Bottom: median AUC grouped by cell line. The average AUC of DeepBind outperforms MEME. 
 
