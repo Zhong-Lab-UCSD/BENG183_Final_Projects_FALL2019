@@ -61,7 +61,7 @@
 >>y(t) = g(Vh(t))
 
 >>where U, W, and V are the connection weights to be computed in training time, and f(z) and g(z) are sigmoid and softmax activation functions as follows: <br>
- ><img src="equations.png" width="200" height="150"> 
+ >><img src="equations.png" width="200" height="150"> 
  
  >>##### ***A Long Short-Term Memory Cell***
  >>The image below illustrates a single LSTM memory cell, as well as provides the equations needs to implement the following cell. 
