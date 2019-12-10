@@ -7,8 +7,8 @@
 - [Procedure](#Procedure)
 - [Applications](#Applications)
   * [PCR Alternative](#PCR-Alternative)
-  * [Random Mutagenesis](#Random-Mutagenisis)
-  * [Geminiviruses & RFLP](#Geminiviruses-&-RFLP)
+  * [Random Mutagenesis](#Random-Mutagenesis)
+  * [Geminiviruses & RFLP](#Geminiviruses-RFLP)
 - [References](#References)
 
 
