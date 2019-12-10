@@ -108,6 +108,8 @@ Map phase: Extract K-mers(Seeds)
 
 Reduce phase: Extend Seeds
 
+![MapReduce](https://oup.silverchair-cdn.com/oup/backfile/Content_public/Journal/bioinformatics/25/11/10.1093/bioinformatics/btp236/2/m_btp236f2.jpeg?Expires=1578605674&Signature=Z3~2rKj14rYQt1TcFmi6vXCYc5mAfRcS0Flz6ZPvGcscomTZnXd6nk6TJm0YdozFZcaUO6nh8nYRiQkkaeJL4KB9gZltYsOYqAGloUXi4dKtAmuCYDJ5CgcrIi5PvFzMDYUXHcTX~au4h6tSkYU5ku-tYCI3Ur3etrUZtughmcDORhPtDzjcfD8lyUjz3FcKCgGrMRG~GIh~9HfZZf0z0WjJQ7dzyM72RTOeDmCNd8N~ttO0w4aC01H1sGyql6KZ3ZAPebVaQvhD2~XUTiRCXriT5pE6w0DM0~6gqg8tDIWrNJBdz2q7kyLkBZ1V2OwkYs6vOUAbAp7l~3aA--QOJA__&Key-Pair-Id=APKAIE5G5CRDK6RD3PGA)
+
 The advantage of Clouburst is that it reduces the time to map reads linearly(~30X faster on 24 cores, and >~100 times faster on 96 cores). This can make it scale the slower RMAP process to match that of current BWT based algorithms. Due to linear scaling, this type of algorithm is good for large datasets, or to just reduce the time needed to compute a normal dataset. It also allows computation with shorter k-mers(which is more time consuming than using longer k-mers in the seed-and-extend algorithm) due to its linear speed decrease. It can be easily scaled due to the open source Hadoop MapReduce implementation. Due to the growing popularity of cloud computing, computing costs can be rented for cheap, making it an economical way to process data.
 
 ## Other
