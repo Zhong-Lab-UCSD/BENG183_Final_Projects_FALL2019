@@ -81,7 +81,7 @@ Given a cohort of individuals hailing from various ancestries, clustering can be
 
 <p align="center"><img src="5.png" height="400"></p>
 
-Figure: PCA performed on 938 dimensional IBS matrix, each row representing a sample. The first and second PCs explain 59% and 26% of the IBS variation, respectively. 51 populations were separated into known continental groups. PC 1 appears to capture the contrast between sub-Saharan Africans and non-Africans and the PC2 captures the East-West difference in Eurasia.
+Figure: PCA performed on 938 dimensional IBS matrix, each row representing a sample. The first and second PCs explain 52% and 27% of the IBS variation, respectively. 51 populations were separated into known continental groups. PC 1 appears to capture the contrast between sub-Saharan Africans and non-Africans and the PC2 captures the East-West difference in Eurasia.
 
 <p align="center"><img src="6.png" height="250" ></p>
 
