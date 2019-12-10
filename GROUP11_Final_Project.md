@@ -67,6 +67,8 @@ https://www.pnas.org/content/98/24/13790.long
 
 Given a cohort of individuals with lung cancer, different subclasses of lung cancer can be identified among the samples using hierarchical clustering of their gene expression profiles. The first step is to use some method, such as RNA-seq, to quantify the gene expression level for each individual. After generating the gene expression profiles for each individual, differential expression analysis can be performed on each sample, and the most differentially expressed genes can be used in downstream analysis. Namely, hierarchical clustering can be performed on the most differentially expressed genes, which allows for identification of clusters of samples, where each cluster represents a subtype of lung cancer.  [2]
 
+<b>Results:</b>
+
 <p align="center"><img src="4.png" height="500" ></p>
 
 Figure: In this study, oligonucleotide microarrays were used to find mRNA expression levels corresponding to 12,600 transcript sequences in 186 lung tumor samples, including 139 adenocarcinomas resected from the lung. Hierarchical clustering performed on 203 samples identified several subclasses. 
@@ -112,11 +114,13 @@ Figure: AUC of DeepBind model vs MEME baseline model on prediction of transcript
 
 https://www.nature.com/articles/s41467-017-00623-3
 
-Convolutional neural networks(CNN), a type of deep learning model that excels in image analysis, can be used for both prediction and clustering tasks. In this study, a convolutional neural network was used to predict the cell cycle phase of jurkat cell images. After training the model on 33,000 images, predictions were made on 3000 images. An accuracy of 98% was achieved, a 6% improvement over traditional machine learning techniques. [5]
+There is much value in developing an automated, non-invasive technique to detect the cell cycle of cells. Current prevalent techniques are invasive, and often rely on injecting some type of radioactive markers or dyes into the cell. An automated method to detect cell cycle given the image of the cell can potentially provide a safer, more efficient, and non-invasive alternative. Convolutional neural networks(CNN), a type of deep learning model that excels in image analysis, can be used for both prediction and clustering tasks. In this study, a convolutional neural network was used to predict the cell cycle phase of jurkat cell images. After training the model on 33,000 images, predictions were made on 3000 images. An accuracy of 98% was achieved, a 6% improvement over traditional machine learning techniques. [5]
 
 <p align="center"><img src="10.png" height="175"></p>
 
 Figure: Images of jurkat cells in each stage of cell cycle
+
+<b>Results:</b>
 
 <p align="center"><img src="11.png" height="400"></p>
 
