@@ -75,7 +75,7 @@ The result of clustering may look like this:
 
 | ![FCM](images/fcm.png) |
 |:--|
-| Fig. fuzzy *c*-means clustering of the dataset [14].|
+| Fig 1. fuzzy *c*-means clustering of the dataset [14].|
 
 ## Mixture of Gaussian Clustering
 
@@ -121,21 +121,21 @@ However, as FCM is a bit more complex than k-means, it has a slower runtime comp
 
 |![km-fcm-time](images/fcm_vs_km_time.png)|
 |:--|
-| Fig. Comparison of average time for k-Means and FCM. The table on the left shows the average executation time by k-Means and FCM. The plot on the right shows average runtime of k-Means and FCM.|
+| Fig 2. Comparison of average time for k-Means and FCM. The table on the left shows the average executation time by k-Means and FCM. The plot on the right shows average runtime of k-Means and FCM.|
 
 ### Comparison between *k*-means and global *k*-means
 
-Because global *k*-means clustering involves a series of computation of the auxiliary function <img src="/tex/2bfa3db256fd1625d91ab9bc03acd9bc.svg?invert_in_darkmode&sanitize=true" align=middle width=37.57057094999999pt height=28.091038800000003pt/>, which produces an affinity matrix in every iteration, it requires longer runtime and greater computation power comparing with the standard *k*-means clustering. However, this gives a much better set of centroids for initial *k*-clusters because at each iteration the cluster centers can be refined according to the previous ones (Fig.).
+Because global *k*-means clustering involves a series of computation of the auxiliary function <img src="/tex/2bfa3db256fd1625d91ab9bc03acd9bc.svg?invert_in_darkmode&sanitize=true" align=middle width=37.57057094999999pt height=28.091038800000003pt/>, which produces an affinity matrix in every iteration, it requires longer runtime and greater computation power comparing with the standard *k*-means clustering. However, this gives a much better set of centroids for initial *k*-clusters because at each iteration the cluster centers can be refined according to the previous ones (Fig. 3).
 
 |<img src="images/kmeans_time.png" width="500" height="400">|
 |:--:|
-| Fig.X A diagram comparing the differences in clustering error between different k-means clustering methods. Notice that global k-means has the lowest error [8].|
+| Fig 3. A diagram comparing the differences in clustering error between different k-means clustering methods. Notice that global k-means has the lowest error [8].|
 
 One way to improve its runtime is to reduce the unnecessary computations by removing data points that are close to the centroid of the previous iteration when we are calculating <img src="/tex/2bfa3db256fd1625d91ab9bc03acd9bc.svg?invert_in_darkmode&sanitize=true" align=middle width=37.57057094999999pt height=28.091038800000003pt/>, and use the triangle inequality while calculating distances to avoid repeats. The algorithm is illustrated below:
 
 | ![time](images/global_kmeans_alg.png)|
 |:--|
-| Fig.X Diagram of the algorithm from the paper.|
+| Fig 4. Diagram of the algorithm from the paper.|
 
 ### Comparison between GMM and *k*-means
 
@@ -144,8 +144,8 @@ Although *k*-means clustering method is widely used in biological data analysis,
 Here is an example of how k-means clustering does not perform as well as the mixture of Gaussian clustering method, because the dataset not only need to consider mean, but also need to consider variance.
 
 | ![kmeans_vs_GMM](images/kmeans_vs_gmm.png)|
-|:--|
-| Fig X. Comparion of clustering results. **a**) the clustering using *k*-means. **b**) the clustering using GMM.|
+|:--:|
+| Fig 5. Comparion of clustering results. **a**) the clustering using *k*-means. **b**) the clustering using GMM.|
 
 ### Real Case Analysis and Comparison of the Clustering methods
 
@@ -175,7 +175,7 @@ RNA-seq technology is widely applied in research as an attractive alternative to
 
 | ![pipeline](images/pipeline.png)|
 |:--|
-| Fig X. The diagram describing the general procedure of clustering of single-cell RNA-seq data. Each colored part indicates which proportion of the matrix is adjusted. For instance, the feature selection part removes rows from the original data set. And the dimensionality reduction calculates a new matrix composed of meta-features [1].|
+| Fig 6. The diagram describing the general procedure of clustering of single-cell RNA-seq data. Each colored part indicates which proportion of the matrix is adjusted. For instance, the feature selection part removes rows from the original data set. And the dimensionality reduction calculates a new matrix composed of meta-features [1].|
 
 In RNA-seq analysis, we can use built-in clustering methods in R script. To understand the performance between different clustering method, we can illustrate using real scRNA-seq data sets ,  GSE60749-GPL13112 (Kumar), SRP073808 (Koh) and GSE52529GPL16791 (Trapnell) and a few others [4]. There are fourteen different clustering methods investigated, but we are particularly interested in k-means related methods: 
 PCAKmeans (PCA dimension reduction (dim=30) and *k*-means clustering with 25 random starts), pcaReduce (PCA dimension reduction (dim=30) and *k*-means clustering through an iterative process. Stepwise merging of clusters and reducing the number of dimensions by PC with lowest variance), which is like the global *k*-means clustering method that involve step-wise computation.  
@@ -183,13 +183,13 @@ And an ensemble method SAFE of *k*-means clustering and other clustering methods
 
 | ![heatmap](images/heatmap.png)|
 |:--|
-| Fig X. The diagram shows different median ARI score for different clustering methods. Each row is a different data set, and each column is a clustering methods. We can see that the k-means clustering methods only have median-to-low accuracy. |
+| Fig 7. The diagram shows different median ARI score for different clustering methods. Each row is a different data set, and each column is a clustering methods. We can see that the k-means clustering methods only have median-to-low accuracy. |
 
 | <img src="images/runtime.jpeg" width="500" height="400"> |
 |:--:|
-| Fig X. The diagram shows the runtime for each clustering methods. |
+| Fig 8. The diagram shows the runtime for each clustering methods. |
 
-In Fig X, *k*-means methods have shorter runtime compared to others. But notice that pcaReduce has a very long runtime, it requires re-calculation of the affinity matrix in each iteration, which is similar to global k-means clustering in the above section. [4]
+In Fig 8, *k*-means methods have shorter runtime compared to others. But notice that pcaReduce has a very long runtime, it requires re-calculation of the affinity matrix in each iteration, which is similar to global k-means clustering in the above section. [4]
 
 Filtering out far-from mean data before clustering: Note that actual RNA-seq data can be noisy, and because *k*-clustering is a partitioning algorithm, genes might be eventually assigned to a cluster even if they do not actually fit in. 
 
