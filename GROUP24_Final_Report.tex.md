@@ -115,6 +115,12 @@ Standard *k*-means clustering requires a careful selection of initial cluster ce
 
 Both k-means and FCM are partition-based clustering algorithm, and they work in a similar iterative fashion. The key difference between FCM and k-means is that using FCM, each data points may belong to multiple clusters based on the computed membership values. These fuzzy classification makes the clustering less vulnerable to noise if the input data is a bit fuzzy. For instance, when clustering of microarray data, k-means clustering may not work well because it does not provide information about the influence of a given gene for the overall shape of clusters. On the other hand, FCM is one fuzzy partitioning method and can attribute cluster memberships to genes [4].
 
+However, as FCM is a bit more complex than k-means, it has a slower runtime compared to k-means clustering. As Velmurugan performed comparative analysis of k-means and FCM on telecommunication data [11], he pointed out that k-means runs significantly faster than FCM (Fig. X).
+
+| ![time](images/fcm_vs_km_time.png)|
+|:--|
+| Fig. Comparison of average time for k-Means and FCM. The table on the top shows the average executation time by k-Means and FCM. The plot at the bottom shows average runtime of k-Means and FCM.|
+
 ![global-kmeans](images/global-kmeans.png)
 
 ## Application in RNA-seq Data
@@ -123,13 +129,7 @@ Both k-means and FCM are partition-based clustering algorithm, and they work in 
 |      K-means          |  GMM |
 |:------------------------|:----------------------------:|
 |![K-Means](images/kmeans.png)  |  ![MOG](images/mog.png)|
-| Fig. Comparison of clustering using k-means and Mixture of Gaussian. The plot |
-
-| ![time](images/fcm_vs_km_time.png)|
-|:--|
-| Fig. Comparison of average time for k-Means and FCM. The table on the top shows the average executation time by k-Means and FCM. The plot at the bottom shows average runtime of k-Means and FCM.|
-
-
+| Fig X. Comparison of clustering using k-means and Mixture of Gaussian. The plot |
 
 ```html
 <img src="http://shabal.in/visuals/kmeans/random.gif" width=500 height=300>
