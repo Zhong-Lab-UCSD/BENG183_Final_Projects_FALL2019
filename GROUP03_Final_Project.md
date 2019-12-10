@@ -31,7 +31,8 @@ However, transcription factor activity cannot occur without access to open chrom
 ## 3. Previous Methods For Genome Wide Assays of Epigenetic Structure <a name="3"></a>
 
 ### ChIP seq
-![ChIP-seq](1ChIP-seq.jpg) <br>
+
+<img src="https://github.com/mchernys/BENG183_Final_Projects_FALL2019/blob/master/1ChIP-seq.jpg">
 (from Lecture 6_ChIP-seq-KN slides)
 A technique for location the regions where a specific DNA-binding protein (like a transcription factor) interacts with DNA. First, crosslink the protein with the DNA using a substance like formaldehyde, add protein specific antibodies with magnetic regions, shear the DNA and pull down with streptavidin (this technique is called immunoprecipitation). Finally, reverse the cross links and sequence the DNA you have pulled down [[5]](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3431496/).
 
