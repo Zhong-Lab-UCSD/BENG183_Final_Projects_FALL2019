@@ -10,7 +10,7 @@
   * [Random Mutagenesis](#Random-Mutagenesis)
   * [Geminiviruses & RFLP](#Geminiviruses-and-RFLP)
 - [References](#References)
-
+- [Conclusion](#Conclusion)
 
 ---
 
@@ -19,7 +19,7 @@
 
 Rolling Circle Amplification (RCA) is a process in which a short DNA or RNA primer is amplified to create a long single-stranded DNA or RNA using its respective polymerases and a circular DNA template. This enzymatic process proves to be a powerful DNA amplification technique that plays a significant role in biomedical research and nanotechnology. RCA is used to develop multiple sensitive diagnostic methods that have different targets such as proteins, cells, nucleic acids, and other small molecules. In addition, because the RCA products are circular in structure due to the circular DNA template, the products have been used to create complicated DNA structures such as nanotubes, nanoribbons, and other DNA materials. These specific RCA products have been used for drug delivery, bioseparation, biodetection, and other technologies. In addition, RCA is a powerful tool for amplifying signals in immunoassays, especially ELISA, and as such has become a very versatile amplification tool with a menagerie of applications in genomics, proteomics, diagnosis, biosensing, and enzyme development. 
 
-![RCA](https://github.com/npusarla/BENG183_Final_Projects_FALL2019/blob/master/Images/RCA.png)
+![Figure4](https://github.com/npusarla/BENG183_Final_Projects_FALL2019/blob/master/Images/Figure4.png)
 
 ---
 
@@ -79,6 +79,12 @@ The DNA amplified from RCA can additionally be characterized by RFLP analysis an
 
 ---
 
+## Conclusion
+
+Rolling Circle Amplification, the amplification of circularized target template molecules, is an innovative and efficient process to achieve a multitude of copies of the DNA snippet of interest. While only a few of the potential uses of RCA are described in this writeup, there are other avenues such as its utilization in Low Copy Number (LCN) DNA used for forensic genomics. Because this is a fairly new concept, continued efforts are being pursued to find even more approaches with RCA. 
+
+---
+
 ### References 
 
 1. Dean, Frank B. et al. “Rapid Amplification of Plasmid and Phage DNA Using Phi29 DNA Polymerase and Multiply-Primed Rolling Circle Amplification.” Genome Research 11.6 (2001): 1095–1099. 
@@ -86,7 +92,6 @@ The DNA amplified from RCA can additionally be characterized by RFLP analysis an
 3. Ali, M. Monsur, et al. “Rolling Circle Amplification: a Versatile Tool for Chemical Biology, Materials Science and Medicine.” Chemical Society Reviews, The Royal Society of Chemistry, 18 Mar. 2014, pubs.rsc.org/en/content/articlelanding/2014/cs/c3cs60439j#!divAbstract. 
 4. Fujii, Ryota & Kitaoka, Motomitsu & Hayashi, Kiyoshi. (2004). One-step random mutagenesis by error-prone rolling circle amplification. Nucleic acids research. 32. e145. 10.1093/nar/gnh147. 
 5. Mohsen, Michael G, and Eric T Kool. “The Discovery of Rolling Circle Amplification and Rolling Circle Transcription.” Accounts of Chemical Research, U.S. National Library of Medicine, 15 Nov. 2016, www.ncbi.nlm.nih.gov/pubmed/27797171.
-
-
+6. Schweitzer, Barry, et al. "Immunoassays with rolling circle DNA amplification: a versatile platform for ultrasensitive antigen detection." Proceedings of the National Academy of Sciences 97.18 (2000): 10113-10119.
 
 
