@@ -74,16 +74,16 @@
 
 ## 3. Other Practical issues with PCA <a name="3"></a>
 
-### 3.1 Scaling the data** <a name="3.1"></a>
+### 3.1 Scaling the data <a name="3.1"></a>
 &nbsp;&nbsp;&nbsp;&nbsp; PCA is solved through the Singular Value Decomposition, which finds linear subspaces that represent the data is squared sense. Scaling is important since Singular Value Decomposition approximates in the sum of squares sense. If one variable is on a different scale than another, it will dominate the PCA procedure, and the 2D plot will really just be visualizing that dimension.
 ![](https://lh4.googleusercontent.com/zDkfa2QCaJnVefNODIhF944OmXJUmjsXDjgTs0AjCttLV3JJBWxOGmtb_m-ZVcY2xBFs8JpR0tmUXC-65rsmjz9lwCa7urEk43KGHhhRC13edtC1sh76Ec82XHh0e1xc7WxTuTdU)
 <p align="center">Figure 8: Comparison of two 2D plots with and without scaling</p>
 
-### 3.2 Missing values** <a name="3.2"></a>
+### 3.2 Missing values <a name="3.2"></a>
 &nbsp;&nbsp;&nbsp;&nbsp; There are two types of commonly used methods for deletion: Listwise deletion and pairwise deletion. Listwise deletion is perhaps the most commonly used method. In PCA it means all the datas with at least one missing value are all completely removed so that they do not go into data analysis. This is a simple method, and the default method in many software packages. There are some obvious drawbacks. First, it reduces the sample size, which reduces the stability of the result. Second, it can introduce biases if the data are not missing completely at random.
 &nbsp;&nbsp;&nbsp;&nbsp; Pairwise deletion solves part of the problems caused by Listwise deletion. It attempts to minimize the loss that occurs. To understand the way pairwise deletion works, we can think of a correlation matrix, which measures the strength of the relationship between two variables. The correlation coefficient takes the data pair into account if the data is available.(not missing) And this maximizes all available data. Though Pairwise deletion performs generally better than Listwise deletion, it also assumes the missing data are MCAR.
 
-### 3.3 Impute/ Estimate missing values:** <a name="3.3"></a>
+### 3.3 Impute/ Estimate missing values: <a name="3.3"></a>
 &nbsp;&nbsp;&nbsp;&nbsp; Missing data passive approach. Meulman and Takane and Oshima-Takane developed the missing data passive approach (MDP) in the context of homogeneity analysis, a form of categorical PCA. The idea behind this approach is that ﬁrst a weight matrix is constructed which indicates whether a score is observed or missing. Next, these weights are used in a weighted homogeneity analysis. [6]
 
 ## 4. Application of clustering: <a name="4"></a>
