@@ -71,11 +71,11 @@ Given a cohort of individuals with lung cancer, different subclasses of lung can
 
 Figure: In this study, oligonucleotide microarrays were used to find mRNA expression levels corresponding to 12,600 transcript sequences in 186 lung tumor samples, including 139 adenocarcinomas resected from the lung. Hierarchical clustering performed on 203 samples identified several subclasses. 
 
-### Determining Ancestry of New Samples via Clustering (PCA) of Genome
+### Determining Ancestry of New Samples via Clustering (Principal Component Analysis) of Genome
 
 https://science.sciencemag.org/content/319/5866/1100.full	
 
-Given a cohort of individuals hailing from various ancestries, clustering can be used to determine the ancestry of each person based on their genetic profile. The first step is to sequence each person’s genome. Then, locations of allelic single nucleotide polymorphisms (SNPs) were determined by comparing each sample genome to the orthologous chimpanzee reference. An Identity-by-State (IBS) matrix is calculated using the SNPs of each sample, to quantify the pairwise distance of each sample from every other sample. For example, given 938 samples, a 938 by 938 IBS matrix is calculated, where each sample is represented by a single row or column in the matrix, and each row/column represents the pairwise distance of a sample from every other sample. Finally, PCA is performed on the IBS matrix. Visualization of PCs 1 and 2 show distinct clustering of samples according to ancestry. For this experiment, a cohort of 938 fully consenting individuals from 51 subpopulations from sub-Saharan Africa, North Africa, Europe, the Middle East, South/Central Asia, East Asia, Oceania, and the Americas was used, and over 650,000 autosomal SNPs were analyzed. [3] 
+Given a cohort of individuals hailing from various ancestries, clustering can be used to determine the ancestry of each person based on their genetic profile. The first step is to sequence each person’s genome. Then, locations of allelic single nucleotide polymorphisms (SNPs) were determined by comparing each sample genome to the orthologous chimpanzee reference. An Identity-by-State (IBS) matrix is calculated using the SNPs of each sample, to quantify the pairwise distance of each sample from every other sample. For example, given 938 samples, a 938 by 938 IBS matrix is calculated, where each sample is represented by a single row or column in the matrix, and each row/column represents the pairwise distance of a sample from every other sample. Finally, principal component analysis(PCA), a type of dimensionality reduction/clustering that relies on finding the top eigenvectors that capture the most variance in a data set, is performed on the IBS matrix. Each row or column of the IBS matrix represents a single data point. Visualization of principal components(PCs) 1 and 2 show distinct clustering of samples according to ancestry. For this experiment, a cohort of 938 fully consenting individuals from 51 subpopulations from sub-Saharan Africa, North Africa, Europe, the Middle East, South/Central Asia, East Asia, Oceania, and the Americas was used, and over 650,000 autosomal SNPs were analyzed. [3] 
 
 <b>Results:</b>
 
@@ -87,7 +87,7 @@ Figure: PCA performed on 938 dimensional IBS matrix, each row representing a sam
 
 Figure: Performing identical technique (pairwise IBS matrix, PCA) on individual subgroups reveals further clustering of the data into known subpopulations. 
 
-### Transcription Binding Site Prediction using CNN on Binding Motifs
+### Transcription Binding Site Prediction using Convolutional Neural Network on Binding Motifs
 
 https://www.nature.com/articles/nbt.3300
 
@@ -108,11 +108,11 @@ CHIP-seq data from 506 experiments from the ENCODE database were used to train t
 
 Figure: AUC of DeepBind model vs MEME baseline model on prediction transcription factor binding sites from 506 CHIP seq experiments. Top: median AUC grouped by transcription factor. Bottom: median AUC grouped by cell line. The average AUC of DeepBind outperforms MEME. 
 
-### Cell Cycle Phase Prediction using CNN on Images of Jurkat Cells
+### Cell Cycle Phase Prediction using Convolutional Neural Network on Images of Jurkat Cells
 
 https://www.nature.com/articles/s41467-017-00623-3
 
-Convolutional neural networks, a type of deep learning model that excels in image analysis, can be used for both prediction and clustering tasks. In this study, a convolutional neural network was used to predict the cell cycle phase of jurkat cell images. After training the model on 33,000 images, predictions were made on 3000 images. An accuracy of 98% was achieved, a 6% improvement over traditional machine learning techniques. [5]
+Convolutional neural networks(CNN), a type of deep learning model that excels in image analysis, can be used for both prediction and clustering tasks. In this study, a convolutional neural network was used to predict the cell cycle phase of jurkat cell images. After training the model on 33,000 images, predictions were made on 3000 images. An accuracy of 98% was achieved, a 6% improvement over traditional machine learning techniques. [5]
 
 <p align="center"><img src="10.png" height="200"></p>
 
