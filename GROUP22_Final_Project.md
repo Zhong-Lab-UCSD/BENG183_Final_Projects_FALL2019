@@ -131,8 +131,8 @@ As the result shown above, (S1,S1,S1) will be the best hidden state sequence tha
 * **Problem Specification**:
     Again, the parameters will be very similar to the Evaluation problem.            
     * If we have the DNA Sequence (e.g. ATTG...), we would like our observation to be 
-    ![](http://bit.ly/358SKYZ) (
-    ![](http://bit.ly/2LCFKTI)
+    ![](http://www.sciweavers.org/tex2img.php?eq=%24o_i%20%5Cin%20%5C%7BA%2CC%2CT%2CG%5C%7D%24&bc=White&fc=Black&im=png&fs=12&ff=arev&edit=0) (
+    ![](http://www.sciweavers.org/tex2img.php?eq=%24o_1%3DA%2C%20o_2%3DT%2C%20o_3%3DT%2C%20o_4%3DG%2C...%24&bc=White&fc=Black&im=png&fs=12&ff=arev&edit=0)
     )
     * The hidden states are the desired features. For example, they can be "exons" or "introns", or they can be "deletion", "duplication" or "insertion".
 
