@@ -4,11 +4,11 @@
 
 * [Overview](#overview)
 
-* [k-Means Clustering](#k-means-clustering)
+* [*k*-Means Clustering](#k-means-clustering)
 
-* [Global k-Means Clustering](#global-k-means-clustering)
+* [Global *k*-Means Clustering](#global-k-means-clustering)
 
-* [Fuzzy c-Means Clustering](#fuzzy-c-means-clustering)
+* [Fuzzy *c*-Means Clustering](#fuzzy-c-means-clustering)
 
 * [Mixture of Gaussian Clustering](#mixture-of-gaussian-clustering)
 
@@ -33,7 +33,7 @@ Step 3: Stop if the algorithm converges (that is, the cluster assignments no lon
 
 Here is a GIF demo:
 
-<img src="http://shabal.in/visuals/kmeans/random.gif" width=700 height=500>
+<img src="https://shabal.in/visuals/kmeans/random.gif" width=700 height=500>
 
 ## Global *K*-Means Clustering
 
@@ -44,7 +44,7 @@ One traditional way is to start from one cluster (centroid), and continuously ad
 Step 1: Given the finite data set <img src="/tex/53d147e7f3fe6e47ee05b88b166bd3f6.svg?invert_in_darkmode&sanitize=true" align=middle width=12.32879834999999pt height=22.465723500000017pt/>, <img src="/tex/9233262f58a431ec864c8dc2308dad7b.svg?invert_in_darkmode&sanitize=true" align=middle width=113.57686394999999pt height=24.65753399999998pt/>, consisting of m n-dimensional elements, compute A’s center, set this as the initial center.  
 Step 2: Let the rest (<img src="/tex/63bb9849783d01d91403bc9a5fea12a2.svg?invert_in_darkmode&sanitize=true" align=middle width=9.075367949999992pt height=22.831056599999986pt/>-1)-partition centroids be <img src="/tex/7e721fe1c7f64784d20cd0f496e836db.svg?invert_in_darkmode&sanitize=true" align=middle width=110.8617807pt height=14.15524440000002pt/>, compute <img src="/tex/2bfa3db256fd1625d91ab9bc03acd9bc.svg?invert_in_darkmode&sanitize=true" align=middle width=37.57057094999999pt height=28.091038800000003pt/>, <img src="/tex/88b6fa172b4ea7646e022c6707d88558.svg?invert_in_darkmode&sanitize=true" align=middle width=32.30026799999999pt height=21.839370299999988pt/>by comparing the minimum square distance between each point and the closest cluster center from <img src="/tex/7e721fe1c7f64784d20cd0f496e836db.svg?invert_in_darkmode&sanitize=true" align=middle width=110.8617807pt height=14.15524440000002pt/> with the square distance of each pair of data. So the point with the minimum <img src="/tex/2bfa3db256fd1625d91ab9bc03acd9bc.svg?invert_in_darkmode&sanitize=true" align=middle width=37.57057094999999pt height=28.091038800000003pt/> value would be the new cluster center for the next iteration.  
 Step 3: Select <img src="/tex/65cdf6ecba6cf2ad3ea727e92424763a.svg?invert_in_darkmode&sanitize=true" align=middle width=144.07717499999998pt height=24.65753399999998pt/> as a new starting point, apply the k-means algorithm. Then use the result as the input, go back to step 2.  
-Step 4: Stop iteration if <img src="/tex/2bfa3db256fd1625d91ab9bc03acd9bc.svg?invert_in_darkmode&sanitize=true" align=middle width=37.57057094999999pt height=28.091038800000003pt/> is smaller than a given tolerance value
+Step 4: Stop iteration if <img src="/tex/2bfa3db256fd1625d91ab9bc03acd9bc.svg?invert_in_darkmode&sanitize=true" align=middle width=37.57057094999999pt height=28.091038800000003pt/> is smaller than a given tolerance value.
 
 ## Fuzzy c-Means Clustering
 
@@ -109,7 +109,7 @@ Here is a GIF demo for the algorithm:
 
 ## Discussion
 
-### Limitations
+### Limitations of *k*-Means
 
 Standard *k*-means clustering requires a careful selection of initial cluster centers. A different initialization may yield to a different number of iterations required for convergence, and a different clustering results. However, in some cases, the algorithm may not converge at all. In addition, the algorithm produces a clustering that attains local optimum, and more importantly, there may be different cluster assignments that have the same optimal scores [11]. Last but not least, the standard k-means clustering is vulnerable to the noise, thus its reliability is compromised provided the data is fuzzy.
 
