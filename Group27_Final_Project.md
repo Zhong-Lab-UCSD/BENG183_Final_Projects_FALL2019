@@ -32,7 +32,7 @@ A specific example of this case is described below. In various tropical and subt
 The DNA amplified from RCA can additionally be characterized by restriction fragment length polymorphism analysis and directly sequenced up to 900 bases in a single run, avoiding other obstacles and allowing for quicker analysis. There are many other advantages to using RCA such as the lack of expensive devices, its simplicity, and the characterization of all infecting circular DNA components, thus, making it a widely used mechanism for diagnostics. 
 
 
-## Citations 
+### Citations 
 
 1. Dean, Frank B. et al. “Rapid Amplification of Plasmid and Phage DNA Using Phi29 DNA Polymerase and Multiply-Primed Rolling Circle Amplification.” Genome Research 11.6 (2001): 1095–1099. 
 2. Haible, Daniela, et al. “Rolling Circle Amplification Revolutionizes Diagnosis and Genomics of Geminiviruses.” Journal of Virological Methods, vol. 135, no. 1, July 2006, pp. 9–16., doi:10.1016/j.jviromet.2006.01.017. 
