@@ -1,5 +1,7 @@
 # Machine learning : Hidden Markov model (HMM)
 
+(A friendly remainder: there are many math equations in this file, please add this [MathJax Chrome Plugin](https://chrome.google.com/webstore/detail/mathjax-plugin-for-github/ioemnmodlmafdkllaclgeombjnmnbima?hl=en) before reading.)
+
 A Hidden Markov Model (HMM) was first introduced as a way to solve speech recognition problems in 1990s. Later, many HMM applications are brought into play in the field of bioinformatics. In this chapter, we will show the definitions for the Markov Chain and HMM, as well as bioinformatics problems using HMM and their algorithm implementations.
 
 ## Definitions and Preliminaries
@@ -8,20 +10,21 @@ A Hidden Markov Model (HMM) was first introduced as a way to solve speech recogn
 **Markov Chain** is a stochastic process that 
 (For simplicity purposes, we focus on discrete time and discrete state space here, to align with HMM applications we will introduction later.)
 1. is discrete time
-    * **discrete time**: $T=\{0,1,2,3,...\}$.
+    * **discrete time**: $T=${$0,1,2,3,...$}.
 2. has discrete state space 
-    * **discrete state space**: $S=\{s_1,s_2,s_3,...\}$.
-    * **states**: random variables $\{x_t : t \in T\}$, which take value from $S$.
-    * Note: the states $x_0,x_1,x_2,x_3,...$ are observable - what is different from HMM.
+    * **discrete state space**: $S=${$s_1,s_2,s_3,...$}.
+    * **states**: random variables {$x_t : t \in T$}, which take value from $S$.
         * **initial distribution**: $\pi = ({\pi}_i)$, where each entry ${\pi}_i$ stands for the probability for the Markov Chain to start at $i \in S$.
+    * Note: the states $x_0,x_1,x_2,x_3,...$ are observable - what is different from HMM.
+
 3. satisfies the Markov property
     * **Markov property** (first-order MP): predicting the future depends solely on its present state, this prediction can be made just as well as knowing the full history. 
         * i.e. the probability of being at state $x_{t+1}$ at time $t+1$ depends only on the state $x_t$ at time $t$ but not $x_{t-1},...,x_1$.
         * Similarly, we have **$k^{th}$-order Markov property**. It states that predicting the future depends solely on its most recent k states, this prediction can be made just as well as knowing the full history. 
     
-    * **transition matrix**: $A=(a_{ij})$, where each entry $a_{ij}$ represents the probability to get from $i$ $(\in S)$ to $j$ $(\in S)$ in one step. Here, we restrict the Markov Chain to be time invarient so that the transition matrix is always the same.
+    * **transition matrix**: $A=$($a_{ij}$), where each entry $a_{ij}$ represents the probability to get from $i$ $(\in S)$ to $j$ $(\in S)$ in one step. Here, we restrict the Markov Chain to be time invarient so that the transition matrix is always the same.
 
-To define a Markov Chain, we need (1) the time index set $T=\{0,1,2,3,...\}$, (2) the state space $S=\{s_1,s_2,s_3,...\}$, (3) the transition matrix $A=(a_{ij})$, (and (4) the initial distribution $\pi = ({\pi}_i)$). 
+To define a Markov Chain, we need (1) the time index set $T=${$0,1,2,3,...$}, (2) the state space $S=${$s_1,s_2,s_3,...$}, (3) the transition matrix $A=(a_{ij})$, (and (4) the initial distribution $\pi = ({\pi}_i)$). 
 
 #### Markov Chain Example
 The following is an example of Markov Chain, known as reflected random walk,
@@ -29,7 +32,7 @@ The following is an example of Markov Chain, known as reflected random walk,
 
 ![](https://i.imgur.com/RW0evNh.png)
 
-where time index set is $T=\{0,1,2,3,...\}$, the state space is $S=\{0,1,2,...\}$ and transition matrix is
+where time index set is $T=${$0,1,2,3,...$}, the state space is $S=${$0,1,2,...$} and transition matrix is
 ![](https://i.imgur.com/uoePXfb.png)
 
  
@@ -41,15 +44,15 @@ And here is a simple example of a symmetric (p = $\frac{1}{2}$) reflected random
 ### Hidden Markov Model
 **Hidden Markov model** is derived from Markov Chain, but
 1. the states in the Markov Chain are NOT observable, although they DO exist as part of the model
-    * **hidden state space** is $S=\{s_1,...,s_N\}$ and **hidden states** are $x_0,x_1,x_2,x_3,... \in S$
-    * **transition matrix**: $A=(a_{ij})$
-    * **initial distribution**: $\pi = ({\pi}_i)$
+    * **hidden state space** is $S=${$s_1,...,s_N$} and **hidden states** are $x_0,x_1,x_2,x_3,... \in S$
+    * **transition matrix**: $A=$($a_{ij}$)
+    * **initial distribution**: $\pi=$($\pi_i$)
 
 2. On the other hand, the additional observations are known.
-    * **observed state space** is $V=\{v_1,...,v_M\}$ and **observations** are $o_0,o_1,o_2,o_3,... \in V$
-    * **emission matrix**: $B=(b_i(k))$, where each entry $b_i(k)$ represents the probability to observing $o_k$ when the Markov Chain is at $i \in S$
+    * **observed state space** is $V=${$v_1,...,v_M$} and **observations** are $o_0,o_1,o_2,o_3,... \in V$
+    * **emission matrix**: $B=$($b_i(k)$), where each entry $b_i(k)$ represents the probability to observing $o_k$ when the Markov Chain is at $i \in S$
 
-To define a Hidden Markov Model, we need (1) the time index set $T=\{0,1,2,3,...\}$, (2) the hidden state space $S=\{s_1,...,s_N\}$, (3) the observed state space $V=\{v_1,...,v_M\}$, (4) the initial distribution $\pi = ({\pi}_i)$, (5) the transition matrix $A=(a_{ij})$, and (6) the emission matrix $B=(b_i(k))$. 
+To define a Hidden Markov Model, we need (1) the time index set $T=${$0,1,2,3,...$}, (2) the hidden state space $S=${$s_1,...,s_N$}, (3) the observed state space $V=${$v_1,...,v_M$}, (4) the initial distribution $\pi=$($\pi_i$), (5) the transition matrix $A=$($a_{ij}$), and (6) the emission matrix $B=$($b_i(k)$). 
 
 #### Hidden Markov Model Example
 
@@ -77,8 +80,8 @@ We will discuss about algorithms to solve the above three types of HMM model pro
 
 #### 1. Evaluation
 
-* **Question:**  
-    During the training process of a hidden markov model, we have to evaluate how well the current model perform after each update of transition and emission matrix, and update the matrix again based on the result. So here comes our first question: Based on the current Markov model, what is the probability of getting a specific observed DNA sequence?
+* **Question**:
+    During the training process of a hidden markov model, we have to evaluate how well the current model perform after each update of transition and emission matrix, and update the matrix again based on the result. So, here comes our first question: Based on the current Markov model, what is the probability of getting a specific observed DNA sequence?
     
 * **Problem Specification**:
     * If we have the DNA Sequence (e.g. ATTG...), we would like our observation to be $o_i \in \{A,C,T,G\}$ ($o_1=A, o_2=T, o_3=T, o_4=G, ...$)
@@ -96,11 +99,12 @@ We will discuss about algorithms to solve the above three types of HMM model pro
     Based on the observations(“A”, “G”, “A”) and the Forward Algorithm, we can fill out the evaluation process diagram showing below. 
     ![](https://i.imgur.com/Z5MGsFn.png)
 
+    The implementation of this method will be a dynamic programming implementation as we are storing the probabilities of the subproblems along the way.
 
 #### 2. Decoding
 * **Question**:
     
-    Similar to the Evaluation problem, we also want to find which hidden states sequence that shows the best probability to generate the observed sequence, based on the current Markov model. One of the problems that we are trying to solve with HMM is to recognize exons and introns in an open reading frame. The input we usually have will be a DNA sequence, while the bases in the sequence are the emitted symbols of an HMM. On the other hand, what we want to find out is which state actually emits the corresponding symbol and those states are unobservable for the observers. We figure this out through picking the hidden state sequence that has the highest probability of doing so.
+    In addition to calculate the probability for one sequence as did in the Evaluation problem, we also want to find which hidden states sequence that shows the best probability to generate the observed sequence, based on the current Markov model. One of the problems that we are trying to solve with HMM is to recognize exons and introns in an open reading frame. The input we usually have will be a DNA sequence, while the bases in the sequence are the emitted symbols of an HMM. On the other hand, what we want to find out is which state actually emits the corresponding symbol and those states are unobservable for the observers. We figure this out through picking the hidden state sequence that has the highest probability.
 * **Problem Specification**:
     The parameters will be very similar to the Evaluation problem.            
     * If we have the DNA Sequence (e.g. ATTG...), we would like our observation to be $o_i \in \{A,C,T,G\}$ ($o_1=A, o_2=T, o_3=T, o_4=G, ...$)
@@ -109,7 +113,7 @@ We will discuss about algorithms to solve the above three types of HMM model pro
     Solution is the hidden state sequence that shows from which state that each observation nucleotide is generated. 
             
 * **Decoding Process - Viterbi algorithm**:
-    We could do something similar as the Evaluation problem just talked about and use the idea introduced below. But, here we are introducing a more advanced but more commonly used gene finding Viterbi algorithm.
+    We could do something very similar to the Evaluation problem in the last subsection, along with the idea introduced below, which is an easy version of Viterbi algorithm. Therefore, here we are going to introduce a more advanced but more commonly used gene finding Viterbi algorithm.
     ![](https://i.imgur.com/T2HL8aF.png)
     In this algorithm,
     $V_i(t)$: the probability of the HMM stay in state i after generating $y_t$(observation at time step “t”), following the most probable path in the model.
@@ -126,11 +130,11 @@ As the result shown above, (S1,S1,S1) will be the best hidden state sequence tha
   
 #### 3. Recognition/Training
 * **Question**: 
-    In gene finding, the common problems that we are trying to solve are identifying protein-coding genes and random ORFs(open reading frames) in prokaryotic DNA sequences or recognizing exons, introns, intergenic regions or promoters etc. from eukaryotic genes. Therefore, in real-life cases, we are trying to build and train a hidden markov model with a set of sequence contains the desired features within them. Therefore, we have the question of how to build up the model.
+    In gene finding, we do not have a very good hidden Markov model present at the very beginning as we assumed in the first two examples. As a result, this is another type of question that we are trying to solve. We are trying to build and train a hidden Markov model with a set of sequence contains the desired features within them. And the question will be how to build up the model.
     
 * **Problem Specification**:
-    Again, the parameters will be very similar to the Evaluation problem.            
-    * If we have the DNA Sequence (e.g. ATTG...), we would like our observation to be ![](http://bit.ly/358SKYZ) (![](http://bit.ly/2LCFKTI))
+    Again, the parameters will be very similar to the Evaluation problem.
+    * If we have the DNA Sequence (e.g. ATTG...), we would like our observation to be  $o_i \in \{A,C,T,G\}$ ($o_1=A, o_2=T, o_3=T, o_4=G, ...$)
     * The hidden states are the desired features. For example, they can be "exons" or "introns", or they can be "deletion", "duplication" or "insertion".
 
     Solution is the trained hidden Markov model that maximize the probability of predicting given features on a DNA sequence.
@@ -152,14 +156,16 @@ As the result shown above, (S1,S1,S1) will be the best hidden state sequence tha
 
 ## Discussions
 
+HMM is commonly used in bioinformatics problems. Therefore, we will list some available tools in use, as well as the advantages and disadvantages of HMM in this section.
+
 ### Some vailable HMM Tools in bioinformatics
-* HMMER Program: A useful program for searching sequence databases for sequence homologs, and for making sequence alignments. The basic methods used in implementing HMMER is profile HMMs
+1. HMMER Program: A useful program for searching sequence databases for sequence homologs, and for making sequence alignments. The basic methods used in implementing HMMER is profile HMMs
     * Compared to BLAST, and other sequence alignment and database search tools based on older scoring methodology, HMMER aims to be significantly more accurate and more able to detect remote homologs, because of the strength of its underlying probability models.
 
-* UPP: a method for ultra-large multiple sequence alignment
+2. UPP: a method for ultra-large multiple sequence alignment
     * Up to 1,000,000 sequences
     * Robust to fragmentary sequences
-* PFAM: a large collection of protein families, each represented by multiple sequence alignments and hidden Markov models (HMMs).
+3. PFAM: a large collection of protein families, each represented by multiple sequence alignments and hidden Markov models (HMMs).
     * Using HMM to recognizing membership in protein families
 
 ### Advantages of HMM
