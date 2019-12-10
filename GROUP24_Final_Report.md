@@ -48,7 +48,7 @@ Step 4: Stop iteration if <img src="/tex/2bfa3db256fd1625d91ab9bc03acd9bc.svg?in
 
 ## Fuzzy c-Means Clustering
 
-The fuzzy c-means clustering (FCM), also referred to as soft k-means clustering, is a clustering algorithm that partitions the data set into c clusters while each data point may potentially belong to multiple clusters. Compared to the well-known k-means clustering, FCM introduces a new attribute for each data point: **membership**. The membership function evaluates the similarity between a data point to each cluster center, and it ranges between 0 and 1, where memberships close to zero indicates little similarity between the point and the center, while memberships close to one indicates a high degree of similarity between the sample and the cluster. The algorithm starts with a given initial set of *c* cluster centers:  
+The fuzzy c-means clustering (FCM), also referred to as soft k-means clustering, is a clustering algorithm that partitions the data set into c clusters while each data point may potentially belong to multiple clusters. Compared to the well-known k-means clustering, FCM introduces a new attribute for each data point: **membership**. The membership function evaluates the similarity between a data point to each cluster center, and it ranges between 0 and 1, where memberships close to zero indicates little similarity between the point and the center, while memberships close to one indicates a high degree of similarity between the sample and the cluster. The algorithm starts with a given initial set of *c* cluster centers [6]:  
 
 Step 0: Determine all parameters needed for the algorithm, and initialize <img src="/tex/7f4a7f354755718b4f9f1d20ee6befdc.svg?invert_in_darkmode&sanitize=true" align=middle width=29.842518749999986pt height=29.190975000000005pt/> membership matrix randomly  
 
@@ -73,13 +73,15 @@ Step 3: If <img src="/tex/ae2d2999dad9c805927593c7eb415152.svg?invert_in_darkmod
 
 The result of clustering may look like this:
 
-![FCM](images/fcm.png)
+| ![FCM](images/fcm.png) |
+|:--|
+| Fig. fuzzy *c*-means clustering of the dataset [14].|
 
 ## Mixture of Gaussian Clustering
 
 The Mixture of Gaussian clustering method is a way to cluster data points not only by the means, but also by variance. Therefore, it can make the cluster more correctly in some circumstances. Gaussian Mixture Models (GMMs) assume that there are a certain number of Gaussian distributions, and each of these distributions represents a cluster. Hence, a Gaussian Mixture Model tends to group the data points belonging to a single distribution together.
 
-GMM is a probabilistic model that uses soft clustering method to distribute the points in different clusters. Soft clustering, also known as fuzzy clustering or soft k-means, is a form of clustering method in which one data point can belong to more than one cluster. The GMM uses the probabilistic density function in a 3D gaussian distribution is given by:
+GMM is a probabilistic model that uses soft clustering method to distribute the points in different clusters. Soft clustering, also known as fuzzy clustering or soft k-means, is a form of clustering method in which one data point can belong to more than one cluster. The GMM uses the probabilistic density function in a 3D gaussian distribution is given by [10]:
 
 <p align="center"><img src="/tex/fa2774981b934668dbf10d514931df16.svg?invert_in_darkmode&sanitize=true" align=middle width=266.47394234999996pt height=40.289634pt/></p>
 
@@ -93,7 +95,7 @@ Since we do not know these mean and variance because we do not know which Gaussi
 
 During the E-step, we compute the responsibilities for each Gaussian for each datapoint. The responsibility (<img src="/tex/6e7c6481f6d031249ab2eb226dd9c467.svg?invert_in_darkmode&sanitize=true" align=middle width=17.94187229999999pt height=14.15524440000002pt/>) is calculated by dividing the Probability of <img src="/tex/1338d1e5163ba5bc872f1411dd30b36a.svg?invert_in_darkmode&sanitize=true" align=middle width=18.269651399999987pt height=22.465723500000017pt/> belongs to cluster <img src="/tex/3e18a4a28fdee1744e5e3f79d13b9ff6.svg?invert_in_darkmode&sanitize=true" align=middle width=7.11380504999999pt height=14.15524440000002pt/> by the Sum of probability <img src="/tex/1338d1e5163ba5bc872f1411dd30b36a.svg?invert_in_darkmode&sanitize=true" align=middle width=18.269651399999987pt height=22.465723500000017pt/> belongs to <img src="/tex/7a914c116509395f0acf452fc81725dc.svg?invert_in_darkmode&sanitize=true" align=middle width=87.19166114999999pt height=14.15524440000002pt/>. This value will be big if the point is assigned to the correct clusterm and low otherwise.
 
-During the M-step, we modify the parameters of each Gaussian to maximize the likelihood for the responsibility weighted data. The density <img src="/tex/0c4cdff2a5c675458f5a6629892c26d1.svg?invert_in_darkmode&sanitize=true" align=middle width=12.32879834999999pt height=22.465723500000017pt/>, mean <img src="/tex/07617f9d8fe48b4a7b3f523d6730eef0.svg?invert_in_darkmode&sanitize=true" align=middle width=9.90492359999999pt height=14.15524440000002pt/> and the covariance matrix <img src="/tex/813cd865c037c89fcdc609b25c465a05.svg?invert_in_darkmode&sanitize=true" align=middle width=11.87217899999999pt height=22.465723500000017pt/> are updated until convergence. They are updated following the manner below:
+During the M-step, we modify the parameters of each Gaussian to maximize the likelihood for the responsibility weighted data. The density <img src="/tex/0c4cdff2a5c675458f5a6629892c26d1.svg?invert_in_darkmode&sanitize=true" align=middle width=12.32879834999999pt height=22.465723500000017pt/>, mean <img src="/tex/07617f9d8fe48b4a7b3f523d6730eef0.svg?invert_in_darkmode&sanitize=true" align=middle width=9.90492359999999pt height=14.15524440000002pt/> and the covariance matrix <img src="/tex/813cd865c037c89fcdc609b25c465a05.svg?invert_in_darkmode&sanitize=true" align=middle width=11.87217899999999pt height=22.465723500000017pt/> are updated until convergence. They are updated following the manner below [10]:
 
 <p align="center"><img src="/tex/b83ef5ac4168a2edc4ff1eaa3b195257.svg?invert_in_darkmode&sanitize=true" align=middle width=240.8622414pt height=37.0084374pt/></p>  
 
@@ -117,7 +119,7 @@ Both k-means and FCM are partition-based clustering algorithm, and they work in 
 
 However, as FCM is a bit more complex than k-means, it has a slower runtime compared to k-means clustering. As Velmurugan performed comparative analysis of k-means and FCM on telecommunication data [11], he pointed out that k-means runs significantly faster than FCM (Fig. X).
 
-| ![time](images/fcm_vs_km_time.png)|
+|  <img src="images/fcm_vs_km_time.png" width="200" height="300" >|
 |:--|
 | Fig. Comparison of average time for k-Means and FCM. The table on the top shows the average executation time by k-Means and FCM. The plot at the bottom shows average runtime of k-Means and FCM.|
 
@@ -143,7 +145,7 @@ Here is an example of how k-means clustering does not perform as well as the mix
 
 | ![kmeans_vs_GMM](images/kmeans_vs_gmm.png)|
 |:--|
-| Fig X. Comparison of average time for k-Means and FCM. The table on the top shows the average executation time by k-Means and FCM. The plot at the bottom shows average runtime of k-Means and FCM.|
+| Fig X. Comparion of clustering results. **a**) the clustering using *k*-means. **b**) the clustering using GMM.|
 
 ### Real Case Analysis and Comparison of the Clustering methods
 
