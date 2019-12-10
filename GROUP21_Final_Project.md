@@ -25,6 +25,7 @@ Applications for predictive genomics are mostly involved with diseases that can 
 The bulk of the diseases that are currently used in predictive genomics are diseases that stem from a hereditary mutation. One of the biggest use cases for predictive genomics currently is testing for mutations in genes that could result in elevated cancer risk (1). The breast cancer susceptibility genes (BRCA) is a pair of genes that are crucial in tumor suppression. These genes encode for enzymes that repair mutated DNA via homologous recombination. Mutations in BRCA 1 and/or BRCA 2 can result in an increased risk of breast and ovarian cancers and are responsible for over 20% of breast and ovarian cancers. Because of a strong correlation between mutated BRCA genes and increased cancer risk, genetic testing for these mutations can be done in order to determine the best course of preventative measures.
 
 ![BRCA 1/2 genes](./GROUP21_Final_Project_images/BRCAgenes.jpeg) 
+
 _FIGURE 1: BRCA GENE diagrams_
 
 Every year, BRCA gene testing has become more and more accessible. Nonetheless, BRCA testing is still limited to those who have some sort of tie to a potential increased risk of cancer. The general criteria for considering a BRCA gene test fall into two main categories, a personal history of cancer before advanced age, or extensive family history with cancer. A personal history of cancer includes history with any of the BRCA-related cancers during young/middle-aged years or history with multiple types of cancers. Extensive family history with cancer includes multiple family members being diagnosed with cancer or a family history of having mutated BRCA genes. The only thing required from the patient is a blood sample taken at their physician's office. Once taken, the sample can be sent in to a number of labs to be screened for BRCA 1/2 mutations. The biggest labs that currently offer BRCA gene testing are Myriad Genetics, Medical Diagnostics, and Quest Diagnostics.
@@ -94,29 +95,17 @@ As presented in class, RNA-seq technology is often preferred to other sequencing
 
 **Bibliography**
 
-1. Marzuillo, C., De Vito, C., D'Andrea, E., Rosso, A., & Villari, P. (2013). Predictive genetic testing for complex diseases: a public health perspective. _QJM: An International Journal of Medicine_, _107_(2), 93-97.
+1. Marzuillo, C., De Vito, C., D'Andrea, E., Rosso, A., & Villari, P. (2013). Predictive genetic testing for complex diseases: a public health perspective. _QJM: An International Journal of Medicine_, _107_(2), 93-97. <https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3905632/>
 
-  <https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3905632/>
+2. Warren, M. (2018). The approach to predictive medicine that is taking genomics research by storm. _Nature_, _562_(7726), 181-184. [www.nature.com/articles/d41586-018-06956-3](http://www.nature.com/articles/d41586-018-06956-3).
 
-2. Warren, M. (2018). The approach to predictive medicine that is taking genomics research by storm. _Nature_, _562_(7726), 181-184.
+3. Wang, E., Zaman, N., Mcgee, S., Milanese, J. S., Masoudi-Nejad, A., & O'Connor-McCourt, M. (2015, February). Predictive genomics: a cancer hallmark network framework for predicting tumor clinical phenotypes using genome sequencing data. In _Seminars in cancer biology_ (Vol. 30, pp. 4-12). Academic Press. <https://www.sciencedirect.com/science/article/pii/S1044579X14000509?via%3Dihub>
 
-  [www.nature.com/articles/d41586-018-06956-3](http://www.nature.com/articles/d41586-018-06956-3).
+4. Timms, K. M., Abkevich, V., Hughes, E., Neff, C., Reid, J., Morris, B., ... & Iliev, D. (2014). Association of BRCA1/2 defects with genomic scores predictive of DNA damage repair deficiency among breast cancer subtypes. _Breast Cancer Research_, _16_(6), 475. <https://www.ncbi.nlm.nih.gov/pubmed/25475740>.
 
-3. Wang, E., Zaman, N., Mcgee, S., Milanese, J. S., Masoudi-Nejad, A., & O'Connor-McCourt, M. (2015, February). Predictive genomics: a cancer hallmark network framework for predicting tumor clinical phenotypes using genome sequencing data. In _Seminars in cancer biology_ (Vol. 30, pp. 4-12). Academic Press.
+5. Steemers, F. J., Chang, W., Lee, G., Barker, D. L., Shen, R., & Gunderson, K. L. (2006). Whole-genome genotyping with the single-base extension assay. _Nature methods_, _3_(1), 31. <https://www.ncbi.nlm.nih.gov/pubmed/16369550?dopt=AbstractPlus>
 
-  <https://www.sciencedirect.com/science/article/pii/S1044579X14000509?via%3Dihub>
-
-4. Timms, K. M., Abkevich, V., Hughes, E., Neff, C., Reid, J., Morris, B., ... & Iliev, D. (2014). Association of BRCA1/2 defects with genomic scores predictive of DNA damage repair deficiency among breast cancer subtypes. _Breast Cancer Research_, _16_(6), 475.
-
-  <https://www.ncbi.nlm.nih.gov/pubmed/25475740>.
-
-5. Steemers, F. J., Chang, W., Lee, G., Barker, D. L., Shen, R., & Gunderson, K. L. (2006). Whole-genome genotyping with the single-base extension assay. _Nature methods_, _3_(1), 31.
-
-  <https://www.ncbi.nlm.nih.gov/pubmed/16369550?dopt=AbstractPlus>
-
-6. Gorodetska, I., Kozeretska, I., & Dubrovska, A. (2019). _BRCA_ Genes: The Role in Genome Stability, Cancer Stemness and Therapy Resistance. _Journal of Cancer_, _10_(9), 2109–2127\. doi:10.7150/jca.30410
-
-  <https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6548160/>
+6. Gorodetska, I., Kozeretska, I., & Dubrovska, A. (2019). _BRCA_ Genes: The Role in Genome Stability, Cancer Stemness and Therapy Resistance. _Journal of Cancer_, _10_(9), 2109–2127\. doi:10.7150/jca.30410 <https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6548160/>
 
 7. _DNA Microarray Technology Fact Sheet_. (2015, August 27). Retrieved from [www.genome.gov/about-genomics/fact-sheets/DNA-Microarray-Technology?fbclid=IwAR0O2ybbVZqTqke4Ymz-ixcQ5DyAmE0Ae6HwlmUXuAxb4P2Ud-6cN763vlQ](http://www.genome.gov/about-genomics/fact-sheets/DNA-Microarray-Technology?fbclid=IwAR0O2ybbVZqTqke4Ymz-ixcQ5DyAmE0Ae6HwlmUXuAxb4P2Ud-6cN763vlQ). B
 
@@ -138,6 +127,4 @@ As presented in class, RNA-seq technology is often preferred to other sequencing
 
 15. Advantages of RNA-Seq Technology. 2019\. Retrieved from <https://www.illumina.com/science/technology/next-generation-sequencing/microarray-rna-seq-comparison.html>
 
-16. Beroukhim, R., Lin, M., Park, Y., Hao, K., Zhao, X., Garraway, L. A., ... & Descazeaud, A. (2006). Inferring loss-of-heterozygosity from unpaired tumors using high-density oligonucleotide SNP arrays. _PLoS computational biology_, _2_(5), e41.
-
-  <https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.0020041>
+16. Beroukhim, R., Lin, M., Park, Y., Hao, K., Zhao, X., Garraway, L. A., ... & Descazeaud, A. (2006). Inferring loss-of-heterozygosity from unpaired tumors using high-density oligonucleotide SNP arrays. _PLoS computational biology_, _2_(5), e41. <https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.0020041>
