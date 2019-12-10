@@ -1,4 +1,4 @@
-# Machine learning : Hidden Markov model (HMM) 
+# Machine learning : Hidden Markov model (HMM)
 
 A Hidden Markov Model (HMM) was first introduced as a way to solve speech recognition problems in 1990s. Later, many HMM applications are brought into play in the field of bioinformatics. In this chapter, we will show the definitions for the Markov Chain and HMM, as well as bioinformatics problems using HMM and their algorithm implementations.
 
@@ -30,7 +30,8 @@ The following is an example of Markov Chain, known as reflected random walk,
 ![](https://i.imgur.com/RW0evNh.png)
 
 where time index set is $T=\{0,1,2,3,...\}$, the state space is $S=\{0,1,2,...\}$ and transition matrix is
- $$A=\begin{pmatrix} p & 1-p & 0 & 0 & ... \\ 0 & p & 1-p &  0 & ...\\ 0 & 0 & p & 1-p & ... \\ 0 & 0 & 0 & p & ... \\ \vdots & \vdots & \vdots & \vdots & \ddots \end{pmatrix}.$$
+![](https://i.imgur.com/uoePXfb.png)
+
  
 And here is a simple example of a symmetric (p = $\frac{1}{2}$) reflected random walk plot (State vs Time).
 
