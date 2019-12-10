@@ -1,0 +1,11 @@
+Useful reading (bibliography)
+    https://blog.dominodatalab.com/topology-and-density-based-clustering/
+        Density based clustering can detect patterns and distinguish noise points
+
+    Lecture
+        KMeans clustering algorithm
+
+    https://iq.opengenus.org/dbscan-clustering-algorithm/
+        general dbscan info
+
+Academic references
