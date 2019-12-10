@@ -5,6 +5,11 @@
 ## Contents
 - [Introduction](#Introduction)
 - [Procedure](#Procedure)
+- [Applications](#Applications)
+ * [PCR Alternative](#PCR Alternative)
+ * [Random Mutagenesis](#Random Mutagenisis)
+ * [Geminiviruses & RFLP](#Geminiviruses & RFLP)
+- [References](#References)
 
 
 ---
