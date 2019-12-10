@@ -20,12 +20,12 @@
 
 ## Overview
 
-Clustering is a really useful machine learning technique for analyzing all kinds of data. It can help us to group certain data points that have similar properties in a large dataset, in order to grab information from it. In biological research, we often obtain lots of data from the experiments. In order to shuffle the useful information from the sea of data, it is crucial for us to correctly interpret the patterns behind it using clustering. We can use clustering method in gene expression data obtained from RNA sequencing, to discover potential groups of genes and samples, and predict the unknown functions of genes.
-In this report, we are going to expand on what we have learned about k-means clustering in the class, introduce global k-means, fuzzy c-means clustering, and Mixture of Gaussian clustering methods. Additionaly, we will discuss how they are different and useful in genomic data analysis.
+Clustering is a really useful machine learning technique for analyzing all kinds of data. It can help us to group certain data points that have similar properties in a large dataset, in order to grab information from it. In biological research, we often obtain lots of data from the experiments. In order to shuffle the useful information from the sea of data, it is crucial for us to correctly interpret the patterns behind it using clustering. We can use clustering methods in gene expression data obtained from RNA sequencing, to discover potential groups of genes and samples, and predict the unknown functions of genes.
+In this report, we are going to expand on what we have learned about k-means clustering in the class, introduce global k-means, fuzzy c-means clustering, and Mixture of Gaussian clustering methods. Additionaly, we will discuss how they are different and useful in biological data analysis.
 
 ## *K*-Means Clustering
 
-K-means clustering is a clustering algorithm that essentially partitions all data points into k clusters with locally optimal within-cluster sum of squared Euclidean distances. The standard algorithm starts with a given initial set of k cluster centers [11]:
+K-means clustering is a clustering algorithm that essentially partitions all data points into *k* clusters with locally optimal within-cluster sum of squared Euclidean distances. The standard algorithm starts with a given initial set of *k* cluster centers [11]:
 
 Step 1: For each point, find its closest cluster center and assign it to the closest cluster.  
 Step 2: Update the cluster centers to be the average of points contained within them.  
@@ -39,9 +39,9 @@ Here is a GIF demo:
 
 As mentioned, k-means clustering results are sensitive to the initial choice of clusters therefore they are only reliable for analyzing small sets of data. To improve it, auxiliary incremental approaches are recently introduced to k-clustering algorithm, which are known as the global k-means clustering.  
 
-One traditional way is to start from one cluster (centroid), and continuously adding new clustering center as the iteration proceeds. 
+One traditional way is to start from one cluster (centroid), and continuously adding new clustering center as the iteration proceeds.
 
-Step 1: Given the finite data set <img src="/tex/53d147e7f3fe6e47ee05b88b166bd3f6.svg?invert_in_darkmode&sanitize=true" align=middle width=12.32879834999999pt height=22.465723500000017pt/>, <img src="/tex/9233262f58a431ec864c8dc2308dad7b.svg?invert_in_darkmode&sanitize=true" align=middle width=113.57686394999999pt height=24.65753399999998pt/>, consisting of m n-dimensional elements, compute A’s center, set this as the initial center.  
+Step 1: Given the finite data set <img src="/tex/53d147e7f3fe6e47ee05b88b166bd3f6.svg?invert_in_darkmode&sanitize=true" align=middle width=12.32879834999999pt height=22.465723500000017pt/>, <img src="/tex/9233262f58a431ec864c8dc2308dad7b.svg?invert_in_darkmode&sanitize=true" align=middle width=113.57686394999999pt height=24.65753399999998pt/>, consisting of m n-dimensional elements, compute *A*’s center, set this as the initial center.  
 Step 2: Let the rest (<img src="/tex/63bb9849783d01d91403bc9a5fea12a2.svg?invert_in_darkmode&sanitize=true" align=middle width=9.075367949999992pt height=22.831056599999986pt/>-1)-partition centroids be <img src="/tex/7e721fe1c7f64784d20cd0f496e836db.svg?invert_in_darkmode&sanitize=true" align=middle width=110.8617807pt height=14.15524440000002pt/>, compute <img src="/tex/2bfa3db256fd1625d91ab9bc03acd9bc.svg?invert_in_darkmode&sanitize=true" align=middle width=37.57057094999999pt height=28.091038800000003pt/>, <img src="/tex/88b6fa172b4ea7646e022c6707d88558.svg?invert_in_darkmode&sanitize=true" align=middle width=32.30026799999999pt height=21.839370299999988pt/>by comparing the minimum square distance between each point and the closest cluster center from <img src="/tex/7e721fe1c7f64784d20cd0f496e836db.svg?invert_in_darkmode&sanitize=true" align=middle width=110.8617807pt height=14.15524440000002pt/> with the square distance of each pair of data. So the point with the minimum <img src="/tex/2bfa3db256fd1625d91ab9bc03acd9bc.svg?invert_in_darkmode&sanitize=true" align=middle width=37.57057094999999pt height=28.091038800000003pt/> value would be the new cluster center for the next iteration.  
 Step 3: Select <img src="/tex/65cdf6ecba6cf2ad3ea727e92424763a.svg?invert_in_darkmode&sanitize=true" align=middle width=144.07717499999998pt height=24.65753399999998pt/> as a new starting point, apply the k-means algorithm. Then use the result as the input, go back to step 2.  
 Step 4: Stop iteration if <img src="/tex/2bfa3db256fd1625d91ab9bc03acd9bc.svg?invert_in_darkmode&sanitize=true" align=middle width=37.57057094999999pt height=28.091038800000003pt/> is smaller than a given tolerance value.
@@ -85,7 +85,7 @@ GMM is a probabilistic model that uses soft clustering method to distribute the 
 
 <p align="center"><img src="/tex/fa2774981b934668dbf10d514931df16.svg?invert_in_darkmode&sanitize=true" align=middle width=266.47394234999996pt height=40.289634pt/></p>
 
-* <img src="/tex/332cc365a4987aacce0ead01b8bdcc0b.svg?invert_in_darkmode&sanitize=true" align=middle width=9.39498779999999pt height=14.15524440000002pt/> = the input vector. 
+* <img src="/tex/332cc365a4987aacce0ead01b8bdcc0b.svg?invert_in_darkmode&sanitize=true" align=middle width=9.39498779999999pt height=14.15524440000002pt/> = the input vector.
 * <img src="/tex/07617f9d8fe48b4a7b3f523d6730eef0.svg?invert_in_darkmode&sanitize=true" align=middle width=9.90492359999999pt height=14.15524440000002pt/> = 2-D mean vector
 * <img src="/tex/813cd865c037c89fcdc609b25c465a05.svg?invert_in_darkmode&sanitize=true" align=middle width=11.87217899999999pt height=22.465723500000017pt/> = 2 <img src="/tex/bdbf342b57819773421273d508dba586.svg?invert_in_darkmode&sanitize=true" align=middle width=12.785434199999989pt height=19.1781018pt/> 2 covariance matrix
 
@@ -93,7 +93,7 @@ Therefore, when we cluster the datasets in a 2 dimensional plot, we will define 
 
 Since we do not know these mean and variance because we do not know which Gaussian generated which data point, these parameters are calculated by a process called Expectation-Maximization (EM), which involves two steps --- the E-step and the M-step. We also have a parameter called <img src="/tex/0c4cdff2a5c675458f5a6629892c26d1.svg?invert_in_darkmode&sanitize=true" align=middle width=12.32879834999999pt height=22.465723500000017pt/> which represent the density of the distribution.
 
-During the E-step, we compute the responsibilities for each Gaussian for each datapoint. The responsibility (<img src="/tex/6e7c6481f6d031249ab2eb226dd9c467.svg?invert_in_darkmode&sanitize=true" align=middle width=17.94187229999999pt height=14.15524440000002pt/>) is calculated by dividing the Probability of <img src="/tex/1338d1e5163ba5bc872f1411dd30b36a.svg?invert_in_darkmode&sanitize=true" align=middle width=18.269651399999987pt height=22.465723500000017pt/> belongs to cluster <img src="/tex/3e18a4a28fdee1744e5e3f79d13b9ff6.svg?invert_in_darkmode&sanitize=true" align=middle width=7.11380504999999pt height=14.15524440000002pt/> by the Sum of probability <img src="/tex/1338d1e5163ba5bc872f1411dd30b36a.svg?invert_in_darkmode&sanitize=true" align=middle width=18.269651399999987pt height=22.465723500000017pt/> belongs to <img src="/tex/7a914c116509395f0acf452fc81725dc.svg?invert_in_darkmode&sanitize=true" align=middle width=87.19166114999999pt height=14.15524440000002pt/>. This value will be big if the point is assigned to the correct clusterm and low otherwise.
+During the E-step, we compute the responsibilities for each Gaussian for each datapoint. The responsibility (<img src="/tex/6e7c6481f6d031249ab2eb226dd9c467.svg?invert_in_darkmode&sanitize=true" align=middle width=17.94187229999999pt height=14.15524440000002pt/>) is calculated by dividing the Probability of <img src="/tex/1338d1e5163ba5bc872f1411dd30b36a.svg?invert_in_darkmode&sanitize=true" align=middle width=18.269651399999987pt height=22.465723500000017pt/> belonging to cluster <img src="/tex/3e18a4a28fdee1744e5e3f79d13b9ff6.svg?invert_in_darkmode&sanitize=true" align=middle width=7.11380504999999pt height=14.15524440000002pt/> by the Sum of probability <img src="/tex/1338d1e5163ba5bc872f1411dd30b36a.svg?invert_in_darkmode&sanitize=true" align=middle width=18.269651399999987pt height=22.465723500000017pt/> belonging to <img src="/tex/7a914c116509395f0acf452fc81725dc.svg?invert_in_darkmode&sanitize=true" align=middle width=87.19166114999999pt height=14.15524440000002pt/>. This value will be big if the point is assigned to the correct clusterm and low otherwise.
 
 During the M-step, we modify the parameters of each Gaussian to maximize the likelihood for the responsibility weighted data. The density <img src="/tex/0c4cdff2a5c675458f5a6629892c26d1.svg?invert_in_darkmode&sanitize=true" align=middle width=12.32879834999999pt height=22.465723500000017pt/>, mean <img src="/tex/07617f9d8fe48b4a7b3f523d6730eef0.svg?invert_in_darkmode&sanitize=true" align=middle width=9.90492359999999pt height=14.15524440000002pt/> and the covariance matrix <img src="/tex/813cd865c037c89fcdc609b25c465a05.svg?invert_in_darkmode&sanitize=true" align=middle width=11.87217899999999pt height=22.465723500000017pt/> are updated until convergence. They are updated following the manner below [10]:
 
@@ -155,7 +155,7 @@ According to. Zhe Liu *et al.*’s paper about using using a new clustering meth
 
 In the paper, Zhe Liu et al.  also compare the performances of their improved EM algorithm, the classic EM algorithm, which is the GMM we introduced before, EM algorithm based on multivariate distributions, and two standard clustering --- Fuzzy *c*-means and *k*-means clustering, which we also introduced in our report. Therefore, the table generated in the paper is a good visualization of comparing our introduced clustering methods [9].
 
-They compared the clustering method by Precision (P), Recall (R), F-measure and ARI, where ARI means the adjusted rand index and F-measure is calculated by <img src="/tex/3e582a87525579da3467401b894ce52b.svg?invert_in_darkmode&sanitize=true" align=middle width=117.19166415pt height=37.80850590000001pt/>. The higher the value of ARI, the cluster generated by algorithm is more close to the real cluster. The higher the F-measure is, the better the clustering performance [9].
+They compared the clustering method by Precision (P), Recall (R), F-measure and ARI, where ARI means the adjusted rand index and F-measure is calculated by <img src="/tex/3e582a87525579da3467401b894ce52b.svg?invert_in_darkmode&sanitize=true" align=middle width=117.19166415pt height=37.80850590000001pt/>. The higher the value of ARI is, the cluster generated by algorithm is more close to the real cluster. The higher the F-measure is, the better the clustering performance [9].
 
 | ![table1](images/table1.png)|
 |:--|
@@ -177,7 +177,7 @@ RNA-seq technology is widely applied in research as an attractive alternative to
 |:--|
 | Fig 6. The diagram describing the general procedure of clustering of single-cell RNA-seq data. Each colored part indicates which proportion of the matrix is adjusted. For instance, the feature selection part removes rows from the original data set. And the dimensionality reduction calculates a new matrix composed of meta-features [1].|
 
-In RNA-seq analysis, we can use built-in clustering methods in R script. To understand the performance between different clustering method, we can illustrate using real scRNA-seq data sets ,  GSE60749-GPL13112 (Kumar), SRP073808 (Koh) and GSE52529GPL16791 (Trapnell) and a few others [4]. There are fourteen different clustering methods investigated, but we are particularly interested in k-means related methods: 
+In RNA-seq analysis, we can use built-in clustering methods in R script. To understand the performance between different clustering method, we can illustrate using real scRNA-seq data sets ,  GSE60749-GPL13112 (Kumar), SRP073808 (Koh) and GSE52529GPL16791 (Trapnell) and a few others [4]. There are fourteen different clustering methods investigated, but we are particularly interested in k-means related methods:
 PCAKmeans (PCA dimension reduction (dim=30) and *k*-means clustering with 25 random starts), pcaReduce (PCA dimension reduction (dim=30) and *k*-means clustering through an iterative process. Stepwise merging of clusters and reducing the number of dimensions by PC with lowest variance), which is like the global *k*-means clustering method that involve step-wise computation.  
 
 And an ensemble method SAFE of *k*-means clustering and other clustering methods SC3, CIDR, Seurat and t-SNE.
@@ -192,11 +192,11 @@ And an ensemble method SAFE of *k*-means clustering and other clustering methods
 
 In Fig 8, *k*-means methods have shorter runtime compared to others. But notice that pcaReduce has a very long runtime, it requires re-calculation of the affinity matrix in each iteration, which is similar to global k-means clustering in the above section. [4]
 
-Filtering out far-from mean data before clustering: Note that actual RNA-seq data can be noisy, and because *k*-clustering is a partitioning algorithm, genes might be eventually assigned to a cluster even if they do not actually fit in. 
+Filtering out far-from mean data before clustering: Note that actual RNA-seq data can be noisy, and because *k*-clustering is a partitioning algorithm, genes might be eventually assigned to a cluster even if they do not actually fit in.
 
-Choosing value for k: Too small k-value can result in oversimplification of the data. To solve this, we can choose to examine different k-values using correlation function. If the correlation is high (<img src="/tex/4b3e766edca9ed3143e80b873a979366.svg?invert_in_darkmode&sanitize=true" align=middle width=91.48456514999998pt height=24.65753399999998pt/> close to 1) between two *k*’s, we might consider reducing the value of *k* [12]. 
+Choosing value for k: Too small k-value can result in oversimplification of the data. To solve this, we can choose to examine different k-values using correlation function. If the correlation is high (<img src="/tex/4b3e766edca9ed3143e80b873a979366.svg?invert_in_darkmode&sanitize=true" align=middle width=91.48456514999998pt height=24.65753399999998pt/> close to 1) between two *k*’s, we might consider reducing the value of *k* [12].
 
-Overall, *k*-means clustering is still a good clustering method for RNA-seq data because of its relative short runtime and less computational complexity. Its accuracy is also acceptable for relative small or simple data sets. However, if we want to obtain a more accurate result for a large data set, it is better to apply multiple clustering methods and compare their differences. 
+Overall, *k*-means clustering is still a good clustering method for RNA-seq data because of its relative short runtime and less computational complexity. Its accuracy is also acceptable for relative small or simple data sets. However, if we want to obtain a more accurate result for a large data set, it is better to apply multiple clustering methods and compare their differences.
 
 ## Reference
 
@@ -208,7 +208,7 @@ Overall, *k*-means clustering is still a good clustering method for RNA-seq data
 
 4. Dembele, D., and P. Kastner. "Fuzzy C-Means Method For Clustering Microarray Data". *Bioinformatics*, vol 19, no. 8, 2003, pp. 973-980. *Oxford University Press (OUP)*, doi:10.1093/bioinformatics/btg119.
 
-5. Duo, Angelo., et., al. “ A systematic performance evaluation of clustering  methods for single-cell RNA-seq data.” NCBI., 11 Sep. 2018. 
+5. Duo, Angelo., et., al. “ A systematic performance evaluation of clustering  methods for single-cell RNA-seq data.” NCBI., 11 Sep. 2018.
 
 6. Hartigan, J. A., and M. A. Wong. "Algorithm AS 136: A K-Means Clustering Algorithm". *Applied Statistics*
 , vol 28, no. 1, 1979, p. 100. *JSTOR*, doi:10.2307/2346830.
