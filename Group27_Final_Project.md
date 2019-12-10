@@ -14,7 +14,7 @@
 
 ---
 
-![RCA](https://github.com/npusarla/BENG183_Final_Projects_FALL2019/blob/master/Images/RCA.jpeg)
+![RCA](https://github.com/npusarla/BENG183_Final_Projects_FALL2019/blob/master/Images/RCA.png)
 
 ## Introduction
 
