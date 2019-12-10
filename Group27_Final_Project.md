@@ -8,20 +8,27 @@ Sahil Saboo
 
 # Rolling Circle Amplification 
 
+---
+
 ## Introduction
 
 Rolling Circle Amplification (RCA) is a process in which a short DNA or RNA primer is amplified to create a long single-stranded DNA or RNA using its respective polymerases and a circular DNA template. This enzymatic process proves to be a powerful DNA amplification technique that plays a significant role in biomedical research and nanotechnology. RCA is used to develop multiple sensitive diagnostic methods that have different targets such as proteins, cells, nucleic acids, and other small molecules. In addition, because the RCA products are circular in structure due to the circular DNA template, the products have been used to create complicated DNA structures such as nanotubes, nanoribbons, and other DNA materials. These specific RCA products have been used for drug delivery, bioseparation, biodetection, and other technologies. In addition, RCA is a powerful tool for amplifying signals in immunoassays, especially ELISA, and as such has become a very versatile amplification tool with a menagerie of applications in genomics, proteomics, diagnosis, biosensing, and enzyme development. 
 
+---
 
 ## Procedure
 
 A typical RCA experiment works through the use of five main components: DNA Polymerase (such as ɸ29 DNA Polymerase) or RNA polymerase, an applicable buffer, DNA or RNA primer, single-stranded DNA template, and dNTPs for elongation. The first step is to ligate the two ends of the single-stranded DNA into one circular template, which can either be done with a ligation primer and enzyme, such as T4 DNA ligase, or with just a template-free ligation enzyme, such as CircLigase [3], shown in Figure 1A. The target sequence is often used as the primer for extension, RNA or DNA, and can serve as a ligation primer as well. Once the primer anneals to the newly formed circular template, the polymerase will attach to the primer and elongate the sequence. While this elongation occurs, the circular template starts to rotate, or “roll”, pushing the previously existing primer and extension off the template. A derivative of RCA, known as Hyperbranched RCA (HRCA), exists as well, in which multiple primers anneal to the circular template, and multiple polymerases can attach and simultaneously extend the replicating sequence, to produce many more replicated strands (shown in Figure 1D). Variations of approaches can be shown in Figure 1B, 1C, and 1D, and further analysis paths can be shown by 1E, 1F, and 1G. 
+
+
 
 <br />
 
 ![Figure 1 - RCA Pathways](https://github.com/npusarla/BENG183_Final_Projects_FALL2019/blob/master/Images/Figure1.png)
 &nbsp; &nbsp; &nbsp; &nbsp;**Figure 1 - RCA Pathways**
 <br />
+
+---
 
 ## Applications
 
@@ -57,6 +64,7 @@ A specific example of this case is described below. In various tropical and subt
 The DNA amplified from RCA can additionally be characterized by RFLP analysis and directly sequenced up to 900 bases in a single run, avoiding other obstacles and allowing for quicker analysis. There are many other advantages to using RCA such as the lack of expensive devices, its simplicity, and the characterization of all infecting circular DNA components, thus, making it a widely used mechanism for diagnostics. 
 
 
+---
 
 ### References 
 
