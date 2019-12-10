@@ -11,7 +11,6 @@ The ATAC-seq protocol only requires around 50,000 cells and two steps: cell prep
 **Chromosomes** are condensed DNA where strands are tightly wound and unwound to make the sequences available for regulatory processes. This process is detailed in the figure below:
 ![alt text][Chromosome]
 
-
 **Transcription factors** are proteins that modify DNA and regulate the transcription of genes. This modification requires that the transcription factors are able to physically access and bind to the specific/important areas on the sequence. As such, it is important to be able to locate and find all possible areas that are accessible to regulatory elements since these are likely to be important to biological function. One method that attempts this and was discussed in class is **ChIP-seq**. However, it is limited to finding and mapping reads that a specific/known transcription factor binds to rather than all possible locations. **Genetic regulation** can be carried out through a variety of interactions such as when upstream activation sequences recruit proteins or proximal promoter elements modify strands in addition to the interaction between chromatin and transcription factors. 
 
 > So, how can the other regulatory regions not modified by transcription factors be found?
@@ -26,15 +25,16 @@ ATAC-seq is an **A**ssay for **T**ransposase-**A**ccessible **C**hromatin with h
 
 ## Protocol 
 ![alt text][Protocol]
+
 This protocol only needs around 50,000 cells and a couple hours to produce results. There are two main steps of the protocol: Cell Preparation and Transposition Reaction. In Cell Preparation, cells are collected and counted. Counting the cells is an extremely important step as the count can affect transposition reaction and size distribution of the DNA fragments. The cells are kept in a homogenous solution and are treated with a nonionic detergent to extract the nuclei. In Transposition Reaction, the open chromatin found in the nuclei are tagged with sequencing adapters using Tn5 transposase. After this, the DNA fragments are amplified using PCR and then sequenced using next generations sequencing. Some things to keep in mind are to keep the cell counts from 25,000-75,000. Anything outside these bounds could lower the quality of the data. Furthermore, cutting the chromatin usually results in a lesser quality of the data. 
 
-A simple protocol can be completed as follows:
-Harvest Cells
-Lyse cells
-Introduce mutant Tn5 transposases, preloaded with DNA adapters for tagmentation and fragmentation of DNA
-Purify fragmented and tagged DNA
-PCR amplify and purify this amplified DNA
-Sequence and map reads to heterochromatin and euchromatin
+**A simple protocol can be completed as follows:**
+1. Harvest Cells
+2. Lyse cells
+3. Introduce mutant Tn5 transposases, preloaded with DNA adapters for tagmentation and fragmentation of DNA
+4. Purify fragmented and tagged DNA
+5. PCR amplify and purify this amplified DNA
+6. Sequence and map reads to heterochromatin and euchromatin
 
 ## Applications
 ![alt text][Application]
@@ -42,11 +42,11 @@ ATAC-seq has a multitude of uses. It can be implemented for things such as nucle
 
 ### snATAC-seq 
 Methods like these tend to average the results from all cell types and therefore single-cell methods are sometimes preferred for certain experiments. ATAC-seq can be modified to include sequencing for single cells. When the chromatin is sheared and tagged with Tn5, each fragment has a unique barcode which can be later on used to identify cell type. snATAC enables researchers to compare chromatin accessibility in different cell types. Analyzing these differences could help in identifying diseases by comparing accessabilities between same cell types in infected vs. non-infected individuals. 
+
 ![alt text][Single Cell]
 
 Video Explaining how Single Cell ATAC-seq works: 
 [![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/9K5Q7oEO7ss/0.jpg)](http://www.youtube.com/watch?v=9K5Q7oEO7ss)
-
 
 
 ## Pros and Cons of ATAC-seq
@@ -105,5 +105,5 @@ Also, due to its ease of use, ATAC-seq is likely to become commonly used in many
 
 [Chromosome]:http://3.bp.blogspot.com/-c8576jgNJVY/U8EeofO_A1I/AAAAAAAAAL4/QRKaxmj53Bo/s1600/TAT_SK1_Figure3.png
 [Protocol]:https://www.genewiz.com/-/media/Images/Services/NGS/Epigenomics/ATAC-Seq_Overview.ashx?la=en-GB&hash=A2DE1D73319AA93C64DE0AF02C2CCC8F6C145EC3
-[Application]: https://upload.wikimedia.org/wikipedia/commons/7/7b/ATAC-Seq_application_.pdf
+[Application]: https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/ATAC-Seq_application_.pdf/page1-529px-ATAC-Seq_application_.pdf.jpg
 [Single Cell]: https://media.springernature.com/full/springer-static/image/art%3A10.1186%2Fs13059-015-0737-7/MediaObjects/13059_2015_737_Fig1_HTML.gif
