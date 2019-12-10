@@ -42,7 +42,7 @@ A technique for location the regions where a specific DNA-binding protein (like 
 (from Lecture 7_Genome-interaction-Hi-C-KN slides)
 Which genomic positions are physically close together in the nucleus? Used to figure out what pairs of DNA strands form the anchors for chromatin loops. First, the loops are held in place by adding formaldehyde to the cells, which covalently links chromatin segments that are close to each other. Next, restriction enzymes are used to cut away the parts of the loop outside the anchors. Fill the sticky ends of the anchor sequences and mark the ends with biotin. DNA ends that are close to each other will be ligated; the ligation mainly happens only to the anchor sequences because of the proximity requirement. Cut off ends of DNA which are not ligated so that they do not contain biotin, and pull down the anchors by attracting the biotin with streptavidin. Shear the anchor DNA, do PCR to make more genetic material, and perform sequencing. Trim and remap signature during the data analysis to make sure you do not have extra nucleotides from outside the anchor sequences [[6]](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3149993/).
 
-![comparison](3comparison.png) <br>
+<img src="https://github.com/mchernys/BENG183_Final_Projects_FALL2019/blob/master/3comparison.png">
 [Figure 1:](https://www.nature.com/articles/nrg3788) <br>
 Comparison between experimental tools for primary-order structure detection. Figure by Meyer, Clifford A.et al., Nature Reviews Genetics 15.11(2014):709-721
 ### FAIRE-seq
@@ -55,7 +55,7 @@ Maps locations of nucleosomes by digesting areas of DNA that are not wrapped aro
 Maps locations of nucleosomes by digesting areas of DNA that are not wrapped around histones with DNase I and sequencing the undigested areas [[9]](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3627383/).
 
 # 4. ATAC-seq <a name="4"></a>
-![ATAC-seq](4ATAC-seq.png)
+<img src="https://github.com/mchernys/BENG183_Final_Projects_FALL2019/blob/master/4ATAC-seq.png">
 [Figure 2:](https://www.activemotif.com/blog-atac-seq) <br>
 Visualization of ATAC seq action on DNA. Figure by Active Motif, Complete Guide to Understanding and Using ATAC-seq 
 
@@ -82,16 +82,16 @@ We will be providing some alternate programs for each step
 ### Step 1: Raw read quality
 Out of sequencing machines, the data is often very “noisy”. They come in the format of a FASTQ file, each read with its own identifier tag, sequence, quality string, and a delimiter (normally a “+”) to separate it from the next read. The bases do not come out with 100% accuracy, and the machine will assign a Phred quality score, represented by one ASCII character per nucleotide, to each nucleotide based on its confidence that it correctly identified that base. 
 
-![Fastq](5Fastq.png) <br>
+<img src="https://github.com/mchernys/BENG183_Final_Projects_FALL2019/blob/master/5Fastq.png">
 The reads can also come with “adaptor” sequences still attached to the ends. Adaptors can be added to the end of DNA fragments to help identify the samples they originate from and to hybridize them to the flowcells of the sequencing machine for the sequencing process. FASTQC will detect these as a warning in “per base sequence content”, as the bases at the start of a read will be biased away from the expected approximate 25% frequency do to the inclusion of these. In addition, the restriction (cut) sites of the transposase will also introduce bias which is expected and does not need to be fixed. 
-![pbsc](6pbsc.png)
-![pbsq](7pbsq.png)
+<img src="https://github.com/mchernys/BENG183_Final_Projects_FALL2019/blob/master/6pbsc.png">
+<img src="https://github.com/mchernys/BENG183_Final_Projects_FALL2019/blob/master/7pbsq.png">
 These adaptors and the low quality read fragments need to be trimmed away as they will interfere with the alignment step and cause the reads to map to erroneous areas of the genome or to not map at all. In addition, the restriction (cut) sites of the transposase will also introduce bias which is expected and does not need to be fixed. Some useful trimming tools are cutadapt and Trimmomatic. 
 
 ### Step 2: Alignment
 To be able to analyze what areas of the genome our ATAC-seq reads came from, we need to align them to a reference genome that comes with an annotation. Thus, we will need the FASTQ from the last step, a FASTA file of the reference genome, and the reference GTF or GFF3 file. In this step, the alignment tool will compare each read to the genome and will match it to the right chromosome and position. The algorithm for this will vary across tools, with more specificity often taking more time. Many of the robust methods include a Burrows-Wheeler Algorithm for genome indexing, which adds numeric labels to the reference genome to help guide reads more efficiently. These include BWA and BowTie2, which have the best mapping rates in most cases. Another method is Stampy, which is faster and more tolerant of variants from the reference, so it is useful to consider it if the organism sampled deviates from the reference genome significantly. These programs will output a file in sequence alignment map (SAM) format, or BAM which is the binary compressed version. 
 
-![SAM](8SAM.png) <br>
+<img src="https://github.com/mchernys/BENG183_Final_Projects_FALL2019/blob/master/8SAM.png">
 [Figure 3:](https://gatkforums.broadinstitute.org/gatk/discussion/11014/sam-bam-cram-mapped-sequence-data-formats) <br> 
 Basic structure of the SAM format. Figure by Genome Analysis Toolkit, SAM / BAM / CRAM - Mapped sequence data formats. 
 
@@ -100,7 +100,8 @@ Reads that originate from the same fragment of DNA (duplicates) must be marked i
 
 ### Step 4: Peak calling
 Now that all the reads are mapped to the reference genome, they can be stacked up for every chromosomal position and counted [[12]](https://www.ncbi.nlm.nih.gov/pubmed/22517427). Interactive Genome Viewer (IGV , below) can be used to visualize these peaks, but we will want to use software to identify them all. A common program for this is MACS2. It takes a BAM file and will output a BED file, which contains information about the location and gene annotations of peaks. MACS2 models the expected fragment sizes and uses a Poisson distribution to capture biases so it can more sensitively and robustly detect real peaks against background noise [[13]](https://genomebiology.biomedcentral.com/articles/10.1186/gb-2008-9-9-r137#citeas).
-![IGV](9IGV.png) <br>
+
+<img src="https://github.com/mchernys/BENG183_Final_Projects_FALL2019/blob/master/9IGV.png">
 
 ### Step 5: Differential peak analysis
 To compare different epigenomic states across samples, we compare the size and location of peaks to see the genes whose accessibilities differ. There are two different approaches:
@@ -124,7 +125,7 @@ a. Intermediate steps: <br>
 5. Differential peak analysis: DESeq2 R package
 6. Peak functional annotation: ChIPpeakAnno R package
 
-![flowchart](10flowchart.png) <br>
+<img src="https://github.com/mchernys/BENG183_Final_Projects_FALL2019/blob/master/10flowchart.png">
 
 # 5. Comparing Methods <a name="5"></a>
 
@@ -138,7 +139,7 @@ ATAC-seq and DNase-seq are the only tools that can be used to find both transcri
 
 In a study that compared ATAC-seq to FAIRE-seq, ATAC-seq was found to also have a higher signal-to-noise ratio, with low background signal and sharper peaks (Fig. E and F). Furthermore, ATAC-seq showed a higher recall of true enhancers than FAIRE-seq, detecting ∼18.75% more enhancers ,even at similar levels of specificity (Fig. G). 
 
-![comparison](11comparison.png)
+<img src="https://github.com/mchernys/BENG183_Final_Projects_FALL2019/blob/master/11comparison.png">
 [Figure 4:](https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1004994) <br> 
 Comparison between FAIRE-seq and ATAC-seq. Figure by Davie, Kristofer et al., Discovery of Transcription Factors and Regulatory Regions Driving In Vivo Tumor Development by ATAC-seq and FAIRE-seq Open Chromatin Profiling.
 
