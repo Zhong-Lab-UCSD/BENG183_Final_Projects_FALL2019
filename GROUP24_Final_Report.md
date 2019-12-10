@@ -119,9 +119,9 @@ Both k-means and FCM are partition-based clustering algorithm, and they work in 
 
 However, as FCM is a bit more complex than k-means, it has a slower runtime compared to k-means clustering. As Velmurugan performed comparative analysis of k-means and FCM on telecommunication data [11], he pointed out that k-means runs significantly faster than FCM (Fig. X).
 
-|  <img src="images/fcm_vs_km_time.png" width="200" height="300" >|
+|![km-fcm-time](images/fcm_vs_km_time.png)|
 |:--|
-| Fig. Comparison of average time for k-Means and FCM. The table on the top shows the average executation time by k-Means and FCM. The plot at the bottom shows average runtime of k-Means and FCM.|
+| Fig. Comparison of average time for k-Means and FCM. The table on the left shows the average executation time by k-Means and FCM. The plot on the right shows average runtime of k-Means and FCM.|
 
 ### Comparison between *k*-means and global *k*-means
 
