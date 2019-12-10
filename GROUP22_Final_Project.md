@@ -1,4 +1,4 @@
-# Machine learning : Hidden Markov model (HMM)
+# Machine learning : Hidden Markov model (HMM) 
 
 A Hidden Markov Model (HMM) was first introduced as a way to solve speech recognition problems in 1990s. Later, many HMM applications are brought into play in the field of bioinformatics. In this chapter, we will show the definitions for the Markov Chain and HMM, as well as bioinformatics problems using HMM and their algorithm implementations.
 
