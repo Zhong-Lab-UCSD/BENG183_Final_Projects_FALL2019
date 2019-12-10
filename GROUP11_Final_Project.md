@@ -16,7 +16,7 @@ Machine learning has become an important topic of discussion in research because
 
 <p align="center"><img src="learning.png" height="250" width="300"></p>
 
-In **supervised learning**, the model is trained using a labeled dataset. In other words, the correct labels are known and act as a “teacher” that corrects the algorithm during its training. The algorithm iteratively makes predictions on the training dataset until it reaches an acceptable level of performance. Supervised learning problems can be fall under classification, in which the algorithm's output value is a category.
+In **supervised learning**, the model is trained using a labeled dataset. In other words, the correct labels are known and act as a “teacher” that corrects the algorithm during its training. The algorithm iteratively makes predictions on the training dataset until it reaches an acceptable level of performance. Supervised learning problems can fall under classification, in which the algorithm's output value is a category.
 
 In **unsupervised learning**, the input data does not have corresponding labels. The goal of this type of learning is to model the distribution of the dataset in order to gain greater insight about the data. Unsupervised learning problems can fall under clustering, which is useful for uncovering groups within the data. 
 
@@ -101,12 +101,12 @@ Figure: Pipeline of DeepBind. We see that the input are reads from any one of va
 
 <b>Results:</b>
 
-CHIP-seq data from 506 experiments from the ENCODE database were used to train the experimental deep learning based DeepBind model.  Performance metric to quantify motif finding accuracy was AUC (area under curve), calculated by comparing the predicted motifs to true motifs. Performance of DeepBind was compared to MEME, a PWM based baseline model.  The AUC was calculated for each of 506 experiments, and the median AUC for each of 151 unique transcription factors is shown on the left, and for 6 cell lines shown on the right. Overall, the DeepBind model outperforms MEME for motif finding by 7%. 
+CHIP-seq data from 506 experiments from the ENCODE database were used to train the experimental deep learning based DeepBind model.  Performance metric to quantify motif finding accuracy was AUC (area under curve), calculated by comparing the predicted motifs to true motifs. Performance of DeepBind was compared to MEME, a PWM based baseline model.  The AUC was calculated for each of 506 experiments, and the median AUC for each of 151 unique transcription factors is shown on the left, and for 6 cell lines shown on the right. Overall, the DeepBind model outperforms MEME for motif finding by 6-7%. 
 
 <p align="center"><img src="8.png" height="250" ></p>
 <p align="center"><img src="9.png" height="250"></p>
 
-Figure: AUC of DeepBind model vs MEME baseline model on prediction transcription factor binding sites from 506 CHIP seq experiments. Top: median AUC grouped by transcription factor. Bottom: median AUC grouped by cell line. The average AUC of DeepBind outperforms MEME. 
+Figure: AUC of DeepBind model vs MEME baseline model on prediction transcription factor binding sites from 506 CHIP seq experiments. Top: median AUC grouped by transcription factor. Bottom: median AUC grouped by cell line. The average AUC of DeepBind outperforms MEME for motif finding by 6-7%. 
 
 ### Cell Cycle Phase Prediction using Convolutional Neural Network on Images of Jurkat Cells
 
