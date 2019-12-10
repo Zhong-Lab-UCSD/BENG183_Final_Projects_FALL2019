@@ -23,12 +23,12 @@ Insulators are 300 to 2000 bp DNA sequences located close to promoters that are 
 ### Regulatory sequence elements
 Proximal to coding genes are promoter and silencer sequences, with enhancers located further away on the strand, but proximal due to DNA looping. Transcription factors (TFs) regulate gene expression by interacting with binding sites of these sequences. TFs know where to bind by looking for DNA-binding motifs, which are specific short sequences for which the factor has a high binding affinity. Once bound TFs often recruit other TFs and RNA polymerase to bind. 
 
-## Genetic expression: why we study the epigenome <a name="2"></a>
+## 2. Genetic expression: why we study the epigenome <a name="2"></a>
 Beyond DNA sequencing and RNA sequence quantification for genetic expression levels, it is important to understand the mechanisms for transcription regulation and how they affect genetic expression. Genes are largely regulated by transcription factors that bind in close proximity to them and either enhance expression by recruiting RNA polymerase for transcript elongation or inhibit expression by preventing other TFs or polymerase from binding to that region of the DNA. It is interesting to find motif sequences for which TFs have high affinity because we can infer a broad range of functions that the TF regulates and predict if nearby genes are implicated in TF action [[4]](https://www.cell.com/cell/fulltext/S0092-8674(18)30106-5?_returnURL=https://linkinghub.elsevier.com/retrieve/pii/S0092867418301065?showall=true).
 
 However, transcription factor activity cannot occur without access to open chromatin, not tightly packed around nucleosomes. It is useful to use methods that cut unprotected DNA to analyze the areas that are protected by nucleosome packing or by bound transcription factors. What genes are active in muscle cells that are not active in neurons? What genes are activated when a cell is under stress? When it is pre-cancerous? Assays for epigenetic structure help to answer these questions. 
 
-## Previous Methods For Genome Wide Assays of Epigenetic Structure <a name="3"></a>
+## 3. Previous Methods For Genome Wide Assays of Epigenetic Structure <a name="3"></a>
 
 ### ChIP seq
 ![ChIP-seq](1ChIP-seq.jpg) <br>
@@ -52,14 +52,14 @@ Maps locations of nucleosomes by digesting areas of DNA that are not wrapped aro
 ### DNase-seq
 Maps locations of nucleosomes by digesting areas of DNA that are not wrapped around histones with DNase I and sequencing the undigested areas [[9]](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3627383/).
 
-# ATAC-seq <a name="4"></a>
+# 4. ATAC-seq <a name="4"></a>
 ![ATAC-seq](4ATAC-seq.png)
 [Figure 2:](https://www.activemotif.com/blog-atac-seq) <br>
 Visualization of ATAC seq action on DNA. Figure by Active Motif, Complete Guide to Understanding and Using ATAC-seq 
 
 ATAC-Seq stands for Assay for Transposase-Accessible Chromatin with high-throughput sequencing. It is used for mapping chromatin accessibility genome-wide. 
 
-## Library Preparation Process <a name="41"></a>
+## 4.1. Library Preparation Process <a name="41"></a>
 ### Cell prep
 During harvesting cells should be intact and in a homogenous single cell suspension. Making sure to have between 25k to 75k cells is important. Using too few cells causes over-digestion of chromatin later on. This creates more noisy data. Using too many cells results in under-digestion. This creates large fragments that can be hard to sequence. After harvesting, cells are lysed with a nonionic detergent to yield pure nuclei [[10]](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4374986/).
 
@@ -67,7 +67,7 @@ During harvesting cells should be intact and in a homogenous single cell suspens
 The yielded nuclei is then fragmented using Tn5 transposase through a process known as tagmentation. Tn5 also adds sequencing adapters to the end of chromatin where it forms a break. The resulting fragments constitute an ATAC-Seq library. The library undergoes purification to only include the DNA from the samples [[11]](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4374986/).
 The purified library can be amplified by PCR so that it can be analyzed by other methods such as qPCR or next-generation sequencing.
 
-## Computational Analysis <a name="42"></a>
+## 4.2. Computational Analysis <a name="42"></a>
 ### The steps:
 Raw read quality: check the sequencing output for the base pair quality and do any necessary read trimming
 Alignment to a reference genome: map the reads to a reference genome for the organism studied
@@ -124,7 +124,7 @@ a. Intermediate steps: <br>
 
 ![flowchart](10flowchart.png) <br>
 
-# Comparing Methods <a name="5"></a>
+# 5. Comparing Methods <a name="5"></a>
 
 Compared to DNase-seq, FAIRE-seq, and MNase-seq ATAC-seq has two common advantages. 
 I. It can be performed with significantly fewer cells. Only requires about 50,000 cells compared to the millions needed by other methods. 
