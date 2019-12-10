@@ -8,7 +8,7 @@ Nicholas Bavafa
 
 # Predictive Genomics
 
-## Introduction:
+## Introduction
 
 Predictive genomics is a personalized application of statistics and genomics that uses gene-based diagnostic tests to make models and estimates of the likelihood of a patient contracting certain hereditary diseases. Predictive Genomics is a fairly new field that's still in the pioneering stages. The idea of predictive genomics stems from the early 2000s, when the first rendition of the human genome was sequenced (1). In the beginning, predictive genomics began with comparative studies searching for SNPs which might indicate disease development in the future. This field relies on using statistics and data modeling along with principles of genetics to give patients an idea of how likely it is that they will get a disease along with how likely it is that they may pass it on to their children.
 
@@ -16,11 +16,11 @@ Probably the most well-known predictive genomics company is 23AndMe, a company a
 
 This research is also somewhat controversial due to the possible applications to predict people's traits beyond diseases, such as intelligence and appearance, which raises ethical questions amongst some critics. 23AndMe also addresses some of the ethical questions of predictive genomics by prioritizing research subject privacy and emphasizing informed consent from all participants. Overall, this is a relatively new technique that relies on knowledge of human inheritance to make helpful predictions about a patient's health to empower them with knowledge of their own genetic background.
 
-## Applications:
+## Applications
 
 Applications for predictive genomics are mostly involved with diseases that can be traced back to a single gene. Due to the complex nature of polygenic inheritance, the behavior of diseases caused by multiple genes is often harder to predict through traditional methods used in predictive genomics. An example of this is in using predictive genomics to determine the percentage that a person with the BRCA1 or BRCA2 gene will develop breast or ovarian cancer. Genetic counseling is widely available to assess whether testing is a useful step for the patient, which determines whether the patient has inherited a defective copy of the gene. Predictive genomics is applied by analyzing homologous recombination deficiency, loss of heterozygosity, and other tests (3). Currently, another application also relating to cancer is finding oncogenic mutations on certain chromosomes, in which predictive genomics is used to make statistical links between where mutations occur and how that influences the likelihood of cancer developing (4).
 
-## Diseases:
+## Diseases
 
 The bulk of the diseases that are currently used in predictive genomics are diseases that stem from a hereditary mutation. One of the biggest use cases for predictive genomics currently is testing for mutations in genes that could result in elevated cancer risk (1). The breast cancer susceptibility genes (BRCA) is a pair of genes that are crucial in tumor suppression. These genes encode for enzymes that repair mutated DNA via homologous recombination. Mutations in BRCA 1 and/or BRCA 2 can result in an increased risk of breast and ovarian cancers and are responsible for over 20% of breast and ovarian cancers. Because of a strong correlation between mutated BRCA genes and increased cancer risk, genetic testing for these mutations can be done in order to determine the best course of preventative measures.
 
@@ -32,7 +32,7 @@ Every year, BRCA gene testing has become more and more accessible. Nonetheless, 
 
 However, there are some diseases that are much more environmentally dependent that can not be used in predictive genomics with strong statistical backing. An example of this is Type 2 diabetes. Even after genetic markers for type 2 diabetes were determined, no strong correlation between genetic variants and the chance of developing the disease could be concluded (6). This is because the chance of developing type 2 diabetes is much more dependent on an individual's environment rather than their genetic makeup.
 
-## Algorithms/Technologies:
+## Algorithms/Technologies
 
 ### SNP Array
 
@@ -81,7 +81,7 @@ This analysis helps researchers see which genes are differentially expressed in 
 
 #### Detection of Loss of Heterozygosity (LOH) using SNP Arrays (12)
 
-LOH is defined as "the sporadic loss of all or part of two parental chromosome homologs" (12). LOH is often described as a characteristic feature of tumor cells. LOH is the shift from Heterozygosity to Homozygosity in a SNP and SNP arrays are used to detect the genotype of a SNP making them a good method to detect LOH (12). Hidden Markov Models were used to interpret continuous homozygous sections in the genome and determine if they were related to the cancer phenotype. Considering the HMM structure, the two hidden possible states can be thought of as "loss" or "retention" and all SNPs can be the "units" of the markov chain in the HMM. Initially, pairs of normal and tumor genotypes from the same individual were required to do this kind of analysis (12). However, with the advance in technology, researchers have now been able to do HMM analysis with solely tumor genotypes available (16).
+LOH is defined as "the sporadic loss of all or part of two parental chromosome homologs" (12). LOH is often described as a characteristic feature of tumor cells. LOH is the shift from Heterozygosity to Homozygosity in a SNP and SNP arrays are used to detect the genotype of a SNP making them a good method to detect LOH (12). Hidden Markov Models were used to interpret continuous homozygous sections in the genome and determine if they were related to the cancer phenotype. Considering the HMM structure, the two hidden possible states can be thought of as "loss" or "retention" and all SNPs can be the "units" of the markov chain in the HMM. Initially, pairs of normal and tumor genotypes from the same individual were required to do this kind of analysis (12). However, with the advances in technology, researchers have now been able to do HMM analysis with solely tumor genotypes available (16).
 
 ![HMM of LOH genotype (16)](./GROUP21_Final_Project_images/HMM.png) _FIGURE 6: HMM of LOH genotype (16)_
 
