@@ -25,7 +25,7 @@ In this report, we are going to expand on what we have learned about k-means clu
 
 ## *K*-Means Clustering
 
-K-means clustering is a clustering algorithm that essentially partitions all data points into k clusters with locally optimal within-cluster sum of squared Euclidean distances1. The standard algorithm starts with a given initial set of k cluster centers:
+K-means clustering is a clustering algorithm that essentially partitions all data points into k clusters with locally optimal within-cluster sum of squared Euclidean distances. The standard algorithm starts with a given initial set of k cluster centers [11]:
 
 Step 1: For each point, find its closest cluster center and assign it to the closest cluster.  
 Step 2: Update the cluster centers to be the average of points contained within them.  
@@ -33,7 +33,7 @@ Step 3: Stop if the algorithm converges (that is, the cluster assignments no lon
 
 Here is a demo:
 
-![k-means demo](http://shabal.in/visuals/kmeans/random.gif)
+![k-means demo](https://shabal.in/visuals/kmeans/random.gif)
 
 ## Global *K*-Means Clustering
 
@@ -42,7 +42,7 @@ As mentioned, k-means clustering results are sensitive to the initial choice of 
 One traditional way is to start from one cluster (centroid), and continuously adding new clustering center as the iteration proceeds. 
 
 Step 1: Given the finite data set $A$, $\{a_1, a_2, \dots, a_m\}$, consisting of m n-dimensional elements, compute A’s center, set this as the initial center.  
-Step 2: Let the rest ($k$-1)-partition centroids be $x_1, x_2, \dots, x_{k-1}$, compute $\overline{f_k}(y)$, $y \in \R^n$by comparing the minimum square distance between each point and the closest cluster center from $x_1, x_2, \dots, x_{k-1}$ with the square distance of each pair of data. So the point with the minimum fk(y)value would be the new cluster center for the next iteration.  
+Step 2: Let the rest ($k$-1)-partition centroids be $x_1, x_2, \dots, x_{k-1}$, compute $\overline{f_k}(y)$, $y \in \R^n$by comparing the minimum square distance between each point and the closest cluster center from $x_1, x_2, \dots, x_{k-1}$ with the square distance of each pair of data. So the point with the minimum $\overline{f_k}(y)$ value would be the new cluster center for the next iteration.  
 Step 3: Select $\{x_1, x_2, \dots, x_{k-1},y\}$ as a new starting point, apply the k-means algorithm. Then use the result as the input, go back to step 2.  
 Step 4: Stop iteration if $\overline{f_k}(y)$ is smaller than a given tolerance value
 
@@ -109,7 +109,7 @@ Here is a demo for the algorithm:
 
 ### Limitations
 
-Standard *k*-means clustering requires a careful selection of initial cluster centers. A different initialization may yield to a different number of iterations required for convergence, and a different clustering results. However, in some cases, the algorithm may not converge at all. In addition, the algorithm produces a clustering that attains local optimum, and more importantly, there may be different cluster assignments that have the same optimal scores. Last but not least, the standard k-means clustering is vulnerable to the noise, thus its reliability is compromised provided the data is fuzzy.
+Standard *k*-means clustering requires a careful selection of initial cluster centers. A different initialization may yield to a different number of iterations required for convergence, and a different clustering results. However, in some cases, the algorithm may not converge at all. In addition, the algorithm produces a clustering that attains local optimum, and more importantly, there may be different cluster assignments that have the same optimal scores [11]. Last but not least, the standard k-means clustering is vulnerable to the noise, thus its reliability is compromised provided the data is fuzzy.
 
 ### Comparions between *k*-means and FCM
 
@@ -120,6 +120,11 @@ However, as FCM is a bit more complex than k-means, it has a slower runtime comp
 | ![time](images/fcm_vs_km_time.png)|
 |:--|
 | Fig. Comparison of average time for k-Means and FCM. The table on the top shows the average executation time by k-Means and FCM. The plot at the bottom shows average runtime of k-Means and FCM.|
+
+### Comparison between *k*-means and global *k*-means
+
+Because global *k*-means clustering involves a series of computation of the auxiliary function $\overline{f_k}(y)$, which produces an affinity matrix in every iteration, it requires longer runtime and greater computation power comparing with the standard *k*-means clustering. However, this gives a much better set of centroids for initial *k*-clusters because at each iteration the cluster centers can be refined according to the previous ones.
+
 
 ![global-kmeans](images/global-kmeans.png)
 
@@ -159,8 +164,10 @@ However, as FCM is a bit more complex than k-means, it has a slower runtime comp
 
 10. Singh, Aishwarya. "What Are Gaussian Mixture Models? A Powerful Clustering Algorithm". *Analytics Vidhya*, 2019, https://www.analyticsvidhya.com/blog/2019/10/gaussian-mixture-models-clustering/.
 
-11. T., Velmurugan. "Performance Based Analysis Between K-Means And Fuzzy C-Means Clustering Algorithms For Connection Oriented Telecommunication Data". *Applied Soft Computing*, vol 19, 2014, pp. 134-146. *Elsevier BV*, doi:10.1016/j.asoc.2014.02.011.
+11. Sheng Zhong. "Intro to Machine Learning". BENG 183.
 
-12. Warner, Jake. "Clustering Rnaseq Data Using K-means Clustering -2-Bitbio". *2-Bitbio.Com*, 2019, https://2-bitbio.com/2017/10/clustering-rnaseq-data-using-k-means.html.
+12. T., Velmurugan. "Performance Based Analysis Between K-Means And Fuzzy C-Means Clustering Algorithms For Connection Oriented Telecommunication Data". *Applied Soft Computing*, vol 19, 2014, pp. 134-146. *Elsevier BV*, doi:10.1016/j.asoc.2014.02.011.
 
-13. Warner, Jake. "Clustering Rnaseq Data Using Fuzzy C-Means Clustering - 2-Bitbio". *2-Bitbio*, 2019, https://2-bitbio.com/post/clustering-rnaseq-data-using-fuzzy-c-means-clustering/.
+13. Warner, Jake. "Clustering Rnaseq Data Using K-means Clustering -2-Bitbio". *2-Bitbio.Com*, 2019, https://2-bitbio.com/2017/10/clustering-rnaseq-data-using-k-means.html.
+
+14. Warner, Jake. "Clustering Rnaseq Data Using Fuzzy C-Means Clustering - 2-Bitbio". *2-Bitbio*, 2019, https://2-bitbio.com/post/clustering-rnaseq-data-using-fuzzy-c-means-clustering/.
