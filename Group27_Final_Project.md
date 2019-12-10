@@ -6,9 +6,9 @@
 - [Introduction](#Introduction)
 - [Procedure](#Procedure)
 - [Applications](#Applications)
-  * [PCR Alternative](#PCR Alternative)
-  * [Random Mutagenesis](#Random Mutagenisis)
-  * [Geminiviruses & RFLP](#Geminiviruses & RFLP)
+  * [PCR Alternative](#PCRAlternative)
+  * [Random Mutagenesis](#RandomMutagenisis)
+  * [Geminiviruses & RFLP](#Geminiviruses&RFLP)
 - [References](#References)
 
 
