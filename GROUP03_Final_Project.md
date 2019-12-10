@@ -58,8 +58,8 @@ Maps locations of nucleosomes by digesting areas of DNA that are not wrapped aro
 Maps locations of nucleosomes by digesting areas of DNA that are not wrapped around histones with DNase I and sequencing the undigested areas [[9]](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3627383/).
 
 # 4. ATAC-seq <a name="4"></a>
-<img src="https://github.com/mchernys/BENG183_Final_Projects_FALL2019/blob/master/4ATAC-seq.png">
-[Figure 2:](https://www.activemotif.com/blog-atac-seq) <br>
+<img src="https://github.com/mchernys/BENG183_Final_Projects_FALL2019/blob/master/4ATAC-seq.png"> <br>
+[Figure 2:](https://www.activemotif.com/blog-atac-seq)
 Visualization of ATAC seq action on DNA. Figure by Active Motif, Complete Guide to Understanding and Using ATAC-seq 
 
 ATAC-Seq stands for Assay for Transposase-Accessible Chromatin with high-throughput sequencing. It is used for mapping chromatin accessibility genome-wide. 
