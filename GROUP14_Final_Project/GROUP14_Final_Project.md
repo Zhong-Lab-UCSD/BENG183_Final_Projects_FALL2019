@@ -63,7 +63,7 @@ Steps for RPKM:
   FPKM stands for Fragments Per Kilobase of transcript per Million and is nearly identical in procedure to RPKM. The only difference is that RPKM is designed for single-end read analysis, while FPKM was designed for paired-end reads. RPKM relies on the assumption that every read is associated with a single fragment that was sequenced. However, in paired-end sequencing, usually two reads (a “pair”) correspond to a single fragment, unless one read did not map for some reason. In FPKM, if two paired-end reads map to one fragment, they are counted as one instance of a read mapping to a fragment, rather than two, as seen in Figure 3. 
 
 <p align="center">
-  <img src="../img/image9.png" width="500">
+  <img src="./img/image9.png" width="500">
 </p>
 <p align="center">
     <em>Figure 3: Illustration comparing the FPKM and RPKM normalization techniques in single vs paired-end reads [3]</em>
