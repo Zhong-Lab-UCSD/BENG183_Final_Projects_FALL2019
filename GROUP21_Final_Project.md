@@ -24,7 +24,7 @@ Applications for predictive genomics are mostly involved with diseases that can 
 
 The bulk of the diseases that are currently used in predictive genomics are diseases that stem from a hereditary mutation. One of the biggest use cases for predictive genomics currently is testing for mutations in genes that could result in elevated cancer risk (1). The breast cancer susceptibility genes (BRCA) is a pair of genes that are crucial in tumor suppression. These genes encode for enzymes that repair mutated DNA via homologous recombination. Mutations in BRCA 1 and/or BRCA 2 can result in an increased risk of breast and ovarian cancers and are responsible for over 20% of breast and ovarian cancers. Because of a strong correlation between mutated BRCA genes and increased cancer risk, genetic testing for these mutations can be done in order to determine the best course of preventative measures.
 
-![BRCA 1/2 genes](./images/BRCAgenes.jpeg) _FIGURE 1: BRCA GENE diagrams_
+![BRCA 1/2 genes](./GROUP21_Final_Project_images/BRCAgenes.jpeg) _FIGURE 1: BRCA GENE diagrams_
 
 Every year, BRCA gene testing has become more and more accessible. Nonetheless, BRCA testing is still limited to those who have some sort of tie to a potential increased risk of cancer. The general criteria for considering a BRCA gene test fall into two main categories, a personal history of cancer before advanced age, or extensive family history with cancer. A personal history of cancer includes history with any of the BRCA-related cancers during young/middle-aged years or history with multiple types of cancers. Extensive family history with cancer includes multiple family members being diagnosed with cancer or a family history of having mutated BRCA genes. The only thing required from the patient is a blood sample taken at their physician's office. Once taken, the sample can be sent in to a number of labs to be screened for BRCA 1/2 mutations. The biggest labs that currently offer BRCA gene testing are Myriad Genetics, Medical Diagnostics, and Quest Diagnostics.
 
@@ -38,7 +38,7 @@ Single Nucleotide Polymorphisms are locations in the human genome where there ca
 
 SNP Array is a type of a DNA Microarray used to find out if an individual carries the mutation responsible for a specific disease. It is widely used to detect cancer biomarkers. This is done by analyzing which genes are expressed in a tissue. SNP Arrays are often used to compare the pattern of gene expression in tumor versus normal tissue. For simplicity, the two possible alleles at the SNP position be A and B. Since each individual has 2 copies of the SNP, the possible genotypes are AA, AB, BB. (12)
 
-![DNA Microarray Workflow](./images/probe.jpg) _FIGURE 2: DNA Microarray Workflow_
+![DNA Microarray Workflow](./GROUP21_Final_Project_images/probe.jpg) _FIGURE 2: DNA Microarray Workflow_
 
 #### Workflow of SNP Arrays (B)
 
@@ -55,23 +55,21 @@ SNP Array is a type of a DNA Microarray used to find out if an individual carrie
 
 This analysis helps researchers see which genes are differentially expressed in cancerous vs. normal tissue. This can help design better drug treatments, genetic therapies, and tests for early detection of cancer. People who have a history of genetic diseases are recommended to get precautionary testing done to find out if they carry the mutations relating to the diseases. Especially in breast cancer, when a parent is known to be affected by it, children are recommended to get tested to get preventive surgery/treatments. Currently, the two most popular SNP array platforms used in the industry are (12):
 
-![The difference in SNP Array techniques - Affymetrix vs. Illumina](./images/affymetrix.jpg) _FIGURE 3: The difference in SNP Array techniques - Affymetrix vs. Illumina_
+![The difference in SNP Array techniques - Affymetrix vs. Illumina](./GROUP21_Final_Project_images/affymetrix.jpg) _FIGURE 3: The difference in SNP Array techniques - Affymetrix vs. Illumina_
 
 1. ##### Affymetrix Genome-Wide Human SNP Array 6.0 (12)
 
-  In this technique, every SNP site interacts with several probes. Some of these probes might be associated with allele A while others with allele B. In addition, the probes must be perfectly complementary (Perfect-match) to the cDNA containing the SNP site, as it helps us identify the nucleotide present at the specific SNP site (genotype-calling). The probes are represented as _PM
+  In this technique, every SNP site interacts with several probes. Some of these probes might be associated with allele A while others with allele B. In addition, the probes must be perfectly complementary (Perfect-match) to the cDNA containing the SNP site, as it helps us identify the nucleotide present at the specific SNP site (genotype-calling). The probes are represented as PM
 
   <sub>a</sub>
 
-  and PM
+   and PM
 
   <sub>b</sub>
 
-  _
-
   . The intensity of cDNA interaction with these probes is used to detect the genotype at the SNP site.
 
-  ![Affymetrix Genome-Wide Human SNP Array 6.0 Workflow](./images/genomesnp.jpg) _FIGURE 4: Affymetrix Genome-Wide Human SNP Array 6.0 Workflow (10)_
+  ![Affymetrix Genome-Wide Human SNP Array 6.0 Workflow](./GROUP21_Final_Project_images/genomesnp.jpg) _FIGURE 4: Affymetrix Genome-Wide Human SNP Array 6.0 Workflow (10)_
 
   Data Analysis for Human SNP Array 6.0 (12)
 
@@ -83,7 +81,7 @@ This analysis helps researchers see which genes are differentially expressed in 
 
   The normalization in the Infinium assay is done internally. Before analyzing the output, raw allele intensities are transformed using a ratio, defined for every specific SNP. This data is then clustered (into 3 clusters for each genotype - AA, AB, BB), and a sample's proximity to the clusters helps determine its genotype/cluster membership (12). It is also preferred that the clusters are distinct and well-separated as that usually means the SNP-quality is higher (12).
 
-  ![Illumina Infinium Assay Workflow (11)](./images/genomicDNA.jpg) _FIGURE 5: Illumina Infinium Assay Workflow (11)_
+  ![Illumina Infinium Assay Workflow (11)](./GROUP21_Final_Project_images/genomicDNA.jpg) _FIGURE 5: Illumina Infinium Assay Workflow (11)_
 
   Data Analysis for Illumina Infinium Assay (13) GenomeStudio is a software provided by Illumina which helps you analyze and visualize the results of your Infinium Assay. The software has different modules for different kinds of analyses. The genotyping module is the most relevant to our topic. It helps with genotype calling, normalizing, clustering the SNP data (the 3 genotypes - AA, AB, BB represent 3 clusters) and helps with Loss of Heterozygosity (LOH) calculations. It also helps perform statistical analysis for copy number variation analysis, which is an integral part of predicting cancer risk by observing biomarkers. Another important module is the Gene Expression Module, which helps us analyze the differential expression and visualize gene expression levels in different genes across different genomes using a heatmap. For more information about GenomeStudio, please refer: <https://www.illumina.com/techniques/microarrays/array-data-analysis-experimental-design/genomestudio.html>
 
@@ -91,13 +89,13 @@ This analysis helps researchers see which genes are differentially expressed in 
 
 LOH is defined as "the sporadic loss of all or part of two parental chromosome homologs" (12). LOH is often described as a characteristic feature of tumor cells. LOH is the shift from Heterozygosity to Homozygosity in a SNP and SNP arrays are used to detect the genotype of a SNP making them a good method to detect LOH (12). Hidden Markov Models were used to interpret continuous homozygous sections in the genome and determine if they were related to the cancer phenotype. Considering the HMM structure, the two hidden possible states can be thought of as "loss" or "retention" and all SNPs can be the "units" of the markov chain in the HMM. Initially, pairs of normal and tumor genotypes from the same individual were required to do this kind of analysis (12). However, with the advance in technology, researchers have now been able to do HMM analysis with solely tumor genotypes available (16).
 
-![HMM of LOH genotype (16)](./images/HMM.png) _FIGURE 6: HMM of LOH genotype (16)_
+![HMM of LOH genotype (16)](./GROUP21_Final_Project_images/HMM.png) _FIGURE 6: HMM of LOH genotype (16)_
 
 #### Why is RNA-Sequencing Preferred over Microarrays? (15)
 
 As presented in class, RNA-seq technology is often preferred to other sequencing methods such as microarrays for a few reasons. An advantage of RNA-seq is that it is more sensitive and can detect minor changes better than microarrays, such as single nucleotide variants. In addition to being more sensitive to minor changes, RNA-seq can also detect differentially expressed genes better than microarrays. This allows RNA-seq to perform analysis on a more dynamic range of samples, including smaller samples that would present a challenge for microarray analysis. However, Microarrays are still widely used to query a smaller range of SNPs as they are cheaper than New Generation Sequencing Approaches.
 
-![Difference between DNA Microarray and RNA Sequencing (14)](./images/microarray_snp.jpg) _FIGURE 7: Difference between DNA Microarray and RNA Sequencing (14)_
+![Difference between DNA Microarray and RNA Sequencing (14)](./GROUP21_Final_Project_images/microarray_snp.jpg) _FIGURE 7: Difference between DNA Microarray and RNA Sequencing (14)_
 
 --------------------------------------------------------------------------------
 
@@ -134,7 +132,9 @@ As presented in class, RNA-seq technology is often preferred to other sequencing
 9. SNP. (n.d.) Retrieved from <https://www.nature.com/scitable/definition/snp-295/>
 
 10. Affymetrix Genome-Wide Human SNP Array 6.0 Data Sheet. (n.d.) Retrieved from <http://tools.thermofisher.com/content/sfs/brochures/genomewide_snp6_datasheet.pdf>
+
 11. Illumina Infinium Array Workflow. 2017\. Retrieved from <https://www.illumina.com/content/dam/illumina-marketing/documents/products/workflows/workflow_infinium_ii.pdf>
+
 12. LaFramboise, T. (2009). Single nucleotide polymorphism arrays: a decade of biological, computational and technological advances. _Nucleic acids research_, _37_(13), 4181-4193.
 
   <https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2715261/>
