@@ -11,9 +11,11 @@ The ATAC-seq protocol only requires around 50,000 cells and two steps: cell prep
 **Chromosomes** are condensed DNA where strands are tightly wound and unwound to make the sequences available for regulatory processes. This process is detailed in the figure below:
 ![alt text][Chromosome]
 
-**Transcription factors** are proteins that modify DNA and regulate the transcription of genes. This modification requires that the transcription factors are able to physically access and bind to the specific/important areas on the sequence. As such, it is important to be able to locate and find all possible areas that are accessible to regulatory elements since these are likely to be important to biological function. One method that attempts this and was discussed in class is **ChIP-seq**. However, it is limited to finding and mapping reads that a specific/known transcription factor binds to rather than all possible locations. **Genetic regulation** can be carried out through a variety of interactions such as when upstream activation sequences recruit proteins or proximal promoter elements modify strands in addition to the interaction between chromatin and transcription factors. 
+**Transcription factors** are proteins that modify DNA and regulate the transcription of genes. This modification requires that the transcription factors are able to physically access and bind to the specific/important areas on the sequence. As such, it is important to be able to locate and find all possible areas that are accessible to regulatory elements since these are likely to be important to biological function. One method that attempts this and was discussed in class is **ChIP-seq**. However, it is limited to finding and mapping reads that a specific/known transcription factor binds to rather than all possible locations. 
 
-> So, how can the other regulatory regions not modified by transcription factors be found?
+> **Genetic regulation** can be carried out through a variety of interactions such as when upstream activation sequences recruit proteins or proximal promoter elements modify strands in addition to the interaction between chromatin and transcription factors. 
+>
+> *So, how can the other regulatory regions not modified by transcription factors be found?*
 
 This is where ATAC-seq is useful as it can help provide a ‘bigger picture’ where the reads show accessible regions DNA sequences in that relate to specific locations in the nucleosome and binding sites. 
 
@@ -21,11 +23,13 @@ This is where ATAC-seq is useful as it can help provide a ‘bigger picture’ w
 ATAC-seq is an **A**ssay for **T**ransposase-**A**ccessible **C**hromatin with high throughput **seq**uencing. ATACseq was created at Stanford University in Howard Chang’s and William Greenleaf’s labs. Their goal was to develop a type of chromatin sequencing that would not need as much time and resources as other chromatin sequencing methods. They used the Tn5 transposase because it was common practice and very successful at fragmenting and adding adapters at the same time. They thought that if they used this method on open chromatin, they would be able to discover the chromatin accessibility. 
 
 ## How Does ATAC-seq Work? 
-**DNA transposons** are specific repeating DNA sequences that are “cut & pasted” throughout the genome into open/accessible regions of DNA with the help of a DNA transposase. Tn5 is one such transposase and is commonly used in many experiments. ATAC-seq uses next generation sequencing to explore chromatin accessibility throughout the genome by using a probing hyperactive Tn5 transposase. The added benefit of this type of transposase is that it is able to fragment and tag regions in the DNA at the same time. This contrasts with most typical sequencing methods which fragment DNA and then tag them afterwards. The result after Tn5 is added DNA are regions fragmented at accessible regions within the genome. From here, the typical sequencing pipeline is carried out where a library is generated, quality control checks are done, and mapping or other further downstream analysis can bring interesting insights.
+**DNA transposons** are specific repeating DNA sequences that are “cut & pasted” throughout the genome into open/accessible regions of DNA with the help of a DNA transposase. Tn5 is one such transposase and is commonly used in many experiments. ATAC-seq uses next generation sequencing to explore chromatin accessibility throughout the genome by using a probing hyperactive Tn5 transposase. 
 
-## Protocol 
 ![alt text][Protocol]
 
+The added benefit of this type of transposase is that it is able to fragment and tag regions in the DNA at the same time. This contrasts with most typical sequencing methods which fragment DNA and then tag them afterwards. The result after Tn5 is added DNA are regions fragmented at accessible regions within the genome. From here, the typical sequencing pipeline is carried out where a library is generated, quality control checks are done, and mapping or other further downstream analysis can bring interesting insights.
+
+## Protocol 
 This protocol only needs around 50,000 cells and a couple hours to produce results. There are two main steps of the protocol: Cell Preparation and Transposition Reaction. In Cell Preparation, cells are collected and counted. Counting the cells is an extremely important step as the count can affect transposition reaction and size distribution of the DNA fragments. The cells are kept in a homogenous solution and are treated with a nonionic detergent to extract the nuclei. In Transposition Reaction, the open chromatin found in the nuclei are tagged with sequencing adapters using Tn5 transposase. After this, the DNA fragments are amplified using PCR and then sequenced using next generations sequencing. Some things to keep in mind are to keep the cell counts from 25,000-75,000. Anything outside these bounds could lower the quality of the data. Furthermore, cutting the chromatin usually results in a lesser quality of the data. 
 
 **A simple protocol can be completed as follows:**
@@ -38,16 +42,18 @@ This protocol only needs around 50,000 cells and a couple hours to produce resul
 
 ## Applications
 ![alt text][Application]
+
 ATAC-seq has a multitude of uses. It can be implemented for things such as nucleosome mapping, transcription factor occupancy analysis, identifying new enhancers, and investigating pathological conditions. It is often used as a way to screen for experiments where researchers can focus follow-up experiments based on changes in chromatin accessibility noticed between samples. For example, ATAC-seq was used to investigate how Polycomb repressive complex 1 (PRC1) affects breast cancer. Furthermore, ATAC-seq has also been used to detect age related diseases such as Age-related macular degeneration (AMD). This procedure uncovered that chromatin accessibility in the retinal regions was extremely decreased in patients with AMD. ATAC-seq can also be used in immunology. Researchers have used it to investigate genes’ role in B-cell development. Finally, ATAC-seq has also been used to study cell differentiation by looking at chromatin accessibility throughout differentiation stages.
 
 ### snATAC-seq 
+
+*Video Explaining how Single Cell ATAC-seq works:*
+
+[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/9K5Q7oEO7ss/0.jpg)](http://www.youtube.com/watch?v=9K5Q7oEO7ss)
+
 Methods like these tend to average the results from all cell types and therefore single-cell methods are sometimes preferred for certain experiments. ATAC-seq can be modified to include sequencing for single cells. When the chromatin is sheared and tagged with Tn5, each fragment has a unique barcode which can be later on used to identify cell type. snATAC enables researchers to compare chromatin accessibility in different cell types. Analyzing these differences could help in identifying diseases by comparing accessabilities between same cell types in infected vs. non-infected individuals. 
 
 ![alt text][Single Cell]
-
-Video Explaining how Single Cell ATAC-seq works: 
-[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/9K5Q7oEO7ss/0.jpg)](http://www.youtube.com/watch?v=9K5Q7oEO7ss)
-
 
 ## Pros and Cons of ATAC-seq
 
@@ -88,7 +94,6 @@ Future applications or optimizations of this protocol look to apply ATAC-seq in 
 Also, due to its ease of use, ATAC-seq is likely to become commonly used in many epigenomics workflows to analyze chromosome accessibility.
 
 ## References
-
 1. https://www.abcam.com/epigenetics/epigenetics-application-spotlight-atac-seq
 2. https://www.activemotif.com/blog-atac-seq
 3. https://www.illumina.com/science/sequencing-method-explorer/kits-and-arrays/atac-seq.html
