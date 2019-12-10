@@ -9,8 +9,8 @@
   * [PCR Alternative](#PCR-Alternative)
   * [Random Mutagenesis](#Random-Mutagenesis)
   * [Geminiviruses & RFLP](#Geminiviruses-and-RFLP)
-- [References](#References)
 - [Conclusion](#Conclusion)
+- [References](#References)
 
 ---
 
