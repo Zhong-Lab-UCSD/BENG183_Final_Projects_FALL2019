@@ -38,7 +38,7 @@ We will not discuss those commands here, rather we will discuss VCF file generat
 #### SpeedSeq Methods:
 SpeedSeq is a genome analysis tool that aims to help with alignment, insertions and deletions (indel) variant detection and functional detection. The characteristics of the SpeedSeq, compared to other variant calling method, is its efficiency and low-cost property. As indicated in the SpeedSeq: ultra-fast personal genome analysis and interpretation. written by Chiang, Colby, et al, SpeedSeq achieves superior processing efficiency through rapid duplicate marking with SAMBLASTER5, through balanced parallelization of external applications and by executing nondependent pipeline components simultaneously. The speed is also obtained from processing by SAMBLASTER due to the addition of mate CIGAR and mate mapping quality tags. [3]
 <p align="center">
-<img src="https://github.com/ztybigcat/BENG183_Final_Projects_FALL2019/blob/master/images_group4/image9.png", width = "800", height = "800"><br/>
+<img src="https://github.com/ztybigcat/BENG183_Final_Projects_FALL2019/blob/master/images_group4/image9.png", width = "400"><br/>
 [Figure 3: SpeedSeq Workflow[3]]<br/>
 </p>
 
@@ -149,7 +149,7 @@ From these four tables, we can see that DeepVariant was clearly more precise (F-
 <br/>
 
 <p align="center">
-<img src="https://github.com/ztybigcat/BENG183_Final_Projects_FALL2019/blob/master/images_group4/image3.png", width = "800"><br/>
+<img src="https://github.com/ztybigcat/BENG183_Final_Projects_FALL2019/blob/master/images_group4/image3.png", width = "400"><br/>
 Table 5: Comparison of amount of hours running DeepVariant and GATK with 35X WGS sample with a 8 core machine 16GB RAM computer.
 <br/>
 </p>
