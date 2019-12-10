@@ -4,9 +4,13 @@
 
 * [Overview](#overview)
 
-* [K-Means Clustering](#k-means-clustering)
+* [k-Means Clustering](#k-means-clustering)
 
-* [Global K-Means Clustering](#global-k-means-clustering)
+* [Global k-Means Clustering](#global-k-means-clustering)
+
+* [Fuzzy c-Means Clustering](#fuzzy-c-means-clustering)
+
+* [Mixture of Gaussian Clustering](#mixture-of-gaussian-clustering)
 
 ## Overview
 
@@ -30,14 +34,16 @@ As mentioned, k-means clustering results are sensitive to the initial choice of 
 
 One traditional way is to start from one cluster (centroid), and continuously adding new clustering center as the iteration proceeds. 
 
+Step 1: Given the finite data set $A$, $\{a_1, a_2, \dots, a_m\}$, consisting of m n-dimensional elements, compute A’s center, set this as the initial center.  
+Step 2: Let the rest ($k$-1)-partition centroids be $x_1, x_2, \dots, x_{k-1}$, compute $\overline{f_k}(y)$, $y \in \R^n$by comparing the minimum square distance between each point and the closest cluster center from $x_1, x_2, \dots, x_{k-1}$ with the square distance of each pair of data. So the point with the minimum fk(y)value would be the new cluster center for the next iteration.  
+Step 3: Select $\{x_1, x_2, \dots, x_{k-1},y\}$ as a new starting point, apply the k-means algorithm. Then use the result as the input, go back to step 2.  
+Step 4: Stop iteration if $\overline{f_k}(y)$ is smaller than a given tolerance value
 
-```html
-<img src="http://shabal.in/visuals/kmeans/random.gif" width=500 height=300>
-```
+## Fuzzy c-Means Clustering
 
-![FCM increasing m](https://2-bitbio.com/post/temp/increasing_m.gif)
+The fuzzy c-means clustering (FCM), also referred to as soft k-means clustering, is a clustering algorithm that partitions the data set into c clusters while each data point may potentially belong to multiple clusters. Compared to the well-known k-means clustering, FCM introduces a new attribute for each data point: **membership**. The membership function evaluates the similarity between a data point to each cluster center, and it ranges between 0 and 1, where memberships close to zero indicates little similarity between the point and the center, while memberships close to one indicates a high degree of similarity between the sample and the cluster. The algorithm starts with a given initial set of *c* cluster centers:  
 
-![MOG](https://media1.tenor.com/images/909622ac2e9ec02a97d4ce9489798b1d/tenor.gif?itemid=15288262)
+Step 0: Determine all parameters needed for the algorithm, and initialize $U^{(0)}$ membership matrix randomly  
 
 * $U^{(t)}$ = the fuzzy c-partition of all data points after $t^{th}$ iterations)
 * $N$ = the number of data points
@@ -46,7 +52,31 @@ One traditional way is to start from one cluster (centroid), and continuously ad
 * $~v_i$ = the $i^{th}$ cluster center
 * $~m$ = weighting component, *aka* the fuzzifier; $m \in (1,\infty)$
 * $\mu_{ij}$ = membership of $i^{th}$ data point to $j^{th}$ cluster center
-* $~y_k$ = the $k^{th}$ data point
+* $~y_k$ = the $k^{th}$ data point  
+
+Step 1: Compute the fuzzy memberships for each data point  
+
+$$ \mu_{ij} = \Big( \sum_{k=1}^c (d_{ij}/d_{ik})^{\frac{2}{m-1}} \Big)^{-1} $$
+
+Step 2: Update the cluster centers according to the membership matrix
+
+$$ v_i = \sum_{k=1}^N (u_{ik})^my_k \Big/ \sum_{k=1}^k (u_{ik})^m $$
+
+Step 3: If $|| U^{(t+1)}-U^{(t+1)}|| < \epsilon$, that is, the change made by this iteration is less than some termination criteria, the algorithm stops. Otherwise, go to Step 1.
+
+The result of clustering may look like this:
+
+![FCM](images/fcm.png)
+
+## Mixture of Gaussian Clustering
+
+
+
+```html
+<img src="http://shabal.in/visuals/kmeans/random.gif" width=500 height=300>
+```
+
+![MOG](https://media1.tenor.com/images/909622ac2e9ec02a97d4ce9489798b1d/tenor.gif?itemid=15288262)
 
 $$ \mu_{ij} = \Big( \sum_{k=1}^c (d_{ij}/d_{ik})^{\frac{2}{m-1}} \Big)^{-1} $$
 
@@ -56,7 +86,7 @@ $||U^{(t+1)}-U^{(t+1)}|| < \epsilon$
 
 ee.<sup>superscript</sup> 
 
-![FCM](images/fcm.png)
+
 
 ![global-kmeans](images/global-kmeans.png)
 
