@@ -91,7 +91,7 @@ Therefore, when we cluster the datasets in a 2 dimensional plot, we will define 
 
 Since we do not know these mean and variance because we do not know which Gaussian generated which data point, these parameters are calculated by a process called Expectation-Maximization (EM), which involves two steps --- the E-step and the M-step. We also have a parameter called $\Pi$ which represent the density of the distribution.
 
-During the E-step, we compute the responsibilities for each Gaussian for each datapoint. The responsibility is calculated by dividing the Probability of $X_i$ belongs to cluster $c$ by the Sum of probability $X_i$ belongs to $c_1,c_2,\dots,c_k$. This value will be big if the point is assigned to the correct clusterm and low otherwise.
+During the E-step, we compute the responsibilities for each Gaussian for each datapoint. The responsibility ($r_{ic}$) is calculated by dividing the Probability of $X_i$ belongs to cluster $c$ by the Sum of probability $X_i$ belongs to $c_1,c_2,\dots,c_k$. This value will be big if the point is assigned to the correct clusterm and low otherwise.
 
 During the M-step, we modify the parameters of each Gaussian to maximize the likelihood for the responsibility weighted data. The density $\Pi$, mean $\mu$ and the covariance matrix $\Sigma$ are updated until convergence. They are updated following the manner below:
 
@@ -161,10 +161,37 @@ They compared the clustering method by Precision (P), Recall (R), F-measure and 
 
 | ![table2](images/table2.png)|
 |:--|
-| Table 2. Comparison of the clustering results of various classification methods on the human fibroblasts serum data
-|
+| Table 2. Comparison of the clustering results of various classification methods on the human fibroblasts serum data|
+
+According to Table 1 and 2, we can see that the performance of the improved EM from the paper is the best over all. If we only take a look at the three clustering methods we mentioned above, the *k*-means, fuzzy *c*-means and Gaussian mixture model using the traditional EM algorithm, we found that the EM algorithm performs the best, fuzzy *c*-means the second, and *k*-means is the last. However, *k*-means still have the advantage of faster calculating time, and easier to implement. Therefore, we need to choose the appropriate clustering method from case to case in order to have the best results.
 
 ## Application in RNA-seq Data
+
+Fuzzy *c*-means and MOG are both relatively powerful clustering methods that are used for various data analysis that involves with microarray or other more complex datasets that cannot simply be done by *k*-means, as we shown in the discussion section. Here we specifically introduce the application of more modern clustering methods in single cell RNA-seq data analysis, and it has the comparison of *k*-means and many advanced clustering methods.
+
+RNA-seq technology is widely applied in research as an attractive alternative to microarray-based methods to study global gene expression. However, due to the massiveness of data obtained, especially for single-cell RNA-seq analysis, scientists are still looking for more robust way to analyze the pattern in RNA-seq.
+
+| ![pipeline](images/pipeline.png)|
+|:--|
+| Fig X. The diagram describing the general procedure of clustering of single-cell RNA-seq data. Each colored part indicates which proportion of the matrix is adjusted. For instance, the feature selection part removes rows from the original data set. And the dimensionality reduction calculates a new matrix composed of meta-features [1].|
+
+In RNA-seq analysis, we can use built-in clustering methods in R script. To understand the performance between different clustering method, we can illustrate using real scRNA-seq data sets ,  GSE60749-GPL13112 (Kumar), SRP073808 (Koh) and GSE52529GPL16791 (Trapnell) and a few others [4]. There are fourteen different clustering methods investigated, but we are particularly interested in k-means related methods: 
+PCAKmeans (PCA dimension reduction (dim=30) and *k*-means clustering with 25 random starts), pcaReduce (PCA dimension reduction (dim=30) and *k*-means clustering through an iterative process. Stepwise merging of clusters and reducing the number of dimensions by PC with lowest variance), which is like the global *k*-means clustering method that involve step-wise computation.  
+And an ensemble method SAFE of *k*-means clustering and other clustering methods SC3, CIDR, Seurat and t-SNE.
+
+| ![heatmap](images/heatmap.png)|
+|:--|
+| Fig X. The diagram shows different median ARI score for different clustering methods. Each row is a different data set, and each column is a clustering methods. We can see that the k-means clustering methods only have median-to-low accuracy. |
+
+| ![runtime](images/runtime.jpeg)|
+|:--|
+| Fig X. The diagram shows the runtime for each clustering methods. |
+
+In Fig X, *k*-means methods have shorter runtime compared to others. But notice that pcaReduce has a very long runtime, it requires re-calculation of the affinity matrix in each iteration, which is similar to global k-means clustering in the above section. [4]
+
+Filtering out far-from mean data before clustering: Note that actual RNA-seq data can be noisy, and because *k*-clustering is a partitioning algorithm, genes might be eventually assigned to a cluster even if they do not actually fit in. 
+
+Choosing value for k: Too small k-value can result in oversimplification of the data. To solve this, we can choose to examine different k-values using correlation function. If the correlation is high ($|Corr(A, B)|$ close to 1) between two *k*’s, we might consider reducing the value of *k* [12]. 
 
 ## Reference
 
