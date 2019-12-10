@@ -24,7 +24,8 @@ Applications for predictive genomics are mostly involved with diseases that can 
 
 The bulk of the diseases that are currently used in predictive genomics are diseases that stem from a hereditary mutation. One of the biggest use cases for predictive genomics currently is testing for mutations in genes that could result in elevated cancer risk (1). The breast cancer susceptibility genes (BRCA) is a pair of genes that are crucial in tumor suppression. These genes encode for enzymes that repair mutated DNA via homologous recombination. Mutations in BRCA 1 and/or BRCA 2 can result in an increased risk of breast and ovarian cancers and are responsible for over 20% of breast and ovarian cancers. Because of a strong correlation between mutated BRCA genes and increased cancer risk, genetic testing for these mutations can be done in order to determine the best course of preventative measures.
 
-![BRCA 1/2 genes](./GROUP21_Final_Project_images/BRCAgenes.jpeg) _FIGURE 1: BRCA GENE diagrams_
+![BRCA 1/2 genes](./GROUP21_Final_Project_images/BRCAgenes.jpeg) 
+_FIGURE 1: BRCA GENE diagrams_
 
 Every year, BRCA gene testing has become more and more accessible. Nonetheless, BRCA testing is still limited to those who have some sort of tie to a potential increased risk of cancer. The general criteria for considering a BRCA gene test fall into two main categories, a personal history of cancer before advanced age, or extensive family history with cancer. A personal history of cancer includes history with any of the BRCA-related cancers during young/middle-aged years or history with multiple types of cancers. Extensive family history with cancer includes multiple family members being diagnosed with cancer or a family history of having mutated BRCA genes. The only thing required from the patient is a blood sample taken at their physician's office. Once taken, the sample can be sent in to a number of labs to be screened for BRCA 1/2 mutations. The biggest labs that currently offer BRCA gene testing are Myriad Genetics, Medical Diagnostics, and Quest Diagnostics.
 
@@ -59,15 +60,7 @@ This analysis helps researchers see which genes are differentially expressed in 
 
 1. ##### Affymetrix Genome-Wide Human SNP Array 6.0 (12)
 
-  In this technique, every SNP site interacts with several probes. Some of these probes might be associated with allele A while others with allele B. In addition, the probes must be perfectly complementary (Perfect-match) to the cDNA containing the SNP site, as it helps us identify the nucleotide present at the specific SNP site (genotype-calling). The probes are represented as PM
-
-  <sub>a</sub>
-
-   and PM
-
-  <sub>b</sub>
-
-  . The intensity of cDNA interaction with these probes is used to detect the genotype at the SNP site.
+  In this technique, every SNP site interacts with several probes. Some of these probes might be associated with allele A while others with allele B. In addition, the probes must be perfectly complementary (Perfect-match) to the cDNA containing the SNP site, as it helps us identify the nucleotide present at the specific SNP site (genotype-calling). The probes are represented as PM<sub>a</sub> and PM<sub>b</sub>. The intensity of cDNA interaction with these probes is used to detect the genotype at the SNP site.
 
   ![Affymetrix Genome-Wide Human SNP Array 6.0 Workflow](./GROUP21_Final_Project_images/genomesnp.jpg) _FIGURE 4: Affymetrix Genome-Wide Human SNP Array 6.0 Workflow (10)_
 
