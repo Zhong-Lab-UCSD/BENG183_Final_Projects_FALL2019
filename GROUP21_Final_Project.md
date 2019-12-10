@@ -42,7 +42,7 @@ SNP Array is a type of a DNA Microarray used to find out if an individual carrie
 
 ![DNA Microarray Workflow](./GROUP21_Final_Project_images/probe.jpg) _FIGURE 2: DNA Microarray Workflow_
 
-#### Workflow of SNP Arrays (B)
+#### Workflow of SNP Arrays (7)
 
 1. mRNA is isolated from both tissue samples. It is converted to cDNA (complementary DNA) using the process of reverse transcription.
 2. The cDNA for both samples is amplified using Polymerase Chain Reaction (PCR).
