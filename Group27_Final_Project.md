@@ -12,23 +12,29 @@ Rolling Circle Amplification (RCA) is a process in which a short DNA or RNA prim
 
 A typical RCA experiment works through the use of five main components: DNA Polymerase (such as ɸ29 DNA Polymerase) or RNA polymerase, an applicable buffer, DNA or RNA primer, single-stranded DNA template, and dNTPs for elongation. The first step is to ligate the two ends of the single-stranded DNA into one circular template, which can either be done with a ligation primer and enzyme, such as T4 DNA ligase, or with just a template-free ligation enzyme, such as CircLigase [3], shown in Figure 1A. The target sequence is often used as the primer for extension, RNA or DNA, and can serve as a ligation primer as well. Once the primer anneals to the newly formed circular template, the polymerase will attach to the primer and elongate the sequence. While this elongation occurs, the circular template starts to rotate, or “roll”, pushing the previously existing primer and extension off the template. A derivative of RCA, known as Hyperbranched RCA (HRCA), exists as well, in which multiple primers anneal to the circular template, and multiple polymerases can attach and simultaneously extend the replicating sequence, to produce many more replicated strands (shown in Figure 1D). Variations of approaches can be shown in Figure 1B, 1C, and 1D, and further analysis paths can be shown by 1E, 1F, and 1G. 
 
+<br />
 
 ![Figure 1 - RCA Pathways](https://github.com/npusarla/BENG183_Final_Projects_FALL2019/blob/master/Images/Figure1.png)
-#### Figure 1 - RCA Pathways
+&nbsp; &nbsp; &nbsp; &nbsp;**Figure 1 - RCA Pathways**
+<br />
 
 
 One of the main applications of Rolling Circle Amplification (RCA) is as a replacement for Polymerase Chain Reaction (PCR) as the replication/amplification process of genetic material for sequencing. For example, with the normal amount of genetic material generally used to initiate Sanger sequencing, it would only take about five hours to get the necessary amount of genetic material using Rolling Circle Amplification. The pipeline for Sanger sequencing then takes about seven hours, allowing the sequencing of genetic material to have a turnaround time of one day. PCR, on the other hand, requires plasmid preparation (miniprep), which causes the total process of amplification and sequencing to last multiple days. RCA offers a huge advantage by allowing the replication process of genetic material to be performed without the preparation required, unlike PCR, the current industry standard.
 
+<br />
 
 ![Figure 2 - PCR and RCA Pipelines Side by Side](https://github.com/npusarla/BENG183_Final_Projects_FALL2019/blob/master/Images/Figure2.png)
-#### Figure 2 - PCR and RCA Pipelines Side by Side
+&nbsp; &nbsp; &nbsp; &nbsp;**Figure 2 - PCR and RCA Pipelines Side by Side**
+<br />
 
 
 Another useful application of RCA is in enzyme development using random mutagenesis. Random mutagenesis is usually paired with genetic selection or high-throughput screening in order to intentionally replicate enzymes while introducing mutations. This is used to develop various forms of enzymes that can be used in new, innovative ways. The most common application of random mutagenesis is with an error-prone version of PCR, which is able to induce mutations in its replication process by weakening the accuracy of DNA Polymerase. While this is a common practice, it is tedious and requires many steps, including digestion with restriction enzymes, separation with electrophoresis, and ligation into a vector, all of which can sum up to over a day’s worth of processes. However, if we were to use an error-prone RCA method instead of PCR, the process becomes a lot less cumbersome for multiple reasons. Firstly, instead of specifically designed primers, RCA can use random hexamers as universal primers. Another significant advantage is that RCA does not require a thermal-cycler due to its isothermal nature. In addition, the end products of RCA are ready to be used for the direct formation of E. Coli, which is extremely useful in the subsequent steps of these types of experiments. One can easily see that RCA can act as a strong alternative to PCR (See Figure 3). 
 
+<br />
 
 ![Figure 3 - RCA vs. PCR Pipelines for Error-Prone Amplification](https://github.com/npusarla/BENG183_Final_Projects_FALL2019/blob/master/Images/Figure3.jpeg)
-#### Figure 3 - RCA vs. PCR Pipelines for Error-Prone Amplification
+&nbsp; &nbsp; &nbsp; &nbsp;**Figure 3 - RCA vs. PCR Pipelines for Error-Prone Amplification**
+<br />
 
 
 Rolling Circle Amplification is used frequently for efficient isothermal DNA amplification in molecular diagnoses. Even though PCR is a popular and reliable technique, its applicability is limited by its dependence on heating and cooling cycles. The heating step of PCR can damage biological models, and therefore an isothermal approach to DNA/RNA amplification, such as RCA, is preferable. The circular templates used allow for amplification to be over a thousand-fold from a single binding event, therefore, making RCA ideal for the ultrasensitive detection used in diagnostics. In addition, Rolling Circle Amplification, using the specific bacteriophage ɸ29, DNA Polymerase aids in determining diagnoses of geminiviruses and essentially all viruses with small-single stranded circular DNA genomes[2]. Viral DNA components of geminiviruses can be detected using RCA, allowing for such diagnoses. 
