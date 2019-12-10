@@ -118,13 +118,13 @@ There is much value in developing an automated, non-invasive technique to detect
 
 <p align="center"><img src="10.png" height="175"></p>
 
-Figure: Images of jurkat cells in each stage of cell cycle
+Figure: Images of jurkat cells in each stage of the cell cycle.
 
 <b>Results:</b>
 
 <p align="center"><img src="11.png" height="400"></p>
 
-Figure: Predictions results of trained convolutional neural network on 30,000 images. 98% accuracy is achieved. 
+Figure: Prediction results of trained convolutional neural network on 30,000 images. 98% accuracy is achieved, a 6% improvement over the baseline model, which used a traditional machine learning model (not a deep neural network). 
 
 ## Challenges of Machine Learning Approaches in Bioinformatics
 
