@@ -148,7 +148,7 @@ As previously stated, there are many ‘hidden’ factors in biology, and withou
 
 <p align="center"><img src="14.jpg" height="250" ></p>
 
-Figure. Interpretation of a predictive model. Data input through ‘The Black Box’ leads to processed data meant for interpretation.
+Figure: Interpretation of a predictive model. Data input through ‘The Black Box’ leads to processed data meant for interpretation.
 
 ### Reliance on Prior Knowledge, and Misapplication of Machine Learning
 
@@ -160,7 +160,7 @@ This reliance on prior knowledge creates issues where a big part of using machin
 
 <p align="center"><img src="15.jpg" height="250" ></p>
 
-Figure. Prior knowledge of  nucleotide count being used in order to create a usable dataset, and predict frequencies using pseudocounts
+Figure: Prior knowledge of  nucleotide count being used in order to create a usable dataset, and predict frequencies using pseudocounts
 
 
 ## Future of Machine Learning in Bioinformatics
