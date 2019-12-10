@@ -3,13 +3,13 @@
 #### Sahil Saboo, Neha Pusarla, Kedar Rudrawar
 
 ## Contents
-1. [Introduction](#Introduction)
-2. [Procedure](#Procedure)
-3. [Applications](#Applications)
+- [Introduction](#Introduction)
+- [Procedure](#Procedure)
+- [Applications](#Applications)
   * [PCR Alternative](#PCR-Alternative)
   * [Random Mutagenesis](#Random-Mutagenesis)
   * [Geminiviruses & RFLP](#Geminiviruses-and-RFLP)
-4. [References](#References)
+- [References](#References)
 
 
 ---
