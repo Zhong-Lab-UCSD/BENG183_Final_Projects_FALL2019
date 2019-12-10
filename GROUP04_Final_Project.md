@@ -69,7 +69,7 @@ LUMPY is a seperate program that uses probabilistic framework to discover genomi
 ```
 speedseq realign
 ``` 
-This step allows alignment from one or more BAM files, rather than FASTQ inputs. It automatically parses read group information from the BAM header to label duplicates based on the library. It produces three sorted, indexed BAM files
+This step allows alignment from one or more BAM files, rather than FASTQ inputs. It automatically parses read group information from the BAM header to label duplicates based on the library. It produces three sorted, indexed BAM files.
 
 #### Deep Variant Methods:
 ##### 1. Summary of DeepVariant’s mechanism:
@@ -89,8 +89,8 @@ DeepVariant workflow (Referenced from the official paper):
 
 i. Left Box in Figure 4 :
 
-	Step 1: Preparation for variant calling.
-	File: Make_examples.py
+Step 1: Preparation for variant calling.
+File: Make_examples.py
 Purpose: Convert BAM files into images (as shown in Figure 2) that can be used in CNN in step 2.
 Method: The Make_examples.py use a very sensitive caller to find all positions that might be a variant. Then it uses a type of local reassembly as a more thorough version of indel realignment. Finally, it pileup all reads into different images for different positions mentioned above[24].   
 
@@ -233,7 +233,7 @@ As showed in Table 5, running DeepVariant requires more hours if running on CPU.
  
  The output.visual_report.html visual report contains some graphs that summarizes the vcf files.  For example, Variant types tells you how many different variants are detected and color coded their types; depth tells you the sequencing depth of all samples in histogram format. Other histograms includes information like quality score distribution, genotype distribution, and distribution of base changes.
 ![Figure1](https://github.com/ztybigcat/BENG183_Final_Projects_FALL2019/blob/master/images_group4/image4.png "Figure 6")
-  [Figure 6. Sample visual report]
+  					[Figure 6. Sample visual report]
 
 
   Academic Sources:
