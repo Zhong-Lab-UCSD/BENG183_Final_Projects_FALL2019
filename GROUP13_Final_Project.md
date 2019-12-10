@@ -32,7 +32,7 @@
 >>#### What is a Neural Network?
 >>A computing system made up of a number of simple interconnected nodes (processing elements), which processes information by their dynamic state response to external inputs.
  
- >><img src="neuralNetworks.png" width="400" height="350">
+ >><img src="neuralNetworks.png" width="500" height="300">
  
  >>The input layer receives various forms of information from the outside world. This is the data that the network aims to process or learn about. From the input unit, the data goes through one or more hidden units. The hidden unit’s job is to transform the input into something the output unit can use.
  <br> </br>
@@ -40,25 +40,25 @@
  >> Recurrent neural networks are networks with loops in them, allowing information to persist. Some common occurrences of RNNs are in translation, image captioning, and more.  RNNs combine the input vector with their state vector with a fixed (but learned) function to produce a new state vector [4].
  <br> </br>
  
- >>><img src="unrolled.png" width="500" height="350">
+ >>><img src="unrolled.png" width="450" height="300">
  
 >>> As you can see in the unrolled version, the model first takes the x(0) from the sequence of input and then it outputs h(0) which together with x(1) is the input for the next step. So, the h(0) and x(1) is the input for the next step. Similarly, h(1) from the next is the input with x(2) for the next step and so on. This way, it remembers the context while training. This method of remembering past processed data is extremely useful when we want our model to have context from previous input.
  
- >> ####***Long Short-Term Memory (LSTM)***
+ >>#### ***Long Short-Term Memory (LSTM)***
  >>LSTMs are a type of RNN; specifically a LSTM’s hidden layer updates are replaced by purpose-built memory cells. As a result, they may be better at finding and preserving long range dependencies of text. 
  
- >> ####***Bi-Directional Long Short-Term Memory (LSTM)***
+ >>#### ***Bi-Directional Long Short-Term Memory (LSTM)***
  >>Bi-LSTM’s are a combination of two LSTMs; one LSTM processing the data from front to end (Forward Layer) and one LSTM processing the data end to from (Backward Layer). Because Bi-LSTM’s read and analyze the input data in both the forward and reverse direction, the model is able to learn more relationships between the words. Bi-LSTMs find the probability of a word based on its full left and right contexts is ideal for maximizing the possibility of correctly clustering key phrases of symptoms, diseases, and/or treatments for a specific condition [5].
- >> <img src="memorycell1.png" width="250" height="250">
- >> <img src="memorycell2.png" width="250" height="200">
- <br> </br>
+ >>
+> <img src="memorycell1.png" width="250" height="250"> 
+> <img src="memorycell2.png" width="250" height="200">
 
 >>As mentioned previously, RNN introduces the connection between the previous states and current state. The recurrent layer is designed to store history information. The values in the hidden and output layers are computed as follows: 
  
 >>h(t) = f(Ux(t) + Wh(t − 1)) 
 
 >>y(t) = g(Vh(t))
-
+>
 >>where U, W, and V are the connection weights to be computed in training time, and f(z) and g(z) are sigmoid and softmax activation functions as follows: <br>
  <img src="equations.png" width="200" height="150"> 
  
