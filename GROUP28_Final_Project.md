@@ -48,7 +48,7 @@ three stage process as shown in Figure 1 [(3)](https://www.ncbi.nlm.nih.gov/pubm
 
 ### Background
 Performs affine-transform-optimized global alignment. It is slower, but more accurate than Smith-Waterman. Uses kmers to index the genome. There is no size or scaffold count limit. It has higher sensitivity and specificity that Burrows-Wheeler aligners. 
-BBMAP has a high mapping rate, high accuracy, and great speed. 
+BBMAP has a high mapping rate, high accuracy, and great speed [(4)] (https://jgi.doe.gov/data-and-tools/bbtools/bb-tools-user-guide/bbmap-guide/).  
  
 
 
@@ -59,6 +59,7 @@ Has high memory usage. The accuracy could be better. It still needs some optimiz
 
 ROC Testing Methodology
 
+![pic1](https://1.bp.blogspot.com/-KyIQsnK14NM/Xe38vZt7QEI/AAAAAAAAAAM/mWvmHtfUh44HKLEbknXZ48uTHNknS_2kQCLcBGAsYHQ/s1600/pic1.PNG)
 
 ROC curves generated files from files containing 1,000,000 reads containing a mix of mutation types
 20% of the reads were perfect. Of the rest, the mutations rates varied:
@@ -70,7 +71,7 @@ ROC curves generated files from files containing 1,000,000 reads containing a mi
 Rates are compounded 
 (0.85)^2 of the reads have at least 2 SNPs, and .25 of the reads have both an insertion and a deletion.
 
-
+![pic2](https://1.bp.blogspot.com/-UvPcddKLl1Q/Xe38vZYmJsI/AAAAAAAAAAY/t65ywgj77iMLToeTrFR4GDPfeQsssyy9gCEwYBhgL/s1600/pic2.PNG)
 
 SAM files contain a mapping quality field. The sam file is evaluated to calculate true and false positive rates 
 
