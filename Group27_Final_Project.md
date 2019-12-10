@@ -14,6 +14,8 @@
 
 ---
 
+![RCA](https://github.com/npusarla/BENG183_Final_Projects_FALL2019/blob/master/Images/RCA.jpeg)
+
 ## Introduction
 
 Rolling Circle Amplification (RCA) is a process in which a short DNA or RNA primer is amplified to create a long single-stranded DNA or RNA using its respective polymerases and a circular DNA template. This enzymatic process proves to be a powerful DNA amplification technique that plays a significant role in biomedical research and nanotechnology. RCA is used to develop multiple sensitive diagnostic methods that have different targets such as proteins, cells, nucleic acids, and other small molecules. In addition, because the RCA products are circular in structure due to the circular DNA template, the products have been used to create complicated DNA structures such as nanotubes, nanoribbons, and other DNA materials. These specific RCA products have been used for drug delivery, bioseparation, biodetection, and other technologies. In addition, RCA is a powerful tool for amplifying signals in immunoassays, especially ELISA, and as such has become a very versatile amplification tool with a menagerie of applications in genomics, proteomics, diagnosis, biosensing, and enzyme development. 
@@ -83,7 +85,6 @@ The DNA amplified from RCA can additionally be characterized by RFLP analysis an
 3. Ali, M. Monsur, et al. “Rolling Circle Amplification: a Versatile Tool for Chemical Biology, Materials Science and Medicine.” Chemical Society Reviews, The Royal Society of Chemistry, 18 Mar. 2014, pubs.rsc.org/en/content/articlelanding/2014/cs/c3cs60439j#!divAbstract. 
 4. Fujii, Ryota & Kitaoka, Motomitsu & Hayashi, Kiyoshi. (2004). One-step random mutagenesis by error-prone rolling circle amplification. Nucleic acids research. 32. e145. 10.1093/nar/gnh147. 
 5. Mohsen, Michael G, and Eric T Kool. “The Discovery of Rolling Circle Amplification and Rolling Circle Transcription.” Accounts of Chemical Research, U.S. National Library of Medicine, 15 Nov. 2016, www.ncbi.nlm.nih.gov/pubmed/27797171.
-6. 
 
 
 
