@@ -83,7 +83,7 @@ Given a cohort of individuals hailing from various ancestries, clustering can be
 
 Figure: PCA performed on 938 dimensional IBS matrix, each row representing a sample. The first and second PCs explain 52% and 27% of the IBS variation, respectively. 51 populations were separated into known continental groups. PC 1 appears to capture the contrast between sub-Saharan Africans and non-Africans and the PC2 captures the East-West difference in Eurasia.
 
-<p align="center"><img src="6.png" height="250" ></p>
+<p align="center"><img src="6.png" height="300" ></p>
 
 Figure: Performing identical technique (pairwise IBS matrix, PCA) on individual subgroups reveals further clustering of the data into known subpopulations. 
 
@@ -114,7 +114,7 @@ https://www.nature.com/articles/s41467-017-00623-3
 
 Convolutional neural networks(CNN), a type of deep learning model that excels in image analysis, can be used for both prediction and clustering tasks. In this study, a convolutional neural network was used to predict the cell cycle phase of jurkat cell images. After training the model on 33,000 images, predictions were made on 3000 images. An accuracy of 98% was achieved, a 6% improvement over traditional machine learning techniques. [5]
 
-<p align="center"><img src="10.png" height="200"></p>
+<p align="center"><img src="10.png" height="175"></p>
 
 Figure: Images of jurkat cells in each stage of cell cycle
 
