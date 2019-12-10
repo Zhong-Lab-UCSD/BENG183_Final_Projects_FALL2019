@@ -152,6 +152,17 @@ Figure. Interpretation of a predictive model. Data input through ‘The Black Bo
 
 ### Reliance on Prior Knowledge, and Misapplication of Machine Learning
 
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5204302/
+
+As a relatively new and powerful field in science, machine learning is often times thrown at complex problems. However, there are many issues that are either unknown or random in nature that create limitations in machine learning models. One of the biggest weaknesses of machine learning methods, is it’s reliance on prior knowledge.
+
+This reliance on prior knowledge creates issues where a big part of using machine learning models requires us to frame the question in a way that uses previous data. [9] Since predictive models are meant to give predictions, when dealing with random or unknown data types, the model will force a categorization or label based on previous knowledge, when in fact two datasets don’t overlap. In areas that require sensitive clustering like precision medicine, misapplying the incorrect algorithm can lead to false positives and inhibit discovery of new diseases or medicine. That’s not to say that using previous knowledge is inherently bad, but instead the reliance on previous data in clustering and predictive modeling can lead to misapplication of Machine Learning in Bioinformatics where traditional methods would be much more effective.
+
+<p align="center"><img src="15.jpg" height="250" ></p>
+
+Figure. Prior knowledge of  nucleotide count being used in order to create a usable dataset, and predict frequencies using pseudocounts
+
+
 ## Future of Machine Learning in Bioinformatics
 
 Future applications of machine learning techniques in the field of Bioinformatics have the potential to contribute to the areas of patient-specific pharmaceutical drugs, newborn genetic screening tools, and agriculture. Pharmacogenomics is studying how the genetic make-up of an individual plays a role in their response to drugs. Newborn genetic screening tools are being developed to collect data at birth and screen for certain diseases. Lastly, genetic data is being used to predict the yield and health of crops, which could help farmers better optimize their yields. Machine learning is currently impacting multiple areas of Bioinformatics research and it will continue to be an active field in the near future. [10]
