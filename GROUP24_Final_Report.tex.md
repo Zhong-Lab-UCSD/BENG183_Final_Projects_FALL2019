@@ -39,7 +39,7 @@ Here is a GIF demo:
 
 As mentioned, k-means clustering results are sensitive to the initial choice of clusters therefore they are only reliable for analyzing small sets of data. To improve it, auxiliary incremental approaches are recently introduced to k-clustering algorithm, which are known as the global k-means clustering.  
 
-One traditional way is to start from one cluster (centroid), and continuously adding new clustering center as the iteration proceeds.
+One traditional way is to start from one cluster (centroid), and continuously adding new clustering center as the iteration proceeds [8].
 
 Step 1: Given the finite data set $A$, $\{a_1, a_2, \dots, a_m\}$, consisting of m n-dimensional elements, compute *A*’s center, set this as the initial center.  
 Step 2: Let the rest ($k$-1)-partition centroids be $x_1, x_2, \dots, x_{k-1}$, compute $\overline{f_k}(y)$, $y \in \R^n$by comparing the minimum square distance between each point and the closest cluster center from $x_1, x_2, \dots, x_{k-1}$ with the square distance of each pair of data. So the point with the minimum $\overline{f_k}(y)$ value would be the new cluster center for the next iteration.  
