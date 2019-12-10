@@ -24,16 +24,19 @@ One of the main applications of Rolling Circle Amplification (RCA) is as a repla
 <br />
 
 ![Figure 2 - PCR and RCA Pipelines Side by Side](https://github.com/npusarla/BENG183_Final_Projects_FALL2019/blob/master/Images/Figure2.png)
+</br>
 &nbsp; &nbsp; &nbsp; &nbsp;**Figure 2 - PCR and RCA Pipelines Side by Side**
-<br />
 
 
 Another useful application of RCA is in enzyme development using random mutagenesis. Random mutagenesis is usually paired with genetic selection or high-throughput screening in order to intentionally replicate enzymes while introducing mutations. This is used to develop various forms of enzymes that can be used in new, innovative ways. The most common application of random mutagenesis is with an error-prone version of PCR, which is able to induce mutations in its replication process by weakening the accuracy of DNA Polymerase. While this is a common practice, it is tedious and requires many steps, including digestion with restriction enzymes, separation with electrophoresis, and ligation into a vector, all of which can sum up to over a day’s worth of processes. However, if we were to use an error-prone RCA method instead of PCR, the process becomes a lot less cumbersome for multiple reasons. Firstly, instead of specifically designed primers, RCA can use random hexamers as universal primers. Another significant advantage is that RCA does not require a thermal-cycler due to its isothermal nature. In addition, the end products of RCA are ready to be used for the direct formation of E. Coli, which is extremely useful in the subsequent steps of these types of experiments. One can easily see that RCA can act as a strong alternative to PCR (See Figure 3). 
 
 <br />
+
 ![Figure 3 - RCA vs. PCR Pipelines for Error-Prone Amplification](https://github.com/npusarla/BENG183_Final_Projects_FALL2019/blob/master/Images/Figure3.jpeg)
+
 <br />
-&nbsp;**Figure 3 - RCA vs. PCR Pipelines for Error-Prone Amplification**
+
+&nbsp; &nbsp; &nbsp; &nbsp;**Figure 3 - RCA vs. PCR Pipelines for Error-Prone Amplification**
 <br />
 
 
