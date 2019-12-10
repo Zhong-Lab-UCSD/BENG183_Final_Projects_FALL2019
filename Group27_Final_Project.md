@@ -68,7 +68,15 @@ However, if we were to use an error-prone RCA method instead of PCR, the process
 
 ### Geminiviruses and RFLP
 
-Rolling Circle Amplification is used frequently for efficient isothermal DNA amplification in molecular diagnoses. Even though PCR is a popular and reliable technique, its applicability is limited by its dependence on heating and cooling cycles. The heating step of PCR can damage biological models, and therefore an isothermal approach to DNA/RNA amplification, such as RCA, is preferable. The circular templates used allow for amplification to be over a thousand-fold from a single binding event, therefore, making RCA ideal for the ultrasensitive detection used in diagnostics. In addition, Rolling Circle Amplification, using the specific bacteriophage ɸ29, DNA Polymerase aids in determining diagnoses of geminiviruses and essentially all viruses with small-single stranded circular DNA genomes[2]. Viral DNA components of geminiviruses can be detected using RCA, allowing for such diagnoses. 
+Rolling Circle Amplification is used frequently for efficient isothermal DNA amplification in molecular diagnoses. Even though PCR is a popular and reliable technique, its applicability is limited by its dependence on heating and cooling cycles. The heating step of PCR can damage biological models, and therefore an isothermal approach to DNA/RNA amplification, such as RCA, is preferable. The circular templates used allow for amplification to be over a thousand-fold from a single binding event, therefore, making RCA ideal for the ultrasensitive detection used in diagnostics, as can be seen in Figure 4. In addition, Rolling Circle Amplification, using the specific bacteriophage ɸ29, DNA Polymerase aids in determining diagnoses of geminiviruses and essentially all viruses with small-single stranded circular DNA genomes[2]. Viral DNA components of geminiviruses can be detected using RCA, allowing for such diagnoses.
+
+<br />
+
+![Figure 4 - RCAGel](https://github.com/npusarla/BENG183_Final_Projects_FALL2019/blob/master/Images/RCA_Gel.jpg)
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp;**Figure 4 - Electrophoresis of RCA Products**
+<br />
 
 A specific example of this case is described below. In various tropical and subtropical countries around the world, geminiviruses have a history of destroying large regions of crops, and a combination of PCR and RFLP (Restriction Fragment Length Polymorphism) have been used for diagnostic tools in this field. However, developing countries are the major regions in which geminiviruses attack, and a combination of RCA/RFLP offers a low-cost procedure alternative for diagnosis that can be performed in lower standard laboratories, but still with high accuracy. Circular DNA was extracted from plants that were positive and negative for infection by various geminiviruses. After purification of the DNA, RCA was performed as an alternative to PCR using ɸ29 Polymerase. 
 
