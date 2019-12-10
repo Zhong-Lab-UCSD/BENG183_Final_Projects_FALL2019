@@ -235,11 +235,17 @@ As showed in Table 5, running DeepVariant requires more hours if running on CPU.
  Lines start with single “#” are headers(basically column name). The data columns include the following items:
  
  CHROM: the number of chromosomes the variant is located;
+ 
  POS: the position of base pair on sequence;
+ 
  REF: base on reference genome;
+ 
  ALT: base of variant sequence;
+ 
  QUAL: quality score of called variant;
- FILTER: A “PASS” in the data indicates this variant has passed all filters. Otherwise it logs which filter the variant has failed to pass. For example: “q5;s40” means the quality is below 5 and this variant is present in 40% of samples。
+ 
+ FILTER: A “PASS” in the data indicates this variant has passed all filters. Otherwise it logs which filter the variant has failed to pass. For example: “q5;s40” means the quality is below 5 and this variant is present in 40% of samples.
+ 
  INFO: Additional info regarding this variant.
  
  The output.visual_report.html visual report contains some graphs that summarizes the vcf files.  For example, Variant types tells you how many different variants are detected and color coded their types; depth tells you the sequencing depth of all samples in histogram format. Other histograms includes information like quality score distribution, genotype distribution, and distribution of base changes.
