@@ -12,8 +12,6 @@ Rolling circle amplification is a process in which a short DNA or RNA primer is 
 
 A typical RCA experiment works through the use of five main components: DNA Polymerase (such as Phi29 DNA Polymerase) or RNA polymerase, an applicable buffer, DNA or RNA primer, single-stranded DNA template, and dNTPs for elongation. The first step is to ligate the two ends of the single-stranded DNA into one circular template, which can either be done with a ligation primer and enzyme, such as T4 DNA ligase, or with just a template-free ligation enzyme, such as CircLigase [3], shown in Figure 1A. The target sequence is often used as the primer for extension, RNA or DNA, and can serve as a ligation primer as well. Once the primer anneals to the newly formed circular template, the polymerase will attach to the primer and elongate the sequence. While this elongation occurs, the circular template starts to rotate, or “roll”, pushing the previously existing primer and extension off the template. A derivative of RCA, known as Hyperbranched RCA (HRCA), exists as well, in which multiple primers anneal to the circular template, and multiple polymerases can attach and simultaneously extend the replicating sequence, to produce many more replicated strands (shown in Figure 1D). Variations of approaches can be shown in Figure 1B, 1C, and 1D, and further analyses paths can be shown by 1E, 1F, and 1G. 
 
-RCA is a powerful tool for amplifying full-length HBV genomes and will be especially useful for the study of occult or inactive HBV infections and patients undergoing antiviral treatment. It can also be used to probe HBV cccDNA, the crucial intermediate in viral persistence and the archive of resistance mutations. (could use this also) 
-
 
 [INSERT FIGURE 1]
 
