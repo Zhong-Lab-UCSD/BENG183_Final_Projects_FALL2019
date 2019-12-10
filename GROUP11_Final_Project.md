@@ -126,13 +126,31 @@ Figure: Predictions results of trained convolutional neural network on 30,000 im
 
 ### Consequences of Overfitting Given Insufficient Data
 
+https://www.nature.com/articles/s41588-018-0328-0
+
+Machine learning is a powerful tool that can analyze the large datasets becoming commonplace in bioinformatics. However, there are many hurdles that come with the application of machine learning in genomic discovery and prediction. One such hurdle is machine learning algorithms require both high quality and quantities of data that may not always be readily available. 
+
+In the field of functional genomics, the large amounts of genomic data allow for accurate prediction models to be created. However, despite the growing accuracy in these predictive models, there are still ‘hidden’ factors that can have profound effects on the genome that can’t be accurately predicted for. [6] Whether it’s non-coding regions or discoveries in alternative splicing, these ‘hidden factors can lead to false positives and “overfitting”(eg.) of data. As such, although a powerful tool, it’s important to understand the limitations of machine learning and predictive models of discovery, when the current datasets are insufficient. 
+
 ### The Black Box of The Predictive Model
+
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6469083/#Sec4title
+
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5938574/
+
+Machine learning has given us the ability to create relational models and process information from increasingly complex datasets that are impossible to analyze with traditional techniques. As a byproduct, the techniques used to interpret and process these datasets have also become increasingly complex. Consequently, many scientists choose to forgo an understanding of the models approach or it’s predictive accuracy, instead just focusing on it’s input and output. In machine learning this is known as ‘The Black Box’ of the model.
+
+This issue is especially pronounced and problematic in the bioinformatics. Due to the interdisciplinary nature of bioinformatics, there are many scientists with a strong background in genomics that have no knowledge of machine learning methods, as such there are large amounts of scientists with no understanding of the selective methods of the model. Similarly, there are many data scientists creating models using methods that are meant for interpreting data in more quantitative fields like banking, but lack the biological knowledge to create accurate predictive models in genomics. This lack of understanding of  “The Black Box” both computationally and scientifically can lead to issues with data interpretation. [7] 
+
+An example of this is seen in bioinformatics in a medical application. A model was trained and assigned patients with asthma a higher rate of survival to pneumonia. [8] In this sense the data was very much correct in that the asthma patients survived pneumonia more than non-asthma patients. However, the model did not take into account the real reason for survivability, which was that  asthma patients have higher priority in hospitals, and are seen more often. This is an example of how the black box problem of focusing on strictly input and output can cause huge problems in bioinformatics, and possibly dire consequences in the fields of science and medicine.
+
+As previously stated, there are many ‘hidden’ factors in biology, and without understanding the process of the predictive model, we may not be able to model data accurately, or interpret data correctly. In a field where a large number of scientists rely solely on the results of data input and output, a lack of understanding how that data is analyzed can be especially dangerous, especially when the model isn’t fully optimized.
 
 ### Reliance on Prior Knowledge, and Misapplication of Machine Learning
 
 ## Future of Machine Learning in Bioinformatics
 
-Future applications of machine learning techniques in the field of Bioinformatics have the potential to contribute to the areas of patient-specific pharmaceutical drugs, newborn genetic screening tools, and agriculture. Pharmacogenomics is studying how the genetic make-up of an individual plays a role in their response to drugs. Newborn genetic screening tools are being developed to collect data at birth and screen for certain diseases. Lastly, genetic data is being used to predict the yield and health of crops, which could help farmers better optimize their yields. Machine learning is currently impacting multiple areas of Bioinformatics research and it will continue to be an active field in the near future. [9]
+Future applications of machine learning techniques in the field of Bioinformatics have the potential to contribute to the areas of patient-specific pharmaceutical drugs, newborn genetic screening tools, and agriculture. Pharmacogenomics is studying how the genetic make-up of an individual plays a role in their response to drugs. Newborn genetic screening tools are being developed to collect data at birth and screen for certain diseases. Lastly, genetic data is being used to predict the yield and health of crops, which could help farmers better optimize their yields. Machine learning is currently impacting multiple areas of Bioinformatics research and it will continue to be an active field in the near future. [10]
 
 
 ## References
@@ -153,4 +171,6 @@ Future applications of machine learning techniques in the field of Bioinformatic
 
 [8] Libbrecht, M. W., & Noble, W. S. (2015). Machine learning applications in genetics and genomics. Nature reviews. Genetics, 16(6), 321–332. doi:10.1038/nrg3920
 
-[9] Sennaar, K. (2019). Machine Learning in Genomics – Current Efforts and Future Applications | Emerj. Retrieved 9 December 2019
+[9 ]Libbrecht, M. W., & Noble, W. S. (2015). Machine learning applications in genetics and genomics. Nature reviews. Genetics, 16(6), 321–332. doi:10.1038/nrg3920
+
+[10] Sennaar, K. (2019). Machine Learning in Genomics – Current Efforts and Future Applications | Emerj. Retrieved 9 December 2019
