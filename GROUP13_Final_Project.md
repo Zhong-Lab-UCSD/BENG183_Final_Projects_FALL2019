@@ -1,12 +1,12 @@
 ## **1. What is Natural Language Processing?**  <a name="1"></a>
 
-> NLP is a field in machine learning with the ability of a computer to understand, analyze, manipulate, and potentially generate human language [1].
+> Natural Language Processing (NLP) is a field in machine learning with the ability of a computer to understand, analyze, manipulate, and potentially generate human language [1].
 
 >NLP can help with many tasks and can applicable to a variety of fields. For example, NLP enables the recognition and prediction of diseases based on electronic health records and patient’s own speech. This capability is being explored in health conditions that go from cardiovascular diseases to depression and even schizophrenia. For example, Amazon Comprehend Medical is a service that uses NLP to extract disease conditions, medications and treatment outcomes from patient notes, clinical trial reports and other electronic health records [2]. 
 >
 ## **2. What is NER?**<a name="2"></a>
  
->Name Entity Recognition plays a major role in the semantic part of NLP, which extracts the meaning of words, sentences and their relationships [1]. NER is able to locate entities in a text and label it based on predefined categories. Some examples of entities are, “person”, “organization”, “place”, or even a biomedical term. For example NER can recognize that “pancreatic cancer” is a disease and “reduced lung function” is a symptom. NER plays an important role in enabling machines to understand a text. 
+>Name Entity Recognition (NER) plays a major role in the semantic part of NLP, which extracts the meaning of words, sentences and their relationships [1]. NER is able to locate entities in a text and label it based on predefined categories. Some examples of entities are, “person”, “organization”, “place”, or even a biomedical term. For example, NER can recognize that “pancreatic cancer” is a disease and “reduced lung function” is a symptom. NER plays an important role in enabling machines to understand a text. 
  
 ## **3. Steps in Classification**<a name="3"></a>
   > ### Overview of Classification:
@@ -55,11 +55,11 @@
 > <img src="memorycell2.png" width="250" height="200">
 
 >>As mentioned previously, RNN introduces the connection between the previous states and current state. The recurrent layer is designed to store history information. The values in the hidden and output layers are computed as follows: 
- 
+>
 >>h(t) = f(Ux(t) + Wh(t − 1)) 
 
 >>y(t) = g(Vh(t))
->
+
 >>where U, W, and V are the connection weights to be computed in training time, and f(z) and g(z) are sigmoid and softmax activation functions as follows: <br>
  <img src="equations.png" width="200" height="150"> 
  
@@ -74,7 +74,7 @@
  - More specifically, NLP is a useful technique for precision medicine
   - NLP enables recognition and prediction of diseases based on electronic health records and patient’s own speech
   - Organizes unstructured data in health record databases, giving physicians more information about the data for decision making [6].
- - Amazon Alexa, which uses NLP technology,has collaborated with Britain’s National Health Service (NHS) to provide medical advice to its users [7].
+ - Amazon Alexa, which uses NLP technology, has collaborated with Britain’s National Health Service (NHS) to provide medical advice to its users [7].
  
  > #### **4.1 Case Study: Pharmacogenetic Studies** <a name="41"></a>
  >- Natural language processing algorithms were used to develop a weekly dose calculation system by extending an existing medication information extraction system “to extract drug-dose information from clinical text, and to assess the capabilities of such tools to automate the data-extraction process for pharmacogenetic studies.” [9]
