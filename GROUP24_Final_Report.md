@@ -1,4 +1,4 @@
-# Final Report (//TODO)
+# Different Clustering Algorithms in Biological Data Analysis
 
 ## By Hanqing Zhao, Jianing Wang, Shihui Zhu
 
@@ -12,6 +12,12 @@
 
 * [Mixture of Gaussian Clustering](#mixture-of-gaussian-clustering)
 
+* [Discussion](#discussion)  
+
+* [Application in RNA-seq Data](#application-in-rna-seq-data)
+
+* [Reference](#reference)
+
 ## Overview
 
 Clustering is a really useful machine learning technique for analyzing all kinds of data. It can help us to group certain data points that have similar properties in a large dataset, in order to grab information from it. In biological research, we often obtain lots of data from the experiments. In order to shuffle the useful information from the sea of data, it is crucial for us to correctly interpret the patterns behind it using clustering. We can use clustering method in gene expression data obtained from RNA sequencing, to discover potential groups of genes and samples, and predict the unknown functions of genes.
@@ -19,7 +25,8 @@ In this report, we are going to expand on what we have learned about k-means clu
 
 ## *K*-Means Clustering
 
-K-means clustering is a clustering algorithm that essentially partitions all data points into k clusters with locally optimal within-cluster sum of squared Euclidean distances1. The standard algorithm starts with a given initial set of k cluster centers:  
+K-means clustering is a clustering algorithm that essentially partitions all data points into k clusters with locally optimal within-cluster sum of squared Euclidean distances1. The standard algorithm starts with a given initial set of k cluster centers:
+
 Step 1: For each point, find its closest cluster center and assign it to the closest cluster.  
 Step 2: Update the cluster centers to be the average of points contained within them.  
 Step 3: Stop if the algorithm converges (that is, the cluster assignments no longer change). Otherwise, go to Step 1.
@@ -70,25 +77,47 @@ The result of clustering may look like this:
 
 ## Mixture of Gaussian Clustering
 
+The Mixture of Gaussian clustering method is a way to cluster data points not only by the means, but also by variance. Therefore, it can make the cluster more correctly in some circumstances. Gaussian Mixture Models (GMMs) assume that there are a certain number of Gaussian distributions, and each of these distributions represents a cluster. Hence, a Gaussian Mixture Model tends to group the data points belonging to a single distribution together.
 
+GMM is a probabilistic model that uses soft clustering method to distribute the points in different clusters. Soft clustering, also known as fuzzy clustering or soft k-means, is a form of clustering method in which one data point can belong to more than one cluster. The GMM uses the probabilistic density function in a 3D gaussian distribution is given by:
 
-```html
-<img src="http://shabal.in/visuals/kmeans/random.gif" width=500 height=300>
-```
+<p align="center"><img src="/tex/fa2774981b934668dbf10d514931df16.svg?invert_in_darkmode&sanitize=true" align=middle width=266.47394234999996pt height=40.289634pt/></p>
+
+* <img src="/tex/332cc365a4987aacce0ead01b8bdcc0b.svg?invert_in_darkmode&sanitize=true" align=middle width=9.39498779999999pt height=14.15524440000002pt/> = the input vector. 
+* <img src="/tex/07617f9d8fe48b4a7b3f523d6730eef0.svg?invert_in_darkmode&sanitize=true" align=middle width=9.90492359999999pt height=14.15524440000002pt/> = 2-D mean vector
+* <img src="/tex/813cd865c037c89fcdc609b25c465a05.svg?invert_in_darkmode&sanitize=true" align=middle width=11.87217899999999pt height=22.465723500000017pt/> = 2 <img src="/tex/bdbf342b57819773421273d508dba586.svg?invert_in_darkmode&sanitize=true" align=middle width=12.785434199999989pt height=19.1781018pt/> 2 covariance matrix
+
+Therefore, when we cluster the datasets in a 2 dimensional plot, we will define <img src="/tex/63bb9849783d01d91403bc9a5fea12a2.svg?invert_in_darkmode&sanitize=true" align=middle width=9.075367949999992pt height=22.831056599999986pt/> clusters, so we will have a mixture of <img src="/tex/63bb9849783d01d91403bc9a5fea12a2.svg?invert_in_darkmode&sanitize=true" align=middle width=9.075367949999992pt height=22.831056599999986pt/> Gaussian distributions, with each of them having a mean vector and a variance matrix.  
+
+Since we do not know these mean and variance because we do not know which Gaussian generated which data point, these parameters are calculated by a process called Expectation-Maximization (EM), which involves two steps --- the E-step and the M-step. We also have a parameter called <img src="/tex/0c4cdff2a5c675458f5a6629892c26d1.svg?invert_in_darkmode&sanitize=true" align=middle width=12.32879834999999pt height=22.465723500000017pt/> which represent the density of the distribution.
+
+During the E-step, we compute the responsibilities for each Gaussian for each datapoint. The responsibility is calculated by dividing the Probability of <img src="/tex/1338d1e5163ba5bc872f1411dd30b36a.svg?invert_in_darkmode&sanitize=true" align=middle width=18.269651399999987pt height=22.465723500000017pt/> belongs to cluster <img src="/tex/3e18a4a28fdee1744e5e3f79d13b9ff6.svg?invert_in_darkmode&sanitize=true" align=middle width=7.11380504999999pt height=14.15524440000002pt/> by the Sum of probability <img src="/tex/1338d1e5163ba5bc872f1411dd30b36a.svg?invert_in_darkmode&sanitize=true" align=middle width=18.269651399999987pt height=22.465723500000017pt/> belongs to <img src="/tex/7a914c116509395f0acf452fc81725dc.svg?invert_in_darkmode&sanitize=true" align=middle width=87.19166114999999pt height=14.15524440000002pt/>. This value will be big if the point is assigned to the correct clusterm and low otherwise.
+
+During the M-step, we modify the parameters of each Gaussian to maximize the likelihood for the responsibility weighted data. The density <img src="/tex/0c4cdff2a5c675458f5a6629892c26d1.svg?invert_in_darkmode&sanitize=true" align=middle width=12.32879834999999pt height=22.465723500000017pt/>, mean <img src="/tex/07617f9d8fe48b4a7b3f523d6730eef0.svg?invert_in_darkmode&sanitize=true" align=middle width=9.90492359999999pt height=14.15524440000002pt/> and the covariance matrix <img src="/tex/813cd865c037c89fcdc609b25c465a05.svg?invert_in_darkmode&sanitize=true" align=middle width=11.87217899999999pt height=22.465723500000017pt/> are updated until convergence. They are updated following the manner below:
+
+<p align="center"><img src="/tex/b83ef5ac4168a2edc4ff1eaa3b195257.svg?invert_in_darkmode&sanitize=true" align=middle width=240.8622414pt height=37.0084374pt/></p>  
+
+<p align="center"><img src="/tex/fa9be4c6dc2d2f0da575baddde7c95aa.svg?invert_in_darkmode&sanitize=true" align=middle width=290.56541745pt height=36.1865163pt/></p>  
+
+<p align="center"><img src="/tex/64408a81a102eb5ac48414a9d142f0a3.svg?invert_in_darkmode&sanitize=true" align=middle width=417.53418135pt height=36.1865163pt/></p>
+
+Here is a demo for the algorithm:
 
 ![MOG](https://media1.tenor.com/images/909622ac2e9ec02a97d4ce9489798b1d/tenor.gif?itemid=15288262)
 
-<p align="center"><img src="/tex/7e7f5a756250695739067a267e57aeba.svg?invert_in_darkmode&sanitize=true" align=middle width=198.30180479999999pt height=45.2741091pt/></p>
+## Discussion
 
-<p align="center"><img src="/tex/a5db1d9a8cd6954654a6611206a242a3.svg?invert_in_darkmode&sanitize=true" align=middle width=209.41944045pt height=48.3106437pt/></p>
+### Limitations
 
-<img src="/tex/86148e50b9dc1d12bf05cb58feb530e5.svg?invert_in_darkmode&sanitize=true" align=middle width=158.38923044999999pt height=29.190975000000005pt/>
+Standard *k*-means clustering requires a careful selection of initial cluster centers. A different initialization may yield to a different number of iterations required for convergence, and a different clustering results. However, in some cases, the algorithm may not converge at all. In addition, the algorithm produces a clustering that attains local optimum, and more importantly, there may be different cluster assignments that have the same optimal scores. Last but not least, the standard k-means clustering is vulnerable to the noise, thus its reliability is compromised provided the data is fuzzy.
 
-ee.<sup>superscript</sup> 
+### Comparions between *k*-means and FCM
 
-
+Both k-means and FCM are partition-based clustering algorithm, and they work in a similar iterative fashion. The key difference between FCM and k-means is that using FCM, each data points may belong to multiple clusters based on the computed membership values. These fuzzy classification makes the clustering less vulnerable to noise if the input data is a bit fuzzy. For instance, when clustering of microarray data, k-means clustering may not work well because it does not provide information about the influence of a given gene for the overall shape of clusters. On the other hand, FCM is one fuzzy partitioning method and can attribute cluster memberships to genes [4].
 
 ![global-kmeans](images/global-kmeans.png)
+
+## Application in RNA-seq Data
 
 
 |      K-means          |  GMM |
@@ -99,3 +128,39 @@ ee.<sup>superscript</sup>
 | ![time](images/fcm_vs_km_time.png)|
 |:--|
 | Fig. Comparison of average time for k-Means and FCM. The table on the top shows the average executation time by k-Means and FCM. The plot at the bottom shows average runtime of k-Means and FCM.|
+
+
+
+```html
+<img src="http://shabal.in/visuals/kmeans/random.gif" width=500 height=300>
+```
+
+## Reference
+
+1. Andrews, Tallulah S., Hemberg, Martin. “Identifying cell populations with scRNASeq” vol. 59, *Molecular Aspect of Medicine*. Feb., 2018.
+
+2. Adil M. Bagirov, Julien Ugon, Dean Webb. “Fast modiﬁed global k-means algorithm for incremental cluster construction.”
+
+3. Bezdek, J., Ehrlich, R. & Full, W. FCM: The fuzzy c-means clustering algorithm. *Computers & Geosciences* 10, 191-203 (1984).
+
+4. Dembele, D., and P. Kastner. "Fuzzy C-Means Method For Clustering Microarray Data". *Bioinformatics*, vol 19, no. 8, 2003, pp. 973-980. *Oxford University Press (OUP)*, doi:10.1093/bioinformatics/btg119.
+
+5. Duo, Angelo., et., al. “ A systematic performance evaluation of clustering  methods for single-cell RNA-seq data.” NCBI., 11 Sep. 2018. 
+
+6. Hartigan, J. A., and M. A. Wong. "Algorithm AS 136: A K-Means Clustering Algorithm". *Applied Statistics*
+, vol 28, no. 1, 1979, p. 100. *JSTOR*, doi:10.2307/2346830.
+
+7. Jiang, D., Tang, C. and Zhang, A. (2019)."Cluster Analysis For Gene Expression Data: A Survey - IEEE Journals & Magazine". *Ieeexplore.Ieee.Org*, 2019, https://ieeexplore.ieee.org/document/1339264.
+
+
+8. Likas, Aristidis. et., al. “The global k-means clustering algorithm.” *Pattern Recognition*. 4 March 2002.
+
+9. Liu, Zhe et al. "A New Clustering Method Of Gene Expression Data Based On Multivariate Gaussian Mixture Models". *Signal, Image And Video Processing*, vol 10, no. 2, 2015, pp. 359-368. *Springer Science And Business Media LLC*, doi:10.1007/s11760-015-0749-5.
+
+10. Singh, Aishwarya. "What Are Gaussian Mixture Models? A Powerful Clustering Algorithm". *Analytics Vidhya*, 2019, https://www.analyticsvidhya.com/blog/2019/10/gaussian-mixture-models-clustering/.
+
+11. T., Velmurugan. "Performance Based Analysis Between K-Means And Fuzzy C-Means Clustering Algorithms For Connection Oriented Telecommunication Data". *Applied Soft Computing*, vol 19, 2014, pp. 134-146. *Elsevier BV*, doi:10.1016/j.asoc.2014.02.011.
+
+12. Warner, Jake. "Clustering Rnaseq Data Using K-means Clustering -2-Bitbio". *2-Bitbio.Com*, 2019, https://2-bitbio.com/2017/10/clustering-rnaseq-data-using-k-means.html.
+
+13. Warner, Jake. "Clustering Rnaseq Data Using Fuzzy C-Means Clustering - 2-Bitbio". *2-Bitbio*, 2019, https://2-bitbio.com/post/clustering-rnaseq-data-using-fuzzy-c-means-clustering/.
