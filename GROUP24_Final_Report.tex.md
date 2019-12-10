@@ -39,7 +39,7 @@ Here is a GIF demo:
 
 As mentioned, k-means clustering results are sensitive to the initial choice of clusters therefore they are only reliable for analyzing small sets of data. To improve it, auxiliary incremental approaches are recently introduced to k-clustering algorithm, which are known as the global k-means clustering.  
 
-One traditional way is to start from one cluster (centroid), and continuously adding new clustering center as the iteration proceeds. 
+One traditional way is to start from one cluster (centroid), and continuously adding new clustering center as the iteration proceeds.
 
 Step 1: Given the finite data set $A$, $\{a_1, a_2, \dots, a_m\}$, consisting of m n-dimensional elements, compute A’s center, set this as the initial center.  
 Step 2: Let the rest ($k$-1)-partition centroids be $x_1, x_2, \dots, x_{k-1}$, compute $\overline{f_k}(y)$, $y \in \R^n$by comparing the minimum square distance between each point and the closest cluster center from $x_1, x_2, \dots, x_{k-1}$ with the square distance of each pair of data. So the point with the minimum $\overline{f_k}(y)$ value would be the new cluster center for the next iteration.  
@@ -85,7 +85,7 @@ GMM is a probabilistic model that uses soft clustering method to distribute the 
 
 $$ f(x|\mu, \Sigma)=\frac{1}{\sqrt{2\pi|\Sigma|}}e^{\frac{1}{2}(x-\mu)^t \Sigma^{-1}(x-\mu)}$$
 
-* $x$ = the input vector. 
+* $x$ = the input vector.
 * $\mu$ = 2-D mean vector
 * $\Sigma$ = 2 $\times$ 2 covariance matrix
 
@@ -177,7 +177,7 @@ RNA-seq technology is widely applied in research as an attractive alternative to
 |:--|
 | Fig 6. The diagram describing the general procedure of clustering of single-cell RNA-seq data. Each colored part indicates which proportion of the matrix is adjusted. For instance, the feature selection part removes rows from the original data set. And the dimensionality reduction calculates a new matrix composed of meta-features [1].|
 
-In RNA-seq analysis, we can use built-in clustering methods in R script. To understand the performance between different clustering method, we can illustrate using real scRNA-seq data sets ,  GSE60749-GPL13112 (Kumar), SRP073808 (Koh) and GSE52529GPL16791 (Trapnell) and a few others [4]. There are fourteen different clustering methods investigated, but we are particularly interested in k-means related methods: 
+In RNA-seq analysis, we can use built-in clustering methods in R script. To understand the performance between different clustering method, we can illustrate using real scRNA-seq data sets ,  GSE60749-GPL13112 (Kumar), SRP073808 (Koh) and GSE52529GPL16791 (Trapnell) and a few others [4]. There are fourteen different clustering methods investigated, but we are particularly interested in k-means related methods:
 PCAKmeans (PCA dimension reduction (dim=30) and *k*-means clustering with 25 random starts), pcaReduce (PCA dimension reduction (dim=30) and *k*-means clustering through an iterative process. Stepwise merging of clusters and reducing the number of dimensions by PC with lowest variance), which is like the global *k*-means clustering method that involve step-wise computation.  
 
 And an ensemble method SAFE of *k*-means clustering and other clustering methods SC3, CIDR, Seurat and t-SNE.
@@ -192,11 +192,11 @@ And an ensemble method SAFE of *k*-means clustering and other clustering methods
 
 In Fig 8, *k*-means methods have shorter runtime compared to others. But notice that pcaReduce has a very long runtime, it requires re-calculation of the affinity matrix in each iteration, which is similar to global k-means clustering in the above section. [4]
 
-Filtering out far-from mean data before clustering: Note that actual RNA-seq data can be noisy, and because *k*-clustering is a partitioning algorithm, genes might be eventually assigned to a cluster even if they do not actually fit in. 
+Filtering out far-from mean data before clustering: Note that actual RNA-seq data can be noisy, and because *k*-clustering is a partitioning algorithm, genes might be eventually assigned to a cluster even if they do not actually fit in.
 
-Choosing value for k: Too small k-value can result in oversimplification of the data. To solve this, we can choose to examine different k-values using correlation function. If the correlation is high ($|Corr(A, B)|$ close to 1) between two *k*’s, we might consider reducing the value of *k* [12]. 
+Choosing value for k: Too small k-value can result in oversimplification of the data. To solve this, we can choose to examine different k-values using correlation function. If the correlation is high ($|Corr(A, B)|$ close to 1) between two *k*’s, we might consider reducing the value of *k* [12].
 
-Overall, *k*-means clustering is still a good clustering method for RNA-seq data because of its relative short runtime and less computational complexity. Its accuracy is also acceptable for relative small or simple data sets. However, if we want to obtain a more accurate result for a large data set, it is better to apply multiple clustering methods and compare their differences. 
+Overall, *k*-means clustering is still a good clustering method for RNA-seq data because of its relative short runtime and less computational complexity. Its accuracy is also acceptable for relative small or simple data sets. However, if we want to obtain a more accurate result for a large data set, it is better to apply multiple clustering methods and compare their differences.
 
 ## Reference
 
@@ -208,7 +208,7 @@ Overall, *k*-means clustering is still a good clustering method for RNA-seq data
 
 4. Dembele, D., and P. Kastner. "Fuzzy C-Means Method For Clustering Microarray Data". *Bioinformatics*, vol 19, no. 8, 2003, pp. 973-980. *Oxford University Press (OUP)*, doi:10.1093/bioinformatics/btg119.
 
-5. Duo, Angelo., et., al. “ A systematic performance evaluation of clustering  methods for single-cell RNA-seq data.” NCBI., 11 Sep. 2018. 
+5. Duo, Angelo., et., al. “ A systematic performance evaluation of clustering  methods for single-cell RNA-seq data.” NCBI., 11 Sep. 2018.
 
 6. Hartigan, J. A., and M. A. Wong. "Algorithm AS 136: A K-Means Clustering Algorithm". *Applied Statistics*
 , vol 28, no. 1, 1979, p. 100. *JSTOR*, doi:10.2307/2346830.
