@@ -130,7 +130,7 @@ https://www.nature.com/articles/s41588-018-0328-0
 
 Machine learning is a powerful tool that can analyze the large datasets becoming commonplace in bioinformatics. However, there are many hurdles that come with the application of machine learning in genomic discovery and prediction. One such hurdle is machine learning algorithms require both high quality and quantities of data that may not always be readily available. 
 
-In the field of functional genomics, the large amounts of genomic data allow for accurate prediction models to be created. However, despite the growing accuracy in these predictive models, there are still ‘hidden’ factors that can have profound effects on the genome that can’t be accurately predicted for. [6] Whether it’s non-coding regions or discoveries in alternative splicing, these ‘hidden factors can lead to false positives and “overfitting”(eg.) of data. As such, although a powerful tool, it’s important to understand the limitations of machine learning and predictive models of discovery, when the current datasets are insufficient. 
+In the field of functional genomics, the large amounts of genomic data allow for accurate prediction models to be created. However, despite the growing accuracy in these predictive models, there are still ‘hidden’ factors that can have profound effects on the genome that can’t be accurately predicted for. [6] Whether it’s non-coding regions or discoveries in alternative splicing, these ‘hidden factors can lead to false positives and “overfitting” of data. As such, although a powerful tool, it’s important to understand the limitations of machine learning and predictive models of discovery, when the current datasets are insufficient. 
 
 ### The Black Box of The Predictive Model
 
