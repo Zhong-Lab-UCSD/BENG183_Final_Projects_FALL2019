@@ -38,6 +38,7 @@ A technique for location the regions where a specific DNA-binding protein (like 
 [[5]](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3431496/).
 
 ### HI - C
+
 <img src="https://github.com/mchernys/BENG183_Final_Projects_FALL2019/blob/master/2Hi-C.png"> 
 
 (from Lecture 7_Genome-interaction-Hi-C-KN slides)
@@ -58,7 +59,9 @@ Maps locations of nucleosomes by digesting areas of DNA that are not wrapped aro
 Maps locations of nucleosomes by digesting areas of DNA that are not wrapped around histones with DNase I and sequencing the undigested areas [[9]](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3627383/).
 
 # 4. ATAC-seq <a name="4"></a>
+
 <img src="https://github.com/mchernys/BENG183_Final_Projects_FALL2019/blob/master/4ATAC-seq.png"> <br>
+
 [Figure 2:](https://www.activemotif.com/blog-atac-seq)
 Visualization of ATAC seq action on DNA. Figure by Active Motif, Complete Guide to Understanding and Using ATAC-seq 
 
@@ -96,7 +99,8 @@ These adaptors and the low quality read fragments need to be trimmed away as the
 ### Step 2: Alignment
 To be able to analyze what areas of the genome our ATAC-seq reads came from, we need to align them to a reference genome that comes with an annotation. Thus, we will need the FASTQ from the last step, a FASTA file of the reference genome, and the reference GTF or GFF3 file. In this step, the alignment tool will compare each read to the genome and will match it to the right chromosome and position. The algorithm for this will vary across tools, with more specificity often taking more time. Many of the robust methods include a Burrows-Wheeler Algorithm for genome indexing, which adds numeric labels to the reference genome to help guide reads more efficiently. These include BWA and BowTie2, which have the best mapping rates in most cases. Another method is Stampy, which is faster and more tolerant of variants from the reference, so it is useful to consider it if the organism sampled deviates from the reference genome significantly. These programs will output a file in sequence alignment map (SAM) format, or BAM which is the binary compressed version. 
 
-<img src="https://github.com/mchernys/BENG183_Final_Projects_FALL2019/blob/master/8SAM.png">
+<img src="https://github.com/mchernys/BENG183_Final_Projects_FALL2019/blob/master/8SAM.png"> <br>
+
 [Figure 3:](https://gatkforums.broadinstitute.org/gatk/discussion/11014/sam-bam-cram-mapped-sequence-data-formats) <br> 
 Basic structure of the SAM format. Figure by Genome Analysis Toolkit, SAM / BAM / CRAM - Mapped sequence data formats. 
 
@@ -106,7 +110,7 @@ Reads that originate from the same fragment of DNA (duplicates) must be marked i
 ### Step 4: Peak calling
 Now that all the reads are mapped to the reference genome, they can be stacked up for every chromosomal position and counted [[12]](https://www.ncbi.nlm.nih.gov/pubmed/22517427). Interactive Genome Viewer (IGV , below) can be used to visualize these peaks, but we will want to use software to identify them all. A common program for this is MACS2. It takes a BAM file and will output a BED file, which contains information about the location and gene annotations of peaks. MACS2 models the expected fragment sizes and uses a Poisson distribution to capture biases so it can more sensitively and robustly detect real peaks against background noise [[13]](https://genomebiology.biomedcentral.com/articles/10.1186/gb-2008-9-9-r137#citeas).
 
-<img src="https://github.com/mchernys/BENG183_Final_Projects_FALL2019/blob/master/9IGV.png">
+<img src="https://github.com/mchernys/BENG183_Final_Projects_FALL2019/blob/master/9IGV.png"> <br>
 
 ### Step 5: Differential peak analysis
 To compare different epigenomic states across samples, we compare the size and location of peaks to see the genes whose accessibilities differ. There are two different approaches:
@@ -129,7 +133,7 @@ a. Intermediate steps: <br>
 5. Differential peak analysis: DESeq2 R package
 6. Peak functional annotation: ChIPpeakAnno R package
 
-<img src="https://github.com/mchernys/BENG183_Final_Projects_FALL2019/blob/master/10flowchart.png">
+<img src="https://github.com/mchernys/BENG183_Final_Projects_FALL2019/blob/master/10flowchart.png"> <br>
 
 # 5. Comparing Methods <a name="5"></a>
 
@@ -143,7 +147,8 @@ ATAC-seq and DNase-seq are the only tools that can be used to find both transcri
 
 In a study that compared ATAC-seq to FAIRE-seq, ATAC-seq was found to also have a higher signal-to-noise ratio, with low background signal and sharper peaks (Fig. E and F). Furthermore, ATAC-seq showed a higher recall of true enhancers than FAIRE-seq, detecting ∼18.75% more enhancers ,even at similar levels of specificity (Fig. G). 
 
-<img src="https://github.com/mchernys/BENG183_Final_Projects_FALL2019/blob/master/11comparison.png">
+<img src="https://github.com/mchernys/BENG183_Final_Projects_FALL2019/blob/master/11comparison.png"> <br>
+
 [Figure 4:](https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1004994) <br> 
 Comparison between FAIRE-seq and ATAC-seq. Figure by Davie, Kristofer et al., Discovery of Transcription Factors and Regulatory Regions Driving In Vivo Tumor Development by ATAC-seq and FAIRE-seq Open Chromatin Profiling.
 
