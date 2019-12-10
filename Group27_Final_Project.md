@@ -1,12 +1,11 @@
-Neha Pusarla 
 
-Kedar Rudrawar 
+# Rolling Circle Amplification - Group 27
+#### Sahil Saboo, Neha Pusarla, Kedar Rudrawar
 
+## Contents
+- [Introduction](#Introduction)
+- [Procedure](#Procedure)
 
-Sahil Saboo 
-
-
-# Rolling Circle Amplification 
 
 ---
 
