@@ -37,14 +37,16 @@ However, transcription factor activity cannot occur without access to open chrom
 A technique for location the regions where a specific DNA-binding protein (like a transcription factor) interacts with DNA. First, crosslink the protein with the DNA using a substance like formaldehyde, add protein specific antibodies with magnetic regions, shear the DNA and pull down with streptavidin (this technique is called immunoprecipitation). Finally, reverse the cross links and sequence the DNA you have pulled down [[5]](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3431496/).
 
 ### HI - C
-<img src="https://github.com/mchernys/BENG183_Final_Projects_FALL2019/blob/master/2Hi-C.png">
+<img src="https://github.com/mchernys/BENG183_Final_Projects_FALL2019/blob/master/2Hi-C.png"> 
 
 (from Lecture 7_Genome-interaction-Hi-C-KN slides)
 Which genomic positions are physically close together in the nucleus? Used to figure out what pairs of DNA strands form the anchors for chromatin loops. First, the loops are held in place by adding formaldehyde to the cells, which covalently links chromatin segments that are close to each other. Next, restriction enzymes are used to cut away the parts of the loop outside the anchors. Fill the sticky ends of the anchor sequences and mark the ends with biotin. DNA ends that are close to each other will be ligated; the ligation mainly happens only to the anchor sequences because of the proximity requirement. Cut off ends of DNA which are not ligated so that they do not contain biotin, and pull down the anchors by attracting the biotin with streptavidin. Shear the anchor DNA, do PCR to make more genetic material, and perform sequencing. Trim and remap signature during the data analysis to make sure you do not have extra nucleotides from outside the anchor sequences [[6]](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3149993/).
 
 <img src="https://github.com/mchernys/BENG183_Final_Projects_FALL2019/blob/master/3comparison.png">
+
 [Figure 1:](https://www.nature.com/articles/nrg3788) <br>
 Comparison between experimental tools for primary-order structure detection. Figure by Meyer, Clifford A.et al., Nature Reviews Genetics 15.11(2014):709-721
+
 ### FAIRE-seq
 A method for finding regions of DNA associated with regulatory activity. DNA is cross linked to preserve its interactions, then sonicated. After sonication, the cross linking is removed using a phenol-chloroform extraction. When the cross linking is removed, chromatin associated with nucleosomes will remain in its organic state while the other DNA will prefer being aqueous. The assay then selects for the aqueous DNA in order to perform functional enrichment for the nucleosome depleted regions of the DNA and sequence those regions. Regulatory DNA segments are often characterized by an eviction of nucleosomes, so sequencing nucleosome poor regions will select for regulatory sequences [[7]](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1891346/).
 
@@ -62,6 +64,7 @@ Visualization of ATAC seq action on DNA. Figure by Active Motif, Complete Guide 
 ATAC-Seq stands for Assay for Transposase-Accessible Chromatin with high-throughput sequencing. It is used for mapping chromatin accessibility genome-wide. 
 
 ## 4.1. Library Preparation Process <a name="41"></a>
+
 ### Cell prep
 During harvesting cells should be intact and in a homogenous single cell suspension. Making sure to have between 25k to 75k cells is important. Using too few cells causes over-digestion of chromatin later on. This creates more noisy data. Using too many cells results in under-digestion. This creates large fragments that can be hard to sequence. After harvesting, cells are lysed with a nonionic detergent to yield pure nuclei [[10]](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4374986/).
 
@@ -70,6 +73,7 @@ The yielded nuclei is then fragmented using Tn5 transposase through a process kn
 The purified library can be amplified by PCR so that it can be analyzed by other methods such as qPCR or next-generation sequencing.
 
 ## 4.2. Computational Analysis <a name="42"></a>
+
 ### The steps:
 Raw read quality: check the sequencing output for the base pair quality and do any necessary read trimming
 Alignment to a reference genome: map the reads to a reference genome for the organism studied
@@ -111,7 +115,6 @@ R is a programming language built for scripting, specifically with an emphasis o
 
 Aside from looking at individual genes, it is also useful to look at gene functions that are “enriched”, more highly expressed. Functional enrichment analysis can be done using gene ontology (GO), a set of terms to categorize and build a network of gene functions. Another representation of biomolecular interactions is Kyoto Encyclopedia of Genes and Genomes (KEGG) pathways. The ChIPpeakAnno bioconductor package can be used for this. Many of the bioconductor tools were written for peak calling for ChIP-seq but are just as effective for analyzing ATAC-seq peaks as the input data formats are the same. 
 
-
 ### A wrapper to sum it all up: GUAVA
 A “wrapper” program is one that puts other well-known gold-standard programs together in sequence with the right settings so the user only needs to make one command to the wrapper program as a whole. This makes analysis more accessible to those without bioinformatics expertise, but we can separate the steps and do more finetuning, and even swap some programs to fine tune it to our experiments. Recently, GUAVA has been developed to provide a convenient user interface for ATAC-seq analysis and generate visuals and annotations. They provide an excellent flowchart to summarize the entire workflow. 
 Their steps and tools:
@@ -144,6 +147,7 @@ In a study that compared ATAC-seq to FAIRE-seq, ATAC-seq was found to also have 
 Comparison between FAIRE-seq and ATAC-seq. Figure by Davie, Kristofer et al., Discovery of Transcription Factors and Regulatory Regions Driving In Vivo Tumor Development by ATAC-seq and FAIRE-seq Open Chromatin Profiling.
 
 **Citations**
+
 1. nucleosome / nucleosomes. Nature News Available at: https://www.nature.com/scitable/definition/nucleosome-nucleosomes-30/.
 2. Greer, E. L. & Shi, Y. Histone methylation: a dynamic mark in health, disease and inheritance. Nature reviews. Genetics (2012). Available at: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4073795/.
 3. Histone Acetylation and Genome Function  EpiGenie Available at: https://epigenie.com/epigenie-learning-center/epigenetics/histone-acetylation-and-genome-function/.
