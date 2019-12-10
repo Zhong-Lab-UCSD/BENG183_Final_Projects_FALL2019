@@ -90,10 +90,14 @@ We will be providing some alternate programs for each step
 ### Step 1: Raw read quality
 Out of sequencing machines, the data is often very “noisy”. They come in the format of a FASTQ file, each read with its own identifier tag, sequence, quality string, and a delimiter (normally a “+”) to separate it from the next read. The bases do not come out with 100% accuracy, and the machine will assign a Phred quality score, represented by one ASCII character per nucleotide, to each nucleotide based on its confidence that it correctly identified that base. 
 
-<img src="https://github.com/mchernys/BENG183_Final_Projects_FALL2019/blob/master/5Fastq.png">
+<img src="https://github.com/mchernys/BENG183_Final_Projects_FALL2019/blob/master/5Fastq.png"> <br>
+
 The reads can also come with “adaptor” sequences still attached to the ends. Adaptors can be added to the end of DNA fragments to help identify the samples they originate from and to hybridize them to the flowcells of the sequencing machine for the sequencing process. FASTQC will detect these as a warning in “per base sequence content”, as the bases at the start of a read will be biased away from the expected approximate 25% frequency do to the inclusion of these. In addition, the restriction (cut) sites of the transposase will also introduce bias which is expected and does not need to be fixed. 
-<img src="https://github.com/mchernys/BENG183_Final_Projects_FALL2019/blob/master/6pbsc.png">
-<img src="https://github.com/mchernys/BENG183_Final_Projects_FALL2019/blob/master/7pbsq.png">
+
+<img src="https://github.com/mchernys/BENG183_Final_Projects_FALL2019/blob/master/6pbsc.png"> <br>
+
+<img src="https://github.com/mchernys/BENG183_Final_Projects_FALL2019/blob/master/7pbsq.png"> <br>
+
 These adaptors and the low quality read fragments need to be trimmed away as they will interfere with the alignment step and cause the reads to map to erroneous areas of the genome or to not map at all. In addition, the restriction (cut) sites of the transposase will also introduce bias which is expected and does not need to be fixed. Some useful trimming tools are cutadapt and Trimmomatic. 
 
 ### Step 2: Alignment
