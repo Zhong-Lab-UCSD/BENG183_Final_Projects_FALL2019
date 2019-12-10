@@ -10,7 +10,7 @@
   * [Random Mutagenesis](#Random-Mutagenesis)
   * [Geminiviruses & RFLP](#Geminiviruses-and-RFLP)
 - [References](#References)
-
+- [Conclusion](#Conclusion)
 
 ---
 
@@ -77,6 +77,11 @@ Through gel electrophoresis of various geminivirus infected plants, these amplif
 The DNA amplified from RCA can additionally be characterized by RFLP analysis and directly sequenced up to 900 bases in a single run, avoiding other obstacles and allowing for quicker analysis. There are many other advantages to using RCA such as the lack of expensive devices, its simplicity, and the characterization of all infecting circular DNA components, thus, making it a widely used mechanism for diagnostics. 
 
 
+---
+
+## Conclusion
+
+Rolling Circle Amplification, the amplification of circularized target template molecules, is an innovative and efficient process to achieve a multitude of copies of the DNA snippet of interest. While only a few of the potential uses of RCA are described in this writeup, there are other avenues such as its utilization in Low Copy Number (LCN) DNA used for forensic genomics. Because this is a fairly new concept, continued efforts are being pursued to find even more approaches with RCA. 
 ---
 
 ### References 
