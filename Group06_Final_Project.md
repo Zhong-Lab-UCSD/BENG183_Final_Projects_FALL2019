@@ -1,6 +1,6 @@
 # ATAC-Seq
 
-By: Erikka Linn A13780018 , Kalyani Kottilil A13513679, Katha Korgaonkar A13437473
+By: Erikka Linn, Kalyani Kottilil, Katha Korgaonkar
 
 ### Table of Contents
 
